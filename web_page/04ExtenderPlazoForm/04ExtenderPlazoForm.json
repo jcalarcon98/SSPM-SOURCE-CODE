@@ -3,11 +3,36 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1611890204629,
+  "lastUpdate" : 1611897003284,
   "rows" : [
     [
       {
-        "type" : "container",
+        "type" : "fragment",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
+        "reference" : "45fcb673-ed5c-4d0c-b5f9-22c8df48fa5b",
+        "hasValidationError" : false,
+        "id" : "headerProcess",
+        "binding" : { }
+      }
+    ],
+    [
+      {
+        "type" : "formContainer",
         "dimension" : {
           "xs" : 12
         },
@@ -19,93 +44,8 @@
           "hidden" : {
             "type" : "constant",
             "value" : false
-          },
-          "repeatedCollection" : {
-            "type" : "variable",
-            "value" : ""
           }
         },
-        "reference" : "8a38a3f6-5ca1-4e5c-a233-eedb8bc36d29",
-        "hasValidationError" : false,
-        "id" : "pbContainer",
-        "rows" : [
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 6
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "srcType" : {
-                  "type" : "constant",
-                  "value" : "Asset"
-                },
-                "url" : {
-                  "type" : "constant"
-                },
-                "assetName" : {
-                  "type" : "constant",
-                  "value" : "unlLogo.png"
-                },
-                "alt" : {
-                  "type" : "interpolation",
-                  "value" : "Universidad Nacional de Loja"
-                }
-              },
-              "reference" : "69cb6693-04ef-41e8-bef0-8b464b57d1fd",
-              "hasValidationError" : false,
-              "id" : "pbImage"
-            },
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 6
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "<b>Seguimiento al sílabo y Plan de Mejoras</b>"
-                },
-                "level" : {
-                  "type" : "constant",
-                  "value" : "Level 2"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "center"
-                }
-              },
-              "reference" : "e8c273b5-3f89-4bf7-8f7a-7806849061f1",
-              "hasValidationError" : false,
-              "id" : "pbTitle"
-            }
-          ]
-        ]
-      }
-    ],
-    [
-      {
-        "type" : "formContainer",
-        "dimension" : {
-          "xs" : 12
-        },
-        "propertyValues" : { },
         "reference" : "4307d667-5aec-4f5f-a3d6-63381c43d602",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
