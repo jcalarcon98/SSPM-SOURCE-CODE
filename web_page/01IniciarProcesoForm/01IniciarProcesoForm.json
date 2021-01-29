@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1611890204515,
+  "lastUpdate" : 1611940977980,
   "rows" : [
     [
       {
@@ -36,9 +36,12 @@
           "rows" : [
             [
               {
-                "type" : "component",
+                "type" : "fragment",
                 "dimension" : {
-                  "xs" : 6
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
                 },
                 "propertyValues" : {
                   "cssClasses" : {
@@ -48,57 +51,12 @@
                   "hidden" : {
                     "type" : "constant",
                     "value" : false
-                  },
-                  "srcType" : {
-                    "type" : "constant",
-                    "value" : "Asset"
-                  },
-                  "url" : {
-                    "type" : "constant"
-                  },
-                  "assetName" : {
-                    "type" : "constant",
-                    "value" : "unlLogo.png"
-                  },
-                  "alt" : {
-                    "type" : "interpolation",
-                    "value" : "Logo de la Universidad Nacional de Loja"
                   }
                 },
-                "reference" : "fcf3de28-f936-4495-b57b-f34a98ed6641",
+                "reference" : "63d00ef8-6445-4133-b4d1-04ae2202497e",
                 "hasValidationError" : false,
-                "id" : "pbImage"
-              },
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 6
-                },
-                "propertyValues" : {
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "<b>Seguimiento al sílabo y Plan de Mejoras</b>"
-                  },
-                  "level" : {
-                    "type" : "constant",
-                    "value" : "Level 2"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "center"
-                  }
-                },
-                "reference" : "e6e833dd-37c9-4b7b-9552-7748f89d65ca",
-                "hasValidationError" : false,
-                "id" : "pbTitle"
+                "id" : "headerProcess",
+                "binding" : { }
               }
             ],
             [

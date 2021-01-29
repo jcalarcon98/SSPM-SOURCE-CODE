@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "customSeparator",
   "name" : "separator",
-  "lastUpdate" : 1611890204483,
+  "lastUpdate" : 1611941253013,
   "template" : "@customSeparator.tpl.html",
   "controller" : "@customSeparator.ctrl.js",
   "custom" : true,

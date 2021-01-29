@@ -3,13 +3,16 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1611890204574,
+  "lastUpdate" : 1611941235906,
   "rows" : [
     [
       {
-        "type" : "container",
+        "type" : "fragment",
         "dimension" : {
-          "xs" : 12
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
         },
         "propertyValues" : {
           "cssClasses" : {
@@ -19,89 +22,12 @@
           "hidden" : {
             "type" : "constant",
             "value" : false
-          },
-          "repeatedCollection" : {
-            "type" : "variable",
-            "value" : ""
           }
         },
-        "reference" : "8867adef-46c3-4c65-b464-10dafe605673",
+        "reference" : "60e824de-457c-4257-bf97-81307ebbcfee",
         "hasValidationError" : false,
-        "id" : "pbContainer",
-        "rows" : [
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 6
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "srcType" : {
-                  "type" : "constant",
-                  "value" : "Asset"
-                },
-                "url" : {
-                  "type" : "constant"
-                },
-                "assetName" : {
-                  "type" : "constant",
-                  "value" : "unlLogo.png"
-                },
-                "alt" : {
-                  "type" : "interpolation",
-                  "value" : "Universidad Nacional de Loja"
-                }
-              },
-              "reference" : "42030c73-f6c4-4d25-b3ce-51aa22a3691d",
-              "hasValidationError" : false,
-              "id" : "pbImage"
-            },
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 6
-              },
-              "propertyValues" : {
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "level" : {
-                  "type" : "constant",
-                  "value" : "Level 2"
-                },
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "<b>Seguimiento al sílabo y Plan de Mejoras</b>"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "center"
-                },
-                "dimension" : {
-                  "type" : "constant",
-                  "value" : 12
-                }
-              },
-              "reference" : "0c82cfab-7d81-4ecd-9393-db8da5f09bec",
-              "hasValidationError" : false,
-              "id" : "pbTitle",
-              "description" : ""
-            }
-          ]
-        ]
+        "id" : "headerProcess",
+        "binding" : { }
       }
     ],
     [
