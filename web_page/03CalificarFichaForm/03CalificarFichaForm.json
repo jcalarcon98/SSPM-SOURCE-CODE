@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1612030217348,
+  "lastUpdate" : 1612039159586,
   "rows" : [
     [
       {
@@ -143,7 +143,7 @@
                 "propertyValues" : {
                   "cssClasses" : {
                     "type" : "constant",
-                    "value" : "custom-table"
+                    "value" : ""
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -555,9 +555,12 @@
                       "rows" : [
                         [
                           {
-                            "type" : "container",
+                            "type" : "component",
                             "dimension" : {
-                              "xs" : 12
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -568,72 +571,51 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "repeatedCollection" : {
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "headers" : {
+                                "type" : "expression",
+                                "value" : "tableResultsHeader"
+                              },
+                              "content" : {
+                                "type" : "expression",
+                                "value" : "tableResultsContent"
+                              },
+                              "columnsKey" : {
+                                "type" : "expression",
+                                "value" : "tableContentKeys"
+                              },
+                              "selectedRow" : {
                                 "type" : "variable",
-                                "value" : "questions"
+                                "value" : ""
+                              },
+                              "striped" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "condensed" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "bordered" : {
+                                "type" : "constant",
+                                "value" : true
                               }
                             },
-                            "reference" : "08d7b489-94e6-4374-806b-7fcd554bbb86",
+                            "reference" : "14921e2f-7ac2-485c-97ad-c7a3910ea7d3",
                             "hasValidationError" : false,
-                            "id" : "pbContainer",
-                            "rows" : [
-                              [
-                                {
-                                  "type" : "component",
-                                  "dimension" : {
-                                    "xs" : 7
-                                  },
-                                  "propertyValues" : {
-                                    "cssClasses" : {
-                                      "type" : "constant",
-                                      "value" : ""
-                                    },
-                                    "hidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "labelHidden" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
-                                    "label" : {
-                                      "type" : "interpolation",
-                                      "value" : "Default label"
-                                    },
-                                    "labelPosition" : {
-                                      "type" : "constant",
-                                      "value" : "top"
-                                    },
-                                    "labelWidth" : {
-                                      "type" : "constant",
-                                      "value" : 4
-                                    },
-                                    "allowHTML" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
-                                    "text" : {
-                                      "type" : "interpolation",
-                                      "value" : "<b>{{questions.indexOf($item) + 1}}.</b> {{$item.description}}"
-                                    },
-                                    "alignment" : {
-                                      "type" : "constant",
-                                      "value" : "left"
-                                    }
-                                  },
-                                  "reference" : "f7022299-bd72-4f50-873e-ed02e1c3963c",
-                                  "hasValidationError" : false,
-                                  "id" : "pbText"
-                                }
-                              ]
-                            ]
+                            "id" : "pbTable"
                           }
                         ],
                         [
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 12
+                              "xs" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "removeItem" : {
@@ -1050,6 +1032,76 @@
         "if($data.currentStage) {",
         " return $data.currentStage.denomination.toLowerCase().includes('mitad') ? \"MITAD\" : \"FINAL\";     ",
         "}"
+      ],
+      "exposed" : false
+    },
+    "tableResultsHeader" : {
+      "type" : "expression",
+      "value" : [
+        "const array = [\"Indicadores de desarrollo del Sílabo\"];",
+        "",
+        "if($data.tracking_alternatives){",
+        "    $data.tracking_alternatives.forEach( ({ description }) => {",
+        "        array.push(description); ",
+        "    });",
+        "}",
+        "",
+        "return array;"
+      ],
+      "exposed" : false
+    },
+    "tableResultsContent" : {
+      "type" : "expression",
+      "value" : [
+        "const tableContent = [];",
+        "",
+        "if($data.tracking_alternatives && $data.sheet.answers && $data.questions && $data.tableResultsHeader){",
+        "    $data.sheet.answers.forEach( ({question, alternative}, questionIndex) => {",
+        "    ",
+        "        if(alternative){",
+        "            ",
+        "            const { description: indicator } = $data.questions.find(currentQuestion => currentQuestion.persistenceId === question);",
+        "            const { description: alternativeResult } = $data.tracking_alternatives.find(currentAlternative => currentAlternative.persistenceId === alternative);",
+        "            const currentObject = {};",
+        "            ",
+        "            $data.tableResultsHeader.forEach((element, index) => {",
+        "                ",
+        "                let value = \" \";  ",
+        "                ",
+        "                if(index === 0){",
+        "                    value = `${questionIndex + 1}. ${indicator}`;",
+        "                }",
+        "                ",
+        "                if(element === alternativeResult) {",
+        "                    value = 'X';  ",
+        "                }",
+        "                ",
+        "                currentObject[`attribute${index}`] = value;",
+        "            });",
+        "            ",
+        "            tableContent.push(currentObject);",
+        "        }",
+        "    });",
+        "}",
+        "",
+        "",
+        "",
+        "return tableContent;"
+      ],
+      "exposed" : false
+    },
+    "tableContentKeys" : {
+      "type" : "expression",
+      "value" : [
+        "const keys = [];",
+        "",
+        "$data.tableResultsHeader.forEach((element, index) => {",
+        "                ",
+        "    const key = `attribute${index}`;",
+        "    keys.push(key);",
+        "});",
+        "            ",
+        "return keys;"
       ],
       "exposed" : false
     }
