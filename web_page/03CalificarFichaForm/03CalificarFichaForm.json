@@ -3,107 +3,8 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1611890204605,
+  "lastUpdate" : 1612030217348,
   "rows" : [
-    [
-      {
-        "type" : "container",
-        "dimension" : {
-          "xs" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "repeatedCollection" : {
-            "type" : "variable",
-            "value" : ""
-          }
-        },
-        "reference" : "bbb62aa6-d290-4ac1-afeb-c03e435bf08f",
-        "hasValidationError" : false,
-        "id" : "pbContainer",
-        "rows" : [
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 6
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "srcType" : {
-                  "type" : "constant",
-                  "value" : "Asset"
-                },
-                "url" : {
-                  "type" : "constant"
-                },
-                "assetName" : {
-                  "type" : "constant",
-                  "value" : "unlLogo.png"
-                },
-                "alt" : {
-                  "type" : "interpolation",
-                  "value" : "Universidad Nacional de Loja"
-                }
-              },
-              "reference" : "3c17fae8-0c1f-44f4-b935-bc503f119108",
-              "hasValidationError" : false,
-              "id" : "pbImage"
-            },
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 6
-              },
-              "propertyValues" : {
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "level" : {
-                  "type" : "constant",
-                  "value" : "Level 2"
-                },
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "<b>Seguimiento al sílabo y Plan de Mejoras</b>"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "center"
-                },
-                "dimension" : {
-                  "type" : "constant",
-                  "value" : 12
-                }
-              },
-              "reference" : "af710ae9-6167-4d26-b37d-ac96c67df376",
-              "hasValidationError" : false,
-              "id" : "pbTitle",
-              "description" : ""
-            }
-          ]
-        ]
-      }
-    ],
     [
       {
         "type" : "formContainer",
@@ -135,40 +36,194 @@
           "rows" : [
             [
               {
-                "type" : "component",
+                "type" : "fragment",
                 "dimension" : {
-                  "xs" : 12
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
                 },
                 "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
                   "hidden" : {
                     "type" : "constant",
                     "value" : false
+                  }
+                },
+                "reference" : "07ecd551-8aaa-4c07-ac0e-1ade44b3d81c",
+                "hasValidationError" : false,
+                "id" : "headerProcess",
+                "binding" : { }
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b>FACULTAD DE LA ENERGÍA, LAS INDUSTRIAS Y LOS RECURSOS NATURALES NO RENOVABLES <br> CARRERA  DE {{degree.name | uppercase}} <br> PERÍODO ACADÉMICO {{ period.initDate }} HASTA {{ period.endDate }} <br> FICHA DE SEGUIMIENTO AL SÍLABO POR PARTE DE LOS ESTUDIANTES <br>   APLICACIÓN A {{ stageDenomination }} DEL PERÍODO ACADÉMICO"
                   },
                   "level" : {
                     "type" : "constant",
                     "value" : "Level 4"
                   },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "center"
+                  }
+                },
+                "reference" : "4dcc03ee-a203-4c4e-b1aa-8040ff006402",
+                "hasValidationError" : false,
+                "id" : "pbTitle"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
                   "cssClasses" : {
                     "type" : "constant",
                     "value" : ""
                   },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "<b>Ficha de Seguimiento al Sílabo \"{{actualStudent.denomination}}\"</b>"
+                    "value" : "<b>1. DATOS INFORMATIVOS"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 5"
                   },
                   "alignment" : {
                     "type" : "constant",
                     "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
                   }
                 },
-                "reference" : "d30380c1-940b-4af9-9228-9d0b035f3ad4",
+                "reference" : "a36dbba1-bb3b-4037-a3d5-1c2c6d54539e",
                 "hasValidationError" : false,
-                "id" : "pbTitle",
-                "description" : ""
+                "id" : "pbTitle"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : "custom-table"
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "headers" : {
+                    "type" : "expression",
+                    "value" : "sheetTableHeader"
+                  },
+                  "content" : {
+                    "type" : "expression",
+                    "value" : "sheetHeader"
+                  },
+                  "columnsKey" : {
+                    "type" : "constant",
+                    "value" : [
+                      "title",
+                      "value"
+                    ]
+                  },
+                  "selectedRow" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "striped" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "condensed" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "bordered" : {
+                    "type" : "constant",
+                    "value" : true
+                  }
+                },
+                "reference" : "816aa0cf-037d-4257-b0e9-2295b172aae9",
+                "hasValidationError" : false,
+                "id" : "pbTable"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b>2. CUESTIONARIO"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 5"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "7a020c63-e3c8-468f-bf67-05fcc3904ef0",
+                "hasValidationError" : false,
+                "id" : "pbTitle"
               }
             ],
             [
@@ -411,7 +466,7 @@
                                     },
                                     "inline" : {
                                       "type" : "constant",
-                                      "value" : true
+                                      "value" : false
                                     },
                                     "availableValues" : {
                                       "type" : "expression",
@@ -498,66 +553,6 @@
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
-                        [
-                          {
-                            "type" : "container",
-                            "dimension" : {
-                              "xs" : 7
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "repeatedCollection" : {
-                                "type" : "variable",
-                                "value" : ""
-                              }
-                            },
-                            "reference" : "18d8caef-a390-46ba-b728-d27329dab879",
-                            "hasValidationError" : false,
-                            "id" : "pbContainer",
-                            "rows" : [
-                              [
-                                {
-                                  "type" : "component",
-                                  "dimension" : {
-                                    "xs" : 12
-                                  },
-                                  "propertyValues" : {
-                                    "cssClasses" : {
-                                      "type" : "constant",
-                                      "value" : ""
-                                    },
-                                    "hidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "text" : {
-                                      "type" : "interpolation",
-                                      "value" : "Resultados"
-                                    },
-                                    "level" : {
-                                      "type" : "constant",
-                                      "value" : "Level 4"
-                                    },
-                                    "alignment" : {
-                                      "type" : "constant",
-                                      "value" : "left"
-                                    }
-                                  },
-                                  "reference" : "38fc9109-32db-447e-9f37-ff24b19c8ba8",
-                                  "hasValidationError" : false,
-                                  "id" : "pbTitle"
-                                }
-                              ]
-                            ]
-                          }
-                        ],
                         [
                           {
                             "type" : "container",
@@ -897,13 +892,6 @@
       ],
       "exposed" : false
     },
-    "test" : {
-      "type" : "expression",
-      "value" : [
-        ""
-      ],
-      "exposed" : false
-    },
     "currentStage" : {
       "type" : "url",
       "value" : [
@@ -964,6 +952,22 @@
         "        $data.actualStudent.email = student.email;",
         "        $data.actualStudent.studentId = student.studentId;",
         "        $data.actualStudent.syllabusId = student.syllabusId;",
+        "        ",
+        "        // Push to shetHeaderTable To visualize Better.",
+        "        ",
+        "        $data.sheetTableHeader = [\"<b>Denominación del Sílabo:</b>\", student.denomination];",
+        "        ",
+        "        $data.sheetHeader = [",
+        "            {",
+        "                title: \"<b>Docente:</b>\",",
+        "                value: student.syllabusTeacher.name",
+        "            },",
+        "            {",
+        "                title: \"<b>Módulo/Ciclo:</b>\",",
+        "                value: `${student.gradeNumber.toString()} - \"${student.gradeParallel}\"  ` ",
+        "            }",
+        "        ]",
+        "        ",
         "        return student;",
         "    }",
         "});"
@@ -973,7 +977,7 @@
     "setQuestions" : {
       "type" : "expression",
       "value" : [
-        "for (var i = 0; i < $data.questions.length; i++) {",
+        "for (let i = 0; i < $data.questions.length; i++) {",
         "    $data.answers.question[i] = $data.questions[i].persistenceId;",
         "}"
       ],
@@ -993,7 +997,7 @@
       "value" : [
         "const answers = [];",
         "",
-        "for (var i = 0; i < $data.questions.length; i++) {",
+        "for (let i = 0; i < $data.questions.length; i++) {",
         "    ",
         "    let answer = {persistenceId_string: \"\", question: $data.answers.question[i], alternative: $data.answers.alternative[i]};",
         "    ",
@@ -1009,6 +1013,43 @@
       "type" : "expression",
       "value" : [
         "return true;"
+      ],
+      "exposed" : false
+    },
+    "sheetHeader" : {
+      "type" : "json",
+      "value" : [
+        "[]"
+      ],
+      "exposed" : false
+    },
+    "sheetTableHeader" : {
+      "type" : "expression",
+      "value" : [
+        "return [\"Denominación del sílabo\" ]"
+      ],
+      "exposed" : false
+    },
+    "period" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.period_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "degree" : {
+      "type" : "url",
+      "value" : [
+        "{{period|lazyRef:'degree'}}"
+      ],
+      "exposed" : false
+    },
+    "stageDenomination" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.currentStage) {",
+        " return $data.currentStage.denomination.toLowerCase().includes('mitad') ? \"MITAD\" : \"FINAL\";     ",
+        "}"
       ],
       "exposed" : false
     }

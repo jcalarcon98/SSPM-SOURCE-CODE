@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1611958620562,
+  "lastUpdate" : 1612023068151,
   "rows" : [
     [
       {
@@ -3286,7 +3286,7 @@
         "    ",
         "    let studentsShow = [];",
         "    ",
-        "    const currentStudentsAmountNeeded = 5;",
+        "    const currentStudentsAmountNeeded = 2;",
         "        ",
         "    for(let init = 1; init < array.length; init++){",
         "        ",
