@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1612039159586,
+  "lastUpdate" : 1612114962995,
   "rows" : [
     [
       {
@@ -513,6 +513,159 @@
                               ]
                             ]
                           }
+                        ],
+                        [
+                          {
+                            "type" : "container",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "showPercentage"
+                              },
+                              "repeatedCollection" : {
+                                "type" : "variable",
+                                "value" : ""
+                              }
+                            },
+                            "reference" : "e8424fab-0990-4044-adbe-b5cb304f4bc5",
+                            "hasValidationError" : false,
+                            "id" : "pbContainer",
+                            "rows" : [
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 7,
+                                    "lg" : 6
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation",
+                                      "value" : "Default label"
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
+                                    },
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "text" : {
+                                      "type" : "interpolation",
+                                      "value" : "Porcentaje alcanzado en el cumplimiento de la ejecución del Sílabo."
+                                    },
+                                    "alignment" : {
+                                      "type" : "constant",
+                                      "value" : "left"
+                                    }
+                                  },
+                                  "reference" : "b6bd99f7-6387-41e0-acee-516042bda762",
+                                  "hasValidationError" : false,
+                                  "id" : "pbText"
+                                },
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 5,
+                                    "lg" : 6
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "disabled" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation",
+                                      "value" : ""
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 1
+                                    },
+                                    "inline" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "availableValues" : {
+                                      "type" : "constant",
+                                      "value" : [
+                                        "91 a 100",
+                                        "81 a 90",
+                                        "71 a 80",
+                                        "61 a 70",
+                                        "Menos del 60"
+                                      ]
+                                    },
+                                    "displayedKey" : {
+                                      "type" : "constant"
+                                    },
+                                    "returnedKey" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "selectedValue" : {
+                                      "type" : "variable",
+                                      "value" : "answers.alternative[questions.length]"
+                                    }
+                                  },
+                                  "reference" : "ecd84e3d-47b1-41ba-a9c0-3b55ed095ce4",
+                                  "hasValidationError" : false,
+                                  "id" : "pbRadioButtons"
+                                }
+                              ]
+                            ]
+                          }
                         ]
                       ]
                     }
@@ -961,6 +1114,10 @@
       "value" : [
         "for (let i = 0; i < $data.questions.length; i++) {",
         "    $data.answers.question[i] = $data.questions[i].persistenceId;",
+        "}",
+        "",
+        "if(!$data.showPercentage){",
+        "    $data.answers.question[$data.questions.length] = \"percentage\";",
         "}"
       ],
       "exposed" : false
@@ -979,7 +1136,13 @@
       "value" : [
         "const answers = [];",
         "",
-        "for (let i = 0; i < $data.questions.length; i++) {",
+        "let length = $data.questions.length;",
+        "",
+        "if(!$data.showPercentage){",
+        "    length++;",
+        "}",
+        "",
+        "for (let i = 0; i < length; i++) {",
         "    ",
         "    let answer = {persistenceId_string: \"\", question: $data.answers.question[i], alternative: $data.answers.alternative[i]};",
         "    ",
@@ -1102,6 +1265,15 @@
         "});",
         "            ",
         "return keys;"
+      ],
+      "exposed" : false
+    },
+    "showPercentage" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.currentStage) {",
+        "    return $data.currentStage.denomination.toLowerCase().includes('mitad') ? true : false;     ",
+        "}"
       ],
       "exposed" : false
     }

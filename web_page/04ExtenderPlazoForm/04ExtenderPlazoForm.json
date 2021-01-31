@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1611897003284,
+  "lastUpdate" : 1612115092958,
   "rows" : [
     [
       {
@@ -230,7 +230,8 @@
                                   "Nombre",
                                   "Apellido",
                                   "Correo",
-                                  "Sílabo"
+                                  "Ciclo",
+                                  "Paralelo"
                                 ]
                               },
                               "content" : {
@@ -243,7 +244,8 @@
                                   "name",
                                   "lastName",
                                   "email",
-                                  "denomination"
+                                  "gradeNumber",
+                                  "gradeParallel"
                                 ]
                               },
                               "selectedRow" : {
