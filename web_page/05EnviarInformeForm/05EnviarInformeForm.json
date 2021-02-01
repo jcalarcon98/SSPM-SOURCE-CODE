@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1612140610249,
+  "lastUpdate" : 1612155586176,
   "rows" : [
     [
       {
@@ -294,7 +294,7 @@
                             },
                             "value" : {
                               "type" : "variable",
-                              "value" : "formInput.report"
+                              "value" : "context.reportSSPM_ref.newValue"
                             },
                             "required" : {
                               "type" : "constant",
@@ -527,7 +527,7 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "formInput.actualImprovePlanInput.duration"
+                                    "value" : "actualImprovePlan.duration"
                                   },
                                   "required" : {
                                     "type" : "constant",
@@ -660,7 +660,7 @@
                                 "propertyValues" : {
                                   "repeatedCollection" : {
                                     "type" : "variable",
-                                    "value" : "formInput.actualImprovePlanInput.improveActions"
+                                    "value" : "actualImprovePlan_improveActions"
                                   },
                                   "hidden" : {
                                     "type" : "constant",
@@ -887,7 +887,7 @@
                                   },
                                   "label" : {
                                     "type" : "interpolation",
-                                    "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Add ImproveAction"
+                                    "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Agregar Acción de Mejora"
                                   },
                                   "dataToSend" : {
                                     "type" : "expression"
@@ -908,11 +908,11 @@
                                   },
                                   "collectionToModify" : {
                                     "type" : "variable",
-                                    "value" : "formInput.actualImprovePlanInput.improveActions"
+                                    "value" : "actualImprovePlan_improveActions"
                                   },
                                   "valueToAdd" : {
                                     "type" : "expression",
-                                    "value" : "{\n  \"persistenceId_string\" : \"\",\n  \"description\" : \"\",\n  \"completed\" : false\n}"
+                                    "value" : "{  \"persistenceId_string\" : \"\",  \"description\" : \"\",  \"completed\" : false}"
                                   },
                                   "disabled" : {
                                     "type" : "constant",
@@ -1114,7 +1114,7 @@
                             },
                             "text" : {
                               "type" : "interpolation",
-                              "value" : "El tiempo establecido para la ejecución del <b>Plan de Mejoras</b> es de <b>{{formInput.actualImprovePlanInput.duration}}</b> días."
+                              "value" : "El tiempo establecido para la ejecución del <b>Plan de Mejoras</b> es de <b>{{actualImprovePlan.duration}}</b> días."
                             },
                             "alignment" : {
                               "type" : "constant",
@@ -1192,7 +1192,7 @@
                             },
                             "content" : {
                               "type" : "expression",
-                              "value" : "formInput.actualImprovePlanInput.improveActions"
+                              "value" : "actualImprovePlan_improveActions"
                             },
                             "columnsKey" : {
                               "type" : "constant",
@@ -1460,19 +1460,6 @@
       ],
       "exposed" : false
     },
-    "formInput" : {
-      "type" : "json",
-      "value" : [
-        "{",
-        "  \"actualImprovePlanInput\" : {",
-        "    \"duration\" : 0,",
-        "    \"improveActions\" : [ ]",
-        "  },",
-        "  \"report\" : null",
-        "}"
-      ],
-      "exposed" : false
-    },
     "submit_errors_list" : {
       "type" : "expression",
       "value" : [
@@ -1491,10 +1478,26 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "console.log(\"OUTPUT IMPROVE\", $data.formInput.actualImprovePlanInput);",
-        "return {",
-        "\tactualImprovePlanInput: $data.formInput.actualImprovePlanInput,",
-        "\treport: $data.formInput.report",
+        "if( $data.context && $data.actualImprovePlan && $data.actualImprovePlan_improveActions ){",
+        "\t//attach lazy references variables to parent variables",
+        "\t$data.actualImprovePlan.improveActions = $data.actualImprovePlan_improveActions;",
+        "\treturn {",
+        "\t\treportSSPMDocumentInput: {",
+        "\t\t\tid: $data.context.reportSSPM_ref && $data.context.reportSSPM_ref.id ? $data.context.reportSSPM_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.reportSSPM_ref.newValue && $data.context.reportSSPM_ref.newValue.filename ? $data.context.reportSSPM_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.reportSSPM_ref.newValue && $data.context.reportSSPM_ref.newValue.tempPath ? $data.context.reportSSPM_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.reportSSPM_ref.newValue && $data.context.reportSSPM_ref.newValue.contentType ? $data.context.reportSSPM_ref.newValue.contentType : null",
+        "\t\t},",
+        "\t\t//map actualImprovePlan variable to expected task contract input",
+        "\t\tactualImprovePlanInput: {",
+        "\t\t\tduration: $data.actualImprovePlan.duration !== undefined ? $data.actualImprovePlan.duration : null,",
+        "\t\t\timproveActions: $data.actualImprovePlan.improveActions.map( it => ({",
+        "\t\t\t\tpersistenceId_string: it.persistenceId_string !== undefined ? it.persistenceId_string : null,",
+        "\t\t\t\tdescription: it.description !== undefined ? it.description : null,",
+        "\t\t\t\tcompleted: it.completed !== undefined ? it.completed : null",
+        "\t\t\t}))",
+        "\t\t}",
+        "\t}",
         "}"
       ],
       "exposed" : false
@@ -1510,6 +1513,20 @@
       "type" : "urlparameter",
       "value" : [
         "id"
+      ],
+      "exposed" : false
+    },
+    "actualImprovePlan" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.actualImprovePlan_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "actualImprovePlan_improveActions" : {
+      "type" : "url",
+      "value" : [
+        "{{actualImprovePlan|lazyRef:'improveActions'}}"
       ],
       "exposed" : false
     }

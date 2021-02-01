@@ -1021,25 +1021,35 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_EVtbMWQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_EVtbMGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_EVv3cGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_lbL8YGQYEeuaypGxdjAx3Q">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_lbL8YWQYEeuaypGxdjAx3Q" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_lbL8YmQYEeuaypGxdjAx3Q" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+          <operations xmi:type="expression:Operation" xmi:id="_U13PcGRFEeuLM5QOp-5kzA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_U13PcWRFEeuLM5QOp-5kzA" name="reportSSPM" content="reportSSPM" type="DOCUMENT_REF_TYPE">
+              <referencedElements xmi:type="process:Document" xmi:id="_U13PcmRFEeuLM5QOp-5kzA" name="reportSSPM"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_lbL8Y2QYEeuaypGxdjAx3Q" name="actualImprovePlanInput.duration" content="actualImprovePlanInput?.duration" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_lbL8ZGQYEeuaypGxdjAx3Q" name="actualImprovePlanInput" type="COMPLEX"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_U13Pc2RFEeuLM5QOp-5kzA" name="reportSSPMDocumentInput" content="reportSSPMDocumentInput" type="TYPE_CONTRACT_INPUT" returnType="org.bonitasoft.engine.bpm.contract.FileInputValue">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_U13PdGRFEeuLM5QOp-5kzA" name="reportSSPMDocumentInput" type="FILE" createMode="false"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_lbL8ZWQYEeuaypGxdjAx3Q" type="JAVA_METHOD" expression="setDuration">
+            <operator xmi:type="expression:Operator" xmi:id="_U13PdWRFEeuLM5QOp-5kzA" type="DOCUMENT_CREATE_UPDATE"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Z3_FgGRFEeuLM5QOp-5kzA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z3_FgWRFEeuLM5QOp-5kzA" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z3_FgmRFEeuLM5QOp-5kzA" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z3_Fg2RFEeuLM5QOp-5kzA" name="actualImprovePlanInput.duration" content="actualImprovePlanInput?.duration" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z3_FhGRFEeuLM5QOp-5kzA" name="actualImprovePlanInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Z3_FhWRFEeuLM5QOp-5kzA" type="JAVA_METHOD" expression="setDuration">
               <inputTypes>java.lang.Integer</inputTypes>
             </operator>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_lbL8ZmQYEeuaypGxdjAx3Q">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_lbL8Z2QYEeuaypGxdjAx3Q" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_lbL8aGQYEeuaypGxdjAx3Q" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+          <operations xmi:type="expression:Operation" xmi:id="_Z3_FhmRFEeuLM5QOp-5kzA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z3_Fh2RFEeuLM5QOp-5kzA" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z3_FiGRFEeuLM5QOp-5kzA" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_lbL8aWQYEeuaypGxdjAx3Q" name="actualImprovePlanInput.improveActions" content="def improveActionList = []&#xA;//For each item collected in multiple input&#xA;actualImprovePlanInput?.improveActions.each{&#xA;&#x9;//Add a new composed ImproveAction instance&#xA;&#x9;improveActionList.add({ currentImproveActionInput ->&#xA;&#x9;&#x9;def improveActionVar = new com.company.model.ImproveAction()&#xA;&#x9;&#x9;improveActionVar.description = currentImproveActionInput.description&#xA;&#x9;&#x9;improveActionVar.completed = currentImproveActionInput.completed&#xA;&#x9;&#x9;return improveActionVar&#xA;&#x9;}(it))&#xA;}&#xA;return improveActionList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_lbL8amQYEeuaypGxdjAx3Q" name="actualImprovePlanInput" type="COMPLEX"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z3_FiWRFEeuLM5QOp-5kzA" name="actualImprovePlanInput.improveActions" content="def improveActionList = []&#xA;//For each item collected in multiple input&#xA;actualImprovePlanInput?.improveActions.each{&#xA;&#x9;//Add ImproveAction instance&#xA;&#x9;improveActionList.add({ currentImproveActionInput ->&#xA;&#x9;&#x9;def improveActionVar = actualImprovePlan.improveActions.find { it.persistenceId.toString() == currentImproveActionInput.persistenceId_string} ?: new com.company.model.ImproveAction()&#xA;&#x9;&#x9;improveActionVar.description = currentImproveActionInput.description&#xA;&#x9;&#x9;improveActionVar.completed = currentImproveActionInput.completed&#xA;&#x9;&#x9;return improveActionVar&#xA;&#x9;}(it))&#xA;}&#xA;return improveActionList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z3_FimRFEeuLM5QOp-5kzA" name="actualImprovePlanInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z3_Fi2RFEeuLM5QOp-5kzA" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_lbL8a2QYEeuaypGxdjAx3Q" type="JAVA_METHOD" expression="setImproveActions">
+            <operator xmi:type="expression:Operator" xmi:id="_Z3_FjGRFEeuLM5QOp-5kzA" type="JAVA_METHOD" expression="setImproveActions">
               <inputTypes>java.util.List</inputTypes>
             </operator>
           </operations>
@@ -1054,44 +1064,31 @@
               <inputTypes>com.company.model.ImprovePlan</inputTypes>
             </operator>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_ljTH0GQeEeuaypGxdjAx3Q">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_ljTH0WQeEeuaypGxdjAx3Q" name="reportSSPM" content="reportSSPM" type="DOCUMENT_REF_TYPE">
-              <referencedElements xmi:type="process:Document" xmi:id="_nOHq4GQeEeuaypGxdjAx3Q" name="reportSSPM"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_ljTH0mQeEeuaypGxdjAx3Q" name="report" content="report" type="TYPE_CONTRACT_INPUT" returnType="org.bonitasoft.engine.bpm.contract.FileInputValue">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_o7t1IGQeEeuaypGxdjAx3Q" name="report" type="FILE">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_o7t1IWQeEeuaypGxdjAx3Q"/>
-              </referencedElements>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_ljTH02QeEeuaypGxdjAx3Q" type="DOCUMENT_CREATE_UPDATE"/>
-          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_EVv3cWQWEeuaypGxdjAx3Q" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_EVv3cmQWEeuaypGxdjAx3Q" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_EVv3c2QWEeuaypGxdjAx3Q" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_EVv3dWQWEeuaypGxdjAx3Q" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_EVv3dGQWEeuaypGxdjAx3Q" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_LBWMwGQWEeuaypGxdjAx3Q">
-            <targetForm xmi:type="expression:Expression" xmi:id="_uiuIoGQYEeuaypGxdjAx3Q" name="05EnviarInformeForm" content="01ed09d2-9677-40ae-8608-6e6c97b82e6b" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_HNVHwGRGEeuLM5QOp-5kzA" name="05EnviarInformeForm" content="01ed09d2-9677-40ae-8608-6e6c97b82e6b" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_LBVluGQWEeuaypGxdjAx3Q">
-            <inputs xmi:type="process:ContractInput" xmi:id="_lbJgIGQYEeuaypGxdjAx3Q" name="actualImprovePlanInput" type="COMPLEX" dataReference="actualImprovePlan">
-              <inputs xmi:type="process:ContractInput" xmi:id="_lbKHMGQYEeuaypGxdjAx3Q" name="duration" type="INTEGER"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_lbKHMWQYEeuaypGxdjAx3Q" name="improveActions" type="COMPLEX" multiple="true">
-                <inputs xmi:type="process:ContractInput" xmi:id="_lbKHMmQYEeuaypGxdjAx3Q" name="persistenceId_string"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_lbKHM2QYEeuaypGxdjAx3Q" name="description"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_lbKHNGQYEeuaypGxdjAx3Q" name="completed" type="BOOLEAN"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_U12oYGRFEeuLM5QOp-5kzA" name="reportSSPMDocumentInput" type="FILE" dataReference="reportSSPM" createMode="false"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_Z3-ecGRFEeuLM5QOp-5kzA" name="actualImprovePlanInput" type="COMPLEX" dataReference="actualImprovePlan" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_Z3-ecWRFEeuLM5QOp-5kzA" name="duration" type="INTEGER" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Z3-ecmRFEeuLM5QOp-5kzA" name="improveActions" type="COMPLEX" multiple="true" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_Z3-ec2RFEeuLM5QOp-5kzA" name="persistenceId_string" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_Z3-edGRFEeuLM5QOp-5kzA" name="description" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_Z3-edWRFEeuLM5QOp-5kzA" name="completed" type="BOOLEAN" createMode="false"/>
               </inputs>
             </inputs>
-            <inputs xmi:type="process:ContractInput" xmi:id="_mCRKgGQYEeuaypGxdjAx3Q" name="report" type="FILE">
-              <mapping xmi:type="process:ContractInputMapping" xmi:id="_mCRKgWQYEeuaypGxdjAx3Q"/>
-            </inputs>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_lbLVUGQYEeuaypGxdjAx3Q" expression="actualImprovePlanInput?.duration != null" errorMessage="duration is mandatory for ImprovePlan" name="mandatory_actualImprovePlanInput_duration">
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_Z3-edmRFEeuLM5QOp-5kzA" expression="actualImprovePlanInput?.duration != null" errorMessage="duration is mandatory for ImprovePlan" name="mandatory_actualImprovePlanInput_duration">
               <inputNames>actualImprovePlanInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_lbLVUWQYEeuaypGxdjAx3Q" expression="actualImprovePlanInput?.improveActions?.description.flatten().every{it!=null}" errorMessage="description is mandatory for ImproveAction" name="mandatory_actualImprovePlanInput_improveActions_description">
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_Z3-ed2RFEeuLM5QOp-5kzA" expression="actualImprovePlanInput?.improveActions?.description.flatten().every{it!=null}" errorMessage="description is mandatory for ImproveAction" name="mandatory_actualImprovePlanInput_improveActions_description">
               <inputNames>actualImprovePlanInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_lbLVUmQYEeuaypGxdjAx3Q" expression="actualImprovePlanInput?.improveActions?.completed.flatten().every{it!=null}" errorMessage="completed is mandatory for ImproveAction" name="mandatory_actualImprovePlanInput_improveActions_completed">
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_Z3-eeGRFEeuLM5QOp-5kzA" expression="actualImprovePlanInput?.improveActions?.completed.flatten().every{it!=null}" errorMessage="completed is mandatory for ImproveAction" name="mandatory_actualImprovePlanInput_improveActions_completed">
               <inputNames>actualImprovePlanInput</inputNames>
             </constraints>
           </contract>
