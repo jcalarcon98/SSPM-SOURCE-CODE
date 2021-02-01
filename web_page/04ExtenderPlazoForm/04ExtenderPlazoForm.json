@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1612115092958,
+  "lastUpdate" : 1612138630057,
   "rows" : [
     [
       {
@@ -498,10 +498,12 @@
                                 "value" : ""
                               },
                               "min" : {
-                                "type" : "constant"
+                                "type" : "constant",
+                                "value" : 1
                               },
                               "max" : {
-                                "type" : "constant"
+                                "type" : "constant",
+                                "value" : 31
                               },
                               "step" : {
                                 "type" : "constant",
