@@ -3067,7 +3067,7 @@
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_wCK1AGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_wCK1AmTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
       </elements>
-      <elements xmi:type="process:Task" xmi:id="_0JyxsGTPEeuzaNnnrgaTTA" name="Verificar Cumplimiento del Plan de Mejoras" outgoing="_MDvCUGTQEeuzaNnnrgaTTA" incoming="_xlVQ4GTPEeuzaNnnrgaTTA _TcMdoGTQEeuzaNnnrgaTTA" actor="_jSwjIGTPEeuzaNnnrgaTTA">
+      <elements xmi:type="process:Task" xmi:id="_0JyxsGTPEeuzaNnnrgaTTA" name="Verificar Cumplimiento del Plan de Mejoras" outgoing="_MDvCUGTQEeuzaNnnrgaTTA" incoming="_xlVQ4GTPEeuzaNnnrgaTTA _TcMdoGTQEeuzaNnnrgaTTA" actor="_OluRkGUKEeu1aOaX3ZUKVw">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_xlJqsGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_xlJDoGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_xlJqsWTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
@@ -3645,7 +3645,7 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_2Bs5EGTQEeuzaNnnrgaTTA"/>
         <condition xmi:type="expression:Expression" xmi:id="_2Bs5EWTQEeuzaNnnrgaTTA" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <actors xmi:type="process:Actor" xmi:id="_jSwjIGTPEeuzaNnnrgaTTA" name="Comisión de Evaluación Interna"/>
+      <actors xmi:type="process:Actor" xmi:id="_OluRkGUKEeu1aOaX3ZUKVw" name="Comisión de Evaluación Interna"/>
       <contract xmi:type="process:Contract" xmi:id="_bwPM4mTPEeuzaNnnrgaTTA"/>
       <documents xmi:type="process:Document" xmi:id="_Mvwv8GTSEeuzaNnnrgaTTA" name="evidences" multiple="true">
         <mimeType xmi:type="expression:Expression" xmi:id="_Mvwv8WTSEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
@@ -4047,7 +4047,7 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_bwcBMmTPEeuzaNnnrgaTTA" fontName="Fira Sans"/>
       <styles xmi:type="notation:LineStyle" xmi:id="_bwcBM2TPEeuzaNnnrgaTTA"/>
       <styles xmi:type="notation:FillStyle" xmi:id="_bwedcWTPEeuzaNnnrgaTTA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bwcBNGTPEeuzaNnnrgaTTA" width="1320" height="700"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bwcBNGTPEeuzaNnnrgaTTA" width="1320" height="550"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_PIASl0U9EeuYOOr8JiHqIQ"/>
     <edges xmi:type="notation:Connector" xmi:id="_vLvfIkn7EeuRMrcBo1p0Vg" type="4001" element="_vLu4EEn7EeuRMrcBo1p0Vg" source="_PIASiUU9EeuYOOr8JiHqIQ" target="_v3GwUEn7EeuRMrcBo1p0Vg" roundedBendpointsRadius="10" routing="Rectilinear">
