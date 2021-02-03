@@ -579,6 +579,46 @@
           <data xmi:type="process:Data" xmi:id="_3AwzAGV4EeugQYG4i8wMTQ" name="emailsTo" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
             <defaultValue xmi:type="expression:Expression" xmi:id="_3AwzAWV4EeugQYG4i8wMTQ" content=""/>
           </data>
+          <data xmi:type="process:JavaObjectData" xmi:id="_9Dx9IGZvEeuUi9V_NqML1w" name="improveActionsLists" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_9Dx9IWZvEeuUi9V_NqML1w" content="" returnType="java.util.List"/>
+          </data>
+          <data xmi:type="process:Data" xmi:id="_gVXbcGZwEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_gVXbcWZwEeuUi9V_NqML1w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+          </data>
+          <data xmi:type="process:Data" xmi:id="_hAeN8GZwEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_hAeN8WZwEeuUi9V_NqML1w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+          </data>
+          <connectors xmi:type="process:Connector" xmi:id="_ye_6UGZwEeuUi9V_NqML1w" name="setLists" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_yfAhYGZwEeuUi9V_NqML1w" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yfAhYWZwEeuUi9V_NqML1w" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_yfAhYmZwEeuUi9V_NqML1w" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yfAhY2ZwEeuUi9V_NqML1w" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yfAhZGZwEeuUi9V_NqML1w" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_yfAhZWZwEeuUi9V_NqML1w" name="setLists()" content="&#xA;List newList = [];&#xA;&#xA;newList = improveActionsLists;&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_zP5ZgGZ1EeuUi9V_NqML1w" name="improveActionsLists" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_yfAhZ2ZwEeuUi9V_NqML1w">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_yfAhaGZwEeuUi9V_NqML1w" name="descriptions" content="descriptions" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:Data" xmi:id="_yfAhaWZwEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_yfAhamZwEeuUi9V_NqML1w" name="result[0]()" content="return result[0];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_yfAha2ZwEeuUi9V_NqML1w" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_yfAhbGZwEeuUi9V_NqML1w" type="ASSIGNMENT"/>
+            </outputs>
+            <outputs xmi:type="expression:Operation" xmi:id="_yfAhbWZwEeuUi9V_NqML1w">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_yfAhbmZwEeuUi9V_NqML1w" name="states" content="states" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:Data" xmi:id="_yfAhb2ZwEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_yfAhcGZwEeuUi9V_NqML1w" name="result[1]()" content="return result[1];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_yfAhcWZwEeuUi9V_NqML1w" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_yfAhcmZwEeuUi9V_NqML1w" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <connectors xmi:type="process:Connector" xmi:id="_Pzu9YGV5EeugQYG4i8wMTQ" name="insertImproveActions" definitionId="document-templating" event="ON_FINISH" definitionVersion="1.0.1">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_Pzu9YWV5EeugQYG4i8wMTQ" definitionId="document-templating" version="1.0.1" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Pzu9YmV5EeugQYG4i8wMTQ" key="documentInput">
@@ -588,10 +628,16 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Pzu9ZWV5EeugQYG4i8wMTQ" key="replacements">
                 <expression xmi:type="expression:TableExpression" xmi:id="_Pzu9ZmV5EeugQYG4i8wMTQ">
-                  <expressions xmi:type="expression:ListExpression" xmi:id="_hz268GV5EeugQYG4i8wMTQ">
-                    <expressions xmi:type="expression:Expression" xmi:id="_hz268WV5EeugQYG4i8wMTQ" name="improveActions" content="improveActions" returnTypeFixed="true"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_hz268mV5EeugQYG4i8wMTQ" name="improveActionsBV" content="improveActionsBV" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZTSZUGV_EeuUFNFgVPZMBg" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction"/>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_JFeX8GZxEeuUi9V_NqML1w">
+                    <expressions xmi:type="expression:Expression" xmi:id="_JFeX8WZxEeuUi9V_NqML1w" name="descriptions" content="descriptions" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_JFeX8mZxEeuUi9V_NqML1w" name="descriptions" content="descriptions" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:Data" xmi:id="_JFeX82ZxEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_JFeX9GZxEeuUi9V_NqML1w">
+                    <expressions xmi:type="expression:Expression" xmi:id="_JFeX9WZxEeuUi9V_NqML1w" name="states" content="states" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_JFeX9mZxEeuUi9V_NqML1w" name="states" content="states" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:Data" xmi:id="_JFeX92ZxEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </expressions>
                   </expressions>
                 </expression>
@@ -732,14 +778,14 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_3cQcM2V4EeugQYG4i8wMTQ" type="ASSIGNMENT"/>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_IE_E0GWAEeuUFNFgVPZMBg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_IE_E0WWAEeuUFNFgVPZMBg" name="improveActionsBV" content="improveActionsBV" type="TYPE_VARIABLE" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_JUZeQGWAEeuUFNFgVPZMBg" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction"/>
+          <operations xmi:type="expression:Operation" xmi:id="_AUKv0GZwEeuUi9V_NqML1w">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_AUKv0WZwEeuUi9V_NqML1w" name="improveActionsLists" content="improveActionsLists" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BOUq8GZwEeuUi9V_NqML1w" name="improveActionsLists" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_IE_E0mWAEeuUFNFgVPZMBg" name="setIA()" content="return actualImprovePlan.improveActions;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_MimfoGWAEeuUFNFgVPZMBg" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_AUKv0mZwEeuUi9V_NqML1w" name="setImproveActionsLists()" content="&#xA;&#xA;List newList = [];&#xA;&#xA;List descriptions = [];&#xA;List states = [];&#xA;&#xA;&#xA;for(action in actualImprovePlan.improveActions){&#xA;&#x9;&#xA;&#x9;descriptions.add(action.description);&#xA;&#x9;&#xA;&#x9;if(action.completed){&#xA;&#x9;&#x9;states.add(&quot;Completada&quot;);&#xA;&#x9;}else{&#xA;&#x9;&#x9;states.add(&quot;No Completada&quot;);&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(descriptions);&#xA;newList.add(states);&#xA;&#xA;return newList;&#xA;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_VskegGZ1EeuUi9V_NqML1w" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_IE_r4GWAEeuUFNFgVPZMBg" type="ASSIGNMENT"/>
+            <operator xmi:type="expression:Operator" xmi:id="_AUKv02ZwEeuUi9V_NqML1w" type="ASSIGNMENT"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_0aCTQ2V2EeugQYG4i8wMTQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_0aCTRGV2EeugQYG4i8wMTQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -3653,6 +3699,46 @@
           <data xmi:type="process:Data" xmi:id="_4tx7cGTpEeuzaNnnrgaTTA" name="date" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
             <defaultValue xmi:type="expression:Expression" xmi:id="_4tx7cWTpEeuzaNnnrgaTTA" content=""/>
           </data>
+          <data xmi:type="process:JavaObjectData" xmi:id="_Hxr_YGZyEeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_Hxr_YWZyEeuUi9V_NqML1w" content="" returnType="java.util.List"/>
+          </data>
+          <data xmi:type="process:Data" xmi:id="_N1hxIGZyEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_N1hxIWZyEeuUi9V_NqML1w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+          </data>
+          <data xmi:type="process:Data" xmi:id="_Oq1BcGZyEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_Oq1BcWZyEeuUi9V_NqML1w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+          </data>
+          <connectors xmi:type="process:Connector" xmi:id="_zORJMGZyEeuUi9V_NqML1w" name="setLists" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_zORJMWZyEeuUi9V_NqML1w" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_zORJMmZyEeuUi9V_NqML1w" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_zORJM2ZyEeuUi9V_NqML1w" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_zORJNGZyEeuUi9V_NqML1w" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_zORJNWZyEeuUi9V_NqML1w" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_zORJNmZyEeuUi9V_NqML1w" name="setLists()" content="&#xA;List newList = [];&#xA;&#xA;newList = improveActionsList;&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_7pNN0GZ1EeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_zORJOGZyEeuUi9V_NqML1w">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_zORJOWZyEeuUi9V_NqML1w" name="descriptions" content="descriptions" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:Data" xmi:id="_zORJOmZyEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_zORJO2ZyEeuUi9V_NqML1w" name="result[0]()" content="return result[0];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_zORJPGZyEeuUi9V_NqML1w" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_zORJPWZyEeuUi9V_NqML1w" type="ASSIGNMENT"/>
+            </outputs>
+            <outputs xmi:type="expression:Operation" xmi:id="_zORJPmZyEeuUi9V_NqML1w">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_zORJP2ZyEeuUi9V_NqML1w" name="states" content="states" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:Data" xmi:id="_zORJQGZyEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_zORJQWZyEeuUi9V_NqML1w" name="result[1]()" content="return result[1];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_zORJQmZyEeuUi9V_NqML1w" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_zORJQ2ZyEeuUi9V_NqML1w" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <connectors xmi:type="process:Connector" xmi:id="_mSFYAGTwEeuzaNnnrgaTTA" name="insertImproveActions" definitionId="document-templating" event="ON_FINISH" definitionVersion="1.0.1">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_mSFYAWTwEeuzaNnnrgaTTA" definitionId="document-templating" version="1.0.1" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mSFYAmTwEeuzaNnnrgaTTA" key="documentInput">
@@ -3662,10 +3748,16 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mSFYBWTwEeuzaNnnrgaTTA" key="replacements">
                 <expression xmi:type="expression:TableExpression" xmi:id="_mSFYBmTwEeuzaNnnrgaTTA">
-                  <expressions xmi:type="expression:ListExpression" xmi:id="_mSFYB2TwEeuzaNnnrgaTTA">
-                    <expressions xmi:type="expression:Expression" xmi:id="_mSFYCGTwEeuzaNnnrgaTTA" name="improveActions" content="improveActions" returnTypeFixed="true"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_mSFYCWTwEeuzaNnnrgaTTA" name="improveActionsBV" content="improveActionsBV" interpreter="GROOVY" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_C0sJ8GT-EeuwZOwUwW6sBA" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction"/>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_31OGMGZyEeuUi9V_NqML1w">
+                    <expressions xmi:type="expression:Expression" xmi:id="_31OGMWZyEeuUi9V_NqML1w" name="descriptions" content="descriptions" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_31OGMmZyEeuUi9V_NqML1w" name="descriptions" content="descriptions" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:Data" xmi:id="_31OGM2ZyEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_31OGNGZyEeuUi9V_NqML1w">
+                    <expressions xmi:type="expression:Expression" xmi:id="_31OGNWZyEeuUi9V_NqML1w" name="states" content="states" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_31OGNmZyEeuUi9V_NqML1w" name="states" content="states" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:Data" xmi:id="_31OGN2ZyEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </expressions>
                   </expressions>
                 </expression>
@@ -3814,14 +3906,14 @@
               </parameters>
             </configuration>
           </connectors>
-          <operations xmi:type="expression:Operation" xmi:id="_QCPtMGT6EeuzaNnnrgaTTA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_QCPtMWT6EeuzaNnnrgaTTA" name="improveActionsBV" content="improveActionsBV" type="TYPE_VARIABLE" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_QkWUsGT6EeuzaNnnrgaTTA" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction"/>
+          <operations xmi:type="expression:Operation" xmi:id="_Z0bMEGZyEeuUi9V_NqML1w">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z0bMEWZyEeuUi9V_NqML1w" name="improveActionsList" content="improveActionsList" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_bKgOMGZyEeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_QCPtMmT6EeuzaNnnrgaTTA" name="setIA()" content="return improvePlan.improveActions;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_YYIaEGT6EeuzaNnnrgaTTA" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z0bMEmZyEeuUi9V_NqML1w" name="setImproveActionList()" content="&#xA;List newList = [];&#xA;&#xA;List descriptions = [];&#xA;List states = [];&#xA;&#xA;&#xA;for(action in improvePlan.improveActions){&#xA;&#x9;&#xA;&#x9;descriptions.add(action.description);&#xA;&#x9;&#xA;&#x9;if(action.completed){&#xA;&#x9;&#x9;states.add(&quot;Completada&quot;);&#xA;&#x9;}else{&#xA;&#x9;&#x9;states.add(&quot;No Completada&quot;);&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(descriptions);&#xA;newList.add(states);&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_CZ9v8GZ2EeuUi9V_NqML1w" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_QCPtM2T6EeuzaNnnrgaTTA" type="ASSIGNMENT"/>
+            <operator xmi:type="expression:Operator" xmi:id="_Z0bME2ZyEeuUi9V_NqML1w" type="ASSIGNMENT"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_AFMMs2TQEeuzaNnnrgaTTA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_AFMMtGTQEeuzaNnnrgaTTA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -3851,6 +3943,46 @@
           <data xmi:type="process:Data" xmi:id="_Fn0lcGTpEeuzaNnnrgaTTA" name="emails" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
             <defaultValue xmi:type="expression:Expression" xmi:id="_Fn0lcWTpEeuzaNnnrgaTTA" content=""/>
           </data>
+          <data xmi:type="process:JavaObjectData" xmi:id="_Q8p6IGZyEeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_Q8p6IWZyEeuUi9V_NqML1w" content="" returnType="java.util.List"/>
+          </data>
+          <data xmi:type="process:Data" xmi:id="_SgY9wGZyEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_SgY9wWZyEeuUi9V_NqML1w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+          </data>
+          <data xmi:type="process:Data" xmi:id="_TWKvMGZyEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_TWKvMWZyEeuUi9V_NqML1w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+          </data>
+          <connectors xmi:type="process:Connector" xmi:id="_BVydgGZzEeuUi9V_NqML1w" name="setLists" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_BVydgWZzEeuUi9V_NqML1w" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BVydgmZzEeuUi9V_NqML1w" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_BVydg2ZzEeuUi9V_NqML1w" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BVydhGZzEeuUi9V_NqML1w" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BVydhWZzEeuUi9V_NqML1w" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_BVydhmZzEeuUi9V_NqML1w" name="setLists()" content="&#xA;List newList = [];&#xA;&#xA;newList = improveActionsList;&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_9nv-IGZ1EeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_BVydiGZzEeuUi9V_NqML1w">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_BVydiWZzEeuUi9V_NqML1w" name="descriptions" content="descriptions" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:Data" xmi:id="_BVydimZzEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_BVydi2ZzEeuUi9V_NqML1w" name="result[0]()" content="return result[0];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_BVydjGZzEeuUi9V_NqML1w" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_BVydjWZzEeuUi9V_NqML1w" type="ASSIGNMENT"/>
+            </outputs>
+            <outputs xmi:type="expression:Operation" xmi:id="_BVydjmZzEeuUi9V_NqML1w">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_BVydj2ZzEeuUi9V_NqML1w" name="states" content="states" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:Data" xmi:id="_BVydkGZzEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_BVydkWZzEeuUi9V_NqML1w" name="result[1]()" content="return result[1];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+                <referencedElements xmi:type="definition:Output" xmi:id="_BVydkmZzEeuUi9V_NqML1w" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_BVydk2ZzEeuUi9V_NqML1w" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <connectors xmi:type="process:Connector" xmi:id="_3ts6UGTwEeuzaNnnrgaTTA" name="insertImproveActions" definitionId="document-templating" event="ON_FINISH" definitionVersion="1.0.1">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_3ts6UWTwEeuzaNnnrgaTTA" definitionId="document-templating" version="1.0.1" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3tthYGTwEeuzaNnnrgaTTA" key="documentInput">
@@ -3860,10 +3992,16 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3tthY2TwEeuzaNnnrgaTTA" key="replacements">
                 <expression xmi:type="expression:TableExpression" xmi:id="_3tthZGTwEeuzaNnnrgaTTA">
-                  <expressions xmi:type="expression:ListExpression" xmi:id="_3tthZWTwEeuzaNnnrgaTTA">
-                    <expressions xmi:type="expression:Expression" xmi:id="_3tthZmTwEeuzaNnnrgaTTA" name="improveActions" content="improveActions" returnTypeFixed="true"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_3tthZ2TwEeuzaNnnrgaTTA" name="improveActionsBV" content="improveActionsBV" interpreter="GROOVY" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_FEKSMGT-EeuwZOwUwW6sBA" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction"/>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_GP61MGZzEeuUi9V_NqML1w">
+                    <expressions xmi:type="expression:Expression" xmi:id="_GP61MWZzEeuUi9V_NqML1w" name="descriptions" content="descriptions" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_GP61MmZzEeuUi9V_NqML1w" name="descriptions" content="descriptions" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:Data" xmi:id="_GP61M2ZzEeuUi9V_NqML1w" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_GP61NGZzEeuUi9V_NqML1w">
+                    <expressions xmi:type="expression:Expression" xmi:id="_GP61NWZzEeuUi9V_NqML1w" name="states" content="states" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_GP61NmZzEeuUi9V_NqML1w" name="states" content="states" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:Data" xmi:id="_GP61N2ZzEeuUi9V_NqML1w" name="states" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </expressions>
                   </expressions>
                 </expression>
@@ -4006,14 +4144,14 @@
               </parameters>
             </configuration>
           </connectors>
-          <operations xmi:type="expression:Operation" xmi:id="_ZdTSYGT6EeuzaNnnrgaTTA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_ZdTSYWT6EeuzaNnnrgaTTA" name="improveActionsBV" content="improveActionsBV" type="TYPE_VARIABLE" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_aRXMkGT6EeuzaNnnrgaTTA" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction"/>
+          <operations xmi:type="expression:Operation" xmi:id="_d1LEsGZyEeuUi9V_NqML1w">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_d1LEsWZyEeuUi9V_NqML1w" name="improveActionsList" content="improveActionsList" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_ig3XwGZyEeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_ZdTSYmT6EeuzaNnnrgaTTA" name="setIA2()" content="return improvePlan.improveActions;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dy-SIGT6EeuzaNnnrgaTTA" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_d1LEsmZyEeuUi9V_NqML1w" name="setImproveActionList()" content="&#xA;List newList = [];&#xA;&#xA;List descriptions = [];&#xA;List states = [];&#xA;&#xA;&#xA;for(action in improvePlan.improveActions){&#xA;&#x9;&#xA;&#x9;descriptions.add(action.description);&#xA;&#x9;&#xA;&#x9;if(action.completed){&#xA;&#x9;&#x9;states.add(&quot;Completada&quot;);&#xA;&#x9;}else{&#xA;&#x9;&#x9;states.add(&quot;No Completada&quot;);&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(descriptions);&#xA;newList.add(states);&#xA;&#xA;return newList;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_BeK2EGZ2EeuUi9V_NqML1w" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_ZdTSY2T6EeuzaNnnrgaTTA" type="ASSIGNMENT"/>
+            <operator xmi:type="expression:Operator" xmi:id="_d1LEs2ZyEeuUi9V_NqML1w" type="ASSIGNMENT"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_x7t7I2TQEeuzaNnnrgaTTA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_x7t7JGTQEeuzaNnnrgaTTA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -4054,14 +4192,8 @@
       <data xmi:type="process:Data" xmi:id="_nbAI4GTlEeuzaNnnrgaTTA" name="managerEmail" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_nbAI4WTlEeuzaNnnrgaTTA" content=""/>
       </data>
-      <data xmi:type="process:Data" xmi:id="_ZcGKwGT1EeuzaNnnrgaTTA" name="descriptions" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_ZcGKwWT1EeuzaNnnrgaTTA" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
-      </data>
       <data xmi:type="process:Data" xmi:id="_aRzqwGT1EeuzaNnnrgaTTA" name="values" multiple="true" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_aRzqwWT1EeuzaNnnrgaTTA" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
-      </data>
-      <data xmi:type="process:JavaObjectData" xmi:id="_ncgxgGT1EeuzaNnnrgaTTA" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_ncgxgWT1EeuzaNnnrgaTTA" content="" returnType="java.util.List"/>
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_PM4LcGT6EeuzaNnnrgaTTA" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction">
         <defaultValue xmi:type="expression:Expression" xmi:id="_PM4LcWT6EeuzaNnnrgaTTA" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
