@@ -8,7 +8,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_PH_rdUU9EeuYOOr8JiHqIQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_PH_rdkU9EeuYOOr8JiHqIQ" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_v3FiMEn7EeuRMrcBo1p0Vg" name="Suministrar información necesaria para el proceso" outgoing="_8Ps1EEr1EeuHg-ZrLb5XVA" incoming="_vLu4EEn7EeuRMrcBo1p0Vg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_v3FiMEn7EeuRMrcBo1p0Vg" name="Suministrar información necesaria para el proceso" outgoing="_8Ps1EEr1EeuHg-ZrLb5XVA" incoming="_vLu4EEn7EeuRMrcBo1p0Vg" actor="_PC26cE1ZEeuV9t0H3Gb7Sg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_vLqmoUn7EeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_vLqmoEn7EeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_vLqmokn7EeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
@@ -279,7 +279,7 @@
           <calledActivityName xmi:type="expression:Expression" xmi:id="_9sMoQ0r1EeuHg-ZrLb5XVA" name="Configurar información necesaria para el proceso" content="Configurar información necesaria para el proceso" returnTypeFixed="true"/>
           <calledActivityVersion xmi:type="expression:Expression" xmi:id="_9sNPUEr1EeuHg-ZrLb5XVA" name="1.0" content="1.0" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_SF2KQGQWEeuaypGxdjAx3Q" name="Sugerir cambios al informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_ViVfQGQWEeuaypGxdjAx3Q" incoming="_OiLPMGQWEeuaypGxdjAx3Q" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_SF2KQGQWEeuaypGxdjAx3Q" name="Sugerir cambios al informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_ViVfQGQWEeuaypGxdjAx3Q" incoming="_OiLPMGQWEeuaypGxdjAx3Q" actor="_PC26cE1ZEeuV9t0H3Gb7Sg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Oh9z0WQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Oh9z0GQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Oh9z0mQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
@@ -755,7 +755,7 @@
         </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_-UuwQE1YEeuV9t0H3Gb7Sg" name="Comisión de Evaluación Interna" actor="_LM4HYE1ZEeuV9t0H3Gb7Sg">
-        <elements xmi:type="process:Task" xmi:id="_UZ2NQE1ZEeuV9t0H3Gb7Sg" documentation="Planificar Actividades Task" name="Planificar Actividades" outgoing="_2mZ6QFjrEeu0WcHuCjypTg" incoming="_S2rxYE1ZEeuV9t0H3Gb7Sg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_UZ2NQE1ZEeuV9t0H3Gb7Sg" documentation="Planificar Actividades Task" name="Planificar Actividades" outgoing="_2mZ6QFjrEeu0WcHuCjypTg" incoming="_S2rxYE1ZEeuV9t0H3Gb7Sg" actor="_LM4HYE1ZEeuV9t0H3Gb7Sg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_S2j1kU1ZEeuV9t0H3Gb7Sg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_S2j1kE1ZEeuV9t0H3Gb7Sg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_S2j1kk1ZEeuV9t0H3Gb7Sg" name="" content="" returnTypeFixed="true"/>
@@ -1243,7 +1243,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="__SC0t1jrEeu0WcHuCjypTg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="__SC0tljrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_v4tpYF0AEeuCL6OsnlvZyg" name="Verificar estudiantes que no han evaluado y extender el plazo" outgoing="_pDjJkF0aEeuCL6OsnlvZyg" incoming="_rswnUFz1EeuCL6OsnlvZyg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_v4tpYF0AEeuCL6OsnlvZyg" name="Verificar estudiantes que no han evaluado y extender el plazo" outgoing="_pDjJkF0aEeuCL6OsnlvZyg" incoming="_rswnUFz1EeuCL6OsnlvZyg" actor="_LM4HYE1ZEeuV9t0H3Gb7Sg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_rsbQIFz1EeuCL6OsnlvZyg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_rsapEFz1EeuCL6OsnlvZyg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_rsbQIVz1EeuCL6OsnlvZyg" name="" content="" returnTypeFixed="true"/>
@@ -1450,7 +1450,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_kEg8x2JJEeuniqg8bGbAsA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_kEg8xmJJEeuniqg8bGbAsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_LBTJcGQWEeuaypGxdjAx3Q" name="Enviar Informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_OiLPMGQWEeuaypGxdjAx3Q" incoming="_EWI5AGQWEeuaypGxdjAx3Q _hpk94GQWEeuaypGxdjAx3Q" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_LBTJcGQWEeuaypGxdjAx3Q" name="Enviar Informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_OiLPMGQWEeuaypGxdjAx3Q" incoming="_EWI5AGQWEeuaypGxdjAx3Q _hpk94GQWEeuaypGxdjAx3Q" actor="_LM4HYE1ZEeuV9t0H3Gb7Sg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_EVtbMWQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_EVtbMGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_EVv3cGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
@@ -1527,7 +1527,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_LBWMwmQWEeuaypGxdjAx3Q" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_c85MUGQWEeuaypGxdjAx3Q" name="Visualizar sugerencias de Dirección de Carrera" outgoing="_hpk94GQWEeuaypGxdjAx3Q" incoming="_aLYuAGQWEeuaypGxdjAx3Q" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_c85MUGQWEeuaypGxdjAx3Q" name="Visualizar sugerencias de Dirección de Carrera" outgoing="_hpk94GQWEeuaypGxdjAx3Q" incoming="_aLYuAGQWEeuaypGxdjAx3Q" actor="_LM4HYE1ZEeuV9t0H3Gb7Sg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_aLO9AWQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_aLO9AGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_aLO9AmQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
@@ -1550,7 +1550,7 @@
         </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_HMxoEFkXEeuJIr4cTKuYsA" name="Estudiante" actor="_NruogFkXEeuJIr4cTKuYsA">
-        <elements xmi:type="process:Task" xmi:id="_-Nkb8FkXEeuJIr4cTKuYsA" name="Calificar Ficha de Seguimiento al Sílabo asignada" outgoing="_2Wz90GDoEeuPS9Z04F0ZTQ" incoming="_ex1CQFkhEeuJIr4cTKuYsA _U4izwGJHEeuniqg8bGbAsA" type="PARALLEL" collectionDataToMultiInstantiate="_t0ArMFklEeuJIr4cTKuYsA" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_-Nkb8FkXEeuJIr4cTKuYsA" name="Calificar Ficha de Seguimiento al Sílabo asignada" outgoing="_2Wz90GDoEeuPS9Z04F0ZTQ" incoming="_ex1CQFkhEeuJIr4cTKuYsA _U4izwGJHEeuniqg8bGbAsA" type="PARALLEL" collectionDataToMultiInstantiate="_t0ArMFklEeuJIr4cTKuYsA" actor="_NruogFkXEeuJIr4cTKuYsA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_wAQBoVkXEeuJIr4cTKuYsA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_wAQBoFkXEeuJIr4cTKuYsA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_wAQBolkXEeuJIr4cTKuYsA" name="" content="" returnTypeFixed="true"/>
@@ -2258,9 +2258,7 @@
               <group>/UNL/FEIRNNR/IS-C/SSPM/Commission</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_0RytCGHjEeuKpJXCxJU9_A"/>
-            <roles xmi:type="actormapping:Roles" xmi:id="_0RytCWHjEeuKpJXCxJU9_A">
-              <role>member</role>
-            </roles>
+            <roles xmi:type="actormapping:Roles" xmi:id="_0RytCWHjEeuKpJXCxJU9_A"/>
             <users xmi:type="actormapping:Users" xmi:id="_0RytCmHjEeuKpJXCxJU9_A"/>
           </actorMapping>
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_0RytC2HjEeuKpJXCxJU9_A" name="Dirección de Carrera Actor">
@@ -2268,9 +2266,7 @@
               <group>/UNL/FEIRNNR/IS-C</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_0RytDWHjEeuKpJXCxJU9_A"/>
-            <roles xmi:type="actormapping:Roles" xmi:id="_0RytDmHjEeuKpJXCxJU9_A">
-              <role>member</role>
-            </roles>
+            <roles xmi:type="actormapping:Roles" xmi:id="_0RytDmHjEeuKpJXCxJU9_A"/>
             <users xmi:type="actormapping:Users" xmi:id="_0RytD2HjEeuKpJXCxJU9_A"/>
           </actorMapping>
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_0RytEGHjEeuKpJXCxJU9_A" name="Estudiante">
@@ -2278,9 +2274,7 @@
               <group>/UNL/FEIRNNR/IS-C/SSPM/Students</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_0RytEmHjEeuKpJXCxJU9_A"/>
-            <roles xmi:type="actormapping:Roles" xmi:id="_0RytE2HjEeuKpJXCxJU9_A">
-              <role>member</role>
-            </roles>
+            <roles xmi:type="actormapping:Roles" xmi:id="_0RytE2HjEeuKpJXCxJU9_A"/>
             <users xmi:type="actormapping:Users" xmi:id="_0RytFGHjEeuKpJXCxJU9_A"/>
           </actorMapping>
         </actorMappings>
@@ -3458,7 +3452,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_wCK1AGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_wCK1AmTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_0JyxsGTPEeuzaNnnrgaTTA" name="Verificar Cumplimiento del Plan de Mejoras" outgoing="_MDvCUGTQEeuzaNnnrgaTTA" incoming="_xlVQ4GTPEeuzaNnnrgaTTA _TcMdoGTQEeuzaNnnrgaTTA" actor="_jSwjIGTPEeuzaNnnrgaTTA" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_0JyxsGTPEeuzaNnnrgaTTA" name="Verificar Cumplimiento del Plan de Mejoras" outgoing="_MDvCUGTQEeuzaNnnrgaTTA" incoming="_xlVQ4GTPEeuzaNnnrgaTTA _TcMdoGTQEeuzaNnnrgaTTA" actor="_jSwjIGTPEeuzaNnnrgaTTA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xlJqsGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xlJDoGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xlJqsWTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
@@ -4045,9 +4039,7 @@
               <group>/UNL/FEIRNNR/IS-C/SSPM/Commission</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_h4EXo2WcEeuR799rSR61XA"/>
-            <roles xmi:type="actormapping:Roles" xmi:id="_h4EXpGWcEeuR799rSR61XA">
-              <role>member</role>
-            </roles>
+            <roles xmi:type="actormapping:Roles" xmi:id="_h4EXpGWcEeuR799rSR61XA"/>
             <users xmi:type="actormapping:Users" xmi:id="_h4EXpWWcEeuR799rSR61XA"/>
           </actorMapping>
         </actorMappings>

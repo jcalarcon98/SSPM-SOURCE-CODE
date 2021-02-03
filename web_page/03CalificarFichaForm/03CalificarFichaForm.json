@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1612114962995,
+  "lastUpdate" : 1612318016951,
   "rows" : [
     [
       {
@@ -991,6 +991,10 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
+        "console.log(\"FO-AS\", $data.actualStudent);",
+        "console.log(\"FO-Asheet\", $data.sheet);",
+        "console.log(\"FO-UserID\", $data.task.assigned_id);",
+        "",
         "return {",
         "\tactualSheetInput: $data.sheet,",
         "\tsyllabusId: $data.actualStudent.syllabusId,",
@@ -1045,6 +1049,8 @@
       "type" : "expression",
       "value" : [
         "const list = JSON.parse($data.syllabus.value);",
+        "console.log(\"syllabus.value\", $data.syllabus.value);",
+        "console.log(\"list\", list);",
         "return list;"
       ],
       "exposed" : false
