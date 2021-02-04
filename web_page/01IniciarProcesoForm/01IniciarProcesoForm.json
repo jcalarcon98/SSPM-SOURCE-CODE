@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1612023068151,
+  "lastUpdate" : 1612415136347,
   "rows" : [
     [
       {
@@ -3474,13 +3474,13 @@
         "    /**",
         "     * Check the amount of students needed (specif eight students)",
         "     */ ",
-        "    const isStudentsAmountCorrect = compareAmountStudents(results);",
+        "    // const isStudentsAmountCorrect = compareAmountStudents(results);",
         "    ",
-        "    if( !isStudentsAmountCorrect ){",
-        "        $data.showStudentsContent = false;",
-        "        $data.studentsCsvError = `${errorMessage} Por favor verifique que la cantidad de estudiantes ingresada sea la solicitada`;",
-        "        return true;",
-        "    }",
+        "    // if( !isStudentsAmountCorrect ){",
+        "    //     $data.showStudentsContent = false;",
+        "    //     $data.studentsCsvError = `${errorMessage} Por favor verifique que la cantidad de estudiantes ingresada sea la solicitada`;",
+        "    //     return true;",
+        "    // }",
         "    ",
         "    /**",
         "     * Verify if the csv content per line contains correct Data, for example.",
