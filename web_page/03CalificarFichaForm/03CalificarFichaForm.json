@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1612318016951,
+  "lastUpdate" : 1612399515229,
   "rows" : [
     [
       {
@@ -724,6 +724,99 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<b>Resultados:"
+                              },
+                              "level" : {
+                                "type" : "constant",
+                                "value" : "Level 4"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              }
+                            },
+                            "reference" : "cdca3712-289d-4469-906b-40d101adc63d",
+                            "hasValidationError" : false,
+                            "id" : "pbTitle"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "Doughnut"
+                              },
+                              "data" : {
+                                "type" : "expression",
+                                "value" : "alternativesData"
+                              },
+                              "labels" : {
+                                "type" : "expression",
+                                "value" : "alternativesChart"
+                              },
+                              "setLabels" : {
+                                "type" : "constant",
+                                "value" : [
+                                  "Default set label"
+                                ]
+                              },
+                              "legendHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "colors" : {
+                                "type" : "constant",
+                                "value" : [
+                                  "#23B2FF",
+                                  "#FF2A23",
+                                  "#FFD023"
+                                ]
+                              },
+                              "options" : {
+                                "type" : "constant"
+                              }
+                            },
+                            "reference" : "5422815e-5575-44af-8a83-495fa6fbe2b0",
+                            "hasValidationError" : false,
+                            "id" : "pbChart"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "allowHTML" : {
                                 "type" : "constant",
                                 "value" : true
@@ -760,6 +853,42 @@
                             "reference" : "14921e2f-7ac2-485c-97ad-c7a3910ea7d3",
                             "hasValidationError" : false,
                             "id" : "pbTable"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "Al dar click en <b> Aceptar </b> confirma que todos los datos ingresados son los correctos, por favor, si encuentra algún error vaya al indicador correspondiente y modifique."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              }
+                            },
+                            "reference" : "e415ab11-09ab-4173-9f9d-e809636fc4d3",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
                           }
                         ],
                         [
@@ -1280,6 +1409,56 @@
         "if($data.currentStage) {",
         "    return $data.currentStage.denomination.toLowerCase().includes('mitad') ? true : false;     ",
         "}"
+      ],
+      "exposed" : false
+    },
+    "alternativesChart" : {
+      "type" : "expression",
+      "value" : [
+        "const alternativesChart = [];",
+        "",
+        "if($data.tracking_alternatives){",
+        "    $data.tracking_alternatives.forEach(({description}) => {",
+        "        alternativesChart.push(description);",
+        "    });",
+        "}",
+        "",
+        "return alternativesChart;"
+      ],
+      "exposed" : false
+    },
+    "alternativesData" : {
+      "type" : "expression",
+      "value" : [
+        "const alternativesData = [];",
+        "",
+        "if($data.tracking_alternatives && $data.sheet.answers){",
+        "    ",
+        "    const currentAlternatives = [];",
+        "    ",
+        "    $data.tracking_alternatives.forEach(alternative =>{",
+        "         currentAlternatives.push({",
+        "             id: alternative.persistenceId,",
+        "             counter: 0",
+        "         })",
+        "    });",
+        "    ",
+        "    $data.sheet.answers.forEach(answer =>{",
+        "       ",
+        "       currentAlternatives.forEach(currentAlternative => {",
+        "        ",
+        "            if(currentAlternative.id === answer.alternative ){",
+        "                currentAlternative.counter++;",
+        "            }",
+        "       });",
+        "    });",
+        "    ",
+        "    currentAlternatives.forEach(({counter}) => {",
+        "        alternativesData.push(counter);",
+        "    });",
+        "}",
+        "",
+        "return alternativesData;"
       ],
       "exposed" : false
     }
