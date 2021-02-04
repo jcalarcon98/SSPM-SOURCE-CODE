@@ -1267,7 +1267,7 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_-VSFYGS7Eeuieu1-zwk2Cw" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-9MZ8GS7Eeuieu1-zwk2Cw" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_-VSFYWS7Eeuieu1-zwk2Cw" name="setNull()" content="return null;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.ImprovePlan"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_-VSFYWS7Eeuieu1-zwk2Cw" name="setNull()" content="import com.company.model.ImprovePlan&#xA;&#xA;ImprovePlan improve = new ImprovePlan();&#xA;improve.setDuration(7);&#xA;&#xA;return improve;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.ImprovePlan"/>
             <operator xmi:type="expression:Operator" xmi:id="_-VSFYmS7Eeuieu1-zwk2Cw" type="ASSIGNMENT"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="__SC0s1jrEeu0WcHuCjypTg" name="loopWhile()" content="return ( index &lt; studentUsers.size() );" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
@@ -1582,7 +1582,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ao1EAWV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ao1EAGV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ao1EAmV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="00:00:15" content="15000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
+          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMIddleDate" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 2, 12, 00);&#xA;&#xA;return calendar.getTime();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_QscGgGa3EeueloIkIVx2ZA" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+          </condition>
         </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_HMxoEFkXEeuJIr4cTKuYsA" name="Estudiante" actor="_NruogFkXEeuJIr4cTKuYsA">
