@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "08VerificarCumplimientoForm",
   "name" : "08VerificarCumplimientoForm",
-  "lastUpdate" : 1612400868698,
+  "lastUpdate" : 1612423206514,
   "rows" : [
     [
       {
@@ -955,10 +955,14 @@
                                       ]
                                     },
                                     "content" : {
-                                      "type" : "constant"
+                                      "type" : "expression",
+                                      "value" : "doneAlternatives"
                                     },
                                     "columnsKey" : {
-                                      "type" : "constant"
+                                      "type" : "constant",
+                                      "value" : [
+                                        "description"
+                                      ]
                                     },
                                     "selectedRow" : {
                                       "type" : "variable",
@@ -1135,10 +1139,14 @@
                                       ]
                                     },
                                     "content" : {
-                                      "type" : "constant"
+                                      "type" : "expression",
+                                      "value" : "toDoneAlternatives"
                                     },
                                     "columnsKey" : {
-                                      "type" : "constant"
+                                      "type" : "constant",
+                                      "value" : [
+                                        "description"
+                                      ]
                                     },
                                     "selectedRow" : {
                                       "type" : "variable",
