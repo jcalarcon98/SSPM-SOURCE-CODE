@@ -2053,8 +2053,8 @@
                 <expression xmi:type="expression:Expression" xmi:id="_3E_7GGifEeuZ26MaKERMkg" content="" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3E_7GWifEeuZ26MaKERMkg" key="to">
-                <expression xmi:type="expression:Expression" xmi:id="_3E_7GmifEeuZ26MaKERMkg" name="emailStudent()" content="return actualStudent.email;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_9v3lsGihEeu4QMMChlZ5tw" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                <expression xmi:type="expression:Expression" xmi:id="_3E_7GmifEeuZ26MaKERMkg" name="emailStudent()" content="return actualStudent[0].email;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_hvnP4Gi1Eeu4QMMChlZ5tw" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3E_7G2ifEeuZ26MaKERMkg" key="bcc">
@@ -2070,15 +2070,15 @@
                 <expression xmi:type="expression:Expression" xmi:id="_3E_7ImifEeuZ26MaKERMkg" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3E_7I2ifEeuZ26MaKERMkg" key="message">
-                <expression xmi:type="expression:Expression" xmi:id="_3E_7JGifEeuZ26MaKERMkg" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p>&#xA;          Estimado(a) ${actualStudent.name},&#xA;          &lt;br>&lt;br>&#xA;          se ha guardado con éxito la información sobre la ficha de Seguimiento al Sílabo &lt;b>${actualStudent.denomination}&lt;/b> asignada.&#xA;          &lt;br>&lt;br>&#xA;          Le deseamos éxitos y agradecemos su colaboración.&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_xwNVwGihEeu4QMMChlZ5tw" name="actualStudent.name" content="actualStudent.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_xwNVwWihEeu4QMMChlZ5tw" name="actualStudent" content="actualStudent" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_xwNVwmihEeu4QMMChlZ5tw" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                <expression xmi:type="expression:Expression" xmi:id="_3E_7JGifEeuZ26MaKERMkg" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p>&#xA;          Estimado(a) ${actualStudent[0].name},&#xA;          &lt;br>&lt;br>&#xA;          se ha guardado con éxito la información sobre la ficha de Seguimiento al Sílabo &lt;b>${actualStudent[0].denomination}&lt;/b> asignada.&#xA;          &lt;br>&lt;br>&#xA;          Le deseamos éxitos y agradecemos su colaboración.&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_hvnP4Wi1Eeu4QMMChlZ5tw" name="actualStudent[0].name" content="actualStudent[0].name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_hvnP4mi1Eeu4QMMChlZ5tw" name="actualStudent" content="actualStudent" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_hvnP42i1Eeu4QMMChlZ5tw" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_xwN80GihEeu4QMMChlZ5tw" name="actualStudent.denomination" content="actualStudent.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_xwN80WihEeu4QMMChlZ5tw" name="actualStudent" content="actualStudent" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_xwN80mihEeu4QMMChlZ5tw" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_hvn28Gi1Eeu4QMMChlZ5tw" name="actualStudent[0].denomination" content="actualStudent[0].denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_hvn28Wi1Eeu4QMMChlZ5tw" name="actualStudent" content="actualStudent" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_hvn28mi1Eeu4QMMChlZ5tw" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -2157,10 +2157,10 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_FMVpMWigEeuZ26MaKERMkg" name="actualStudent" content="actualStudent" type="TYPE_VARIABLE" returnType="java.util.List">
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_F_fkcGigEeuZ26MaKERMkg" name="actualStudent" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_FMVpMmigEeuZ26MaKERMkg" name="getActualStudent()" content="&#xA;List studentSyllabusList = studentSyllabusObj;&#xA;&#xA;Long id = Long.valueOf(userId);&#xA;&#xA;def currentStudent = studentSyllabusList.find{ element -> element.id == id};&#xA;&#xA;return currentStudent;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_aI_M0GihEeu4QMMChlZ5tw" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_aI_z4GihEeu4QMMChlZ5tw" name="userId">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_aI_z4WihEeu4QMMChlZ5tw"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_FMVpMmigEeuZ26MaKERMkg" name="getActualStudent()" content="&#xA;List studentSyllabusList = studentSyllabusObj;&#xA;&#xA;List newList = [];&#xA;&#xA;Long id = Long.valueOf(userId);&#xA;&#xA;def currentStudent = studentSyllabusList.find{ element -> element.studentId == id};&#xA;&#xA;newList.add(currentStudent);&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_ZKAsAGi1Eeu4QMMChlZ5tw" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_ZKAsAWi1Eeu4QMMChlZ5tw" name="userId">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_ZKAsAmi1Eeu4QMMChlZ5tw"/>
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_FMWQQGigEeuZ26MaKERMkg" type="ASSIGNMENT"/>
