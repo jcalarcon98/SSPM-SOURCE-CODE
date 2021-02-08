@@ -817,8 +817,8 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xSMRMWV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xSMRMGV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xSMRMmV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="00:02:00" content="120000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rj43EGiZEeuZ26MaKERMkg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;return calendar.getTime();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TfpD4GpaEeubDeMomNAFEw" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_B-sPMGilEeu4QMMChlZ5tw" name="Notificar dirección de carrera sobre el informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_MI0g4GilEeu4QMMChlZ5tw" incoming="_B_A_UGilEeu4QMMChlZ5tw">
@@ -1777,8 +1777,8 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ao1EAWV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ao1EAGV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ao1EAmV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="00:00:30" content="30000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_onglgGiZEeuZ26MaKERMkg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMIddleDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;return calendar.getTime();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_OxKikGpaEeubDeMomNAFEw" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_RzNR0GiaEeuZ26MaKERMkg" name="Notificar miembros de la comisión sobre activación de tarea de los estudiantes para calificar las fichas" outgoing="_SPCSMGiaEeuZ26MaKERMkg" incoming="_KiZrwGicEeuZ26MaKERMkg">
@@ -2187,12 +2187,12 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_wAQoslkXEeuJIr4cTKuYsA" name="student" content="student" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_wAQosVkXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_n4TJIFzzEeuCL6OsnlvZyg" name="Tiempo Límite" outgoing="_IT0FkGiiEeu4QMMChlZ5tw">
-            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="00:03:00" content="180000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_MWxUgGa8EeuUi9V_NqML1w" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;return duration.toMillis();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="_fJVq4GpaEeubDeMomNAFEw" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
             </condition>
           </BoundaryIntermediateEvents>
           <BoundaryIntermediateEvents xmi:type="process:NonInterruptingBoundaryTimerEvent" xmi:id="_qdzXUF9aEeuVVLsH7l3cUw" name="1 día despúes" outgoing="_Quz0IF9bEeuVVLsH7l3cUw">
-            <condition xmi:type="expression:Expression" xmi:id="_vTJ8sF9aEeuVVLsH7l3cUw" name="00:01:00" content="60000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
+            <condition xmi:type="expression:Expression" xmi:id="_vTJ8sF9aEeuVVLsH7l3cUw" name="1 Days 00:00:01" content="86401000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_-NmRIVkXEeuJIr4cTKuYsA">
             <targetForm xmi:type="expression:Expression" xmi:id="_RBmycFt4Eeu9pYy-wQwCwA" name="03CalificarFichaForm" content="ec39ea6f-fda5-4019-b128-54a84f1a79c1" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -3951,7 +3951,7 @@
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6M2_QV9cEeuVVLsH7l3cUw" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6M2_QF9cEeuVVLsH7l3cUw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6M2_Ql9cEeuVVLsH7l3cUw" name="" content="" returnTypeFixed="true"/>
-        <condition xmi:type="expression:Expression" xmi:id="_8IjP4F9cEeuVVLsH7l3cUw" name="00:01:00" content="60000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
+        <condition xmi:type="expression:Expression" xmi:id="_8IjP4F9cEeuVVLsH7l3cUw" name="1 Days 00:00:01" content="86401000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
       </elements>
       <elements xmi:type="process:XORGateway" xmi:id="_Tjkv4F9dEeuVVLsH7l3cUw" name="Hay Plazo y Sílabos sin Calificar?" outgoing="_TIRDMF95EeuVVLsH7l3cUw _aiojAF95EeuVVLsH7l3cUw" incoming="_Rj5tcF95EeuVVLsH7l3cUw">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_AST6kV9dEeuVVLsH7l3cUw" name="" content="" returnTypeFixed="true"/>
@@ -4233,9 +4233,9 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_xlJqtmTPEeuzaNnnrgaTTA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_xlJqtWTPEeuzaNnnrgaTTA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_XWlPkGTQEeuzaNnnrgaTTA" name="Fecha límite excedida" outgoing="_dT0qEGTQEeuzaNnnrgaTTA">
-            <condition xmi:type="expression:Expression" xmi:id="_8DJeIGTQEeuzaNnnrgaTTA" name="00:04:00" content="240000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fnR74Ga8EeuUi9V_NqML1w" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_fnR74Wa8EeuUi9V_NqML1w" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
+            <condition xmi:type="expression:Expression" xmi:id="_8DJeIGTQEeuzaNnnrgaTTA" name="setTimer()" content="Date limitDate = actualDate.plus(improvePlan.duration);&#xA;&#xA;return (limitDate);" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_xXbL8GpaEeubDeMomNAFEw" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_xXbzAGpaEeubDeMomNAFEw" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
             </condition>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_0J1N-WTPEeuzaNnnrgaTTA">
@@ -4267,7 +4267,7 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_4CqgsWTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_4CqgsGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_4CqgsmTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_ADcq0GTREeuzaNnnrgaTTA" name="00:02:00" content="120000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
+          <condition xmi:type="expression:Expression" xmi:id="_ADcq0GTREeuzaNnnrgaTTA" name="2 Days 00:00:01" content="172801000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
         </elements>
         <elements xmi:type="process:XORGateway" xmi:id="_8GSHIGTPEeuzaNnnrgaTTA" name="Limite alcanzado || Acciones completadas" outgoing="_AFThcGTQEeuzaNnnrgaTTA _uQUAYGTQEeuzaNnnrgaTTA" incoming="_7o8q4GTPEeuzaNnnrgaTTA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_7o3yYGTPEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
