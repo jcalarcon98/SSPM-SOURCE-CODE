@@ -1488,13 +1488,6 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_h9RFg1kLEeupS7xWF9Tvpg" type="ASSIGNMENT"/>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_-VReUGS7Eeuieu1-zwk2Cw">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_-VSFYGS7Eeuieu1-zwk2Cw" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-9MZ8GS7Eeuieu1-zwk2Cw" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_-VSFYWS7Eeuieu1-zwk2Cw" name="setNull()" content="import com.company.model.ImprovePlan&#xA;&#xA;ImprovePlan improve = new ImprovePlan();&#xA;improve.setDuration(7);&#xA;&#xA;return improve;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.ImprovePlan"/>
-            <operator xmi:type="expression:Operator" xmi:id="_-VSFYmS7Eeuieu1-zwk2Cw" type="ASSIGNMENT"/>
-          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="__SC0s1jrEeu0WcHuCjypTg" name="loopWhile()" content="return ( index &lt; studentUsers.size() );" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
             <referencedElements xmi:type="process:Data" xmi:id="_DkAoEFkLEeupS7xWF9Tvpg" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
             <referencedElements xmi:type="process:JavaObjectData" xmi:id="_DkBPIFkLEeupS7xWF9Tvpg" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
@@ -1850,10 +1843,15 @@
                 <expression xmi:type="expression:Expression" xmi:id="_35WW9mikEeu4QMMChlZ5tw" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_35WW92ikEeu4QMMChlZ5tw" key="message">
-                <expression xmi:type="expression:Expression" xmi:id="_35WW-GikEeu4QMMChlZ5tw" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p>&#xA;          Estimado(a) miembro de la comisión,&#xA;          &lt;br>&lt;br>&#xA;          se le informa que ha iniciado el proceso de notificación de los estudiantes con el objetivo de evaluar las fichas de seguimiento a los sílabos asignadas a cada uno de los estudiantes de la carrera &lt;b>${degree.name}&lt;/b>.&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_35WW-WikEeu4QMMChlZ5tw" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_35WW-mikEeu4QMMChlZ5tw" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.company.model.Degree">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_35WW-2ikEeu4QMMChlZ5tw" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
+                <expression xmi:type="expression:Expression" xmi:id="_35WW-GikEeu4QMMChlZ5tw" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p>&#xA;          Estimado(a) miembro de la comisión,&#xA;          &lt;br>&lt;br>&#xA;          se le informa que ha iniciado el proceso de notificación de los estudiantes de la etapa &lt;b>${currentStage.denomination}&lt;/b> con el objetivo de evaluar las fichas de seguimiento a los sílabos asignadas a cada uno de los estudiantes de la carrera &lt;b>${degree.name}&lt;/b>.&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_tlXmsGpGEeubDeMomNAFEw" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_tlXmsWpGEeubDeMomNAFEw" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.company.model.Stage">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_tlXmsmpGEeubDeMomNAFEw" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+                    </referencedElements>
+                  </referencedElements>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_tlXms2pGEeubDeMomNAFEw" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_tlXmtGpGEeubDeMomNAFEw" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.company.model.Degree">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_tlXmtWpGEeubDeMomNAFEw" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -1872,6 +1870,13 @@
               </parameters>
             </configuration>
           </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_vxWWEGpGEeubDeMomNAFEw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_vxWWEWpGEeubDeMomNAFEw" name="actualImprovePlan" content="actualImprovePlan" type="TYPE_VARIABLE" returnType="com.company.model.ImprovePlan">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_wUZ_0GpGEeubDeMomNAFEw" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_vxWWEmpGEeubDeMomNAFEw" name="setNull()" content="import com.company.model.ImprovePlan&#xA;&#xA;ImprovePlan improve = new ImprovePlan();&#xA;improve.setDuration(7);&#xA;&#xA;return improve;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.ImprovePlan"/>
+            <operator xmi:type="expression:Operator" xmi:id="_vxWWE2pGEeubDeMomNAFEw" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_RzSKU2iaEeuZ26MaKERMkg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_RzSKVGiaEeuZ26MaKERMkg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_RzSKVWiaEeuZ26MaKERMkg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
