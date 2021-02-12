@@ -1777,8 +1777,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ao1EAWV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ao1EAGV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ao1EAmV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMIddleDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;return calendar.getTime();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_OxKikGpaEeubDeMomNAFEw" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMiddleDate()" content="import java.time.LocalDate&#xA;&#xA;if(productionTimers){&#xA;&#x9;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#x9;Calendar calendar = GregorianCalendar.getInstance();&#xA;&#x9;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#x9;return calendar.getTime();&#xA;}&#xA;Long expiremilis = 60000L;&#xA;Date strtime = new Date()&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_a2wvgGzYEeunXPDArUMloQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+            <referencedElements xmi:type="parameter:Parameter" xmi:id="_a2xWkGzYEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_RzNR0GiaEeuZ26MaKERMkg" name="Notificar miembros de la comisión sobre activación de tarea de los estudiantes para calificar las fichas" outgoing="_SPCSMGiaEeuZ26MaKERMkg" incoming="_KiZrwGicEeuZ26MaKERMkg">
@@ -3088,6 +3089,7 @@
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_fBQ5MGHkEeuKpJXCxJU9_A" name="emailUser" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_ZzzGkGWZEeuUFNFgVPZMBg" name="backendHost" typeClassname="java.lang.String"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_QOB2QGzYEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
       <contract xmi:type="process:Contract" xmi:id="_PH_rjEU9EeuYOOr8JiHqIQ"/>
       <documents xmi:type="process:Document" xmi:id="_x1sFcEoSEeuRMrcBo1p0Vg" name="sillabusFile">
         <mimeType xmi:type="expression:Expression" xmi:id="_x1sFcUoSEeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
