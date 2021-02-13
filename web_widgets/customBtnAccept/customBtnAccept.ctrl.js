@@ -14,6 +14,7 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
                                   },
                                   buttonsStyling: false,
                                   confirmButtonText: 'Si, continuar con el proceso!',
+                                  cancelButtonText: 'Cancelar',
                                   footer: '<p class="text-primary"><b>Seguimiento al Sílabo y Plan de mejoras </b></p>',
                                 });
                                   

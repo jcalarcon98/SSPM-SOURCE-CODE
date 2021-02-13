@@ -42,8 +42,3 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .glyphicon {
     margin-left: 5px;
 }
-
-.badgeCircle {
-    background-color: green;
-    color: white;
-}

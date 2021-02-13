@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613244981206,
+  "lastUpdate" : 1613248254653,
   "rows" : [
     [
       {
@@ -1557,7 +1557,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "Proveer el listado estudiantes de cada paralelo por cada ciclo en formato <b>.csv</b>, de la siguiente manera:\n<br>\nNombre,Ciclo,Paralelo,Correo,Nota.\n<br>\n<b>Ejemplo:</b>\n<br>\n<br>\nNombres,Apellidos,Ciclo,Paralelo,Correo,Nota\n<br>\n\"Jean Carlos\",\"Alarcón Ochoa\",10,\"A\",\"jean.alarcon@unl.edu.ec\",9.99\n<br>\n\"Edgar Andrés\",\"Soto Rodríguez\",10,\"A\",\"edgar.soto@unl.edu.ec\",9.99\n<br>\n<h3>NOTA:</h3>\n<h4>Las calificaciones de cada estudiante deben ser las del periodo académico anterior. </h4>"
+                                "value" : "Por favor,  proveer el listado de estudiantes de cada paralelo por cada ciclo en formato <b>.csv</b>, de la siguiente manera:"
                               },
                               "alignment" : {
                                 "type" : "constant",
@@ -1567,6 +1567,80 @@
                             "reference" : "7c1961ab-32d3-41cc-be3a-d734c6c647cf",
                             "hasValidationError" : false,
                             "id" : "pbText"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "srcType" : {
+                                "type" : "constant",
+                                "value" : "Asset"
+                              },
+                              "url" : {
+                                "type" : "constant"
+                              },
+                              "assetName" : {
+                                "type" : "constant",
+                                "value" : "students.png"
+                              },
+                              "alt" : {
+                                "type" : "interpolation"
+                              }
+                            },
+                            "reference" : "adf7151d-367b-4f5f-9c47-bb838aa308f0",
+                            "hasValidationError" : false,
+                            "id" : "pbImage"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>Nota: </b> Las calificaciones de cada estudiante deben ser las del periodo académico anterior. <b>Además debe agregar 3 estudiantes más, que la cantidad de sílabos por cada ciclo."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              }
+                            },
+                            "reference" : "55660748-eee0-4bf1-a360-20fa41b74a12",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
                           }
                         ],
                         [
@@ -1937,7 +2011,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "Subir los sílabos de cada ciclo del período académico actual  en formato <b>.CSV</b>, de la siguiente manera:\n<br>\nDenominacion,Docente,Correo Docente,Ciclo,Paralelo\n<br>\n<b>Ejemplo:</b>\n<br>\n<br>\nDenominacion,Docente,Correo Docente,Ciclo\n<br>\n\"Control Automatizado Asistido por Computadores\",\"Cesár Fernando Iñiguez Pineda\",\"correoprueba@unl.edu.ec\",\"10\",\"A\"<br>\n\"Sistemas Expertos\",\"Oscar Miguel Cumbicus Pineda\",\"correoprueba@unl.edu.ec\",\"10\",\"A\""
+                                "value" : "Por favor, proveer los sílabos de cada ciclo del período académico actual  en formato <b>.csv</b>, de la siguiente manera:"
                               },
                               "alignment" : {
                                 "type" : "constant",
@@ -1947,6 +2021,44 @@
                             "reference" : "9df49905-24b0-4e95-8e70-fada9f3c05e5",
                             "hasValidationError" : false,
                             "id" : "pbText"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "srcType" : {
+                                "type" : "constant",
+                                "value" : "Asset"
+                              },
+                              "url" : {
+                                "type" : "constant"
+                              },
+                              "assetName" : {
+                                "type" : "constant",
+                                "value" : "silabos.png"
+                              },
+                              "alt" : {
+                                "type" : "interpolation"
+                              }
+                            },
+                            "reference" : "c1cc1bd7-d48c-471e-9ae4-9015716c6bd6",
+                            "hasValidationError" : false,
+                            "id" : "pbImage"
                           }
                         ],
                         [
@@ -3016,10 +3128,24 @@
   ],
   "assets" : [
     {
+      "id" : "5ee47e2e-49e8-4a7e-85c1-8e60c1ccf3bd",
+      "name" : "students.png",
+      "type" : "img",
+      "order" : 4,
+      "external" : false
+    },
+    {
       "id" : "63fe8ed2-d3ed-461d-b901-53f44808a940",
       "name" : "angular-locale_es.js",
       "type" : "js",
       "order" : 2,
+      "external" : false
+    },
+    {
+      "id" : "f7461123-e8ba-4398-9afe-db447a448ac0",
+      "name" : "silabos.png",
+      "type" : "img",
+      "order" : 5,
       "external" : false
     },
     {
@@ -3435,7 +3561,7 @@
         "",
         "Swal.fire({",
         "  type: 'success',",
-        "  title: 'El Archivo de Estudiantes se ha cargado correctamente',",
+        "  title: 'El archivo de estudiantes se ha cargado correctamente',",
         "  showConfirmButton: false,",
         "  timer: 1500",
         "});",
@@ -3888,7 +4014,7 @@
         "",
         "Swal.fire({",
         "  type: 'success',",
-        "  title: 'El Archivo de Sílabos se ha cargado correctamente',",
+        "  title: 'El archivo de sílabos se ha cargado correctamente',",
         "  showConfirmButton: false,",
         "  timer: 1500",
         "});",
