@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "customSillabusTable",
   "name" : "sillabusTable",
-  "lastUpdate" : 1611948794040,
+  "lastUpdate" : 1613184183499,
   "template" : "@customSillabusTable.tpl.html",
   "controller" : "@customSillabusTable.ctrl.js",
   "custom" : true,

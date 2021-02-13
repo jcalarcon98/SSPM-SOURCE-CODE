@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1612415136347,
+  "lastUpdate" : 1613239046878,
   "rows" : [
     [
       {
@@ -412,7 +412,9 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 6
+                                    "xs" : 6,
+                                    "md" : 6,
+                                    "lg" : 6
                                   },
                                   "propertyValues" : {
                                     "labelHidden" : {
@@ -490,7 +492,9 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 6
+                                    "xs" : 6,
+                                    "md" : 6,
+                                    "lg" : 6
                                   },
                                   "propertyValues" : {
                                     "labelHidden" : {
@@ -1102,7 +1106,7 @@
                                                 },
                                                 "type" : {
                                                   "type" : "constant",
-                                                  "value" : "text"
+                                                  "value" : "email"
                                                 },
                                                 "dimension" : {
                                                   "type" : "constant",
@@ -2836,6 +2840,65 @@
                           {
                             "type" : "component",
                             "dimension" : {
+                              "xs" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "allowHtml" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "!formOutput._submitError.message"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+                              },
+                              "label" : {
+                                "type" : "interpolation"
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<strong>Se han encontrado los siguientes errores: </strong>\n<br/>\n{{submit_errors_list}}"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              }
+                            },
+                            "reference" : "95c815bc-162e-435b-84d4-342fa7d9699b",
+                            "hasValidationError" : false,
+                            "id" : "pbText",
+                            "description" : ""
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
                               "xs" : 12
                             },
                             "propertyValues" : {
@@ -2933,63 +2996,6 @@
                     }
                   }
                 ]
-              }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 12
-                },
-                "propertyValues" : {
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "allowHtml" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "hidden" : {
-                    "type" : "expression",
-                    "value" : "!formOutput._submitError.message"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
-                  },
-                  "label" : {
-                    "type" : "interpolation"
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 4
-                  }
-                },
-                "reference" : "95c815bc-162e-435b-84d4-342fa7d9699b",
-                "hasValidationError" : false,
-                "id" : "pbText",
-                "description" : ""
               }
             ]
           ]
@@ -3197,7 +3203,7 @@
         "/**",
         " * This function returns headers for the Syllabus table after data of Syllabus CSV file is correct.",
         " */ ",
-        "const sillabusHeaders = ['Denominación del sílabo', 'Docente','Correo Docente', 'Ciclo', 'Paralelo'];",
+        "const sillabusHeaders = ['Denominación del sílabo', 'Docente', 'Ciclo', 'Paralelo'];",
         "",
         "return sillabusHeaders;"
       ],
@@ -3280,124 +3286,43 @@
         "    return false;",
         "}",
         "",
-        "function compareAmountStudents(array) {",
-        "    ",
-        "    let isCorrect = true;",
-        "    ",
-        "    let studentsShow = [];",
-        "    ",
-        "    const currentStudentsAmountNeeded = 2;",
-        "        ",
-        "    for(let init = 1; init < array.length; init++){",
-        "        ",
-        "        const currentStudentShow = {",
-        "            name: array[init][0],",
-        "            lastName: array[init][1],",
-        "            grade: parseInt(array[init][2]),",
-        "            parallel: array[init][3],",
-        "            email: array[init][4],",
-        "            rate: array[init][5],",
-        "        }",
-        "        ",
-        "        studentsShow.push(currentStudentShow);",
-        "    }",
-        "    ",
-        "    const sortedStudentsByGrade = _.sortBy(studentsShow, 'grade');",
-        "    ",
-        "    const initRegister = sortedStudentsByGrade[0];",
-        "    let initGrade = initRegister.grade;",
-        "    let initParallel = initRegister.parallel;",
-        "    ",
-        "    let currentAmount = 0;",
-        "    let areMoreThanOneGrade = false;",
-        "    for (let init = 0; init < sortedStudentsByGrade.length; init++) {",
-        "        ",
-        "        const currentRegister = sortedStudentsByGrade[init];",
-        "        const currentGrade = currentRegister.grade;",
-        "        const currentParallel = currentRegister.parallel;",
-        "      ",
-        "        if (initGrade === currentGrade && initParallel === currentParallel ) {",
-        "            currentAmount += 1;",
-        "        } else {",
-        "            ",
-        "            areMoreThanOneGrade = true;",
-        "            if ( currentAmount !== currentStudentsAmountNeeded){",
-        "                //TODO: FEATURE Here we can verify or catch  the specific grade and parallel ",
-        "                //that does not meet the proposed conditions.",
-        "                return false;",
-        "            }",
-        "            ",
-        "            initGrade = currentGrade;",
-        "            initParallel = currentParallel;",
-        "            currentAmount = 1;",
-        "        }",
-        "    }",
-        "    ",
-        "    if(!areMoreThanOneGrade){",
-        "         if ( currentAmount !== currentStudentsAmountNeeded){",
-        "                //TODO: FEATURE Here we can verify or catch  the specific grade and parallel ",
-        "                //that does not meet the proposed conditions.",
-        "                return false;",
-        "        }",
-        "    }",
-        "    ",
-        "    return true;",
-        "}",
+        "",
         "",
         "function compareSizeContent(array) {",
-        "  // Compare the items contents size inside csv file of sillabus.",
-        "  let isCorrect = true;",
+        "    ",
+        "    const parametersSize = 6;",
+        "    ",
+        "    let isCorrect = true;",
+        "    for (let init = 0; init < array.length; init++) {",
+        "        const currentArray = array[init];",
+        "        if (currentArray.length !== 1 && currentArray.length !== parametersSize) {",
+        "          isCorrect = false;",
+        "          return isCorrect;",
+        "        }",
         "",
-        "  for (let init = 0; init < array.length; init++) {",
-        "    const currentArray = array[init];",
-        "",
-        "    if (currentArray.length !== 1 && currentArray.length !== 6) {",
-        "      isCorrect = false;",
+        "        if (currentArray.length === 1) {",
+        "          const [element] = currentArray;",
+        "          if (element !== \"\"  ) {",
+        "            isCorrect = false;",
+        "            return isCorrect;",
+        "          }",
+        "        }",
+        "    }",
         "      return isCorrect;",
-        "    }",
-        "",
-        "    if (currentArray.length === 1) {",
-        "      const [element] = currentArray;",
-        "",
-        "      if (element !== \"\") {",
-        "        isCorrect = false;",
-        "        return isCorrect;",
-        "      }",
-        "    }",
-        "  }",
-        "  return isCorrect;",
         "}",
         "",
+        "",
         "function verifyCorrectRate(rate) {",
-        "  let delimiter = \"\";",
+        "  const currentRate = Number(rate);",
         "",
-        "  if (rate.includes(\".\")) {",
-        "    delimiter = \".\";",
-        "  }",
-        "",
-        "  if (rate.includes(\",\")) {",
-        "    delimiter = \",\";",
-        "  }",
-        "",
-        "  const array = rate.split(delimiter);",
-        "",
-        "  for (let init = 0; init < array.length; init++) {",
-        "    const currentElement = parseInt(array[init]);",
-        "",
-        "    if (isNaN(currentElement)) {",
-        "      return false;",
-        "    }",
-        "  }",
-        "",
-        "  return true;",
+        "  return !Number.isNaN(currentRate);",
         "}",
         "",
         "function compareContent(array) {",
         "  const unlDomain = \"@unl.edu.ec\";",
         "  const permitedGrades = [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\"];",
         "  const permitedParallels = [\"A\", \"B\", \"C\", \"D\"];",
-        "  let isCorrect = true;",
-        "",
+        "  ",
         "  for (let init = 1; init < array.length; init++) {",
         "    const currentArray = array[init];",
         "    const currentGrade = currentArray[2];",
@@ -3421,10 +3346,10 @@
         "    }",
         "    // verify if rate is correct -> verify if is number",
         "    if (!verifyCorrectRate(currentRate)) {",
-        "      return false;",
+        "        return false;",
         "    }",
         "  }",
-        "  return isCorrect;",
+        "  return true;",
         "}",
         "",
         "function compareUniqueStudentByEmail(array) {",
@@ -3467,20 +3392,9 @@
         "    ",
         "    if (!isSizeContentCorrect) {",
         "        $data.showStudentsContent = false;",
-        "        $data.studentsCsvError = `${errorMessage} Por favor verifique que cada uno de los registros tenga los parámetros solicitados`;",
+        "        $data.studentsCsvError = `${errorMessage} Por favor verifique que cada uno de los registros tenga la cantidad de parámetros solicitados`;",
         "        return true;",
         "    }",
-        "    ",
-        "    /**",
-        "     * Check the amount of students needed (specif eight students)",
-        "     */ ",
-        "    // const isStudentsAmountCorrect = compareAmountStudents(results);",
-        "    ",
-        "    // if( !isStudentsAmountCorrect ){",
-        "    //     $data.showStudentsContent = false;",
-        "    //     $data.studentsCsvError = `${errorMessage} Por favor verifique que la cantidad de estudiantes ingresada sea la solicitada`;",
-        "    //     return true;",
-        "    // }",
         "    ",
         "    /**",
         "     * Verify if the csv content per line contains correct Data, for example.",
@@ -3593,7 +3507,7 @@
         "    ",
         "let finalArray = [];",
         "",
-        "const sortedStudentsByGrade = _.sortBy(studentsShow, 'cicle');",
+        "let sortedStudentsByGrade = _.sortBy(studentsShow, 'cicle');",
         "",
         "let {cicle: initGrade} = sortedStudentsByGrade[0];",
         "",
@@ -3601,9 +3515,11 @@
         "",
         "for(let init = 0; init < sortedStudentsByGrade.length; init++){",
         "    ",
-        "    const {cicle: currentGradeShow} = sortedStudentsByGrade[init]; ",
+        "    const {cicle: currentGradeShow } = sortedStudentsByGrade[init]; ",
         "    ",
-        "    if(currentGradeShow !== initGrade){",
+        "    if(currentGradeShow !== initGrade ){",
+        "        ",
+        "        initArray = _.sortBy(initArray, 'parallel');",
         "        ",
         "        finalArray.push(initArray);",
         "        ",
@@ -3612,18 +3528,20 @@
         "        initArray = [];",
         "        ",
         "        initArray.push(sortedStudentsByGrade[init]);",
-        "        ",
+        "      ",
         "    }else{",
         "        ",
         "        initArray.push(sortedStudentsByGrade[init]);",
-        "        ",
-        "        if(init + 1 === sortedStudentsByGrade.length){",
+        "    }",
+        "    ",
+        "    if(init + 1 === sortedStudentsByGrade.length){",
+        "            initArray = _.sortBy(initArray, 'parallel');",
         "            finalArray.push(initArray);",
-        "        }",
         "    }",
         "}",
         "",
-        "studentsShow = [...finalArray];",
+        "studentsShow = finalArray;",
+        "",
         "$data.showStudentsContent = true;",
         "",
         "return studentsShow;"
@@ -3741,9 +3659,8 @@
         "  const currentSillabusShow = {",
         "    name: results[init][0],",
         "    teacher: results[init][1],",
-        "    teacherEmail: results[init][2],",
-        "    cicle: parseInt(results[init][3]),",
-        "    parallel: results[init][4]",
+        "    cicle: parseInt(results[init][2]),",
+        "    parallel: results[init][3]",
         "  };",
         "  ",
         "  sillabusToShow.push(currentSillabusShow);",
@@ -3762,7 +3679,7 @@
         "  const { cicle: currentGrade } = sortedSillabusByGrade[init];",
         "",
         "  if (currentGrade !== initGrade) {",
-        "    ",
+        "    initArray = _.sortBy(initArray, 'parallel');",
         "    finalArray.push(initArray);",
         "    ",
         "    initGrade = currentGrade;",
@@ -3771,20 +3688,18 @@
         "    ",
         "    initArray.push(sortedSillabusByGrade[init]);",
         "    ",
-        "    if (init + 1 === sortedSillabusByGrade.length) {",
-        "      finalArray.push(initArray);",
-        "    }",
-        "",
         "  } else {",
-        "      ",
+        "",
         "    initArray.push(sortedSillabusByGrade[init]);",
-        "    ",
-        "    if (init + 1 === sortedSillabusByGrade.length) {",
+        "  }",
+        "  ",
+        "  if (init + 1 === sortedSillabusByGrade.length) {",
+        "      initArray = _.sortBy(initArray, 'parallel');",
         "      finalArray.push(initArray);",
         "    }",
-        "",
-        "  }",
         "}",
+        "console.log(finalArray);",
+        "",
         "sillabusToShow = [...finalArray];",
         "",
         "$data.showSillabusContent = true;",
@@ -3829,11 +3744,10 @@
         "    return false;",
         "} ",
         "",
-        "",
         "function compareSizeContent(array) {",
         "    ",
         "    // Permit items in each row inside CSV file.",
-        "    const defaultItemsInRow = 5;",
+        "    const defaultItemsInRow = 4;",
         "    ",
         "  // Compare the items contents size inside csv file of sillabus.",
         "  let isCorrect = true;",
@@ -3869,31 +3783,16 @@
         "  for (let init = 1; init < array.length; init++) {",
         "  ",
         "    const currentArray = array[init];",
-        "    const currentEmail = currentArray[2];",
-        "    const currentGrade = currentArray[3];",
-        "    const currentParallel = currentArray[4];",
-        "",
-        "    const catchUnlDomainOnCurrentEmail = currentEmail.substr(currentEmail.length - unlDomain.length);",
-        "    ",
-        "    // compare if email ends with the correct unlDomain",
-        "    if (catchUnlDomainOnCurrentEmail !== unlDomain) {",
-        "      return false;",
-        "    }",
-        "",
-        "    // compare if email includes UNL domain",
-        "    if (!currentEmail.includes(unlDomain)) {",
-        "      return false;",
-        "    }",
+        "    const currentGrade = currentArray[2];",
+        "    const currentParallel = currentArray[3];",
         "",
         "    if (!permitedGrades.includes(currentGrade)) {",
         "      return false;",
         "    }",
         "    ",
-        "     // compare if parallel is inside permited parallels",
         "    if (!permitedParallels.includes(currentParallel)) {",
         "      return false;",
         "    }",
-        "    ",
         "  }",
         "  return isCorrect;",
         "}",
@@ -3904,12 +3803,12 @@
         "",
         "  for (let init = 1; init < array.length; init++) {",
         "  ",
-        "    const [denomination, , , cicle, parallel] = array[init];",
+        "    const [denomination, , cicle, parallel] = array[init];",
         "",
         "    for (let initInside = 0; initInside < array.length; initInside++) {",
         "      if (init !== initInside) {",
         "",
-        "        const [denominationInside, , , cicleInside, parallelInside] = array[initInside];",
+        "        const [denominationInside, , cicleInside, parallelInside] = array[initInside];",
         "",
         "        if (denomination === denominationInside && cicle === cicleInside && parallel === parallelInside) {",
         "          return false;",
@@ -3983,13 +3882,31 @@
         " * data.resultSillabus",
         " */ ",
         "",
-        "function areEnoughStudentsToRateSyllabus(grades){",
-        "    for (let grade of grades) {",
-        "        if(grade.students.length < grade.syllabuses.length){",
-        "            return false;",
-        "        }",
+        "function areEnoughStudentsToRateSyllabus(grades) {",
+        "  const amountOfAdditionalStudentsPerGrade = 3;",
+        "  let areWrongParallels = false;",
+        "",
+        "  let wrongParallels = '';",
+        "",
+        "  for (let grade of grades) {",
+        "    if (grade.students.length !== (grade.syllabuses.length + amountOfAdditionalStudentsPerGrade)) {",
+        "      areWrongParallels = true;",
+        "      wrongParallels += `<li>Ciclo: <b>${grade.number}</b> Paralelo: <b>\"${grade.parallel}\"</b></li>`;",
         "    }",
-        "    return true;    ",
+        "  }",
+        "",
+        "  if (areWrongParallels) {",
+        "    return {",
+        "      isCorrect: false,",
+        "      message: `<b>Error</b>: Asegurese que exista 3 estudiantes más que la cantidad de sílabos por cada ciclo<br>",
+        "      Los siguientes ciclos no cumplen esa característica:<br>",
+        "      ${wrongParallels}`,",
+        "    };",
+        "  }",
+        "",
+        "  return {",
+        "    isCorrect: true,",
+        "  };",
         "}",
         "/**",
         " * This code help us to add the sillabus to the corresponding grade.",
@@ -4001,6 +3918,8 @@
         "}  ",
         "",
         "let updateGrades = angular.copy($data.grades);",
+        "",
+        "console.log(updateGrades);",
         "",
         "let results =[...$data.resultSillabus];",
         "",
@@ -4015,15 +3934,14 @@
         "",
         "for (let init = 1; init < results.length; init++) {",
         "    ",
-        "    const currentGradeNumber = parseInt(results[init][3]);",
-        "    const currentParallel = results[init][4];",
+        "    const currentGradeNumber = parseInt(results[init][2]);",
+        "    const currentParallel = results[init][3];",
         "    ",
         "    const currentSillabus = {",
         "      persistenceId_string: \"\",",
         "      denomination: results[init][0],",
         "      teacher: {",
-        "        name: results[init][1],",
-        "        email: results[init][2],",
+        "        name: results[init][1]",
         "      },",
         "    };",
         "    ",
@@ -4042,10 +3960,11 @@
         "",
         "const areEnoughStudents = areEnoughStudentsToRateSyllabus(updateGrades);",
         "",
-        "if (!areEnoughStudents) {",
+        "if (!areEnoughStudents.isCorrect) {",
         "  $data.showSillabusContent = false;",
-        "  $data.sillabusCsvError = `<b>Error</b> Por favor verifique que exista la cantidad suficiente de estudiantes para calificar las fichas de seguimiento al sílabo`;",
+        "  $data.sillabusCsvError = areEnoughStudents.message;",
         "  $data.isSyllabusCsvInvalid = true;",
+        "  return;",
         "}",
         "",
         "return updateGrades;"
@@ -4658,13 +4577,6 @@
         " * If not exists errors returns false -> Enable last tab ",
         " */",
         "return true;"
-      ],
-      "exposed" : false
-    },
-    "test" : {
-      "type" : "expression",
-      "value" : [
-        "console.log(\"UPDATED GRADEAS\", $data.updateGrades );"
       ],
       "exposed" : false
     }
