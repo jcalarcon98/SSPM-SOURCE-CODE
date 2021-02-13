@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613239046878,
+  "lastUpdate" : 1613244981206,
   "rows" : [
     [
       {
@@ -2899,68 +2899,39 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 12
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
-                              "removeItem" : {
-                                "type" : "variable"
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
                               },
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "buttonStyle" : {
-                                "type" : "constant",
-                                "value" : "success"
+                              "disabled" : {
+                                "type" : "expression",
+                                "value" : "$form.$invalid"
                               },
                               "label" : {
                                 "type" : "interpolation",
                                 "value" : "Finalizar"
                               },
-                              "dataToSend" : {
-                                "type" : "expression",
-                                "value" : "formOutput"
-                              },
-                              "dataFromError" : {
-                                "type" : "variable",
-                                "value" : "formOutput._submitError"
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "collectionPosition" : {
-                                "type" : "constant"
-                              },
-                              "targetUrlOnSuccess" : {
-                                "type" : "interpolation",
-                                "value" : "/bonita"
-                              },
-                              "action" : {
-                                "type" : "constant",
-                                "value" : "Submit task"
-                              },
-                              "collectionToModify" : {
-                                "type" : "variable"
-                              },
-                              "valueToAdd" : {
-                                "type" : "expression"
-                              },
-                              "disabled" : {
-                                "type" : "expression",
-                                "value" : "$form.$invalid"
-                              },
                               "alignment" : {
                                 "type" : "constant",
                                 "value" : "center"
                               },
-                              "dimension" : {
+                              "buttonStyle" : {
                                 "type" : "constant",
-                                "value" : 12
+                                "value" : "success"
+                              },
+                              "action" : {
+                                "type" : "constant",
+                                "value" : "Submit task"
                               },
                               "assign" : {
                                 "type" : "constant",
@@ -2973,6 +2944,10 @@
                                 "type" : "variable",
                                 "value" : ""
                               },
+                              "dataToSend" : {
+                                "type" : "expression",
+                                "value" : "formOutput"
+                              },
                               "dataFromSuccess" : {
                                 "type" : "variable",
                                 "value" : ""
@@ -2981,15 +2956,51 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "dataFromError" : {
+                                "type" : "variable",
+                                "value" : "formOutput._submitError"
+                              },
+                              "targetUrlOnSuccess" : {
+                                "type" : "interpolation",
+                                "value" : "/bonita"
+                              },
+                              "collectionToModify" : {
+                                "type" : "variable"
+                              },
                               "modalId" : {
                                 "type" : "constant",
                                 "value" : ""
+                              },
+                              "collectionPosition" : {
+                                "type" : "constant",
+                                "value" : "Last"
+                              },
+                              "valueToAdd" : {
+                                "type" : "constant"
+                              },
+                              "removeItem" : {
+                                "type" : "variable"
+                              },
+                              "cancelText" : {
+                                "type" : "constant",
+                                "value" : "Cancelar."
+                              },
+                              "confirmText" : {
+                                "type" : "constant",
+                                "value" : "Sí, finalizar."
+                              },
+                              "titleQuestion" : {
+                                "type" : "constant",
+                                "value" : "¿La información ingresada es la correcta?."
+                              },
+                              "textQuestion" : {
+                                "type" : "constant",
+                                "value" : "El Sistema de Seguimiento al sílabo y Plan de mejoras empezará el proceso con la información ingresada. Es una acción que no se puede revertir"
                               }
                             },
-                            "reference" : "c58e2252-577f-4c50-850e-6dd317734324",
+                            "reference" : "6424e9d2-4ea5-4157-994f-2bf6b011392d",
                             "hasValidationError" : false,
-                            "id" : "pbButton",
-                            "description" : ""
+                            "id" : "customSubmitTaskButton"
                           }
                         ]
                       ]
@@ -3421,6 +3432,13 @@
         "        return true;",
         "    }",
         "}",
+        "",
+        "Swal.fire({",
+        "  type: 'success',",
+        "  title: 'El Archivo de Estudiantes se ha cargado correctamente',",
+        "  showConfirmButton: false,",
+        "  timer: 1500",
+        "});",
         "",
         "return false;"
       ],
@@ -3867,6 +3885,13 @@
         "      return true;",
         "    }",
         "}",
+        "",
+        "Swal.fire({",
+        "  type: 'success',",
+        "  title: 'El Archivo de Sílabos se ha cargado correctamente',",
+        "  showConfirmButton: false,",
+        "  timer: 1500",
+        "});",
         "",
         "return false;"
       ],
