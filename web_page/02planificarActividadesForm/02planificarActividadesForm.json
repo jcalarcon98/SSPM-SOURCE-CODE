@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1613319196607,
+  "lastUpdate" : 1613323980561,
   "rows" : [
     [
       {
@@ -1663,7 +1663,10 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 12
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -1678,34 +1681,97 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "<b>AGREGAR ALTERNATIVAS POR DEFECTO"
+                                "value" : "<b>Modificar o agregar más alternativas."
                               },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "buttonStyle" : {
-                                "type" : "constant",
-                                "value" : "success"
-                              },
-                              "itemsToAdd" : {
-                                "type" : "expression",
-                                "value" : "defaultAlternatives"
-                              },
-                              "targetArray" : {
+                              "value" : {
                                 "type" : "variable",
-                                "value" : "tracking.alternatives"
-                              },
-                              "textMessage" : {
-                                "type" : "constant",
-                                "value" : "Alternativas agregadas con éxito"
+                                "value" : "modifyAlternative"
                               }
                             },
-                            "reference" : "8b7e5dd0-4b56-4802-8885-9365bd19fdff",
+                            "reference" : "aa7e9f59-ec8c-415c-9508-04735aba4bf7",
                             "hasValidationError" : false,
-                            "id" : "customAddDefault"
+                            "id" : "pbCheckbox"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "!modifyAlternative"
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>!Precaución!</b>, si se modifica las alternativas por defecto los valores de: <br><ul><li><b>Total Cumplimiento</b></li><li><b>Porcentaje Total</b></li></ul> No serán calculados automáticamente al momento de tabular los resultados."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "warning"
+                              }
+                            },
+                            "reference" : "cc917255-f7b7-4878-9f67-55d38f82e046",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "!modifyAlternative"
+                              },
+                              "srcType" : {
+                                "type" : "constant",
+                                "value" : "Asset"
+                              },
+                              "url" : {
+                                "type" : "constant",
+                                "value" : "https://raw.githubusercontent.com/jcalarcon98/SSPM-RESOURCES/main/items.png"
+                              },
+                              "assetName" : {
+                                "type" : "constant",
+                                "value" : "items.png"
+                              },
+                              "alt" : {
+                                "type" : "interpolation"
+                              }
+                            },
+                            "reference" : "b7199413-ac9e-4866-b79c-09becd0c36df",
+                            "hasValidationError" : false,
+                            "id" : "pbImage"
                           }
                         ],
                         [
@@ -1764,8 +1830,8 @@
                                       "value" : 1
                                     },
                                     "readOnly" : {
-                                      "type" : "constant",
-                                      "value" : false
+                                      "type" : "expression",
+                                      "value" : "!modifyAlternative"
                                     },
                                     "label" : {
                                       "type" : "interpolation",
@@ -1963,8 +2029,8 @@
                                 "value" : "{\n  \"persistenceId_string\" : \"\",\n  \"description\" : \"\"\n}"
                               },
                               "disabled" : {
-                                "type" : "constant",
-                                "value" : false
+                                "type" : "expression",
+                                "value" : "!modifyAlternative"
                               },
                               "alignment" : {
                                 "type" : "constant",
@@ -2906,7 +2972,7 @@
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+                                      "value" : "<strong>Se encontraron los siguientes errores:</strong>\n<br/>\n{{submit_errors_list}}"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -2950,8 +3016,8 @@
                                       "value" : false
                                     },
                                     "disabled" : {
-                                      "type" : "constant",
-                                      "value" : false
+                                      "type" : "expression",
+                                      "value" : "$form.$invalid"
                                     },
                                     "label" : {
                                       "type" : "interpolation",
@@ -3045,6 +3111,13 @@
       "name" : "unlLogo.png",
       "type" : "img",
       "order" : 1,
+      "external" : false
+    },
+    {
+      "id" : "6d471e70-c826-4cab-b993-84d3b2d032e5",
+      "name" : "items.png",
+      "type" : "img",
+      "order" : 2,
       "external" : false
     }
   ],
@@ -3289,8 +3362,6 @@
         "",
         "const currentIndicators = $data.halfStage.questions;",
         "",
-        "console.log(currentIndicators, 'Pilas' );",
-        "",
         "// Verify if exist two or more alternatives.",
         "if(currentIndicators.length <= 0) {",
         "    halfStageError += 'Debe ingresar al menos un indicador en la ficha de mitad de ciclo';   ",
@@ -3399,6 +3470,31 @@
         "return {",
         "  isIncorrect: false",
         "}"
+      ],
+      "exposed" : false
+    },
+    "fillDefaultAlternatives" : {
+      "type" : "expression",
+      "value" : [
+        "if(!$data.modifyAlternative) {",
+        "    const alternatives = angular.copy($data.defaultAlternatives);",
+        "",
+        "    $data.tracking.alternatives = alternatives;",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "modifyAlternative" : {
+      "type" : "expression",
+      "value" : [
+        "return false;"
+      ],
+      "exposed" : false
+    },
+    "test" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data.modifyAlternative);"
       ],
       "exposed" : false
     }

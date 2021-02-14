@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1612399515229,
+  "lastUpdate" : 1613320243352,
   "rows" : [
     [
       {
@@ -900,65 +900,93 @@
                               "lg" : 12
                             },
                             "propertyValues" : {
-                              "removeItem" : {
-                                "type" : "variable"
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "allowHtml" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "!formOutput._submitError.message"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+                              },
+                              "label" : {
+                                "type" : "interpolation"
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<strong>Se encontraron los siguientes errores:</strong>\n<br/>\n{{submit_errors_list}}"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              }
+                            },
+                            "reference" : "57a6d583-1526-47a1-9a22-4c3e304710d5",
+                            "hasValidationError" : false,
+                            "id" : "pbText",
+                            "description" : ""
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
                               },
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "buttonStyle" : {
-                                "type" : "constant",
-                                "value" : "success"
+                              "disabled" : {
+                                "type" : "expression",
+                                "value" : "$form.$invalid"
                               },
                               "label" : {
                                 "type" : "interpolation",
                                 "value" : "Finalizar"
                               },
-                              "dataToSend" : {
-                                "type" : "expression",
-                                "value" : "formOutput"
-                              },
-                              "dataFromError" : {
-                                "type" : "variable",
-                                "value" : "formOutput._submitError"
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "collectionPosition" : {
-                                "type" : "constant"
-                              },
-                              "targetUrlOnSuccess" : {
-                                "type" : "interpolation",
-                                "value" : "/bonita"
-                              },
-                              "action" : {
-                                "type" : "constant",
-                                "value" : "Submit task"
-                              },
-                              "collectionToModify" : {
-                                "type" : "variable"
-                              },
-                              "valueToAdd" : {
-                                "type" : "expression"
-                              },
-                              "disabled" : {
-                                "type" : "expression",
-                                "value" : "$form.$invalid"
-                              },
                               "alignment" : {
                                 "type" : "constant",
                                 "value" : "center"
                               },
-                              "dimension" : {
+                              "buttonStyle" : {
                                 "type" : "constant",
-                                "value" : 12
+                                "value" : "success"
+                              },
+                              "action" : {
+                                "type" : "constant",
+                                "value" : "Submit task"
                               },
                               "assign" : {
                                 "type" : "constant",
@@ -971,86 +999,48 @@
                                 "type" : "variable",
                                 "value" : ""
                               },
+                              "dataToSend" : {
+                                "type" : "constant",
+                                "value" : "formOutput"
+                              },
                               "dataFromSuccess" : {
                                 "type" : "variable",
                                 "value" : ""
                               },
-                              "closeOnSuccess" : {
-                                "type" : "constant",
-                                "value" : false
+                              "dataFromError" : {
+                                "type" : "variable",
+                                "value" : "formOutput._submitError"
                               },
-                              "modalId" : {
+                              "targetUrlOnSuccess" : {
+                                "type" : "interpolation",
+                                "value" : "bonita"
+                              },
+                              "cancelText" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "Cancelar"
+                              },
+                              "confirmText" : {
+                                "type" : "constant",
+                                "value" : "Sí, continuar"
+                              },
+                              "titleQuestion" : {
+                                "type" : "constant",
+                                "value" : "¿Está seguro de terminar la Ficha de Seguimiento al sílabo?"
+                              },
+                              "textQuestion" : {
+                                "type" : "constant",
+                                "value" : "El sistema  procederá a  tabular en base a las respuestas ingresadas. Es una acción que no se puede revertir."
                               }
                             },
-                            "reference" : "10c027bf-5842-4ff0-b4de-8c5bc2effdd1",
+                            "reference" : "7793f49f-6808-4221-85be-1ee2465d5e19",
                             "hasValidationError" : false,
-                            "id" : "pbButton",
-                            "description" : ""
+                            "id" : "customSubmitTaskBtn"
                           }
                         ]
                       ]
                     }
                   }
                 ]
-              }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 12
-                },
-                "propertyValues" : {
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "allowHtml" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "hidden" : {
-                    "type" : "expression",
-                    "value" : "!formOutput._submitError.message"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
-                  },
-                  "label" : {
-                    "type" : "interpolation"
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 4
-                  }
-                },
-                "reference" : "57a6d583-1526-47a1-9a22-4c3e304710d5",
-                "hasValidationError" : false,
-                "id" : "pbText",
-                "description" : ""
               }
             ]
           ]

@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613318733845,
+  "lastUpdate" : 1613320466518,
   "rows" : [
     [
       {
@@ -3026,8 +3026,8 @@
                                 "value" : false
                               },
                               "disabled" : {
-                                "type" : "constant",
-                                "value" : false
+                                "type" : "expression",
+                                "value" : "$form.$invalid"
                               },
                               "label" : {
                                 "type" : "interpolation",
@@ -3821,8 +3821,6 @@
         "      finalArray.push(initArray);",
         "    }",
         "}",
-        "console.log(finalArray);",
-        "",
         "sillabusToShow = [...finalArray];",
         "",
         "$data.showSillabusContent = true;",
@@ -3847,7 +3845,6 @@
         "const errorMessage = '<b>Error:</b>';",
         "",
         "const sillabusFile = $data.sillabusFileDocumentInput.contentType;",
-        "",
         "",
         "if( sillabusFile ){",
         "     /**",
