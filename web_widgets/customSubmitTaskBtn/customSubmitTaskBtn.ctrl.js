@@ -5,8 +5,8 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
   var vm = this;
 
   this.action = function action() {
-      
-      Swal.fire({
+     if ($scope.properties.action === 'Submit task') {
+        Swal.fire({
           title: $scope.properties.titleQuestion,
           text: $scope.properties.textQuestion,
           type: 'question',
@@ -24,7 +24,11 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
              submitTask();
           }
         })
+    }  if ($scope.properties.url) {
+      doRequest($scope.properties.action, $scope.properties.url);
+    }
   };
+
   /**
    * Execute a get/post request to an URL
    * It also bind custom data from success|error to a data

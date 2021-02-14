@@ -1116,10 +1116,10 @@
             <constraints xmi:type="process:ContractConstraint" xmi:id="_0T0bYVghEeuB95htEZxr8g" expression="trackingInput?.stages?.executionDate.flatten().every{it!=null}" errorMessage="executionDate is mandatory for Stage" name="mandatory_trackingInput_stages_executionDate">
               <inputNames>trackingInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_0T0bYlghEeuB95htEZxr8g" expression="trackingInput?.stages?.questions?.description.flatten().every{it!=null}" errorMessage="description is mandatory for Question" name="mandatory_trackingInput_stages_questions_description">
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_0T0bYlghEeuB95htEZxr8g" expression="trackingInput?.stages?.questions?.description.flatten().every{it!=null}" errorMessage="Cada uno de los indicadores debe tener su propia descripción." name="mandatory_trackingInput_stages_questions_description">
               <inputNames>trackingInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_0T0bY1ghEeuB95htEZxr8g" expression="trackingInput?.alternatives?.description.flatten().every{it!=null}" errorMessage="description is mandatory for Alternative" name="mandatory_trackingInput_alternatives_description">
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_0T0bY1ghEeuB95htEZxr8g" expression="trackingInput?.alternatives?.description.flatten().every{it!=null}" errorMessage="La descripción es necesaria para cada una de las alternativas, no pueden estar vacías." name="mandatory_trackingInput_alternatives_description">
               <inputNames>trackingInput</inputNames>
             </constraints>
           </contract>

@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1611941235906,
+  "lastUpdate" : 1613319196607,
   "rows" : [
     [
       {
@@ -2876,68 +2876,98 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 12
+                                    "xs" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
                                   },
                                   "propertyValues" : {
-                                    "removeItem" : {
-                                      "type" : "variable"
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "allowHtml" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "hidden" : {
+                                      "type" : "expression",
+                                      "value" : "!formOutput._submitError.message"
+                                    },
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation"
+                                    },
+                                    "text" : {
+                                      "type" : "interpolation",
+                                      "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+                                    },
+                                    "alignment" : {
+                                      "type" : "constant",
+                                      "value" : "left"
+                                    },
+                                    "dimension" : {
+                                      "type" : "constant",
+                                      "value" : 12
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
+                                    }
+                                  },
+                                  "reference" : "2119d77b-9f54-4a4a-a462-52763d00be1f",
+                                  "hasValidationError" : false,
+                                  "id" : "pbText",
+                                  "description" : ""
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
                                     },
                                     "hidden" : {
                                       "type" : "constant",
                                       "value" : false
                                     },
-                                    "cssClasses" : {
+                                    "disabled" : {
                                       "type" : "constant",
-                                      "value" : ""
-                                    },
-                                    "buttonStyle" : {
-                                      "type" : "constant",
-                                      "value" : "success"
+                                      "value" : false
                                     },
                                     "label" : {
                                       "type" : "interpolation",
                                       "value" : "Finalizar"
                                     },
-                                    "dataToSend" : {
-                                      "type" : "expression",
-                                      "value" : "formOutput"
-                                    },
-                                    "dataFromError" : {
-                                      "type" : "variable",
-                                      "value" : "formOutput._submitError"
-                                    },
-                                    "labelHidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "collectionPosition" : {
-                                      "type" : "constant"
-                                    },
-                                    "targetUrlOnSuccess" : {
-                                      "type" : "interpolation",
-                                      "value" : "/bonita"
-                                    },
-                                    "action" : {
-                                      "type" : "constant",
-                                      "value" : "Submit task"
-                                    },
-                                    "collectionToModify" : {
-                                      "type" : "variable"
-                                    },
-                                    "valueToAdd" : {
-                                      "type" : "expression"
-                                    },
-                                    "disabled" : {
-                                      "type" : "expression",
-                                      "value" : "$form.$invalid"
-                                    },
                                     "alignment" : {
                                       "type" : "constant",
                                       "value" : "center"
                                     },
-                                    "dimension" : {
+                                    "buttonStyle" : {
                                       "type" : "constant",
-                                      "value" : 12
+                                      "value" : "success"
+                                    },
+                                    "action" : {
+                                      "type" : "constant",
+                                      "value" : "Submit task"
                                     },
                                     "assign" : {
                                       "type" : "constant",
@@ -2950,23 +2980,42 @@
                                       "type" : "variable",
                                       "value" : ""
                                     },
+                                    "dataToSend" : {
+                                      "type" : "expression",
+                                      "value" : "formOutput"
+                                    },
                                     "dataFromSuccess" : {
                                       "type" : "variable",
                                       "value" : ""
                                     },
-                                    "closeOnSuccess" : {
-                                      "type" : "constant",
-                                      "value" : false
+                                    "dataFromError" : {
+                                      "type" : "variable",
+                                      "value" : "formOutput._submitError"
                                     },
-                                    "modalId" : {
+                                    "targetUrlOnSuccess" : {
+                                      "type" : "interpolation",
+                                      "value" : "/bonita"
+                                    },
+                                    "cancelText" : {
                                       "type" : "constant",
-                                      "value" : ""
+                                      "value" : "Cancelar"
+                                    },
+                                    "confirmText" : {
+                                      "type" : "constant",
+                                      "value" : "Sí, continuar"
+                                    },
+                                    "titleQuestion" : {
+                                      "type" : "constant",
+                                      "value" : "¿La información ingresada es la correcta?."
+                                    },
+                                    "textQuestion" : {
+                                      "type" : "constant",
+                                      "value" : "El Sistema de Seguimiento al sílabo y Plan de mejoras continuará con el proceso con la información ingresada. Es una acción que no se puede revertir."
                                     }
                                   },
-                                  "reference" : "b803f54c-2e09-4777-a133-cbc4802faff4",
+                                  "reference" : "551e460b-45b1-4fb7-b68d-9de143466d26",
                                   "hasValidationError" : false,
-                                  "id" : "pbButton",
-                                  "description" : ""
+                                  "id" : "customSubmitTaskBtn"
                                 }
                               ]
                             ]
@@ -2976,55 +3025,6 @@
                     }
                   }
                 ]
-              }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 12
-                },
-                "propertyValues" : {
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "allowHtml" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "hidden" : {
-                    "type" : "expression",
-                    "value" : "!formOutput._submitError.message"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
-                  },
-                  "label" : {
-                    "type" : "interpolation"
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  }
-                },
-                "reference" : "2119d77b-9f54-4a4a-a462-52763d00be1f",
-                "hasValidationError" : false,
-                "id" : "pbText",
-                "description" : ""
               }
             ]
           ]
@@ -3259,7 +3259,6 @@
         "}",
         "",
         "// Verify if each alternative has a description",
-        "",
         "let hasDescription = true;",
         "",
         "for (let alternative of currentAlternatives) {",
@@ -3268,7 +3267,6 @@
         "    }",
         "}",
         "",
-        "",
         "if(!hasDescription){",
         "    alternativeError += 'Las alternativas no pueden estar vacias';",
         "    return {",
@@ -3276,7 +3274,6 @@
         "            errorMessage: alternativeError",
         "        }",
         "}",
-        "",
         "",
         "return {",
         "    isIncorrect: false,",
@@ -3338,9 +3335,7 @@
         "",
         "const currentIndicators = $data.endStage.questions;",
         "",
-        "console.log(currentIndicators, 'Pilas' );",
-        "",
-        "// Verify if exist two or more alternatives.",
+        "// Verify if exist two or more indicators.",
         "if(currentIndicators.length <= 0) {",
         "    halfStageError += 'Debe ingresar al menos un indicador en la ficha de final de ciclo';   ",
         "    ",

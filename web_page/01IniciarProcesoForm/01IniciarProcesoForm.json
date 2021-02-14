@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613270655449,
+  "lastUpdate" : 1613318733845,
   "rows" : [
     [
       {
@@ -1171,7 +1171,7 @@
                                                   "value" : "<span class=\"glyphicon glyphicon-trash\"></span>"
                                                 },
                                                 "dataToSend" : {
-                                                  "type" : "expression"
+                                                  "type" : "constant"
                                                 },
                                                 "labelHidden" : {
                                                   "type" : "constant",
@@ -1268,7 +1268,7 @@
                                             "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Agregar Docente"
                                           },
                                           "dataToSend" : {
-                                            "type" : "expression"
+                                            "type" : "constant"
                                           },
                                           "labelHidden" : {
                                             "type" : "constant",
@@ -3026,8 +3026,8 @@
                                 "value" : false
                               },
                               "disabled" : {
-                                "type" : "expression",
-                                "value" : "$form.$invalid"
+                                "type" : "constant",
+                                "value" : false
                               },
                               "label" : {
                                 "type" : "interpolation",
@@ -3064,10 +3064,6 @@
                                 "type" : "variable",
                                 "value" : ""
                               },
-                              "closeOnSuccess" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
                               "dataFromError" : {
                                 "type" : "variable",
                                 "value" : "formOutput._submitError"
@@ -3076,30 +3072,13 @@
                                 "type" : "interpolation",
                                 "value" : "/bonita"
                               },
-                              "collectionToModify" : {
-                                "type" : "variable"
-                              },
-                              "modalId" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "collectionPosition" : {
-                                "type" : "constant",
-                                "value" : "Last"
-                              },
-                              "valueToAdd" : {
-                                "type" : "constant"
-                              },
-                              "removeItem" : {
-                                "type" : "variable"
-                              },
                               "cancelText" : {
                                 "type" : "constant",
-                                "value" : "Cancelar."
+                                "value" : "Cancelar"
                               },
                               "confirmText" : {
                                 "type" : "constant",
-                                "value" : "Sí, finalizar."
+                                "value" : "Sí, finalizar"
                               },
                               "titleQuestion" : {
                                 "type" : "constant",
@@ -3110,9 +3089,9 @@
                                 "value" : "El Sistema de Seguimiento al sílabo y Plan de mejoras empezará el proceso con la información ingresada. Es una acción que no se puede revertir"
                               }
                             },
-                            "reference" : "6424e9d2-4ea5-4157-994f-2bf6b011392d",
+                            "reference" : "c8e2f1df-c29e-4241-8802-cdf77f25b902",
                             "hasValidationError" : false,
-                            "id" : "customSubmitTaskButton"
+                            "id" : "customSubmitTaskBtn"
                           }
                         ]
                       ]
