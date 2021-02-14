@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1613323980561,
+  "lastUpdate" : 1613339339714,
   "rows" : [
     [
       {
@@ -247,7 +247,10 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 6
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -272,7 +275,7 @@
                               },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Fecha de Aplicación"
+                                "value" : "Fecha de Aplicación  Mitad de Ciclo"
                               },
                               "labelPosition" : {
                                 "type" : "constant",
@@ -296,16 +299,30 @@
                               },
                               "showToday" : {
                                 "type" : "constant",
-                                "value" : true
+                                "value" : false
                               },
                               "todayLabel" : {
                                 "type" : "interpolation",
-                                "value" : "Fecha de Hoy"
+                                "value" : "Today"
+                              },
+                              "disabledDays" : {
+                                "type" : "constant"
+                              },
+                              "minDate" : {
+                                "type" : "constant",
+                                "value" : "today"
+                              },
+                              "maxDate" : {
+                                "type" : "constant"
+                              },
+                              "disabledDates" : {
+                                "type" : "expression",
+                                "value" : "disabledDates"
                               }
                             },
-                            "reference" : "31133620-3946-444f-8a93-34da7fa9b858",
+                            "reference" : "fa5c07ee-a59d-40c3-8bc2-f8dd25aa088f",
                             "hasValidationError" : false,
-                            "id" : "pbDatePicker"
+                            "id" : "customCustomDatePicker"
                           }
                         ],
                         [
@@ -911,7 +928,10 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 6
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -936,7 +956,7 @@
                               },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Fecha de Aplicación"
+                                "value" : "Fecha de Aplicación Final de Ciclo"
                               },
                               "labelPosition" : {
                                 "type" : "constant",
@@ -960,16 +980,30 @@
                               },
                               "showToday" : {
                                 "type" : "constant",
-                                "value" : true
+                                "value" : false
                               },
                               "todayLabel" : {
                                 "type" : "interpolation",
-                                "value" : "Fecha de Hoy"
+                                "value" : "Today"
+                              },
+                              "disabledDays" : {
+                                "type" : "constant"
+                              },
+                              "minDate" : {
+                                "type" : "constant",
+                                "value" : "today"
+                              },
+                              "maxDate" : {
+                                "type" : "constant"
+                              },
+                              "disabledDates" : {
+                                "type" : "expression",
+                                "value" : "disabledDates"
                               }
                             },
-                            "reference" : "4090c97f-9870-4527-8093-9280a4242046",
+                            "reference" : "b3a4cc09-9414-4234-b9bd-f1e0433b9e01",
                             "hasValidationError" : false,
-                            "id" : "pbDatePicker"
+                            "id" : "customCustomDatePicker"
                           }
                         ],
                         [
@@ -1694,14 +1728,14 @@
                                 "value" : "modifyAlternative"
                               }
                             },
-                            "reference" : "aa7e9f59-ec8c-415c-9508-04735aba4bf7",
+                            "reference" : "5ae3e220-8db1-42af-83eb-04267f4a6c87",
                             "hasValidationError" : false,
                             "id" : "pbCheckbox"
                           }
                         ],
                         [
                           {
-                            "type" : "component",
+                            "type" : "container",
                             "dimension" : {
                               "xs" : 12,
                               "sm" : 12,
@@ -1717,61 +1751,91 @@
                                 "type" : "expression",
                                 "value" : "!modifyAlternative"
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "<b>!Precaución!</b>, si se modifica las alternativas por defecto los valores de: <br><ul><li><b>Total Cumplimiento</b></li><li><b>Porcentaje Total</b></li></ul> No serán calculados automáticamente al momento de tabular los resultados."
-                              },
-                              "show" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "warning"
-                              }
-                            },
-                            "reference" : "cc917255-f7b7-4878-9f67-55d38f82e046",
-                            "hasValidationError" : false,
-                            "id" : "customAlertDanger"
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
+                              "repeatedCollection" : {
+                                "type" : "variable",
                                 "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!modifyAlternative"
-                              },
-                              "srcType" : {
-                                "type" : "constant",
-                                "value" : "Asset"
-                              },
-                              "url" : {
-                                "type" : "constant",
-                                "value" : "https://raw.githubusercontent.com/jcalarcon98/SSPM-RESOURCES/main/items.png"
-                              },
-                              "assetName" : {
-                                "type" : "constant",
-                                "value" : "items.png"
-                              },
-                              "alt" : {
-                                "type" : "interpolation"
                               }
                             },
-                            "reference" : "b7199413-ac9e-4866-b79c-09becd0c36df",
+                            "reference" : "a2a233ca-71df-45a6-8180-7c584ba7c47d",
                             "hasValidationError" : false,
-                            "id" : "pbImage"
+                            "id" : "pbContainer",
+                            "rows" : [
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "expression",
+                                      "value" : ""
+                                    },
+                                    "message" : {
+                                      "type" : "constant",
+                                      "value" : "<b>!Precaución!</b>, si se modifica las alternativas por defecto los valores de: <br><ul><li><b>Total Cumplimiento</b></li><li><b>Porcentaje Total</b></li></ul> No serán calculados automáticamente al momento de tabular los resultados."
+                                    },
+                                    "show" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "type" : {
+                                      "type" : "constant",
+                                      "value" : "warning"
+                                    }
+                                  },
+                                  "reference" : "fa4e4910-57f9-413a-af7c-93de9ea7742a",
+                                  "hasValidationError" : false,
+                                  "id" : "customAlertDanger"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "expression",
+                                      "value" : ""
+                                    },
+                                    "srcType" : {
+                                      "type" : "constant",
+                                      "value" : "Asset"
+                                    },
+                                    "url" : {
+                                      "type" : "constant",
+                                      "value" : "https://raw.githubusercontent.com/jcalarcon98/SSPM-RESOURCES/main/items.png"
+                                    },
+                                    "assetName" : {
+                                      "type" : "constant",
+                                      "value" : "items.png"
+                                    },
+                                    "alt" : {
+                                      "type" : "interpolation"
+                                    }
+                                  },
+                                  "reference" : "c241b645-fef8-42e5-a165-638f3e2fd7dd",
+                                  "hasValidationError" : false,
+                                  "id" : "pbImage"
+                                }
+                              ]
+                            ]
                           }
                         ],
                         [
@@ -3491,10 +3555,38 @@
       ],
       "exposed" : false
     },
+    "period" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.period_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "disabledDates" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.period){",
+        "    ",
+        "    const today = new Date()",
+        "    const initPeriod = new Date($data.period.initDate);",
+        "    ",
+        "    const endPeriod = new Date($data.period.endDate);",
+        "    const finalDate = new Date(2130, 11, 25);",
+        "    ",
+        "    return [",
+        "        { start: initPeriod, end: today  },",
+        "        { start: endPeriod, end: finalDate },",
+        "    ] ",
+        "}"
+      ],
+      "exposed" : false
+    },
     "test" : {
       "type" : "expression",
       "value" : [
-        "console.log($data.modifyAlternative);"
+        "console.log($data.periodInitDate);",
+        "console.log($data.periodEndDate);",
+        "console.log(typeof($data.periodInitDate));"
       ],
       "exposed" : false
     }

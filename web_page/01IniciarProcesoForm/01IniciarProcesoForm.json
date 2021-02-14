@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613320466518,
+  "lastUpdate" : 1613339483779,
   "rows" : [
     [
       {
@@ -661,26 +661,29 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 6
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 6,
+                                    "lg" : 6
                                   },
                                   "propertyValues" : {
-                                    "hidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "dateFormat" : {
-                                      "type" : "constant",
-                                      "value" : "MM/dd/yyyy"
-                                    },
                                     "cssClasses" : {
                                       "type" : "constant",
                                       "value" : ""
                                     },
-                                    "labelWidth" : {
+                                    "hidden" : {
                                       "type" : "constant",
-                                      "value" : 1
+                                      "value" : false
                                     },
                                     "readOnly" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "labelHidden" : {
                                       "type" : "constant",
                                       "value" : false
                                     },
@@ -688,70 +691,78 @@
                                       "type" : "interpolation",
                                       "value" : "Inicio del Periodo Académico"
                                     },
-                                    "type" : {
-                                      "type" : "constant"
-                                    },
-                                    "required" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
-                                    "todayLabel" : {
-                                      "type" : "constant",
-                                      "value" : "Today"
-                                    },
-                                    "labelHidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "showToday" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
                                     "labelPosition" : {
                                       "type" : "constant",
                                       "value" : "top"
                                     },
-                                    "placeholder" : {
+                                    "labelWidth" : {
                                       "type" : "constant",
-                                      "value" : "Seleccionar Fecha de Inicio"
-                                    },
-                                    "dimension" : {
-                                      "type" : "constant",
-                                      "value" : 12
+                                      "value" : 4
                                     },
                                     "value" : {
                                       "type" : "variable",
                                       "value" : "period.initDate"
-                                    }
-                                  },
-                                  "reference" : "dc602e7e-e798-42d5-8c9b-d05f46d40973",
-                                  "hasValidationError" : false,
-                                  "id" : "pbDatePicker",
-                                  "description" : ""
-                                },
-                                {
-                                  "type" : "component",
-                                  "dimension" : {
-                                    "xs" : 6
-                                  },
-                                  "propertyValues" : {
-                                    "hidden" : {
-                                      "type" : "constant",
-                                      "value" : false
                                     },
                                     "dateFormat" : {
                                       "type" : "constant",
                                       "value" : "MM/dd/yyyy"
                                     },
+                                    "placeholder" : {
+                                      "type" : "interpolation",
+                                      "value" : "Seleccionar Fecha de Inicio"
+                                    },
+                                    "showToday" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "todayLabel" : {
+                                      "type" : "interpolation",
+                                      "value" : "Fecha de hoy"
+                                    },
+                                    "disabledDays" : {
+                                      "type" : "constant",
+                                      "value" : "06"
+                                    },
+                                    "minDate" : {
+                                      "type" : "constant"
+                                    },
+                                    "maxDate" : {
+                                      "type" : "constant"
+                                    },
+                                    "disabledDates" : {
+                                      "type" : "constant"
+                                    }
+                                  },
+                                  "reference" : "32226268-e9e7-450e-b757-666f5e093650",
+                                  "hasValidationError" : false,
+                                  "id" : "customCustomDatePicker"
+                                },
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 6,
+                                    "lg" : 6
+                                  },
+                                  "propertyValues" : {
                                     "cssClasses" : {
                                       "type" : "constant",
                                       "value" : ""
                                     },
-                                    "labelWidth" : {
+                                    "hidden" : {
                                       "type" : "constant",
-                                      "value" : 1
+                                      "value" : false
                                     },
                                     "readOnly" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "labelHidden" : {
                                       "type" : "constant",
                                       "value" : false
                                     },
@@ -759,46 +770,51 @@
                                       "type" : "interpolation",
                                       "value" : "Fin del Periodo Académico"
                                     },
-                                    "type" : {
-                                      "type" : "constant"
-                                    },
-                                    "required" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
-                                    "todayLabel" : {
-                                      "type" : "constant",
-                                      "value" : "Today"
-                                    },
-                                    "labelHidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "showToday" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
                                     "labelPosition" : {
                                       "type" : "constant",
                                       "value" : "top"
                                     },
-                                    "placeholder" : {
+                                    "labelWidth" : {
                                       "type" : "constant",
-                                      "value" : "Seleccionar Fecha de Fin"
-                                    },
-                                    "dimension" : {
-                                      "type" : "constant",
-                                      "value" : 12
+                                      "value" : 4
                                     },
                                     "value" : {
                                       "type" : "variable",
                                       "value" : "period.endDate"
+                                    },
+                                    "dateFormat" : {
+                                      "type" : "constant",
+                                      "value" : "MM/dd/yyyy"
+                                    },
+                                    "placeholder" : {
+                                      "type" : "interpolation",
+                                      "value" : "Seleccionar Fecha de Fin"
+                                    },
+                                    "showToday" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "todayLabel" : {
+                                      "type" : "interpolation",
+                                      "value" : "Today"
+                                    },
+                                    "disabledDays" : {
+                                      "type" : "constant",
+                                      "value" : "06"
+                                    },
+                                    "minDate" : {
+                                      "type" : "constant"
+                                    },
+                                    "maxDate" : {
+                                      "type" : "constant"
+                                    },
+                                    "disabledDates" : {
+                                      "type" : "constant"
                                     }
                                   },
-                                  "reference" : "c0eca9d6-8673-4332-bafe-0787b4f480ed",
+                                  "reference" : "8ba11c91-7b77-447e-8d74-847ae8e1b599",
                                   "hasValidationError" : false,
-                                  "id" : "pbDatePicker",
-                                  "description" : ""
+                                  "id" : "customCustomDatePicker"
                                 }
                               ],
                               [
