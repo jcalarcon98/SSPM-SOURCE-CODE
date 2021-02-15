@@ -17,7 +17,7 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_faftUVUaEeu9n-5VMdb4Uw" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_faftUlUaEeu9n-5VMdb4Uw" name="degreeInput.name" content="degreeInput?.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_faftU1UaEeu9n-5VMdb4Uw" name="degreeInput" type="COMPLEX"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_rt5EsG9JEeuPj7orz-zlug" name="degreeInput" type="COMPLEX"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_faftVFUaEeu9n-5VMdb4Uw" type="JAVA_METHOD" expression="setName">
               <inputTypes>java.lang.String</inputTypes>
@@ -50,7 +50,7 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_4UklPFUaEeu9n-5VMdb4Uw" name="grades" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Grade"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_4UklPVUaEeu9n-5VMdb4Uw" name="gradesInput" content="def gradeList = []&#xA;//For each item collected in multiple input&#xA;gradesInput.each{&#xA;&#x9;//Add a new composed Grade instance&#xA;&#x9;gradeList.add({ currentGradeInput ->&#xA;&#x9;&#x9;def gradeVar = new com.company.model.Grade()&#xA;&#x9;&#x9;gradeVar.number = currentGradeInput.number&#xA;&#x9;&#x9;gradeVar.parallel = currentGradeInput.parallel&#xA;&#x9;&#x9;gradeVar.students = {&#xA;&#x9;&#x9;&#x9;def studentList = []&#xA;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xA;&#x9;&#x9;&#x9;currentGradeInput.students.each{&#xA;&#x9;&#x9;&#x9;&#x9;//Add a new composed Student instance&#xA;&#x9;&#x9;&#x9;&#x9;studentList.add({ currentStudentInput ->&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def studentVar = new com.company.model.Student()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;studentVar.name = currentStudentInput.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;studentVar.lastName = currentStudentInput.lastName&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;studentVar.email = currentStudentInput.email&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;studentVar.rate = currentStudentInput.rate?.toFloat()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return studentVar&#xA;&#x9;&#x9;&#x9;&#x9;}(it))&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;return studentList}()&#xA;&#x9;&#x9;gradeVar.syllabuses = {&#xA;&#x9;&#x9;&#x9;def syllabusList = []&#xA;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xA;&#x9;&#x9;&#x9;currentGradeInput.syllabuses.each{&#xA;&#x9;&#x9;&#x9;&#x9;//Add a new composed Syllabus instance&#xA;&#x9;&#x9;&#x9;&#x9;syllabusList.add({ currentSyllabusInput ->&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def syllabusVar = new com.company.model.Syllabus()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;syllabusVar.denomination = currentSyllabusInput.denomination&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;syllabusVar.teacher = {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!currentSyllabusInput.teacher) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def teacherVar = new com.company.model.Teacher()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;teacherVar.name = currentSyllabusInput.teacher?.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return teacherVar}()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return syllabusVar&#xA;&#x9;&#x9;&#x9;&#x9;}(it))&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;return syllabusList}()&#xA;&#x9;&#x9;return gradeVar&#xA;&#x9;}(it))&#xA;}&#xA;return gradeList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_37jlQG2lEeuVE9nriHv5Ig" name="gradesInput" type="COMPLEX" multiple="true"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_w7YdQG9JEeuPj7orz-zlug" name="gradesInput" type="COMPLEX" multiple="true"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_4UklP1UaEeu9n-5VMdb4Uw" type="ASSIGNMENT" expression="addAll">
               <inputTypes>java.util.Collection</inputTypes>
@@ -1026,7 +1026,7 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_0T0bZlghEeuB95htEZxr8g" name="tracking" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Tracking"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_0T0bZ1ghEeuB95htEZxr8g" name="trackingInput.stages" content="def stageList = []&#xA;//For each item collected in multiple input&#xA;trackingInput?.stages.each{&#xA;&#x9;//Add a new composed Stage instance&#xA;&#x9;stageList.add({ currentStageInput ->&#xA;&#x9;&#x9;def stageVar = new com.company.model.Stage()&#xA;&#x9;&#x9;stageVar.denomination = currentStageInput.denomination&#xA;&#x9;&#x9;stageVar.executionDate = currentStageInput.executionDate&#xA;&#x9;&#x9;stageVar.questions = {&#xA;&#x9;&#x9;&#x9;def questionList = []&#xA;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xA;&#x9;&#x9;&#x9;currentStageInput.questions.each{&#xA;&#x9;&#x9;&#x9;&#x9;//Add a new composed Question instance&#xA;&#x9;&#x9;&#x9;&#x9;questionList.add({ currentQuestionInput ->&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def questionVar = new com.company.model.Question()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;questionVar.description = currentQuestionInput.description&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return questionVar&#xA;&#x9;&#x9;&#x9;&#x9;}(it))&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;return questionList}()&#xA;&#x9;&#x9;return stageVar&#xA;&#x9;}(it))&#xA;}&#xA;return stageList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_0T0baFghEeuB95htEZxr8g" name="trackingInput" type="COMPLEX"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_nb8oAG9BEeuPj7orz-zlug" name="trackingInput" type="COMPLEX"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_0T0baVghEeuB95htEZxr8g" type="JAVA_METHOD" expression="setStages">
               <inputTypes>java.util.List</inputTypes>
@@ -1497,6 +1497,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_rsbQIFz1EeuCL6OsnlvZyg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_rsapEFz1EeuCL6OsnlvZyg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_rsbQIVz1EeuCL6OsnlvZyg" name="" content="" returnTypeFixed="true"/>
+          <data xmi:type="process:JavaObjectData" xmi:id="_eZVB4G9KEeuPj7orz-zlug" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_eZVB4W9KEeuPj7orz-zlug" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+          </data>
           <operations xmi:type="expression:Operation" xmi:id="_VvYKMF0aEeuCL6OsnlvZyg">
             <leftOperand xmi:type="expression:Expression" xmi:id="_VvYKMV0aEeuCL6OsnlvZyg" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
               <referencedElements xmi:type="process:Data" xmi:id="_XNFeUF0aEeuCL6OsnlvZyg" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
@@ -1519,6 +1522,17 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Y4i6k10aEeuCL6OsnlvZyg" type="ASSIGNMENT"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_e2AbAG9DEeuPj7orz-zlug">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_e2AbAW9DEeuPj7orz-zlug" name="gradesDELETE" content="gradesDELETE" type="TYPE_VARIABLE" returnType="java.lang.Object">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_ftdjQG9KEeuPj7orz-zlug" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_e2AbAm9DEeuPj7orz-zlug" name="newScript()" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;logger.severe('**********OJITO***********')&#xA;logger.severe(gradesToChange.toString());&#xA;&#xA;return gradesToChange;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_i5A5QG9KEeuPj7orz-zlug" name="gradesToChange" type="COMPLEX" multiple="true">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_i5A5QW9KEeuPj7orz-zlug"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_e2AbA29DEeuPj7orz-zlug" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_rsbQIlz1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_rsbQI1z1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_rsbQJFz1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -1533,6 +1547,30 @@
             </inputs>
             <inputs xmi:type="process:ContractInput" xmi:id="_Fpxh8F0BEeuCL6OsnlvZyg" name="extend" type="BOOLEAN">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_Fpxh8V0BEeuCL6OsnlvZyg"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_vyrpcG9BEeuPj7orz-zlug" name="gradesToChange" type="COMPLEX" multiple="true">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_vyrpcW9BEeuPj7orz-zlug"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9_uFAG9DEeuPj7orz-zlug" name="number" type="INTEGER">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_9_usEG9DEeuPj7orz-zlug"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Nee5EG9EEeuPj7orz-zlug" name="parallel">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Nee5EW9EEeuPj7orz-zlug"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_OuCccG9EEeuPj7orz-zlug" name="selected" type="BOOLEAN">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_OuCccW9EEeuPj7orz-zlug"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_RKmlgG9EEeuPj7orz-zlug" name="students" type="COMPLEX" multiple="true">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_RKmlgW9EEeuPj7orz-zlug"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_TLI54G9EEeuPj7orz-zlug" name="name">
+                  <mapping xmi:type="process:ContractInputMapping" xmi:id="_TLJg8G9EEeuPj7orz-zlug"/>
+                </inputs>
+                <inputs xmi:type="process:ContractInput" xmi:id="_Ug2IkG9EEeuPj7orz-zlug" name="lastName">
+                  <mapping xmi:type="process:ContractInputMapping" xmi:id="_Ug2IkW9EEeuPj7orz-zlug"/>
+                </inputs>
+                <inputs xmi:type="process:ContractInput" xmi:id="_VJQzcG9EEeuPj7orz-zlug" name="email">
+                  <mapping xmi:type="process:ContractInputMapping" xmi:id="_VJQzcW9EEeuPj7orz-zlug"/>
+                </inputs>
+              </inputs>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_v4veml0AEeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -2185,14 +2223,14 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_wAQoslkXEeuJIr4cTKuYsA" name="student" content="student" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_wAQosVkXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_n4TJIFzzEeuCL6OsnlvZyg" name="Tiempo Límite" outgoing="_IT0FkGiiEeu4QMMChlZ5tw">
-            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;return 240000L;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_FcyEwGzZEeunXPDArUMloQ" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_Fcyr0GzZEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;return 30000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="_0XwqEG80EeuPj7orz-zlug" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_0XxRIG80EeuPj7orz-zlug" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <BoundaryIntermediateEvents xmi:type="process:NonInterruptingBoundaryTimerEvent" xmi:id="_qdzXUF9aEeuVVLsH7l3cUw" name="1 día despúes" outgoing="_Quz0IF9bEeuVVLsH7l3cUw">
             <condition xmi:type="expression:Expression" xmi:id="_vTJ8sF9aEeuVVLsH7l3cUw" name="1 Days 00:00:01" content="if(productionTimers){&#xA;&#x9;return 86401000L;&#xA;}&#xA;&#xA;return 60000L;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_Hrk3kGzZEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_18LqMG80EeuPj7orz-zlug" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_-NmRIVkXEeuJIr4cTKuYsA">

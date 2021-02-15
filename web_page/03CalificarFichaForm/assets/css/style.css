@@ -35,3 +35,7 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
     z-index: 9999;
 }
 
+.font-800 {
+    font-weight: 800;
+    font-size: 20px;
+}

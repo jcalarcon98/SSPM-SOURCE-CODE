@@ -52,7 +52,6 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
         if ($scope.properties.targetUrlOnSuccess && method !== 'GET') {
           redirectIfNeeded();
         }
-        closeModal($scope.properties.closeOnSuccess);
       })
       .error(function(data, status) {
         $scope.properties.dataFromError = data;

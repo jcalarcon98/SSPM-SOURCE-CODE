@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1613320243352,
+  "lastUpdate" : 1613350916036,
   "rows" : [
     [
       {
@@ -262,7 +262,7 @@
                     "propertyValues" : {
                       "cssClasses" : {
                         "type" : "constant",
-                        "value" : ""
+                        "value" : "font-800"
                       },
                       "hidden" : {
                         "type" : "constant",
@@ -678,7 +678,7 @@
                     "propertyValues" : {
                       "cssClasses" : {
                         "type" : "constant",
-                        "value" : ""
+                        "value" : "font-800"
                       },
                       "hidden" : {
                         "type" : "constant",

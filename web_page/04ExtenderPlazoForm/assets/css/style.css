@@ -35,3 +35,7 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
     z-index: 9999;
 }
 
+.bordered {
+  border: 2px solid black;;
+  border-radius: 8px;
+}

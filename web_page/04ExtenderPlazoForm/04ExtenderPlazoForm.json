@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1612138630057,
+  "lastUpdate" : 1613362555162,
   "rows" : [
     [
       {
@@ -395,6 +395,41 @@
                           {
                             "type" : "component",
                             "dimension" : {
+                              "xs" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>Precaución</b>, en caso de no extender el plazo de calificación para los estudiantes, el proceso continuará con su flujo normal y se tabulará  solamente la información de las fichas que ya se encuentran calificadas."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "warning"
+                              }
+                            },
+                            "reference" : "fc6ac809-f022-45a1-b5e0-69bfa8d393fb",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
                               "xs" : 4
                             },
                             "propertyValues" : {
@@ -518,35 +553,260 @@
                         ],
                         [
                           {
-                            "type" : "component",
+                            "type" : "container",
                             "dimension" : {
-                              "xs" : 12
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "bordered"
                               },
                               "hidden" : {
-                                "type" : "constant",
-                                "value" : false
+                                "type" : "expression",
+                                "value" : "!formInput.extend"
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "En caso de no extender el plazo de calificación para los estudiantes, el proceso continuará con su flujo normal y se tabulará la información de las fichas que ya se encuentran calificadas."
-                              },
-                              "show" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
+                              "repeatedCollection" : {
+                                "type" : "variable",
+                                "value" : ""
                               }
                             },
-                            "reference" : "fc6ac809-f022-45a1-b5e0-69bfa8d393fb",
+                            "reference" : "1d472726-69bc-43b2-81a3-cee0a29e3f59",
                             "hasValidationError" : false,
-                            "id" : "customAlertDanger"
+                            "id" : "pbContainer",
+                            "rows" : [
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "expression",
+                                      "value" : "!formInput.extend"
+                                    },
+                                    "disabled" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation",
+                                      "value" : "<b>Asignar nuevos estudiantes para calificar las fichas de seguimiento al sílabo que aún no han sido calificadas"
+                                    },
+                                    "value" : {
+                                      "type" : "variable",
+                                      "value" : "assignNewStudents"
+                                    }
+                                  },
+                                  "reference" : "836c28f8-da55-4fdc-93d5-747bd31236b5",
+                                  "hasValidationError" : false,
+                                  "id" : "pbCheckbox"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "container",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "expression",
+                                      "value" : "!assignNewStudents"
+                                    },
+                                    "repeatedCollection" : {
+                                      "type" : "variable",
+                                      "value" : ""
+                                    }
+                                  },
+                                  "reference" : "69fbd364-87bd-46d5-9581-f708b4594375",
+                                  "hasValidationError" : false,
+                                  "id" : "pbContainer",
+                                  "rows" : [
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          },
+                                          "text" : {
+                                            "type" : "interpolation",
+                                            "value" : "<b>Ciclos con sílabos que aún no han sido calificados"
+                                          },
+                                          "level" : {
+                                            "type" : "constant",
+                                            "value" : "Level 4"
+                                          },
+                                          "alignment" : {
+                                            "type" : "constant",
+                                            "value" : "left"
+                                          }
+                                        },
+                                        "reference" : "c6fc2a9d-099f-4cb2-96d5-9b22667a0ec1",
+                                        "hasValidationError" : false,
+                                        "id" : "pbTitle"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          },
+                                          "labelHidden" : {
+                                            "type" : "constant",
+                                            "value" : true
+                                          },
+                                          "label" : {
+                                            "type" : "interpolation",
+                                            "value" : "Default label"
+                                          },
+                                          "labelPosition" : {
+                                            "type" : "constant",
+                                            "value" : "top"
+                                          },
+                                          "labelWidth" : {
+                                            "type" : "constant",
+                                            "value" : 4
+                                          },
+                                          "allowHTML" : {
+                                            "type" : "constant",
+                                            "value" : true
+                                          },
+                                          "text" : {
+                                            "type" : "interpolation",
+                                            "value" : "Por favor seleccionar los ciclos en los cuales desea que se asigne los estudiantes de reserva para calificar las fichas de seguimiento al silabo que aún no han sido evaluadas."
+                                          },
+                                          "alignment" : {
+                                            "type" : "constant",
+                                            "value" : "left"
+                                          }
+                                        },
+                                        "reference" : "e5789777-ec30-45c8-aa64-09cf7d099073",
+                                        "hasValidationError" : false,
+                                        "id" : "pbText"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "container",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          },
+                                          "repeatedCollection" : {
+                                            "type" : "variable",
+                                            "value" : ""
+                                          }
+                                        },
+                                        "reference" : "a5a5805a-f845-448d-9856-66fb90bfb15c",
+                                        "hasValidationError" : false,
+                                        "id" : "pbContainer",
+                                        "rows" : [
+                                          [
+                                            {
+                                              "type" : "component",
+                                              "dimension" : {
+                                                "xs" : 12,
+                                                "sm" : 12,
+                                                "md" : 12,
+                                                "lg" : 12
+                                              },
+                                              "propertyValues" : {
+                                                "cssClasses" : {
+                                                  "type" : "constant",
+                                                  "value" : ""
+                                                },
+                                                "hidden" : {
+                                                  "type" : "constant",
+                                                  "value" : false
+                                                },
+                                                "value" : {
+                                                  "type" : "constant",
+                                                  "value" : "This is the initial value"
+                                                },
+                                                "color" : {
+                                                  "type" : "constant",
+                                                  "value" : "RebeccaPurple"
+                                                },
+                                                "background" : {
+                                                  "type" : "constant",
+                                                  "value" : "Yellow"
+                                                },
+                                                "grades" : {
+                                                  "type" : "variable",
+                                                  "value" : "gradesToBeEvaluated"
+                                                }
+                                              },
+                                              "reference" : "5bd7a15f-859a-4588-917c-8e33239ca0b0",
+                                              "hasValidationError" : false,
+                                              "id" : "customCheckTable"
+                                            }
+                                          ]
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            ]
                           }
                         ],
                         [
@@ -761,7 +1021,8 @@
       "value" : [
         "return {",
         "\tduration: $data.formInput.duration,",
-        "\textend: $data.formInput.extend",
+        "\textend: $data.formInput.extend,",
+        "\tgradesToChange: $data.gradesToBeEvaluated",
         "}"
       ],
       "exposed" : false
@@ -803,8 +1064,78 @@
     "studentsList" : {
       "type" : "expression",
       "value" : [
-        "const list = JSON.parse($data.students.value);",
-        "return list;"
+        "if($data.students){",
+        "    const list = JSON.parse($data.students.value);",
+        "    return list;",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "assignNewStudents" : {
+      "type" : "expression",
+      "value" : [
+        "return false;"
+      ],
+      "exposed" : false
+    },
+    "gradesToBeEvaluated" : {
+      "type" : "expression",
+      "value" : [
+        "function getOrderedGrades(studentsList) {",
+        "  const grades = [];",
+        "",
+        "  let results = studentsList;",
+        "",
+        "  for (let init = 0; init < results.length; init += 1) {",
+        "    ",
+        "    const currentGrade = {",
+        "      number: results[init].gradeNumber,",
+        "      parallel: results[init].gradeParallel,",
+        "      selected: false,",
+        "      students: []",
+        "    };",
+        "",
+        "    const currentStudent = {",
+        "      name: results[init].name,",
+        "      lastName: results[init].lastName,",
+        "      email: results[init].email,",
+        "    };",
+        "",
+        "    if (!grades.some((compareGrade) => compareGrade.number === currentGrade.number",
+        "      && compareGrade.parallel === currentGrade.parallel)) {",
+        "      currentGrade.students.push(currentStudent);",
+        "      grades.push(currentGrade);",
+        "    } else {",
+        "      const grade = grades.find((gradeInline) => gradeInline.number === currentGrade.number",
+        "        && gradeInline.parallel === currentGrade.parallel);",
+        "      grade.students.push(currentStudent);",
+        "    }",
+        "  }",
+        "  return grades;",
+        "}",
+        "",
+        "if($data.studentsList){",
+        "    ",
+        "    const orderedGrades = getOrderedGrades($data.studentsList);",
+        "    ",
+        "    return orderedGrades;",
+        "}",
+        "",
+        "return [",
+        "    {",
+        "      number: 10,",
+        "      parallel: \"B\",",
+        "      selected: false,",
+        "      students: [1,2]  ",
+        "    }    ",
+        "];"
+      ],
+      "exposed" : false
+    },
+    "test" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data.gradesToBeEvaluated);"
       ],
       "exposed" : false
     }
