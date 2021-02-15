@@ -1,0 +1,21 @@
+{
+  "modelVersion" : "2.0",
+  "id" : "customCheckTable",
+  "name" : "checkTable",
+  "lastUpdate" : 1613360827242,
+  "template" : "@customCheckTable.tpl.html",
+  "controller" : "@customCheckTable.ctrl.js",
+  "custom" : true,
+  "properties" : [
+    {
+      "label" : "Grades to be Evaluated",
+      "name" : "grades",
+      "type" : "text",
+      "bond" : "variable"
+    }
+  ],
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "type" : "widget",
+  "hasHelp" : false
+}
