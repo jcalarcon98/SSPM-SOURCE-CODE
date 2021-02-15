@@ -1500,6 +1500,32 @@
           <data xmi:type="process:JavaObjectData" xmi:id="_eZVB4G9KEeuPj7orz-zlug" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object">
             <defaultValue xmi:type="expression:Expression" xmi:id="_eZVB4W9KEeuPj7orz-zlug" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
           </data>
+          <data xmi:type="process:Data" xmi:id="_E9eKwG_HEeuRZJYO1HfhxQ" name="replaceStudents" dataType="_PH_rnEU9EeuYOOr8JiHqIQ">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_E9eKwW_HEeuRZJYO1HfhxQ" content="" returnType="java.lang.Boolean"/>
+          </data>
+          <connectors xmi:type="process:Connector" xmi:id="_TJWaoG_HEeuRZJYO1HfhxQ" name="test" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_TJWaoW_HEeuRZJYO1HfhxQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TJWaom_HEeuRZJYO1HfhxQ" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_TJWao2_HEeuRZJYO1HfhxQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TJWapG_HEeuRZJYO1HfhxQ" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TJWapW_HEeuRZJYO1HfhxQ" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_TJWapm_HEeuRZJYO1HfhxQ" name="test" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;logger.severe('*****************');&#xA;logger.severe(replaceStudents.toString());&#xA;logger.severe('2222222222222222222');&#xA;logger.severe(gradesDELETE.toString());" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:ContractInput" xmi:id="_TJWap2_HEeuRZJYO1HfhxQ" name="replaceStudents" type="BOOLEAN">
+                    <mapping xmi:type="process:ContractInputMapping" xmi:id="_TJWaqG_HEeuRZJYO1HfhxQ"/>
+                  </referencedElements>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_TJWaqW_HEeuRZJYO1HfhxQ" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_TJWaqm_HEeuRZJYO1HfhxQ">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_TJWaq2_HEeuRZJYO1HfhxQ"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_TJWarG_HEeuRZJYO1HfhxQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_TJWarW_HEeuRZJYO1HfhxQ" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_TJWarm_HEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_VvYKMF0aEeuCL6OsnlvZyg">
             <leftOperand xmi:type="expression:Expression" xmi:id="_VvYKMV0aEeuCL6OsnlvZyg" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
               <referencedElements xmi:type="process:Data" xmi:id="_XNFeUF0aEeuCL6OsnlvZyg" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
@@ -1521,6 +1547,17 @@
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Y4i6k10aEeuCL6OsnlvZyg" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_-85IYG_GEeuRZJYO1HfhxQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_-85IYW_GEeuRZJYO1HfhxQ" name="replaceStudents" content="replaceStudents" type="TYPE_VARIABLE" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:Data" xmi:id="_FIOpQG_HEeuRZJYO1HfhxQ" name="replaceStudents" dataType="_PH_rnEU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_-85IYm_GEeuRZJYO1HfhxQ" name="replaceStudents" content="replaceStudents" type="TYPE_CONTRACT_INPUT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Fq1AAG_HEeuRZJYO1HfhxQ" name="replaceStudents" type="BOOLEAN">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Fq1AAW_HEeuRZJYO1HfhxQ"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_-85IY2_GEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
           </operations>
           <operations xmi:type="expression:Operation" xmi:id="_e2AbAG9DEeuPj7orz-zlug">
             <leftOperand xmi:type="expression:Expression" xmi:id="_e2AbAW9DEeuPj7orz-zlug" name="gradesDELETE" content="gradesDELETE" type="TYPE_VARIABLE" returnType="java.lang.Object">
@@ -1556,9 +1593,6 @@
               <inputs xmi:type="process:ContractInput" xmi:id="_Nee5EG9EEeuPj7orz-zlug" name="parallel">
                 <mapping xmi:type="process:ContractInputMapping" xmi:id="_Nee5EW9EEeuPj7orz-zlug"/>
               </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_OuCccG9EEeuPj7orz-zlug" name="selected" type="BOOLEAN">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_OuCccW9EEeuPj7orz-zlug"/>
-              </inputs>
               <inputs xmi:type="process:ContractInput" xmi:id="_RKmlgG9EEeuPj7orz-zlug" name="students" type="COMPLEX" multiple="true">
                 <mapping xmi:type="process:ContractInputMapping" xmi:id="_RKmlgW9EEeuPj7orz-zlug"/>
                 <inputs xmi:type="process:ContractInput" xmi:id="_TLI54G9EEeuPj7orz-zlug" name="name">
@@ -1570,7 +1604,13 @@
                 <inputs xmi:type="process:ContractInput" xmi:id="_VJQzcG9EEeuPj7orz-zlug" name="email">
                   <mapping xmi:type="process:ContractInputMapping" xmi:id="_VJQzcW9EEeuPj7orz-zlug"/>
                 </inputs>
+                <inputs xmi:type="process:ContractInput" xmi:id="_8gWJQG_NEeuRZJYO1HfhxQ" name="selected" type="BOOLEAN">
+                  <mapping xmi:type="process:ContractInputMapping" xmi:id="_8gWJQW_NEeuRZJYO1HfhxQ"/>
+                </inputs>
               </inputs>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_nOzicG_GEeuRZJYO1HfhxQ" name="replaceStudents" type="BOOLEAN">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_nOzicW_GEeuRZJYO1HfhxQ"/>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_v4veml0AEeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -1812,9 +1852,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Ao1EAWV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ao1EAGV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ao1EAmV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMiddleDate()" content="import java.time.LocalDate&#xA;&#xA;if(productionTimers){&#xA;&#x9;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#x9;Calendar calendar = GregorianCalendar.getInstance();&#xA;&#x9;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#x9;return calendar.getTime();&#xA;}&#xA;Long expiremilis = 60000L;&#xA;Date strtime = new Date()&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_a2wvgGzYEeunXPDArUMloQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
-            <referencedElements xmi:type="parameter:Parameter" xmi:id="_a2xWkGzYEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+          <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMiddleDate()" content="import java.time.LocalDate&#xA;&#xA;if(productionTimers){&#xA;&#x9;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#x9;Calendar calendar = GregorianCalendar.getInstance();&#xA;&#x9;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#x9;return calendar.getTime();&#xA;}&#xA;Long expiremilis = 30000L;&#xA;Date strtime = new Date()&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_yiSvQG_OEeuRZJYO1HfhxQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+            <referencedElements xmi:type="parameter:Parameter" xmi:id="_yiSvQW_OEeuRZJYO1HfhxQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_RzNR0GiaEeuZ26MaKERMkg" name="Notificar miembros de la comisión sobre activación de tarea de los estudiantes para calificar las fichas" outgoing="_SPCSMGiaEeuZ26MaKERMkg" incoming="_KiZrwGicEeuZ26MaKERMkg">

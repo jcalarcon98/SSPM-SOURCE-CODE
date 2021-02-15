@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "customAlertDanger",
   "name" : "alertDanger",
-  "lastUpdate" : 1611890204500,
+  "lastUpdate" : 1613417455813,
   "template" : "@customAlertDanger.tpl.html",
   "controller" : "@customAlertDanger.ctrl.js",
   "custom" : true,
@@ -37,7 +37,15 @@
       "bond" : "expression"
     }
   ],
-  "assets" : [ ],
+  "assets" : [
+    {
+      "id" : "24777411-f7d4-4c48-8748-ace66baa5217",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 1,
+      "external" : false
+    }
+  ],
   "requiredModules" : [ ],
   "type" : "widget",
   "hasHelp" : false

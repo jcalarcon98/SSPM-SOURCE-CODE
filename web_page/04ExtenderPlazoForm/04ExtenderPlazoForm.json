@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1613362555162,
+  "lastUpdate" : 1613418586832,
   "rows" : [
     [
       {
@@ -68,7 +68,7 @@
                 "propertyValues" : {
                   "cssClasses" : {
                     "type" : "constant",
-                    "value" : ""
+                    "value" : "mb-10"
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -193,7 +193,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "Los siguientes estudiantes aún no han calificado su ficha de seguimiento al sílabo asignada:"
+                                "value" : "Los siguientes estudiantes aún no han calificado la ficha de seguimiento que se les asignó:"
                               },
                               "alignment" : {
                                 "type" : "constant",
@@ -563,7 +563,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : "bordered"
+                                "value" : "bordered mb-10"
                               },
                               "hidden" : {
                                 "type" : "expression",
@@ -735,7 +735,7 @@
                                     ],
                                     [
                                       {
-                                        "type" : "container",
+                                        "type" : "component",
                                         "dimension" : {
                                           "xs" : 12,
                                           "sm" : 12,
@@ -751,56 +751,62 @@
                                             "type" : "constant",
                                             "value" : false
                                           },
-                                          "repeatedCollection" : {
+                                          "value" : {
+                                            "type" : "constant",
+                                            "value" : "This is the initial value"
+                                          },
+                                          "color" : {
+                                            "type" : "constant",
+                                            "value" : "RebeccaPurple"
+                                          },
+                                          "background" : {
+                                            "type" : "constant",
+                                            "value" : "Yellow"
+                                          },
+                                          "grades" : {
                                             "type" : "variable",
-                                            "value" : ""
+                                            "value" : "gradesToBeEvaluated"
                                           }
                                         },
-                                        "reference" : "a5a5805a-f845-448d-9856-66fb90bfb15c",
+                                        "reference" : "5bd7a15f-859a-4588-917c-8e33239ca0b0",
                                         "hasValidationError" : false,
-                                        "id" : "pbContainer",
-                                        "rows" : [
-                                          [
-                                            {
-                                              "type" : "component",
-                                              "dimension" : {
-                                                "xs" : 12,
-                                                "sm" : 12,
-                                                "md" : 12,
-                                                "lg" : 12
-                                              },
-                                              "propertyValues" : {
-                                                "cssClasses" : {
-                                                  "type" : "constant",
-                                                  "value" : ""
-                                                },
-                                                "hidden" : {
-                                                  "type" : "constant",
-                                                  "value" : false
-                                                },
-                                                "value" : {
-                                                  "type" : "constant",
-                                                  "value" : "This is the initial value"
-                                                },
-                                                "color" : {
-                                                  "type" : "constant",
-                                                  "value" : "RebeccaPurple"
-                                                },
-                                                "background" : {
-                                                  "type" : "constant",
-                                                  "value" : "Yellow"
-                                                },
-                                                "grades" : {
-                                                  "type" : "variable",
-                                                  "value" : "gradesToBeEvaluated"
-                                                }
-                                              },
-                                              "reference" : "5bd7a15f-859a-4588-917c-8e33239ca0b0",
-                                              "hasValidationError" : false,
-                                              "id" : "customCheckTable"
-                                            }
-                                          ]
-                                        ]
+                                        "id" : "customCheckTable"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          },
+                                          "message" : {
+                                            "type" : "constant",
+                                            "value" : "<b>Nota:</b> Los estudiantes que sean seleccionados, serán remplazados por los estudiantes de reserva. Solamente deben ser seleccionador en casos que haya sucedido alguna situación de fuerza mayor."
+                                          },
+                                          "show" : {
+                                            "type" : "constant",
+                                            "value" : true
+                                          },
+                                          "type" : {
+                                            "type" : "constant",
+                                            "value" : "info"
+                                          }
+                                        },
+                                        "reference" : "5bf75ad3-5de3-47c8-aaf1-f1aa8915a6a0",
+                                        "hasValidationError" : false,
+                                        "id" : "customAlertDanger"
                                       }
                                     ]
                                   ]
@@ -813,7 +819,68 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 12
+                              "xs" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "allowHtml" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "!formOutput._submitError.message"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+                              },
+                              "label" : {
+                                "type" : "interpolation"
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              }
+                            },
+                            "reference" : "910a0e34-2e42-4fe6-babf-696bc2bf0526",
+                            "hasValidationError" : false,
+                            "id" : "pbText",
+                            "description" : ""
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "md" : 12,
+                              "lg" : 12
                             },
                             "propertyValues" : {
                               "removeItem" : {
@@ -911,55 +978,6 @@
                   }
                 ]
               }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 12
-                },
-                "propertyValues" : {
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "allowHtml" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "hidden" : {
-                    "type" : "expression",
-                    "value" : "!formOutput._submitError.message"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
-                  },
-                  "label" : {
-                    "type" : "interpolation"
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  }
-                },
-                "reference" : "910a0e34-2e42-4fe6-babf-696bc2bf0526",
-                "hasValidationError" : false,
-                "id" : "pbText",
-                "description" : ""
-              }
             ]
           ]
         }
@@ -995,7 +1013,7 @@
       "type" : "json",
       "value" : [
         "{",
-        "  \"duration\" : 0,",
+        "  \"duration\" : 1,",
         "  \"extend\" : false",
         "}"
       ],
@@ -1022,7 +1040,8 @@
         "return {",
         "\tduration: $data.formInput.duration,",
         "\textend: $data.formInput.extend,",
-        "\tgradesToChange: $data.gradesToBeEvaluated",
+        "\tgradesToChange: $data.gradesToBeEvaluated,",
+        "\treplaceStudents: $data.assignNewStudents",
         "}"
       ],
       "exposed" : false
@@ -1091,7 +1110,6 @@
         "    const currentGrade = {",
         "      number: results[init].gradeNumber,",
         "      parallel: results[init].gradeParallel,",
-        "      selected: false,",
         "      students: []",
         "    };",
         "",
@@ -1099,6 +1117,7 @@
         "      name: results[init].name,",
         "      lastName: results[init].lastName,",
         "      email: results[init].email,",
+        "      selected: false,",
         "    };",
         "",
         "    if (!grades.some((compareGrade) => compareGrade.number === currentGrade.number",
@@ -1125,8 +1144,38 @@
         "    {",
         "      number: 10,",
         "      parallel: \"B\",",
-        "      selected: false,",
-        "      students: [1,2]  ",
+        "      students: [",
+        "        {",
+        "            name: 'Jean Carlos' ,",
+        "            lastName: 'Alarcón Ochoa',",
+        "            email: 'jean.alarcon@unl.edu.ec',",
+        "            selected: false,",
+        "        },",
+        "        {",
+        "            name: 'Juan Zapata' ,",
+        "            lastName: 'Alarcón Ochoa',",
+        "            email: 'jean.alarcon@unl.edu.ec',",
+        "            selected: false,",
+        "        },",
+        "      ]  ",
+        "    },",
+        "    {",
+        "      number: 10,",
+        "      parallel: \"A\",",
+        "      students: [",
+        "        {",
+        "            name: 'Pepe Carlos' ,",
+        "            lastName: 'Alarcón Ochoa',",
+        "            email: 'jean.alarcon@unl.edu.ec',",
+        "            selected: false,",
+        "        },",
+        "        {",
+        "            name: 'Juan Gerardo' ,",
+        "            lastName: 'Alarcón Ochoa',",
+        "            email: 'jean.alarcon@unl.edu.ec',",
+        "            selected: false,",
+        "        },",
+        "      ]  ",
         "    }    ",
         "];"
       ],
