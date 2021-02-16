@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1613434259167,
+  "lastUpdate" : 1613456535351,
   "rows" : [
     [
       {
@@ -154,6 +154,58 @@
                             "reference" : "1d136a7a-a53d-4d45-8dbe-bc11c4655221",
                             "hasValidationError" : false,
                             "id" : "pbTitle"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Default label"
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<pre>\n{{grades}}\n</pre>"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              }
+                            },
+                            "reference" : "87ea6cca-ed08-49d0-8d7f-3636fcfabed4",
+                            "hasValidationError" : false,
+                            "id" : "pbText"
                           }
                         ],
                         [
@@ -1143,6 +1195,10 @@
         "      parallel: results[init].gradeParallel,",
         "      students: []",
         "    };",
+        "    ",
+        "    const foundedGrade = $data.grades.find(grade => grade.parallel === currentGrade.parallel && grade.number === currentGrade.number);",
+        "    ",
+        "    currentGrade.amount  = foundedGrade.amount;",
         "",
         "    const currentStudent = {",
         "      name: results[init].name,",
@@ -1175,9 +1231,16 @@
         "    {",
         "      number: 10,",
         "      parallel: \"B\",",
+        "      amount: 2,",
         "      students: [",
         "        {",
         "            name: 'Jean Carlos' ,",
+        "            lastName: 'Alarcón Ochoa',",
+        "            email: 'jean.alarcon@unl.edu.ec',",
+        "            selected: false,",
+        "        },",
+        "        {",
+        "            name: 'Juan Zapata' ,",
         "            lastName: 'Alarcón Ochoa',",
         "            email: 'jean.alarcon@unl.edu.ec',",
         "            selected: false,",
@@ -1193,6 +1256,7 @@
         "    {",
         "      number: 10,",
         "      parallel: \"A\",",
+        "      amount: 3,",
         "      students: [",
         "        {",
         "            name: 'Pepe Carlos' ,",
@@ -1216,6 +1280,24 @@
       "type" : "expression",
       "value" : [
         "console.log($data.gradesToBeEvaluated);"
+      ],
+      "exposed" : false
+    },
+    "reserveGrades" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseVariable/{{task.caseId}}/reserveGradesString"
+      ],
+      "exposed" : false
+    },
+    "grades" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.reserveGrades) { ",
+        "    const list = JSON.parse($data.reserveGrades.value); ",
+        "    return list; ",
+        "}",
+        "return [];"
       ],
       "exposed" : false
     }

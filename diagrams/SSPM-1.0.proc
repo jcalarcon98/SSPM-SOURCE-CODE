@@ -239,6 +239,46 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_8PSlYEr1EeuHg-ZrLb5XVA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_8PR-UEr1EeuHg-ZrLb5XVA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_8PSlYUr1EeuHg-ZrLb5XVA" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_SxlwYHATEeuRZJYO1HfhxQ" name="testing" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_SxlwYXATEeuRZJYO1HfhxQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_SxlwYnATEeuRZJYO1HfhxQ" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_SxlwY3ATEeuRZJYO1HfhxQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_SxlwZHATEeuRZJYO1HfhxQ" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_SxlwZXATEeuRZJYO1HfhxQ" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_SxlwZnATEeuRZJYO1HfhxQ" name="test" content="import java.util.logging.Logger&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;reserveGrades.each { currentGrade -> &#xA;&#x9;logger.severe('****************HEY**********');&#xA;&#x9;logger.severe(currentGrade.toString());&#xA;&#x9;&#xA;&#x9;logger.severe('Qualify Students');&#xA;&#x9;&#xA;&#x9;currentGrade.qualifyStudents.each { qualifyStudent -> &#xA;&#x9;&#x9;logger.severe(qualifyStudent.name.toString());&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;logger.severe('Reserve Students')&#xA;&#x9;&#xA;&#x9;currentGrade.reserveStudents.each { reserveStudent -> &#xA;&#x9;&#x9;logger.severe(reserveStudent.name.toString());&#xA;&#x9;}&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_SxlwZ3ATEeuRZJYO1HfhxQ" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_SxlwaHATEeuRZJYO1HfhxQ">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_SxlwaXATEeuRZJYO1HfhxQ"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_SxlwanATEeuRZJYO1HfhxQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_Sxlwa3ATEeuRZJYO1HfhxQ" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_SxlwbHATEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_g8t2gHAMEeuRZJYO1HfhxQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_g8t2gXAMEeuRZJYO1HfhxQ" name="reserveGrades" content="reserveGrades" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_zrwvkHAMEeuRZJYO1HfhxQ" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_g8t2gnAMEeuRZJYO1HfhxQ" name="assignReserveGrades()" content="def reserveGrades = new ArrayList&lt;ReserveGrade>();&#xA;&#xA;currentGrades.each {&#xA;&#x9;reserveGrades.add({ currentGrade ->&#xA;&#x9;&#x9;def reserveGrade = new ReserveGrade();&#xA;&#x9;&#x9;reserveGrade.number = currentGrade.number&#xA;&#x9;&#x9;reserveGrade.parallel = currentGrade.parallel&#xA;&#x9;&#x9;reserveGrade.amount = amountReserveStudents&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;def currentStudentsList = studentSyllabusObj.findAll{ currentStudent -> currentStudent.gradeNumber == reserveGrade.number &amp;&amp; currentStudent.gradeParallel == reserveGrade.parallel };&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;currentGrade.students.each { currentStudent ->&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;def foundedStudent = currentStudentsList.find{ currentStudentList -> currentStudentList.email == currentStudent.email };&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;if (foundedStudent) {&#xA;&#x9;&#x9;&#x9;&#x9;reserveGrade.addToQualifyStudents(currentStudent);&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;reserveGrade.addToReserveStudents(currentStudent);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return reserveGrade;&#xA;&#x9;}(it))&#xA;}&#xA;&#xA;return reserveGrades;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BF_b4HAUEeuRZJYO1HfhxQ" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BF_b4XAUEeuRZJYO1HfhxQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_BF_b4nAUEeuRZJYO1HfhxQ" documentation="Amount of Students that Degree direction Choose for each grade. " name="amountReserveStudents" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_g8t2g3AMEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_BzNuQHAUEeuRZJYO1HfhxQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_BzNuQXAUEeuRZJYO1HfhxQ" name="reserveGradesString" content="reserveGradesString" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_DAL3sHAUEeuRZJYO1HfhxQ" name="reserveGradesString" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_BzNuQnAUEeuRZJYO1HfhxQ" name="builderReserveGrades" content="def builder = new groovy.json.JsonBuilder(reserveGrades);&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_L3nLYHAUEeuRZJYO1HfhxQ" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_BzNuQ3AUEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_8PSlYkr1EeuHg-ZrLb5XVA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_8PSlY0r1EeuHg-ZrLb5XVA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_8PSlZEr1EeuHg-ZrLb5XVA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -1357,26 +1397,6 @@
               </parameters>
             </configuration>
           </connectors>
-          <connectors xmi:type="process:Connector" xmi:id="_sMB1IG_sEeuRZJYO1HfhxQ" documentation="Script to assign the amount of reserve students to each grade." name="assignStudentsToGrades" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_sMCcMG_sEeuRZJYO1HfhxQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_sMCcMW_sEeuRZJYO1HfhxQ" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_sMCcMm_sEeuRZJYO1HfhxQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_sMCcM2_sEeuRZJYO1HfhxQ" key="variables"/>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_sMCcNG_sEeuRZJYO1HfhxQ" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_sMCcNW_sEeuRZJYO1HfhxQ" name="assignStudentsToGrades" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;for (grade in currentGrades) {&#xA;&#x9;logger.severe(&quot;PILAS&quot;);&#xA;&#x9;logger.severe(grade.number.toString())&#xA;&#x9;logger.severe(grade.parallel.toString());&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_sMCcNm_sEeuRZJYO1HfhxQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                </expression>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_sMCcN2_sEeuRZJYO1HfhxQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_sMCcOG_sEeuRZJYO1HfhxQ"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_sMCcOW_sEeuRZJYO1HfhxQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_sMCcOm_sEeuRZJYO1HfhxQ" name="result" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_sMCcO2_sEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
-            </outputs>
-          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_2l4V01jrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_2l4V1FjrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_2l4V1VjrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -2282,9 +2302,9 @@
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_0-CVsF0GEeuCL6OsnlvZyg" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_0G1A4l0GEeuCL6OsnlvZyg" name="setNewList()" content="&#xA;List studentSyllabusList = studentSyllabusObj;&#xA;&#xA;Long id = Long.valueOf(userId);&#xA;&#xA;studentSyllabusList.removeIf{ std -> std.studentId.equals(id) };&#xA;&#xA;return studentSyllabusList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Ac-ZQGivEeu4QMMChlZ5tw" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_Ac-ZQWivEeu4QMMChlZ5tw" name="userId">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Ac-ZQmivEeu4QMMChlZ5tw"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_ZIbuwG_0EeuRZJYO1HfhxQ" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_ZIcV0G_0EeuRZJYO1HfhxQ" name="userId">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_ZIcV0W_0EeuRZJYO1HfhxQ"/>
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_0G1A410GEeuCL6OsnlvZyg" type="ASSIGNMENT"/>
@@ -2890,6 +2910,12 @@
       </data>
       <data xmi:type="process:Data" xmi:id="_5Fm10G_PEeuRZJYO1HfhxQ" documentation="Amount of Students that Degree direction Choose for each grade. " name="amountReserveStudents" dataType="_PH_rnkU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_5Fm10W_PEeuRZJYO1HfhxQ" content="" returnType="java.lang.Integer"/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="_sI350G_0EeuRZJYO1HfhxQ" name="reserveGradesString" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_sI350W_0EeuRZJYO1HfhxQ" content=""/>
+      </data>
+      <data xmi:type="process:JavaObjectData" xmi:id="_xmu8wHAMEeuRZJYO1HfhxQ" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_xmu8wXAMEeuRZJYO1HfhxQ" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_PH_rhEU9EeuYOOr8JiHqIQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_smrxUEoPEeuRMrcBo1p0Vg" name="00InitForm" content="e91ca845-526b-40c1-9ef4-dd86faa5d762" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>

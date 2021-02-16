@@ -6,6 +6,20 @@
  * 
  * You can leave the controller empty if you do not need it.
  */
-function ($scope) {
-    
-}
+ function tableCntroller($scope) {
+ 
+    this.isSelected = function(grade, selected) {
+        
+        if(selected){
+            grade.amount--;
+        }else{
+            grade.amount++;
+        }
+        
+        
+        console.log(grade, selected);
+        
+      
+    };
+     
+ }

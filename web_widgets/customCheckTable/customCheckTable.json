@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "customCheckTable",
   "name" : "checkTable",
-  "lastUpdate" : 1613433599282,
+  "lastUpdate" : 1613456606122,
   "template" : "@customCheckTable.tpl.html",
   "controller" : "@customCheckTable.ctrl.js",
   "custom" : true,
