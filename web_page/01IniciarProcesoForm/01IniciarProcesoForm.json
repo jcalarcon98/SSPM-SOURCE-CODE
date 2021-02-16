@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613339483779,
+  "lastUpdate" : 1613430973362,
   "rows" : [
     [
       {
@@ -68,7 +68,7 @@
                 "propertyValues" : {
                   "cssClasses" : {
                     "type" : "constant",
-                    "value" : ""
+                    "value" : "mb-10"
                   },
                   "hidden" : {
                     "type" : "expression",
@@ -412,9 +412,10 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 6,
+                                    "xs" : 12,
                                     "md" : 6,
-                                    "lg" : 6
+                                    "lg" : 6,
+                                    "sm" : 6
                                   },
                                   "propertyValues" : {
                                     "labelHidden" : {
@@ -492,9 +493,10 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 6,
+                                    "xs" : 12,
                                     "md" : 6,
-                                    "lg" : 6
+                                    "lg" : 6,
+                                    "sm" : 6
                                   },
                                   "propertyValues" : {
                                     "labelHidden" : {
@@ -662,7 +664,7 @@
                                   "type" : "component",
                                   "dimension" : {
                                     "xs" : 12,
-                                    "sm" : 12,
+                                    "sm" : 6,
                                     "md" : 6,
                                     "lg" : 6
                                   },
@@ -741,7 +743,7 @@
                                   "type" : "component",
                                   "dimension" : {
                                     "xs" : 12,
-                                    "sm" : 12,
+                                    "sm" : 6,
                                     "md" : 6,
                                     "lg" : 6
                                   },
@@ -1009,7 +1011,10 @@
                                             {
                                               "type" : "component",
                                               "dimension" : {
-                                                "xs" : 5
+                                                "xs" : 12,
+                                                "md" : 4,
+                                                "lg" : 4,
+                                                "sm" : 5
                                               },
                                               "propertyValues" : {
                                                 "labelHidden" : {
@@ -1086,7 +1091,10 @@
                                             {
                                               "type" : "component",
                                               "dimension" : {
-                                                "xs" : 6
+                                                "xs" : 11,
+                                                "md" : 4,
+                                                "lg" : 4,
+                                                "sm" : 6
                                               },
                                               "propertyValues" : {
                                                 "labelHidden" : {
@@ -1163,7 +1171,9 @@
                                             {
                                               "type" : "component",
                                               "dimension" : {
-                                                "xs" : 1
+                                                "xs" : 1,
+                                                "md" : 4,
+                                                "lg" : 4
                                               },
                                               "propertyValues" : {
                                                 "removeItem" : {
@@ -1217,7 +1227,7 @@
                                                 },
                                                 "alignment" : {
                                                   "type" : "constant",
-                                                  "value" : "right"
+                                                  "value" : "center"
                                                 },
                                                 "dimension" : {
                                                   "type" : "constant",
@@ -1540,6 +1550,179 @@
                           {
                             "type" : "component",
                             "dimension" : {
+                              "xs" : 12,
+                              "sm" : 5,
+                              "md" : 6,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<b class='control-label--required'>Cantidad de estudiantes de reserva:"
+                              },
+                              "level" : {
+                                "type" : "constant",
+                                "value" : "Level 5"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              }
+                            },
+                            "reference" : "bdee39f8-ca76-4d15-ae43-80ea0b8e1aef",
+                            "hasValidationError" : false,
+                            "id" : "pbTitle"
+                          },
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 2,
+                              "md" : 2,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Cantidad de estudiantes de reseva:"
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "placeholder" : {
+                                "type" : "interpolation"
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "amountReserveStudents"
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "number"
+                              },
+                              "min" : {
+                                "type" : "constant",
+                                "value" : 0
+                              },
+                              "max" : {
+                                "type" : "constant",
+                                "value" : 10
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
+                              }
+                            },
+                            "reference" : "be92fc3f-ad09-47f2-a848-18504a06b112",
+                            "hasValidationError" : false,
+                            "id" : "pbInput"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "amountReserveStudents !== 0"
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>Precaución: </b> En caso de no ingresar estudiantes de reserva, no existiría la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "warning"
+                              }
+                            },
+                            "reference" : "25c7651d-3d3e-4497-9176-6a4d96431134",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "42f0ee42-3878-4a66-a13e-72ed4a5ba65f",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
                               "xs" : 12
                             },
                             "propertyValues" : {
@@ -1573,7 +1756,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "Por favor,  proveer el listado de estudiantes de cada paralelo por cada ciclo en formato <b>.csv</b>, de la siguiente manera:"
+                                "value" : "Por favor,  proveer el listado de estudiantes de cada paralelo por cada ciclo en formato <b>.csv</b>,de la siguiente manera:"
                               },
                               "alignment" : {
                                 "type" : "constant",
@@ -1642,8 +1825,8 @@
                                 "value" : false
                               },
                               "message" : {
-                                "type" : "constant",
-                                "value" : "<b>Nota: </b> Las calificaciones de cada estudiante deben ser las del periodo académico anterior. <b>Además debe agregar 3 estudiantes más, que la cantidad de sílabos por cada ciclo."
+                                "type" : "expression",
+                                "value" : "reserveStudentsMessage"
                               },
                               "show" : {
                                 "type" : "constant",
@@ -1654,7 +1837,7 @@
                                 "value" : "info"
                               }
                             },
-                            "reference" : "55660748-eee0-4bf1-a360-20fa41b74a12",
+                            "reference" : "ec46d195-c66f-4f2d-bad5-c00609f4d152",
                             "hasValidationError" : false,
                             "id" : "customAlertDanger"
                           }
@@ -3035,7 +3218,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "mb-10"
                               },
                               "hidden" : {
                                 "type" : "constant",
@@ -3130,17 +3313,17 @@
       "external" : false
     },
     {
-      "id" : "f7461123-e8ba-4398-9afe-db447a448ac0",
-      "name" : "silabos.png",
-      "type" : "img",
-      "order" : 5,
-      "external" : false
-    },
-    {
       "id" : "63fe8ed2-d3ed-461d-b901-53f44808a940",
       "name" : "angular-locale_es.js",
       "type" : "js",
       "order" : 2,
+      "external" : false
+    },
+    {
+      "id" : "f7461123-e8ba-4398-9afe-db447a448ac0",
+      "name" : "silabos.png",
+      "type" : "img",
+      "order" : 5,
       "external" : false
     },
     {
@@ -3197,7 +3380,8 @@
         "\tperiodInput: $data.period,",
         "\tstudentsFileDocumentInput: $data.studentsFileDocumentInput,",
         "\tsillabusFileDocumentInput: $data.sillabusFileDocumentInput,",
-        "\tgradesInput: $data.updateGrades",
+        "\tgradesInput: $data.updateGrades,",
+        "\tamountReserveStudentsInput: $data.amountReserveStudents",
         "}"
       ],
       "exposed" : false
@@ -4017,9 +4201,8 @@
         " * data.grades",
         " * data.resultSillabus",
         " */ ",
-        "",
-        "function areEnoughStudentsToRateSyllabus(grades) {",
-        "  const amountOfAdditionalStudentsPerGrade = 3;",
+        "function areEnoughStudentsToRateSyllabus(grades, aditionalStudents) {",
+        "  const amountOfAdditionalStudentsPerGrade = aditionalStudents;",
         "  let areWrongParallels = false;",
         "",
         "  let wrongParallels = '';",
@@ -4036,7 +4219,8 @@
         "      isCorrect: false,",
         "      message: `<b>Error</b>: Asegurese que exista 3 estudiantes más que la cantidad de sílabos por cada ciclo<br>",
         "      Los siguientes ciclos no cumplen esa característica:<br>",
-        "      ${wrongParallels}`,",
+        "      ${wrongParallels}",
+        "      Cambie la cantidad de estudiantes de reserva y vuelva a subir el archivo o actualice el archivo .csv`,",
         "    };",
         "  }",
         "",
@@ -4120,7 +4304,7 @@
         "    }",
         "}",
         "",
-        "const areEnoughStudents = areEnoughStudentsToRateSyllabus(updateGrades);",
+        "const areEnoughStudents = areEnoughStudentsToRateSyllabus(updateGrades, $data.amountReserveStudents);",
         "",
         "if (!areEnoughStudents.isCorrect) {",
         "  $data.showSillabusContent = false;",
@@ -4135,6 +4319,9 @@
         "  showConfirmButton: false,",
         "  timer: 1500",
         "});",
+        "",
+        "",
+        "",
         "",
         "return updateGrades;"
       ],
@@ -4746,6 +4933,20 @@
         " * If not exists errors returns false -> Enable last tab ",
         " */",
         "return true;"
+      ],
+      "exposed" : false
+    },
+    "amountReserveStudents" : {
+      "type" : "expression",
+      "value" : [
+        "return 1;"
+      ],
+      "exposed" : false
+    },
+    "reserveStudentsMessage" : {
+      "type" : "expression",
+      "value" : [
+        "return `<b>Nota: </b> Las calificaciones de cada estudiante deben ser las del periodo académico anterior. <b>Además debe agregar ${$data.amountReserveStudents} estudiante(s) más, que la cantidad de sílabos por cada ciclo.`;"
       ],
       "exposed" : false
     }

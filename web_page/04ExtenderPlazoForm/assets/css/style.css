@@ -36,7 +36,7 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 }
 
 .bordered {
-  border: 1px solid gray;
+  border: 1px solid #E0E0E0;
   border-radius: 8px;
 }
 

@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "headerProcess",
   "name" : "headerProcess",
-  "lastUpdate" : 1612022313919,
+  "lastUpdate" : 1613434172376,
   "rows" : [
     [
       {
@@ -36,7 +36,7 @@
               "type" : "component",
               "dimension" : {
                 "xs" : 12,
-                "sm" : 12,
+                "sm" : 6,
                 "md" : 6,
                 "lg" : 6
               },
@@ -73,7 +73,7 @@
               "type" : "component",
               "dimension" : {
                 "xs" : 12,
-                "sm" : 12,
+                "sm" : 6,
                 "md" : 6,
                 "lg" : 6
               },

@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1613339339714,
+  "lastUpdate" : 1613435029288,
   "rows" : [
     [
       {
@@ -1789,6 +1789,10 @@
                                     "type" : {
                                       "type" : "constant",
                                       "value" : "warning"
+                                    },
+                                    "color" : {
+                                      "type" : "constant",
+                                      "value" : "amber-100"
                                     }
                                   },
                                   "reference" : "fa4e4910-57f9-413a-af7c-93de9ea7742a",
@@ -2245,6 +2249,9 @@
                                     "type" : {
                                       "type" : "constant",
                                       "value" : "danger"
+                                    },
+                                    "color" : {
+                                      "type" : "constant"
                                     }
                                   },
                                   "reference" : "6e932fa1-6e88-472d-8c53-f8e589667463",
@@ -2278,6 +2285,9 @@
                                     "type" : {
                                       "type" : "constant",
                                       "value" : "danger"
+                                    },
+                                    "color" : {
+                                      "type" : "constant"
                                     }
                                   },
                                   "reference" : "ebbb3085-d4b3-4d01-8a27-6f02482a30a1",
@@ -2311,6 +2321,9 @@
                                     "type" : {
                                       "type" : "constant",
                                       "value" : "danger"
+                                    },
+                                    "color" : {
+                                      "type" : "constant"
                                     }
                                   },
                                   "reference" : "f354f187-0001-462f-bbc7-79e4446f160c",
@@ -2344,6 +2357,9 @@
                                     "type" : {
                                       "type" : "constant",
                                       "value" : "danger"
+                                    },
+                                    "color" : {
+                                      "type" : "constant"
                                     }
                                   },
                                   "reference" : "07227b45-4c16-4219-bffc-73d665312e73",

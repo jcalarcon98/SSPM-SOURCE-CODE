@@ -7,5 +7,8 @@
  * You can leave the controller empty if you do not need it.
  */
 function ($scope) {
-    
+    this.color = 'alert-' + $scope.properties.type;  
+    if ($scope.properties.color) {
+        this.color = 'bg-' + $scope.properties.color;  
+    }
 }

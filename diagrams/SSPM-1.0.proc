@@ -145,6 +145,17 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_zo9KplUaEeu9n-5VMdb4Uw" type="DOCUMENT_CREATE_UPDATE"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_--6ykG_PEeuRZJYO1HfhxQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_--6ykW_PEeuRZJYO1HfhxQ" name="amountReserveStudents" content="amountReserveStudents" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:Data" xmi:id="_AHmR4G_QEeuRZJYO1HfhxQ" documentation="Amount of Students that Degree direction Choose for each grade. " name="amountReserveStudents" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_--6ykm_PEeuRZJYO1HfhxQ" name="amountReserveStudentsInput" content="amountReserveStudentsInput" type="TYPE_CONTRACT_INPUT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Aq2I4G_QEeuRZJYO1HfhxQ" name="amountReserveStudentsInput" type="INTEGER">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Aq2I4W_QEeuRZJYO1HfhxQ"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_--6yk2_PEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_vLqmo0n7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_vLqmpEn7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_vLqmpUn7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -190,6 +201,9 @@
                   <inputs xmi:type="process:ContractInput" xmi:id="_4Uj-LlUaEeu9n-5VMdb4Uw" name="name"/>
                 </inputs>
               </inputs>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_69T-UG_PEeuRZJYO1HfhxQ" name="amountReserveStudentsInput" type="INTEGER">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_69T-UW_PEeuRZJYO1HfhxQ"/>
             </inputs>
             <constraints xmi:type="process:ContractConstraint" xmi:id="_4UklMFUaEeu9n-5VMdb4Uw" expression="gradesInput?.number.flatten().every{it!=null}" errorMessage="El número del Ciclo es necesario." name="mandatory_gradesInput_number">
               <inputNames>gradesInput</inputNames>
@@ -1343,6 +1357,26 @@
               </parameters>
             </configuration>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_sMB1IG_sEeuRZJYO1HfhxQ" documentation="Script to assign the amount of reserve students to each grade." name="assignStudentsToGrades" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_sMCcMG_sEeuRZJYO1HfhxQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_sMCcMW_sEeuRZJYO1HfhxQ" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_sMCcMm_sEeuRZJYO1HfhxQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_sMCcM2_sEeuRZJYO1HfhxQ" key="variables"/>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_sMCcNG_sEeuRZJYO1HfhxQ" key="fakeScriptExpression">
+                <expression xmi:type="expression:Expression" xmi:id="_sMCcNW_sEeuRZJYO1HfhxQ" name="assignStudentsToGrades" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;for (grade in currentGrades) {&#xA;&#x9;logger.severe(&quot;PILAS&quot;);&#xA;&#x9;logger.severe(grade.number.toString())&#xA;&#x9;logger.severe(grade.parallel.toString());&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_sMCcNm_sEeuRZJYO1HfhxQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                </expression>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_sMCcN2_sEeuRZJYO1HfhxQ">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_sMCcOG_sEeuRZJYO1HfhxQ"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_sMCcOW_sEeuRZJYO1HfhxQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
+                <referencedElements xmi:type="definition:Output" xmi:id="_sMCcOm_sEeuRZJYO1HfhxQ" name="result" type="java.lang.Object"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_sMCcO2_sEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_2l4V01jrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_2l4V1FjrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_2l4V1VjrEeu0WcHuCjypTg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -1511,10 +1545,8 @@
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TJWapG_HEeuRZJYO1HfhxQ" key="variables"/>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TJWapW_HEeuRZJYO1HfhxQ" key="fakeScriptExpression">
                 <expression xmi:type="expression:Expression" xmi:id="_TJWapm_HEeuRZJYO1HfhxQ" name="test" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;logger.severe('*****************');&#xA;logger.severe(replaceStudents.toString());&#xA;logger.severe('2222222222222222222');&#xA;logger.severe(gradesDELETE.toString());" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:ContractInput" xmi:id="_TJWap2_HEeuRZJYO1HfhxQ" name="replaceStudents" type="BOOLEAN">
-                    <mapping xmi:type="process:ContractInputMapping" xmi:id="_TJWaqG_HEeuRZJYO1HfhxQ"/>
-                  </referencedElements>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_TJWaqW_HEeuRZJYO1HfhxQ" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_6w3K0G_cEeuRZJYO1HfhxQ" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_6w3K0W_cEeuRZJYO1HfhxQ" name="replaceStudents" dataType="_PH_rnEU9EeuYOOr8JiHqIQ"/>
                 </expression>
               </parameters>
             </configuration>
@@ -1550,11 +1582,11 @@
           </operations>
           <operations xmi:type="expression:Operation" xmi:id="_-85IYG_GEeuRZJYO1HfhxQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_-85IYW_GEeuRZJYO1HfhxQ" name="replaceStudents" content="replaceStudents" type="TYPE_VARIABLE" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:Data" xmi:id="_FIOpQG_HEeuRZJYO1HfhxQ" name="replaceStudents" dataType="_PH_rnEU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_uPuJAG_dEeuRZJYO1HfhxQ" name="replaceStudents" dataType="_PH_rnEU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_-85IYm_GEeuRZJYO1HfhxQ" name="replaceStudents" content="replaceStudents" type="TYPE_CONTRACT_INPUT" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_Fq1AAG_HEeuRZJYO1HfhxQ" name="replaceStudents" type="BOOLEAN">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Fq1AAW_HEeuRZJYO1HfhxQ"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_-85IYm_GEeuRZJYO1HfhxQ" name="replaceStudentsInput" content="replaceStudentsInput" type="TYPE_CONTRACT_INPUT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_xwVJAG_dEeuRZJYO1HfhxQ" name="replaceStudentsInput" type="BOOLEAN">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_xwVJAW_dEeuRZJYO1HfhxQ"/>
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_-85IY2_GEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
@@ -1563,9 +1595,9 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_e2AbAW9DEeuPj7orz-zlug" name="gradesDELETE" content="gradesDELETE" type="TYPE_VARIABLE" returnType="java.lang.Object">
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_ftdjQG9KEeuPj7orz-zlug" name="gradesDELETE" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.lang.Object"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_e2AbAm9DEeuPj7orz-zlug" name="newScript()" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;logger.severe('**********OJITO***********')&#xA;logger.severe(gradesToChange.toString());&#xA;&#xA;return gradesToChange;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_i5A5QG9KEeuPj7orz-zlug" name="gradesToChange" type="COMPLEX" multiple="true">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_i5A5QW9KEeuPj7orz-zlug"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_e2AbAm9DEeuPj7orz-zlug" name="gradesToChange" content="gradesToChange" interpreter="GROOVY" type="TYPE_CONTRACT_INPUT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_2AOQ4G_dEeuRZJYO1HfhxQ" name="gradesToChange" type="COMPLEX" multiple="true">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_2AOQ4W_dEeuRZJYO1HfhxQ"/>
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_e2AbA29DEeuPj7orz-zlug" type="ASSIGNMENT"/>
@@ -1609,7 +1641,7 @@
                 </inputs>
               </inputs>
             </inputs>
-            <inputs xmi:type="process:ContractInput" xmi:id="_nOzicG_GEeuRZJYO1HfhxQ" name="replaceStudents" type="BOOLEAN">
+            <inputs xmi:type="process:ContractInput" xmi:id="_nOzicG_GEeuRZJYO1HfhxQ" name="replaceStudentsInput" type="BOOLEAN">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_nOzicW_GEeuRZJYO1HfhxQ"/>
             </inputs>
           </contract>
@@ -2855,6 +2887,9 @@
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_NHKasGV_EeuUFNFgVPZMBg" name="improveActionsBV" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImproveAction">
         <defaultValue xmi:type="expression:Expression" xmi:id="_NHKasWV_EeuUFNFgVPZMBg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="_5Fm10G_PEeuRZJYO1HfhxQ" documentation="Amount of Students that Degree direction Choose for each grade. " name="amountReserveStudents" dataType="_PH_rnkU9EeuYOOr8JiHqIQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_5Fm10W_PEeuRZJYO1HfhxQ" content="" returnType="java.lang.Integer"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_PH_rhEU9EeuYOOr8JiHqIQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_smrxUEoPEeuRMrcBo1p0Vg" name="00InitForm" content="e91ca845-526b-40c1-9ef4-dd86faa5d762" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
