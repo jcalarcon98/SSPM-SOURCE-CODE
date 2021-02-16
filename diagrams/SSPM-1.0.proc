@@ -1622,13 +1622,6 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_e2AbA29DEeuPj7orz-zlug" type="ASSIGNMENT"/>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_Huf7IHB7EeuMopS7Q05zLw">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_HugiMHB7EeuMopS7Q05zLw" name="reserveGrades" content="reserveGrades" type="TYPE_VARIABLE" returnType="java.util.List">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_I4PxcHB7EeuMopS7Q05zLw" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_HugiMXB7EeuMopS7Q05zLw" content=""/>
-            <operator xmi:type="expression:Operator" xmi:id="_HugiMnB7EeuMopS7Q05zLw" type="ASSIGNMENT"/>
-          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_rsbQIlz1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_rsbQI1z1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_rsbQJFz1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -2322,14 +2315,14 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_wAQoslkXEeuJIr4cTKuYsA" name="student" content="student" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_wAQosVkXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_n4TJIFzzEeuCL6OsnlvZyg" name="Tiempo Límite" outgoing="_IT0FkGiiEeu4QMMChlZ5tw">
-            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;return 30000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_0XwqEG80EeuPj7orz-zlug" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_0XxRIG80EeuPj7orz-zlug" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;return 240000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="_5lmjcHCeEeu_fp3LITPV6g" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_5lmjcXCeEeu_fp3LITPV6g" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <BoundaryIntermediateEvents xmi:type="process:NonInterruptingBoundaryTimerEvent" xmi:id="_qdzXUF9aEeuVVLsH7l3cUw" name="1 día despúes" outgoing="_Quz0IF9bEeuVVLsH7l3cUw">
-            <condition xmi:type="expression:Expression" xmi:id="_vTJ8sF9aEeuVVLsH7l3cUw" name="1 Days 00:00:01" content="if(productionTimers){&#xA;&#x9;return 86401000L;&#xA;}&#xA;&#xA;return 60000L;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_18LqMG80EeuPj7orz-zlug" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <condition xmi:type="expression:Expression" xmi:id="_vTJ8sF9aEeuVVLsH7l3cUw" name="1 Days 00:00:01" content="if(productionTimers){&#xA;&#x9;return 86401000L;&#xA;}&#xA;&#xA;return 240000L;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_3fiO0HCeEeu_fp3LITPV6g" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_-NmRIVkXEeuJIr4cTKuYsA">
@@ -2928,7 +2921,7 @@
         <targetForm xmi:type="expression:Expression" xmi:id="_smrxUEoPEeuRMrcBo1p0Vg" name="00InitForm" content="e91ca845-526b-40c1-9ef4-dd86faa5d762" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_PH_rhkU9EeuYOOr8JiHqIQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_PH_rh0U9EeuYOOr8JiHqIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_PD_J4HCaEeu_fp3LITPV6g" name="caseoverview" content="981aadcf-631a-4742-9507-59e85e93c39e" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_vLu4EEn7EeuRMrcBo1p0Vg" target="_v3FiMEn7EeuRMrcBo1p0Vg" source="_PH_rc0U9EeuYOOr8JiHqIQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_vLvfIEn7EeuRMrcBo1p0Vg"/>
