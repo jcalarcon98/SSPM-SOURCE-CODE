@@ -15,11 +15,6 @@
         }else{
             grade.amount++;
         }
-        
-        
-        console.log(grade, selected);
-        
-      
     };
      
  }

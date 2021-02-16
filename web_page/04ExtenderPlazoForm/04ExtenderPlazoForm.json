@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1613456535351,
+  "lastUpdate" : 1613497553833,
   "rows" : [
     [
       {
@@ -206,6 +206,46 @@
                             "reference" : "87ea6cca-ed08-49d0-8d7f-3636fcfabed4",
                             "hasValidationError" : false,
                             "id" : "pbText"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "Error"
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant",
+                                "value" : "cyan-a100"
+                              }
+                            },
+                            "reference" : "257a1ea8-7e92-48bc-8e4b-8a1af7e8b783",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
                           }
                         ],
                         [

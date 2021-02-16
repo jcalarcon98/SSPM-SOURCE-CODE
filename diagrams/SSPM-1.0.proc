@@ -264,9 +264,9 @@
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_zrwvkHAMEeuRZJYO1HfhxQ" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_g8t2gnAMEeuRZJYO1HfhxQ" name="assignReserveGrades()" content="def reserveGrades = new ArrayList&lt;ReserveGrade>();&#xA;&#xA;currentGrades.each {&#xA;&#x9;reserveGrades.add({ currentGrade ->&#xA;&#x9;&#x9;def reserveGrade = new ReserveGrade();&#xA;&#x9;&#x9;reserveGrade.number = currentGrade.number&#xA;&#x9;&#x9;reserveGrade.parallel = currentGrade.parallel&#xA;&#x9;&#x9;reserveGrade.amount = amountReserveStudents&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;def currentStudentsList = studentSyllabusObj.findAll{ currentStudent -> currentStudent.gradeNumber == reserveGrade.number &amp;&amp; currentStudent.gradeParallel == reserveGrade.parallel };&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;currentGrade.students.each { currentStudent ->&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;def foundedStudent = currentStudentsList.find{ currentStudentList -> currentStudentList.email == currentStudent.email };&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;if (foundedStudent) {&#xA;&#x9;&#x9;&#x9;&#x9;reserveGrade.addToQualifyStudents(currentStudent);&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;reserveGrade.addToReserveStudents(currentStudent);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return reserveGrade;&#xA;&#x9;}(it))&#xA;}&#xA;&#xA;return reserveGrades;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BF_b4HAUEeuRZJYO1HfhxQ" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BF_b4XAUEeuRZJYO1HfhxQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_BF_b4nAUEeuRZJYO1HfhxQ" documentation="Amount of Students that Degree direction Choose for each grade. " name="amountReserveStudents" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Qif80HB6EeuMopS7Q05zLw" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Qigj4HB6EeuMopS7Q05zLw" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_Qigj4XB6EeuMopS7Q05zLw" documentation="Amount of Students that Degree direction Choose for each grade. " name="amountReserveStudents" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_g8t2g3AMEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
           </operations>
@@ -275,7 +275,7 @@
               <referencedElements xmi:type="process:Data" xmi:id="_DAL3sHAUEeuRZJYO1HfhxQ" name="reserveGradesString" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_BzNuQnAUEeuRZJYO1HfhxQ" name="builderReserveGrades" content="def builder = new groovy.json.JsonBuilder(reserveGrades);&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_L3nLYHAUEeuRZJYO1HfhxQ" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_SSEdAHB6EeuMopS7Q05zLw" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_BzNuQ3AUEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
           </operations>
@@ -1621,6 +1621,13 @@
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_e2AbA29DEeuPj7orz-zlug" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Huf7IHB7EeuMopS7Q05zLw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_HugiMHB7EeuMopS7Q05zLw" name="reserveGrades" content="reserveGrades" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_I4PxcHB7EeuMopS7Q05zLw" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_HugiMXB7EeuMopS7Q05zLw" content=""/>
+            <operator xmi:type="expression:Operator" xmi:id="_HugiMnB7EeuMopS7Q05zLw" type="ASSIGNMENT"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_rsbQIlz1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_rsbQI1z1EeuCL6OsnlvZyg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>

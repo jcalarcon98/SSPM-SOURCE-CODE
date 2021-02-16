@@ -19,7 +19,7 @@
       </thead>
       <tbody>
           <tr ng-repeat="student in grade.students">
-            <td class="text-center"><input type="checkbox"  ng-disabled="grade.amount === 0 && !student.selected" ng-model="student.selected" ng-change="ctrl.isSelected(grade, student.selected)"></td>
+            <td class="text-center"><input type="checkbox" ng-disabled="grade.amount === 0 && !student.selected" ng-model="student.selected" ng-change="ctrl.isSelected(grade, student.selected)"></td>
             <th scope="row" class='bg-grey-200 text-center' > {{student.name}}</th>
             <th scope="row" class="bg-grey-200 text-center"> {{student.lastName}}</th>
             <td scope="row" class="text-center"> {{student.email}}</td>
