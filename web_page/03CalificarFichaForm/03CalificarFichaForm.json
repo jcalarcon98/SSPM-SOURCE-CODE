@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1613350916036,
+  "lastUpdate" : 1613516652614,
   "rows" : [
     [
       {
@@ -1000,7 +1000,7 @@
                                 "value" : ""
                               },
                               "dataToSend" : {
-                                "type" : "constant",
+                                "type" : "expression",
                                 "value" : "formOutput"
                               },
                               "dataFromSuccess" : {

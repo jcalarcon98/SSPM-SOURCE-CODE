@@ -31,11 +31,27 @@ class ReserveGrade {
 		this.reserveStudents.add(addTo);
 	}
 	
+	public void removeFromReserveStudents(Student removeFrom) {
+		this.reserveStudents.remove(removeFrom);
+	}
+	
 	public List<Student> getQualifyStudents() {
 		return qualifyStudents;
 	}
 	
 	public void addToQualifyStudents(Student addTo) {
 		this.qualifyStudents.add(addTo);
-	}	
+	}
+	
+	public void removeFromQualifyStudents(Student removeFrom) {
+		this.qualifyStudents.remove(removeFrom);
+	}
+	
+	public List<Student> getNotQualifyStudent() {
+		return notQualifyStudent;
+	}
+	
+	public void addToNotQualifyStudent(Student addTo) {
+		this.notQualifyStudent.add(addTo);
+	}
 }
