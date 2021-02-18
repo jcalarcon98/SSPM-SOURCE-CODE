@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1612155586176,
+  "lastUpdate" : 1613663752159,
   "rows" : [
     [
       {
@@ -684,9 +684,9 @@
                                       "type" : "component",
                                       "dimension" : {
                                         "md" : 11,
-                                        "sm" : 12,
-                                        "xs" : 12,
-                                        "lg" : 6
+                                        "sm" : 11,
+                                        "xs" : 11,
+                                        "lg" : 11
                                       },
                                       "propertyValues" : {
                                         "labelHidden" : {
@@ -764,9 +764,9 @@
                                       "type" : "component",
                                       "dimension" : {
                                         "md" : 1,
-                                        "sm" : 12,
-                                        "xs" : 12,
-                                        "lg" : 6
+                                        "sm" : 1,
+                                        "xs" : 1,
+                                        "lg" : 1
                                       },
                                       "propertyValues" : {
                                         "removeItem" : {
