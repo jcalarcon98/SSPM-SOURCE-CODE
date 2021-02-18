@@ -1,8 +1,13 @@
 import org.bonitasoft.engine.api.APIAccessor
 import org.bonitasoft.engine.identity.User;
 import org.bonitasoft.engine.identity.UserCreator;
+import org.bonitasoft.engine.identity.UserSearchDescriptor
+import org.bonitasoft.engine.profile.Profile
+import org.bonitasoft.engine.profile.ProfileSearchDescriptor
 import org.bonitasoft.engine.identity.Group
 import org.bonitasoft.engine.identity.GroupSearchDescriptor
+import org.bonitasoft.engine.identity.Role
+import org.bonitasoft.engine.identity.RoleSearchDescriptor
 import org.bonitasoft.engine.search.SearchOptionsBuilder
 import org.bonitasoft.engine.search.impl.SearchResultImpl
 
@@ -37,6 +42,70 @@ public final class UtilsSSPM {
 		}
 			
 		return id;
+	}
+	
+	/**
+	 *@param apiAccessor, the current APIAccessor
+	 *@param profileName, name of the profile from which to obtain the id
+	 *@return Long id, the Profile identified by its id (-1 if not match any results)
+	 *
+	 */
+	public static Long getProfileId(APIAccessor apiAccessor, String profileName) {
+				
+		Long id = -1L;
+			
+		SearchOptionsBuilder builder = new SearchOptionsBuilder(0, 100);
+		builder.filter(ProfileSearchDescriptor.NAME, profileName);
+		SearchResultImpl<Profile> profileResults = apiAccessor.profileAPI.searchProfiles(builder.done())
+			
+		for (profile in profileResults.getResult()){
+			return profile.id;
+		}
+			
+		return id;
+	}
+	
+	/**
+	 *@param apiAccessor, the current APIAccessor
+	 *@param roleName, name of the role from which to obtain the id
+	 *@return Long id, the Role identified by its id (-1 if not match any results)
+	 *
+	 */
+	public static Long getRoleId(APIAccessor apiAccessor, String roleName) {
+				
+		Long id = -1L;
+			
+		SearchOptionsBuilder builder = new SearchOptionsBuilder(0, 100);
+		builder.filter(RoleSearchDescriptor.NAME, roleName);
+		SearchResultImpl<Role> roleResults = apiAccessor.identityAPI.searchRoles(builder.done())
+			
+		for (role in roleResults.getResult()){
+			return role.id;
+		}
+			
+		return id;
+	}
+	
+	/**
+	 *@param apiAccessor, the current APIAccessor
+	 *@param username, username of the user to search
+	 *@return Boolean, true if user exists otherwise false
+	 *
+	 */
+	public static Boolean userExists(APIAccessor apiAccessor, String username) {
+		
+		
+		SearchOptionsBuilder builder = new SearchOptionsBuilder(0, 100);
+		builder.filter(UserSearchDescriptor.USER_NAME, username);
+		SearchResultImpl<User> userResults = apiAccessor.identityAPI.searchUsers(builder.done())
+			
+		for (user in userResults.getResult()){
+			if (user.getUserName() == username) {
+				return true;
+			}
+		}
+			
+		return false;
 	}
 	
 	/**
