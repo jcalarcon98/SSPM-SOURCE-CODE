@@ -574,6 +574,15 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_eWe1M2S1Eeuieu1-zwk2Cw" type="ASSIGNMENT"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_6eLa0HIKEeuJ0MOecJdBVA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_6eLa0XIKEeuJ0MOecJdBVA" name="studentSyllabus" content="studentSyllabus" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_7qh5MHIKEeuJ0MOecJdBVA" name="studentSyllabus" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_6eLa0nIKEeuJ0MOecJdBVA" name="setNewStudentSyllabus()" content="def builder = new groovy.json.JsonBuilder(studentSyllabusObj);&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="__7n68HIKEeuJ0MOecJdBVA" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_6eLa03IKEeuJ0MOecJdBVA" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_I2Luw2SwEeuieu1-zwk2Cw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_I2LuxGSwEeuieu1-zwk2Cw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_I2LuxWSwEeuieu1-zwk2Cw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -867,9 +876,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xSMRMWV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xSMRMGV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xSMRMmV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return calendar.getTime();&#xA;}&#xA;&#xA;Long expiremilis = 180000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_P7qsAHGbEeuBQOKfhwGuBQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
-            <referencedElements xmi:type="parameter:Parameter" xmi:id="_P7qsAXGbEeuBQOKfhwGuBQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return calendar.getTime();&#xA;}&#xA;&#xA;Long expiremilis = 120000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_K4qQQHILEeuJ0MOecJdBVA" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
+            <referencedElements xmi:type="parameter:Parameter" xmi:id="_K4qQQXILEeuJ0MOecJdBVA" name="productionTimers" typeClassname="java.lang.Boolean"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_B-sPMGilEeu4QMMChlZ5tw" name="Notificar dirección de carrera sobre el informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_MI0g4GilEeu4QMMChlZ5tw" incoming="_B_A_UGilEeu4QMMChlZ5tw">
@@ -2128,29 +2137,6 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_dyCU4XCpEeuluuhB0SCOWA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_dyCU4HCpEeuluuhB0SCOWA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_dyCU4nCpEeuluuhB0SCOWA" name="" content="" returnTypeFixed="true"/>
-          <connectors xmi:type="process:Connector" xmi:id="_QWihoHDAEeu298oRXxJOxQ" name="test1" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_QWihoXDAEeu298oRXxJOxQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_QWihonDAEeu298oRXxJOxQ" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_QWiho3DAEeu298oRXxJOxQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_QWihpHDAEeu298oRXxJOxQ" key="variables"/>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_QWjIsHDAEeu298oRXxJOxQ" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_QWjIsXDAEeu298oRXxJOxQ" name="test1" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;logger.severe(&quot;*ZZZZZZZZZZZZZZZZZZZZZZ***********111111111111***&quot;);&#xA;for (item in reserveGrades){&#xA;&#x9;logger.severe(item.toString())&#xA;&#x9;logger.severe(&quot;reserv *********&quot;);&#xA;&#x9;for(student in item.reserveStudents){&#xA;&#x9;&#x9;logger.severe(student.email.toString())&#xA;&#x9;}&#xA;&#x9;logger.severe(&quot;qualify *********&quot;);&#xA;&#x9;for(student in item.qualifyStudents){&#xA;&#x9;&#x9;logger.severe(student.email.toString())&#xA;&#x9;}&#xA;&#x9;logger.severe(&quot;notQualify *********&quot;);&#xA;&#x9;for(student in item.notQualifyStudent){&#xA;&#x9;&#x9;logger.severe(student.email.toString())&#xA;&#x9;}&#xA;}&#xA;logger.severe(&quot;*ZZZZZZZZZZZZZZZZZZZZZZ***********222222222222***&quot;);&#xA;for(item in studentSyllabusObj){&#xA;&#x9;logger.severe(item.toString())&#xA;}&#xA;logger.severe(&quot;*ZZZZZZZZZZZZZZZZZZZZZZ***********333333333333***&quot;);&#xA;for(item in listStudents){&#xA;&#x9;logger.severe(item.toString())&#xA;}&#xA;logger.severe(&quot;*ZZZZZZZZZZZZZZZZZZZZZZ***********444444444444***&quot;);&#xA;for(item in studentUsers){&#xA;&#x9;logger.severe(item.toString())&#xA;}&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_u5P6IHF9EeuV_OhrDb5V1w" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_u5P6IXF9EeuV_OhrDb5V1w" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_u5P6InF9EeuV_OhrDb5V1w" name="listStudents" multiple="true" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_u5P6I3F9EeuV_OhrDb5V1w" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                </expression>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_QWjIs3DAEeu298oRXxJOxQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_QWjItHDAEeu298oRXxJOxQ"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_QWjItXDAEeu298oRXxJOxQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_QWjItnDAEeu298oRXxJOxQ" name="result" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_QWjIt3DAEeu298oRXxJOxQ" type="ASSIGNMENT"/>
-            </outputs>
-          </connectors>
           <connectors xmi:type="process:Connector" xmi:id="_O0mhcHFHEeu7jpfeHLyCxA" name="setNewLists()" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_O0mhcXFHEeu7jpfeHLyCxA" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_O0mhcnFHEeu7jpfeHLyCxA" key="script">
@@ -2256,35 +2242,21 @@
               <operator xmi:type="expression:Operator" xmi:id="_bVqQrXF7EeuV_OhrDb5V1w" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
-          <connectors xmi:type="process:Connector" xmi:id="_NgzqoHDAEeu298oRXxJOxQ" name="test2" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_NgzqoXDAEeu298oRXxJOxQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_NgzqonDAEeu298oRXxJOxQ" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_Ngzqo3DAEeu298oRXxJOxQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_NgzqpHDAEeu298oRXxJOxQ" key="variables"/>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_NgzqpXDAEeu298oRXxJOxQ" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_NgzqpnDAEeu298oRXxJOxQ" name="test2()" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;logger.severe(&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;);&#xA;logger.severe(&quot;*wwwwwwwwwwwwwwwwwwwwww***********111111111111***&quot;);&#xA;for (item in reserveGrades){&#xA;&#x9;logger.severe(item.toString())&#xA;&#x9;logger.severe(&quot;reserv *********&quot;);&#xA;&#x9;for(student in item.reserveStudents){&#xA;&#x9;&#x9;logger.severe(student.email.toString())&#xA;&#x9;}&#xA;&#x9;logger.severe(&quot;qualify *********&quot;);&#xA;&#x9;for(student in item.qualifyStudents){&#xA;&#x9;&#x9;logger.severe(student.email.toString())&#xA;&#x9;}&#xA;&#x9;logger.severe(&quot;notQualify *********&quot;);&#xA;&#x9;for(student in item.notQualifyStudent){&#xA;&#x9;&#x9;logger.severe(student.email.toString())&#xA;&#x9;}&#xA;}&#xA;logger.severe(&quot;*wwwwwwwwwwwwwwwwwwwwww***********222222222222***&quot;);&#xA;for(item in studentSyllabusObj){&#xA;&#x9;logger.severe(item.toString())&#xA;}&#xA;logger.severe(&quot;*wwwwwwwwwwwwwwwwwwwwww***********333333333333***&quot;);&#xA;for(item in listStudents){&#xA;&#x9;logger.severe(item.toString())&#xA;}&#xA;logger.severe(&quot;*wwwwwwwwwwwwwwwwwwwwww***********444444444444***&quot;);&#xA;for(item in studentUsers){&#xA;&#x9;logger.severe(item.toString())&#xA;}&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_0FBbcHF9EeuV_OhrDb5V1w" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_0FBbcXF9EeuV_OhrDb5V1w" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_0FBbcnF9EeuV_OhrDb5V1w" name="listStudents" multiple="true" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_0FCCgHF9EeuV_OhrDb5V1w" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                </expression>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_NgzqqHDAEeu298oRXxJOxQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_NgzqqXDAEeu298oRXxJOxQ"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_NgzqqnDAEeu298oRXxJOxQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_Ngzqq3DAEeu298oRXxJOxQ" name="result" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_NgzqrHDAEeu298oRXxJOxQ" type="ASSIGNMENT"/>
-            </outputs>
-          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_7iQsQHGBEeuYMuCMXEcOJQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_7iQsQXGBEeuYMuCMXEcOJQ" name="indexReserved" content="indexReserved" type="TYPE_VARIABLE" returnType="java.lang.Integer">
               <referencedElements xmi:type="process:Data" xmi:id="_8Tc4oHGBEeuYMuCMXEcOJQ" name="indexReserved" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_7iQsQnGBEeuYMuCMXEcOJQ" name="setDefaultIndex()" content="Integer newIndex = 0;&#xA;&#xA;return newIndex;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer"/>
             <operator xmi:type="expression:Operator" xmi:id="_7iQsQ3GBEeuYMuCMXEcOJQ" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_UnPHAHIOEeuJ0MOecJdBVA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_UnPHAXIOEeuJ0MOecJdBVA" name="reserveGradesString" content="reserveGradesString" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_YGSAwHIOEeuJ0MOecJdBVA" name="reserveGradesString" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_UnPHAnIOEeuJ0MOecJdBVA" name="setNewReserveGradesString()" content="def builder = new groovy.json.JsonBuilder(reserveGrades);&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_W0aJMHIOEeuJ0MOecJdBVA" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_UnPHA3IOEeuJ0MOecJdBVA" type="ASSIGNMENT"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_dyC78HCpEeuluuhB0SCOWA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_dyC78XCpEeuluuhB0SCOWA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -2444,9 +2416,9 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_ECF_U3GCEeuYMuCMXEcOJQ" type="ASSIGNMENT"/>
           </operations>
-          <loopCondition xmi:type="expression:Expression" xmi:id="_tVPM43GBEeuYMuCMXEcOJQ" name="loopWhile()" content="return ( indexReserved &lt; studentUsers.size() );" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-            <referencedElements xmi:type="process:JavaObjectData" xmi:id="_6OO4kHGBEeuYMuCMXEcOJQ" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-            <referencedElements xmi:type="process:Data" xmi:id="_6OPfoHGBEeuYMuCMXEcOJQ" name="indexReserved" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_tVPM43GBEeuYMuCMXEcOJQ" name="loopWhile()" content="return ( indexReserved &lt; studentUsersReserved.size() );" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+            <referencedElements xmi:type="process:Data" xmi:id="_7sBDwHIGEeuJ0MOecJdBVA" name="indexReserved" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+            <referencedElements xmi:type="process:JavaObjectData" xmi:id="_7sBDwXIGEeuJ0MOecJdBVA" name="studentUsersReserved" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
           </loopCondition>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_tVPM5HGBEeuYMuCMXEcOJQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_tVPM5XGBEeuYMuCMXEcOJQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -2632,9 +2604,9 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_wAQoslkXEeuJIr4cTKuYsA" name="student" content="student" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_wAQosVkXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_n4TJIFzzEeuCL6OsnlvZyg" name="Tiempo Límite" outgoing="_IT0FkGiiEeu4QMMChlZ5tw">
-            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;return 240000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_sG4wsHIAEeuJ0MOecJdBVA" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_sG4wsXIAEeuJ0MOecJdBVA" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;return 150000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="_P_LeIHILEeuJ0MOecJdBVA" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_P_LeIXILEeuJ0MOecJdBVA" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <BoundaryIntermediateEvents xmi:type="process:NonInterruptingBoundaryTimerEvent" xmi:id="_qdzXUF9aEeuVVLsH7l3cUw" name="1 día despúes" outgoing="_Quz0IF9bEeuVVLsH7l3cUw">
@@ -5123,7 +5095,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_MDpiwGTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_MDpiwmTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_o-5KEGTQEeuzaNnnrgaTTA" name="EX01" outgoing="_6nwzEGpTEeubDeMomNAFEw" incoming="_cGNAYGTQEeuzaNnnrgaTTA _dT0qEGTQEeuzaNnnrgaTTA _uQUAYGTQEeuzaNnnrgaTTA">
+        <elements xmi:type="process:XORGateway" xmi:id="_o-5KEGTQEeuzaNnnrgaTTA" name="EX01" outgoing="_6nwzEGpTEeubDeMomNAFEw" incoming="_cGNAYGTQEeuzaNnnrgaTTA _dT0qEGTQEeuzaNnnrgaTTA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_cGFEkWTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_cGFEkGTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_cGFEkmTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
@@ -5359,6 +5331,11 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_2BmLYGTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_2BmLYmTQEeuzaNnnrgaTTA" name="" content="" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_MjHjwHIHEeuJ0MOecJdBVA" name="Final de Notificar" incoming="_uQUAYGTQEeuzaNnnrgaTTA">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_MjewIXIHEeuJ0MOecJdBVA" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_MjewIHIHEeuJ0MOecJdBVA" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_MjewInIHEeuJ0MOecJdBVA" name="" content="" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_gBulUGTREeuzaNnnrgaTTA" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan">
         <defaultValue xmi:type="expression:Expression" xmi:id="_gBulUWTREeuzaNnnrgaTTA" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
@@ -5441,7 +5418,7 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_dT0qEWTQEeuzaNnnrgaTTA"/>
         <condition xmi:type="expression:Expression" xmi:id="_dT0qEmTQEeuzaNnnrgaTTA" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_uQUAYGTQEeuzaNnnrgaTTA" name="SI" target="_o-5KEGTQEeuzaNnnrgaTTA" source="_8GSHIGTPEeuzaNnnrgaTTA">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_uQUAYGTQEeuzaNnnrgaTTA" name="SI" target="_MjHjwHIHEeuJ0MOecJdBVA" source="_8GSHIGTPEeuzaNnnrgaTTA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_uQUAYWTQEeuzaNnnrgaTTA"/>
         <condition xmi:type="expression:Expression" xmi:id="_uQUAYmTQEeuzaNnnrgaTTA" name="checkTimeAndCompleted()" content="&#xA;Boolean isTimeLimit = false;&#xA;Boolean areActionsCompleted = true;&#xA;&#xA;def duration;&#xA;&#xA;Date limitDate = actualDate.plus(improvePlan.duration);&#xA;&#xA;use(groovy.time.TimeCategory) {&#xA;&#x9;duration = new Date() - limitDate;&#xA;}&#xA;&#xA;if(duration.days > 0){&#xA;&#x9;isTimeLimit = true;&#xA;}&#xA;&#xA;for (action in improvePlan.improveActions){&#xA;&#x9;if(!action.completed){&#xA;&#x9;&#x9;areActionsCompleted = false;&#xA;&#x9;}&#xA;}&#xA;&#xA;return isTimeLimit || areActionsCompleted;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
           <referencedElements xmi:type="process:Data" xmi:id="_wsTKkGTkEeuzaNnnrgaTTA" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
@@ -6015,6 +5992,12 @@
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2BoAkWTQEeuzaNnnrgaTTA" x="1194" y="301"/>
             </children>
+            <children xmi:type="notation:Shape" xmi:id="_Mjn6EHIHEeuJ0MOecJdBVA" type="3003" element="_MjHjwHIHEeuJ0MOecJdBVA" fontName="Fira Sans">
+              <children xmi:type="notation:DecorationNode" xmi:id="_Mjq9YHIHEeuJ0MOecJdBVA" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Mjq9YXIHEeuJ0MOecJdBVA" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MjohIHIHEeuJ0MOecJdBVA" x="545" y="215"/>
+            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_e9xwwWWcEeuR799rSR61XA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_e9xwwmWcEeuR799rSR61XA" fontName="Fira Sans"/>
@@ -6366,14 +6349,14 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dT14MmTQEeuzaNnnrgaTTA" points="[-7, -25, -164, 72]$[-7, -98, -164, -1]$[137, -98, -20, -1]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dT4UcGTQEeuzaNnnrgaTTA" id="(1.0,1.0)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_uQlGIGTQEeuzaNnnrgaTTA" type="4001" element="_uQUAYGTQEeuzaNnnrgaTTA" source="_8GVKcWTPEeuzaNnnrgaTTA" target="_o--CkGTQEeuzaNnnrgaTTA" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_uQlGIGTQEeuzaNnnrgaTTA" type="4001" element="_uQUAYGTQEeuzaNnnrgaTTA" source="_8GVKcWTPEeuzaNnnrgaTTA" target="_Mjn6EHIHEeuJ0MOecJdBVA" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_uQltMmTQEeuzaNnnrgaTTA" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_uQmUQGTQEeuzaNnnrgaTTA" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_uQltMGTQEeuzaNnnrgaTTA" fontName="Fira Sans"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uQltMWTQEeuzaNnnrgaTTA" points="[-31, 3, -72, -161]$[-31, 85, -72, -79]$[46, 85, 5, -79]$[46, 155, 5, -9]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uQltMWTQEeuzaNnnrgaTTA" points="[-23, 11, 0, -68]$[-23, 78, 0, -1]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uQp-oGTQEeuzaNnnrgaTTA" id="(1.0,0.6976744186046512)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lGcMGpTEeubDeMomNAFEw" id="(0.37209302325581395,0.20930232558139536)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VGD1MHIHEeuJ0MOecJdBVA" id="(0.43333333333333335,0.03333333333333333)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_2BtgIGTQEeuzaNnnrgaTTA" type="4001" element="_2BsSAGTQEeuzaNnnrgaTTA" source="_x7vJQGTQEeuzaNnnrgaTTA" target="_2BoAkGTQEeuzaNnnrgaTTA" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_2BuuQGTQEeuzaNnnrgaTTA" type="6001">

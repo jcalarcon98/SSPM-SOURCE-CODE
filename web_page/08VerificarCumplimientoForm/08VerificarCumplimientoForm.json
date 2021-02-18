@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "08VerificarCumplimientoForm",
   "name" : "08VerificarCumplimientoForm",
-  "lastUpdate" : 1612423206514,
+  "lastUpdate" : 1613670275769,
   "rows" : [
     [
       {
@@ -350,7 +350,7 @@
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "<b>Evidences</b>"
+                                      "value" : "<b>Evidencias</b>"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -476,7 +476,7 @@
                                           },
                                           "placeholder" : {
                                             "type" : "constant",
-                                            "value" : "Browse to update the file..."
+                                            "value" : "Subir evidencia ..."
                                           },
                                           "dimension" : {
                                             "type" : "constant",
@@ -631,7 +631,7 @@
                                     },
                                     "label" : {
                                       "type" : "interpolation",
-                                      "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Add File"
+                                      "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Añadir Evidencia"
                                     },
                                     "dataToSend" : {
                                       "type" : "expression"
