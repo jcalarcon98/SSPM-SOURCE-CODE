@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1613511805043,
+  "lastUpdate" : 1613616966296,
   "rows" : [
     [
       {
@@ -197,7 +197,7 @@
                 },
                 "hidden" : {
                   "type" : "expression",
-                  "value" : "caseOverview.documentRefs"
+                  "value" : "openStudentsFile || archivedStudentsFile"
                 },
                 "repeatedCollection" : {
                   "type" : "variable",
@@ -223,12 +223,12 @@
                         "value" : ""
                       },
                       "hidden" : {
-                        "type" : "constant",
-                        "value" : false
+                        "type" : "expression",
+                        "value" : "openStudentsFile"
                       },
                       "text" : {
                         "type" : "interpolation",
-                        "value" : "<div class=\"alert alert-info\" translate><i class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></i> No existen documentos</div>"
+                        "value" : "<div class=\"alert alert-info\" translate><i class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></i> Aún no existen documentos</div>"
                       },
                       "alignment" : {
                         "type" : "constant",
@@ -275,18 +275,18 @@
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : "padding-x-xl"
+                  "value" : ""
                 },
                 "hidden" : {
-                  "type" : "constant",
-                  "value" : false
+                  "type" : "expression",
+                  "value" : "!openStudentsFile"
                 },
                 "repeatedCollection" : {
                   "type" : "variable",
                   "value" : ""
                 }
               },
-              "reference" : "a5016da6-35c1-406e-91cb-f9d8ad14ac6c",
+              "reference" : "8b2df28d-3b2c-4499-be05-0a0c60900e7e",
               "hasValidationError" : false,
               "id" : "pbContainer",
               "rows" : [
@@ -302,18 +302,18 @@
                     "propertyValues" : {
                       "cssClasses" : {
                         "type" : "constant",
-                        "value" : "margin-top-md"
+                        "value" : ""
                       },
                       "hidden" : {
                         "type" : "expression",
-                        "value" : "caseOverview.documentRefs.length === 0"
+                        "value" : "!openSillabusFile && !openStudentsFile"
                       },
                       "repeatedCollection" : {
                         "type" : "variable",
-                        "value" : "caseOverview.documentRefs"
+                        "value" : ""
                       }
                     },
-                    "reference" : "6f5594fa-aa76-448a-bb1b-2bb878062e70",
+                    "reference" : "671f235f-ace0-432b-a0dc-808d82b14f43",
                     "hasValidationError" : false,
                     "id" : "pbContainer",
                     "rows" : [
@@ -321,7 +321,10 @@
                         {
                           "type" : "component",
                           "dimension" : {
-                            "xs" : 12
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
                           },
                           "propertyValues" : {
                             "cssClasses" : {
@@ -332,306 +335,494 @@
                               "type" : "constant",
                               "value" : false
                             },
-                            "labelHidden" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "label" : {
-                              "type" : "interpolation",
-                              "value" : "Default label"
-                            },
-                            "labelPosition" : {
-                              "type" : "constant",
-                              "value" : "top"
-                            },
-                            "labelWidth" : {
-                              "type" : "constant",
-                              "value" : 4
-                            },
-                            "allowHTML" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
                             "text" : {
                               "type" : "interpolation",
-                              "value" : "<strong class=\"text-capitalize\">{{$item.name}}</strong>\n{{$item.description  ? \"<br/><em>\" + $item.description + \"</em>\"  : \"\"}}"
+                              "value" : "<b>Archivos CSV ingresados por la Dirección de Carrera"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
                             },
                             "alignment" : {
                               "type" : "constant",
                               "value" : "left"
                             }
                           },
-                          "reference" : "31e263cb-f875-4c6c-8dbf-f68cb804fc89",
+                          "reference" : "d82bfba9-5f98-4b4d-bbcf-a82ba7fefc60",
                           "hasValidationError" : false,
-                          "id" : "pbText"
+                          "id" : "pbTitle"
                         }
                       ],
                       [
                         {
-                          "type" : "container",
-                          "dimension" : {
-                            "xs" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
-                              "type" : "expression",
-                              "value" : "$item.documents.length > 0"
-                            },
-                            "repeatedCollection" : {
-                              "type" : "variable",
-                              "value" : ""
-                            }
-                          },
-                          "reference" : "b79b8e33-a5b2-4129-a8fd-185e0219a156",
-                          "hasValidationError" : false,
-                          "id" : "pbContainer",
-                          "rows" : [
-                            [
-                              {
-                                "type" : "component",
-                                "dimension" : {
-                                  "xs" : 12
-                                },
-                                "propertyValues" : {
-                                  "cssClasses" : {
-                                    "type" : "constant",
-                                    "value" : ""
-                                  },
-                                  "hidden" : {
-                                    "type" : "constant",
-                                    "value" : false
-                                  },
-                                  "labelHidden" : {
-                                    "type" : "constant",
-                                    "value" : true
-                                  },
-                                  "label" : {
-                                    "type" : "interpolation",
-                                    "value" : "Default label"
-                                  },
-                                  "labelPosition" : {
-                                    "type" : "constant",
-                                    "value" : "top"
-                                  },
-                                  "labelWidth" : {
-                                    "type" : "constant",
-                                    "value" : 4
-                                  },
-                                  "allowHTML" : {
-                                    "type" : "constant",
-                                    "value" : true
-                                  },
-                                  "text" : {
-                                    "type" : "interpolation",
-                                    "value" : "<em>No file attached to this document</em>"
-                                  },
-                                  "alignment" : {
-                                    "type" : "constant",
-                                    "value" : "left"
-                                  }
-                                },
-                                "reference" : "637aaf2a-13ef-43c1-a2f8-a976dadb2645",
-                                "hasValidationError" : false,
-                                "id" : "pbText"
-                              }
-                            ]
-                          ]
-                        }
-                      ],
-                      [
-                        {
-                          "type" : "container",
+                          "type" : "fragment",
                           "dimension" : {
                             "xs" : 12,
+                            "sm" : 12,
                             "md" : 12,
                             "lg" : 12
                           },
                           "propertyValues" : {
                             "cssClasses" : {
                               "type" : "constant",
-                              "value" : "col-md-6 col-lg-3 padding-x-lg"
+                              "value" : ""
                             },
                             "hidden" : {
                               "type" : "expression",
-                              "value" : "$item.documents.length === 0"
-                            },
-                            "repeatedCollection" : {
-                              "type" : "variable",
-                              "value" : "$item.documents"
+                              "value" : "!openStudentsFile"
                             }
                           },
-                          "reference" : "f6c64337-bb36-4e71-8c14-a0278a25317d",
+                          "reference" : "ac207790-8d15-449b-8e18-b900ac8308bd",
                           "hasValidationError" : false,
-                          "id" : "pbContainer",
-                          "rows" : [
-                            [
-                              {
-                                "type" : "container",
-                                "dimension" : {
-                                  "xs" : 12
-                                },
-                                "propertyValues" : {
-                                  "cssClasses" : {
-                                    "type" : "constant",
-                                    "value" : "panel panel-default margin-bottom-sm"
-                                  },
-                                  "hidden" : {
-                                    "type" : "constant",
-                                    "value" : false
-                                  },
-                                  "repeatedCollection" : {
-                                    "type" : "variable",
-                                    "value" : ""
-                                  }
-                                },
-                                "reference" : "27d0741f-a393-410f-9891-4441c7549583",
-                                "hasValidationError" : false,
-                                "id" : "pbContainer",
-                                "rows" : [
-                                  [
-                                    {
-                                      "type" : "component",
-                                      "dimension" : {
-                                        "xs" : 10
-                                      },
-                                      "propertyValues" : {
-                                        "cssClasses" : {
-                                          "type" : "constant",
-                                          "value" : ""
-                                        },
-                                        "hidden" : {
-                                          "type" : "constant",
-                                          "value" : false
-                                        },
-                                        "type" : {
-                                          "type" : "constant",
-                                          "value" : "Process document"
-                                        },
-                                        "url" : {
-                                          "type" : "constant",
-                                          "value" : ""
-                                        },
-                                        "document" : {
-                                          "type" : "variable",
-                                          "value" : "$item"
-                                        },
-                                        "showPreview" : {
-                                          "type" : "constant",
-                                          "value" : false
-                                        }
-                                      },
-                                      "reference" : "71dde46e-e434-4d16-822b-63b8e2d04004",
-                                      "hasValidationError" : false,
-                                      "id" : "pbFileViewer"
-                                    },
-                                    {
-                                      "type" : "component",
-                                      "dimension" : {
-                                        "xs" : 2
-                                      },
-                                      "propertyValues" : {
-                                        "cssClasses" : {
-                                          "type" : "constant",
-                                          "value" : ""
-                                        },
-                                        "hidden" : {
-                                          "type" : "constant",
-                                          "value" : false
-                                        },
-                                        "labelHidden" : {
-                                          "type" : "constant",
-                                          "value" : true
-                                        },
-                                        "label" : {
-                                          "type" : "interpolation",
-                                          "value" : "Default label"
-                                        },
-                                        "labelPosition" : {
-                                          "type" : "constant",
-                                          "value" : "top"
-                                        },
-                                        "labelWidth" : {
-                                          "type" : "constant",
-                                          "value" : 4
-                                        },
-                                        "allowHTML" : {
-                                          "type" : "constant",
-                                          "value" : true
-                                        },
-                                        "text" : {
-                                          "type" : "interpolation",
-                                          "value" : "<small><em>v{{$item.version}}</em></small>"
-                                        },
-                                        "alignment" : {
-                                          "type" : "constant",
-                                          "value" : "right"
-                                        }
-                                      },
-                                      "reference" : "f93a54cb-d541-4ba4-9fe3-78cfe597b1de",
-                                      "hasValidationError" : false,
-                                      "id" : "pbText"
-                                    }
-                                  ],
-                                  [
-                                    {
-                                      "type" : "component",
-                                      "dimension" : {
-                                        "xs" : 12,
-                                        "sm" : 12,
-                                        "md" : 12,
-                                        "lg" : 12
-                                      },
-                                      "propertyValues" : {
-                                        "cssClasses" : {
-                                          "type" : "constant",
-                                          "value" : ""
-                                        },
-                                        "hidden" : {
-                                          "type" : "constant",
-                                          "value" : false
-                                        },
-                                        "labelHidden" : {
-                                          "type" : "constant",
-                                          "value" : true
-                                        },
-                                        "label" : {
-                                          "type" : "interpolation",
-                                          "value" : "Default label"
-                                        },
-                                        "labelPosition" : {
-                                          "type" : "constant",
-                                          "value" : "top"
-                                        },
-                                        "labelWidth" : {
-                                          "type" : "constant",
-                                          "value" : 4
-                                        },
-                                        "allowHTML" : {
-                                          "type" : "constant",
-                                          "value" : true
-                                        },
-                                        "text" : {
-                                          "type" : "interpolation",
-                                          "value" : "<small><span class=\"glyphicon glyphicon-calendar\"></span> Uploaded {{ $item.creationDate | fromNow }}</small>"
-                                        },
-                                        "alignment" : {
-                                          "type" : "constant",
-                                          "value" : "left"
-                                        }
-                                      },
-                                      "reference" : "633d991e-bda1-4de1-9a32-b98ad0ec778b",
-                                      "hasValidationError" : false,
-                                      "id" : "pbText"
-                                    }
-                                  ]
-                                ]
-                              }
-                            ]
-                          ]
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Listado de estudiantes'",
+                            "file" : "openStudentsFile"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "expression",
+                              "value" : "!openSillabusFile"
+                            }
+                          },
+                          "reference" : "09c48bba-74c8-43ef-821d-6813a1e3497d",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Listado  de sílabos'",
+                            "file" : "openSillabusFile"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "2915f2e2-9612-4cd0-adcb-c1f311284881",
+                    "hasValidationError" : false,
+                    "id" : "customSeparator"
+                  }
+                ],
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "openSillabusReports.length === 0"
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "a42bd91a-51c7-48ad-9652-8dc2ab73ebb6",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Reporte de sílabos generado en la presente etapa"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "28d2ae51-d244-4e93-9442-3cb08a2c0ce2",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "expression",
+                              "value" : "!currentSillabusReportFile"
+                            }
+                          },
+                          "reference" : "1e048614-13fe-4b09-8c03-f275eb8549f5",
+                          "hasValidationError" : false,
+                          "id" : "fileViewerURL",
+                          "binding" : {
+                            "title" : "'Reporte de la última calificación de estudiantes'",
+                            "file" : "currentSillabusReportFile"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!archivedSillabusFile"
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "45df6fe8-3377-41bc-8e00-d494e4161152",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "50166a27-47a5-454c-a29f-70c7ce1e64fb",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Archivos CSV ingresados por la Dirección de Carrera"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "ca8dad17-741e-41aa-9eb1-a9b8c5ce5321",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "d7211b2b-6857-44bb-ad10-caa01dcf6bb4",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "file" : "archivedStudentsFile",
+                            "title" : "'Listado de estudiantes'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "24e1f593-b232-4a24-baff-9b57cbc10d62",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "file" : "archivedSillabusFile",
+                            "title" : "'Listado  de sílabos'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "f2ff478a-325b-4218-ba7a-de56f2f138b8",
+                    "hasValidationError" : false,
+                    "id" : "customSeparator"
+                  }
+                ],
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "6487830e-16e0-42e6-a5ff-ebd6b6420bce",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Reportes de sílabos generados"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "4ee5df7d-2f9b-4f70-8ff0-a16b1c5e7420",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "c90423df-0580-4ffb-8b20-990bf0042156",
+                          "hasValidationError" : false,
+                          "id" : "fileViewerURL",
+                          "binding" : {
+                            "title" : "'Mitad de Ciclo'",
+                            "file" : "archivedSillabusMiddleReport"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "745d3c2e-0d8e-4567-9685-0257381fcc4f",
+                          "hasValidationError" : false,
+                          "id" : "fileViewerURL",
+                          "binding" : {
+                            "title" : "'Final de Ciclo'",
+                            "file" : "archivedSillabusEndReport"
+                          }
                         }
                       ]
                     ]
@@ -775,6 +966,61 @@
               "hasValidationError" : false,
               "id" : "timelineWidget"
             }
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "expression",
+            "value" : "!isStudent"
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "f6856737-75de-4079-a151-048886db116c",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "fragment",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "1ae04b6f-14e2-4d4c-823c-2a431316efbd",
+              "hasValidationError" : false,
+              "id" : "headerProcess",
+              "binding" : { }
+            }
           ],
           [
             {
@@ -794,71 +1040,110 @@
                   "type" : "constant",
                   "value" : false
                 },
-                "disabled" : {
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<b>Universidad Nacional de Loja"
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 3"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                }
+              },
+              "reference" : "2cdb5507-fb91-4bce-b995-ae011cb81710",
+              "hasValidationError" : false,
+              "id" : "pbTitle"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
                   "type" : "constant",
                   "value" : false
                 },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
                 "label" : {
                   "type" : "interpolation",
-                  "value" : "Submit"
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "La Universidad Nacional de Loja a través de la expedición de la Resolución 018-R-UNL-2014 del 31 de marzo de 2014 norma la política institucional y la estructura del sistema que facilita el seguimiento al cumplimiento de los sílabos de las diferentes asignaturas de las carreras. El Artículo 3 de la mencionada resolución señala que la Universidad Nacional de Loja garantizará un proceso educativo centrado en el logro de aprendizaje de las y los estudiantes, con la ejecución de la planificación micro curricular y el seguimiento al cumplimiento de los sílabos de las diferentes asignaturas."
                 },
                 "alignment" : {
                   "type" : "constant",
                   "value" : "left"
-                },
-                "buttonStyle" : {
+                }
+              },
+              "reference" : "56090a02-ab0d-4f46-942c-550065b06d53",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
                   "type" : "constant",
-                  "value" : "default"
+                  "value" : ""
                 },
-                "action" : {
-                  "type" : "constant",
-                  "value" : "Submit task"
-                },
-                "assign" : {
+                "hidden" : {
                   "type" : "constant",
                   "value" : false
                 },
-                "url" : {
-                  "type" : "interpolation"
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "El Proceso de Seguimiento al sílabo y plan de mejoras garantiza la participación estudiantil."
                 },
-                "responseStatusCode" : {
-                  "type" : "variable",
-                  "value" : ""
-                },
-                "dataToSend" : {
-                  "type" : "constant"
-                },
-                "dataFromSuccess" : {
-                  "type" : "variable",
-                  "value" : ""
-                },
-                "dataFromError" : {
-                  "type" : "variable",
-                  "value" : ""
-                },
-                "targetUrlOnSuccess" : {
-                  "type" : "interpolation"
-                },
-                "cancelText" : {
+                "level" : {
                   "type" : "constant",
-                  "value" : "Cancelar"
+                  "value" : "Level 2"
                 },
-                "confirmText" : {
+                "alignment" : {
                   "type" : "constant",
-                  "value" : "Sí, continuar"
-                },
-                "titleQuestion" : {
-                  "type" : "constant",
-                  "value" : "¿Está seguro?"
-                },
-                "textQuestion" : {
-                  "type" : "constant",
-                  "value" : "Es una acción que no se puede revertir."
+                  "value" : "center"
                 }
               },
-              "reference" : "6eba4f02-a3ae-4f4f-a9f7-15585a0de195",
+              "reference" : "3834f9d2-9df6-4cca-a4b1-6ed9ef6042d4",
               "hasValidationError" : false,
-              "id" : "customSubmitTaskBtn"
+              "id" : "pbTitle"
             }
           ]
         ]
@@ -1202,9 +1487,9 @@
       "exposed" : false
     },
     "caseId" : {
-      "type" : "urlparameter",
+      "type" : "expression",
       "value" : [
-        "id"
+        "return 1011;"
       ],
       "exposed" : false
     },
@@ -1278,10 +1563,168 @@
       ],
       "exposed" : false
     },
-    "testing" : {
+    "openStudentsCsvFile" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?f=caseId={{caseId}}&f=name=studentsFile"
+      ],
+      "exposed" : false
+    },
+    "openStudentsFile" : {
       "type" : "expression",
       "value" : [
-        "console.log($data.caseOverview.documentRefs);"
+        "if ($data.openStudentsCsvFile.length > 0){",
+        "    return $data.openStudentsCsvFile[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "openSillabusCsvFile" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?f=caseId={{caseId}}&f=name=sillabusFile"
+      ],
+      "exposed" : false
+    },
+    "openSillabusFile" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.openSillabusCsvFile.length > 0) {",
+        "    return $data.openSillabusCsvFile[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "openSillabusReports" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?f=caseId={{caseId}}&f=name=syllabusTrackingReport"
+      ],
+      "exposed" : false
+    },
+    "openSillabusMiddleReport" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.openSillabusReports.length > 0) {",
+        "    return $data.openSillabusReports[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "archivedStudentsCsvFile" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?f=caseId={{caseId}}&f=name=studentsFile"
+      ],
+      "exposed" : false
+    },
+    "archivedStudentsFile" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.archivedStudentsCsvFile.length > 0){",
+        "    return $data.archivedStudentsCsvFile[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "archivedSillabussCsvFile" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?f=caseId={{caseId}}&f=name=studentsFile"
+      ],
+      "exposed" : false
+    },
+    "archivedSillabusFile" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.archivedSillabussCsvFile.length > 0) {",
+        "    return $data.archivedSillabussCsvFile[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "archivedSillabusReports" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?f=caseId={{caseId}}&f=name=syllabusTrackingReport"
+      ],
+      "exposed" : false
+    },
+    "archivedSillabusMiddleReport" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.archivedSillabusReports.length > 0){",
+        "    return $data.archivedSillabusReports[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "archivedSillabusEndReport" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.archivedSillabusReports.length > 1){",
+        "    return $data.archivedSillabusReports[1];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "currentSillabusReportFile" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.openSillabusReports.length > 0) {",
+        "    return $data.openSillabusReports[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "session" : {
+      "type" : "url",
+      "value" : [
+        "../API/system/session/unusedid"
+      ],
+      "exposed" : false
+    },
+    "userId" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.session) {",
+        "   return $data.session.user_id; ",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "studentsGroup" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/group?&f=name=Students"
+      ],
+      "exposed" : false
+    },
+    "studentsGroupId" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.studentsGroup) {",
+        "    return $data.studentsGroup[0].id;",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "membership" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/membership?&f=user_id={{userId}}"
+      ],
+      "exposed" : false
+    },
+    "isStudent" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.membership) {",
+        "    const isStudent = $data.membership[0].group_id === $data.studentsGroupId; ",
+        "    return isStudent;",
+        "}",
+        "",
+        "return false;"
       ],
       "exposed" : false
     }
