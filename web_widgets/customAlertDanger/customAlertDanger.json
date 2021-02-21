@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "customAlertDanger",
   "name" : "alertDanger",
-  "lastUpdate" : 1613434270677,
+  "lastUpdate" : 1613874967158,
   "template" : "@customAlertDanger.tpl.html",
   "controller" : "@customAlertDanger.ctrl.js",
   "custom" : true,
@@ -43,6 +43,14 @@
       "help" : "See the next url:  https://codepen.io/badboy/pen/BKPQWr/",
       "type" : "text",
       "bond" : "constant"
+    },
+    {
+      "label" : "Font Color",
+      "name" : "fontColor",
+      "caption" : "Font Color",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "expression"
     }
   ],
   "assets" : [

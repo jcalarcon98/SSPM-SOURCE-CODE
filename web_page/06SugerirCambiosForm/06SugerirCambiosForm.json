@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "06SugerirCambiosForm",
   "name" : "06SugerirCambiosForm",
-  "lastUpdate" : 1612141359773,
+  "lastUpdate" : 1613937516808,
   "rows" : [
     [
       {
@@ -307,23 +307,11 @@
                             "hidden" : {
                               "type" : "constant",
                               "value" : false
-                            },
-                            "text" : {
-                              "type" : "interpolation",
-                              "value" : "<b>Tiempo establecido</b>"
-                            },
-                            "level" : {
-                              "type" : "constant",
-                              "value" : "Level 4"
-                            },
-                            "alignment" : {
-                              "type" : "constant",
-                              "value" : "left"
                             }
                           },
-                          "reference" : "1c7bad20-d135-4404-a68b-e1ef406c9d8c",
+                          "reference" : "0880877b-55e2-42c3-9a75-a7eaf264f4c4",
                           "hasValidationError" : false,
-                          "id" : "pbTitle"
+                          "id" : "customSeparator"
                         }
                       ],
                       [
@@ -341,137 +329,246 @@
                               "value" : ""
                             },
                             "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "labelHidden" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "label" : {
-                              "type" : "interpolation",
-                              "value" : "Default label"
-                            },
-                            "labelPosition" : {
-                              "type" : "constant",
-                              "value" : "top"
-                            },
-                            "labelWidth" : {
-                              "type" : "constant",
-                              "value" : 4
-                            },
-                            "allowHTML" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "text" : {
-                              "type" : "interpolation",
-                              "value" : "El tiempo establecido para la ejecución del <b>Plan de Mejoras</b> es de <b>{{ actualImprovePlan.duration }}</b> días."
-                            },
-                            "alignment" : {
-                              "type" : "constant",
-                              "value" : "left"
-                            }
-                          },
-                          "reference" : "18f65db0-3b2b-4048-ab91-42c8f54232cd",
-                          "hasValidationError" : false,
-                          "id" : "pbText"
-                        }
-                      ],
-                      [
-                        {
-                          "type" : "component",
-                          "dimension" : {
-                            "xs" : 12,
-                            "sm" : 12,
-                            "md" : 12,
-                            "lg" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "text" : {
-                              "type" : "interpolation",
-                              "value" : "<b>Acciones de Mejora a Implementarse</b>"
-                            },
-                            "level" : {
-                              "type" : "constant",
-                              "value" : "Level 4"
-                            },
-                            "alignment" : {
-                              "type" : "constant",
-                              "value" : "left"
-                            }
-                          },
-                          "reference" : "9790caea-a080-484f-93b4-3b3325c6be45",
-                          "hasValidationError" : false,
-                          "id" : "pbTitle"
-                        }
-                      ],
-                      [
-                        {
-                          "type" : "component",
-                          "dimension" : {
-                            "xs" : 12,
-                            "sm" : 12,
-                            "md" : 12,
-                            "lg" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "allowHTML" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "headers" : {
-                              "type" : "constant",
-                              "value" : [
-                                "Acción de Mejora"
-                              ]
-                            },
-                            "content" : {
                               "type" : "expression",
-                              "value" : "actualImprovePlan_improveActions"
+                              "value" : "actualImprovePlan_improveActions.length > 0"
                             },
-                            "columnsKey" : {
+                            "message" : {
                               "type" : "constant",
-                              "value" : [
-                                "description"
-                              ]
+                              "value" : "<b>Nota: </b> La comisión de evaluación interna no ha indicado acciones de mejora a implementar."
                             },
-                            "selectedRow" : {
+                            "show" : {
+                              "type" : "constant",
+                              "value" : true
+                            },
+                            "type" : {
+                              "type" : "constant",
+                              "value" : "info"
+                            },
+                            "color" : {
+                              "type" : "constant"
+                            },
+                            "fontColor" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "21d7ede4-a718-4c31-9154-5c2fb91cb437",
+                          "hasValidationError" : false,
+                          "id" : "customAlertDanger"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "container",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "expression",
+                              "value" : "!actualImprovePlan_improveActions ||  actualImprovePlan_improveActions.length === 0"
+                            },
+                            "repeatedCollection" : {
                               "type" : "variable",
                               "value" : ""
-                            },
-                            "striped" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "condensed" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "bordered" : {
-                              "type" : "constant",
-                              "value" : false
                             }
                           },
-                          "reference" : "8e553a63-4722-4004-b5bb-8ea0c5b6db00",
+                          "reference" : "92c05d53-44b8-4523-b10d-a3319a3c2b6e",
                           "hasValidationError" : false,
-                          "id" : "pbTable"
+                          "id" : "pbContainer",
+                          "rows" : [
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b>Tiempo establecido</b>"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 4"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "1c7bad20-d135-4404-a68b-e1ef406c9d8c",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Default label"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 4
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "El tiempo establecido para la ejecución del <b>Plan de Mejoras</b> es de <b>{{ actualImprovePlan.duration }}</b> días."
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "18f65db0-3b2b-4048-ab91-42c8f54232cd",
+                                "hasValidationError" : false,
+                                "id" : "pbText"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b>Acciones de Mejora a Implementarse</b>"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 4"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "9790caea-a080-484f-93b4-3b3325c6be45",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "headers" : {
+                                    "type" : "constant",
+                                    "value" : [
+                                      "Acción de Mejora"
+                                    ]
+                                  },
+                                  "content" : {
+                                    "type" : "expression",
+                                    "value" : "actualImprovePlan_improveActions"
+                                  },
+                                  "columnsKey" : {
+                                    "type" : "constant",
+                                    "value" : [
+                                      "description"
+                                    ]
+                                  },
+                                  "selectedRow" : {
+                                    "type" : "variable",
+                                    "value" : ""
+                                  },
+                                  "striped" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "condensed" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "bordered" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "8e553a63-4722-4004-b5bb-8ea0c5b6db00",
+                                "hasValidationError" : false,
+                                "id" : "pbTable"
+                              }
+                            ]
+                          ]
                         }
                       ]
                     ]
@@ -655,6 +752,30 @@
                       ],
                       [
                         {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "c12dc7d3-380d-4b33-adb3-82ed0aefebe8",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
                           "type" : "container",
                           "dimension" : {
                             "xs" : 12,
@@ -700,7 +821,7 @@
                                   },
                                   "text" : {
                                     "type" : "interpolation",
-                                    "value" : "<b>Por favor indicar las observaciones encontradas"
+                                    "value" : "<b class='control-label--required'><b>Por favor indicar las observaciones encontradas"
                                   },
                                   "level" : {
                                     "type" : "constant",
@@ -812,7 +933,7 @@
                                   },
                                   "placeholder" : {
                                     "type" : "constant",
-                                    "value" : "Browse to upload a new file..."
+                                    "value" : "Seleccionar archivo con sugerencias"
                                   },
                                   "dimension" : {
                                     "type" : "constant",
@@ -904,7 +1025,7 @@
                             },
                             "disabled" : {
                               "type" : "expression",
-                              "value" : "$form.$invalid"
+                              "value" : "$form.$invalid || ( !formInput.changes && formInput.suggestionsInput.trim() === '')"
                             },
                             "alignment" : {
                               "type" : "constant",
@@ -1016,17 +1137,17 @@
   ],
   "assets" : [
     {
-      "id" : "08727c3e-fb9b-4b47-bacf-f7924b98ebcf",
-      "name" : "style.css",
-      "type" : "css",
-      "order" : 0,
-      "external" : false
-    },
-    {
       "id" : "42d78140-0af5-43fb-9098-83aa07bf6516",
       "name" : "unlLogo.png",
       "type" : "img",
       "order" : 1,
+      "external" : false
+    },
+    {
+      "id" : "08727c3e-fb9b-4b47-bacf-f7924b98ebcf",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
       "external" : false
     },
     {

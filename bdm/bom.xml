@@ -52,7 +52,7 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.ImprovePlan">
             <fields>
-                <field type="INTEGER" length="255" name="duration" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="duration" nullable="true" collection="false"/>
                 <relationField type="COMPOSITION" reference="com.company.model.ImproveAction" fetchType="LAZY" name="improveActions" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
