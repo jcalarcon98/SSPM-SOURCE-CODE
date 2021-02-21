@@ -2718,6 +2718,19 @@
               <inputTypes>java.util.List</inputTypes>
             </operator>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_yRyGgHSOEeuLpZN-Z3PlmA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_yRyGgXSOEeuLpZN-Z3PlmA" name="actualSheet" content="actualSheet" type="TYPE_VARIABLE" returnType="com.company.model.Sheet">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zAwsYHSOEeuLpZN-Z3PlmA" name="actualSheet" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Sheet"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_yRyGgnSOEeuLpZN-Z3PlmA" name="denominationInput" content="denominationInput" type="TYPE_CONTRACT_INPUT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_O0FpYHSPEeuLpZN-Z3PlmA" name="denominationInput">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_O0FpYXSPEeuLpZN-Z3PlmA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_yRyGg3SOEeuLpZN-Z3PlmA" type="JAVA_METHOD" expression="setDenomination">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
           <operations xmi:type="expression:Operation" xmi:id="_BqmbsGDoEeuPS9Z04F0ZTQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_BqmbsWDoEeuPS9Z04F0ZTQ" name="currentGrades" content="currentGrades" type="TYPE_VARIABLE" returnType="java.util.List">
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_CZZbYGDoEeuPS9Z04F0ZTQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
@@ -2829,12 +2842,9 @@
             <inputs xmi:type="process:ContractInput" xmi:id="_3J4DgFz4EeuCL6OsnlvZyg" name="userId">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_3J4DgVz4EeuCL6OsnlvZyg"/>
             </inputs>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_kHgP1Vt5Eeu9pYy-wQwCwA" expression="actualSheetInput?.answers?.question.flatten().every{it!=null}" errorMessage="question is mandatory for Answer" name="mandatory_actualSheetInput_answers_question">
-              <inputNames>actualSheetInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_kHgP1lt5Eeu9pYy-wQwCwA" expression="actualSheetInput?.answers?.alternative.flatten().every{it!=null}" errorMessage="alternative is mandatory for Answer" name="mandatory_actualSheetInput_answers_alternative">
-              <inputNames>actualSheetInput</inputNames>
-            </constraints>
+            <inputs xmi:type="process:ContractInput" xmi:id="_M87TcHSPEeuLpZN-Z3PlmA" name="denominationInput">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_M87TcXSPEeuLpZN-Z3PlmA"/>
+            </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_-NmRI1kXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>

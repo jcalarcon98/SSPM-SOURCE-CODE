@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1613667036120,
+  "lastUpdate" : 1613946413655,
   "rows" : [
     [
       {
@@ -831,6 +831,7 @@
               ]
             }
           ],
+          [ ],
           [
             {
               "type" : "component",
@@ -1487,9 +1488,9 @@
       "exposed" : false
     },
     "caseId" : {
-      "type" : "urlparameter",
+      "type" : "expression",
       "value" : [
-        "id"
+        "return 3013;"
       ],
       "exposed" : false
     },
@@ -1725,6 +1726,38 @@
         "}",
         "",
         "return false;"
+      ],
+      "exposed" : false
+    },
+    "currentPeriodLink" : {
+      "type" : "expression",
+      "value" : [
+        "let linkPeriod;",
+        "",
+        "if($data.caseOverview){",
+        "    for (let currentLink of $data.caseOverview.businessDataRefs) {",
+        "        if(currentLink.name === 'period (com.company.model.Period)') {",
+        "            linkPeriod = currentLink.link;",
+        "            return linkPeriod;",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "period" : {
+      "type" : "url",
+      "value" : [
+        "../{{currentPeriodLink}}"
+      ],
+      "exposed" : false
+    },
+    "periodId" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.period){",
+        "    return $data.period.persistenceId;",
+        "}"
       ],
       "exposed" : false
     }
