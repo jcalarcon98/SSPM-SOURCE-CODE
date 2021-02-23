@@ -2,33 +2,8 @@
   "modelVersion" : "2.0",
   "id" : "06SugerirCambiosForm",
   "name" : "06SugerirCambiosForm",
-  "lastUpdate" : 1614043117263,
+  "lastUpdate" : 1614052315633,
   "rows" : [
-    [
-      {
-        "type" : "fragment",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "d754d0f1-cdc1-47ea-a15f-d5597db9ab75",
-        "hasValidationError" : false,
-        "id" : "headerProcess",
-        "binding" : { }
-      }
-    ],
     [
       {
         "type" : "container",
@@ -41,7 +16,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-bottom-xl padding-lg"
           },
           "hidden" : {
             "type" : "constant",
@@ -56,6 +31,31 @@
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
+          [
+            {
+              "type" : "fragment",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "d754d0f1-cdc1-47ea-a15f-d5597db9ab75",
+              "hasValidationError" : false,
+              "id" : "headerProcess",
+              "binding" : { }
+            }
+          ],
           [
             {
               "type" : "component",
@@ -969,6 +969,30 @@
                         {
                           "type" : "component",
                           "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "5bf8c937-962f-4664-b439-3a28db054d32",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
                             "md" : 12,
                             "sm" : 12,
                             "xs" : 12,
@@ -1110,30 +1134,6 @@
                           "reference" : "c4cc47a6-a46b-4965-a446-7216fb0c7e2b",
                           "hasValidationError" : false,
                           "id" : "customSubmitTaskBtn"
-                        }
-                      ],
-                      [
-                        {
-                          "type" : "component",
-                          "dimension" : {
-                            "xs" : 12,
-                            "sm" : 12,
-                            "md" : 12,
-                            "lg" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            }
-                          },
-                          "reference" : "5bf8c937-962f-4664-b439-3a28db054d32",
-                          "hasValidationError" : false,
-                          "id" : "customSeparator"
                         }
                       ]
                     ]

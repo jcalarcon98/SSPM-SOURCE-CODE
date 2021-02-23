@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1614043735933,
+  "lastUpdate" : 1614049505255,
   "rows" : [
     [
       {
@@ -14,7 +14,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-lg padding-bottom-xl"
           },
           "hidden" : {
             "type" : "constant",
@@ -68,7 +68,7 @@
                 "propertyValues" : {
                   "cssClasses" : {
                     "type" : "constant",
-                    "value" : "mb-10"
+                    "value" : "padding-x"
                   },
                   "hidden" : {
                     "type" : "expression",
@@ -1012,7 +1012,7 @@
                                               "type" : "component",
                                               "dimension" : {
                                                 "xs" : 12,
-                                                "md" : 4,
+                                                "md" : 5,
                                                 "lg" : 4,
                                                 "sm" : 5
                                               },
@@ -1092,7 +1092,7 @@
                                               "type" : "component",
                                               "dimension" : {
                                                 "xs" : 11,
-                                                "md" : 4,
+                                                "md" : 6,
                                                 "lg" : 4,
                                                 "sm" : 6
                                               },
@@ -1172,7 +1172,7 @@
                                               "type" : "component",
                                               "dimension" : {
                                                 "xs" : 1,
-                                                "md" : 4,
+                                                "md" : 1,
                                                 "lg" : 4
                                               },
                                               "propertyValues" : {
@@ -1362,6 +1362,30 @@
                                       }
                                     ]
                                   ]
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    }
+                                  },
+                                  "reference" : "89479e90-97aa-4555-bd06-0fdf5f544a41",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
                                 }
                               ],
                               [
@@ -1662,6 +1686,13 @@
                               "type" : {
                                 "type" : "constant",
                                 "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "ec46d195-c66f-4f2d-bad5-c00609f4d152",
@@ -1927,6 +1958,30 @@
                             "hasValidationError" : false,
                             "id" : "customNextButton"
                           }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "24a7fab6-c6ed-466c-b7b0-a8cb21b859f4",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
                         ]
                       ]
                     }
@@ -1998,6 +2053,49 @@
                             "reference" : "6f72c625-a12e-45e9-9832-2e0aabfebdd6",
                             "hasValidationError" : false,
                             "id" : "pbTitle"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b> Los estudiantes de reserva serán seleccionados por el sistema en caso de que algún estudiante por motivo de fuerza mayor no pueda calificar la ficha de seguimiento al sílabo asignada. </b> Tener en cuenta: si se indica 3 estudiantes de reserva, cada ciclo debe proporcionar 3 estudiantes más que la cantidad de sílabos de ese ciclo. <br>  Por ejemplo: <br>  <b>Decimo 'A' cuenta con 4 sílabos, entonces se debe proporcionar un total de 7 estudiantes para Décimo 'A', 4 estudiantes para calificar cada una de las fichas y 3 estudiantes de reserva."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "a7a89002-2ae7-4a0f-824e-474876b40e05",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
                           }
                         ],
                         [
@@ -2520,6 +2618,30 @@
                             "reference" : "4780c29a-4f3a-4182-93d9-167ad55f65c3",
                             "hasValidationError" : false,
                             "id" : "customNextButton"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "805285a6-1b90-4425-a318-90541c37ecb3",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
                           }
                         ]
                       ]
@@ -3121,6 +3243,30 @@
                           {
                             "type" : "component",
                             "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "8716fc49-18da-4051-9d57-bc82a8e8b81a",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
                               "xs" : 12
                             },
                             "propertyValues" : {
@@ -3294,6 +3440,30 @@
                             "reference" : "c8e2f1df-c29e-4241-8802-cdf77f25b902",
                             "hasValidationError" : false,
                             "id" : "customSubmitTaskBtn"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "2e1e58fa-23f6-476f-b053-d0d3a70380ed",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
                           }
                         ]
                       ]

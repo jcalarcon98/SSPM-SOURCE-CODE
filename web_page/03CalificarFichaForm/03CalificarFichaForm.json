@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1613964644044,
+  "lastUpdate" : 1614051977332,
   "rows" : [
     [
       {
@@ -14,7 +14,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-bottom-xl padding-lg"
           },
           "hidden" : {
             "type" : "constant",
@@ -546,7 +546,7 @@
                                   "type" : "component",
                                   "dimension" : {
                                     "xs" : 12,
-                                    "sm" : 12,
+                                    "sm" : 8,
                                     "md" : 7,
                                     "lg" : 6
                                   },
@@ -596,7 +596,7 @@
                                   "type" : "component",
                                   "dimension" : {
                                     "xs" : 12,
-                                    "sm" : 12,
+                                    "sm" : 4,
                                     "md" : 5,
                                     "lg" : 6
                                   },
@@ -665,6 +665,73 @@
                                 }
                               ]
                             ]
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "1fc81081-4231-4e98-8b20-36f1fedc27d1",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>Información: </b> Una vez culminada la calificación de cada uno de los indicadores, diríjase a la pestaña <b>Finalizar </b> para visualizar un resumen de las respuestas seleccionadas y finalizar la calificación."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "c5dd3350-ba49-4d93-ae31-b0748d87af48",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
                           }
                         ]
                       ]
@@ -889,6 +956,30 @@
                             "reference" : "e415ab11-09ab-4173-9f9d-e809636fc4d3",
                             "hasValidationError" : false,
                             "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "bdd155d5-4801-4356-915c-0992ef09ec39",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
                           }
                         ],
                         [

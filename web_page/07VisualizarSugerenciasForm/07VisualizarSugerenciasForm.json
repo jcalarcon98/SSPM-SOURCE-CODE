@@ -2,33 +2,8 @@
   "modelVersion" : "2.0",
   "id" : "07VisualizarSugerenciasForm",
   "name" : "07VisualizarSugerenciasForm",
-  "lastUpdate" : 1612139794650,
+  "lastUpdate" : 1614052402069,
   "rows" : [
-    [
-      {
-        "type" : "fragment",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "52154db2-d042-4e7f-896a-13f76de900e7",
-        "hasValidationError" : false,
-        "id" : "headerProcess",
-        "binding" : { }
-      }
-    ],
     [
       {
         "type" : "container",
@@ -41,7 +16,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-bottom-xl padding-lg"
           },
           "hidden" : {
             "type" : "constant",
@@ -56,6 +31,31 @@
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
+          [
+            {
+              "type" : "fragment",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "52154db2-d042-4e7f-896a-13f76de900e7",
+              "hasValidationError" : false,
+              "id" : "headerProcess",
+              "binding" : { }
+            }
+          ],
           [
             {
               "type" : "component",

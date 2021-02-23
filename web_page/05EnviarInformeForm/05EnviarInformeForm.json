@@ -2,33 +2,8 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1614045080445,
+  "lastUpdate" : 1614052259655,
   "rows" : [
-    [
-      {
-        "type" : "fragment",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "a0897316-fa1b-470f-8f1a-79f11b3d7cbb",
-        "hasValidationError" : false,
-        "id" : "headerProcess",
-        "binding" : { }
-      }
-    ],
     [
       {
         "type" : "container",
@@ -41,7 +16,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-bottom-xl padding-lg"
           },
           "hidden" : {
             "type" : "constant",
@@ -56,6 +31,31 @@
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
+          [
+            {
+              "type" : "fragment",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "a0897316-fa1b-470f-8f1a-79f11b3d7cbb",
+              "hasValidationError" : false,
+              "id" : "headerProcess",
+              "binding" : { }
+            }
+          ],
           [
             {
               "type" : "component",

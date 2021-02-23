@@ -2,33 +2,8 @@
   "modelVersion" : "2.0",
   "id" : "08VerificarCumplimientoForm",
   "name" : "08VerificarCumplimientoForm",
-  "lastUpdate" : 1614043502083,
+  "lastUpdate" : 1614052724270,
   "rows" : [
-    [
-      {
-        "type" : "fragment",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "f96cd388-c181-4264-a941-dc3fd2c66c56",
-        "hasValidationError" : false,
-        "id" : "headerProcess",
-        "binding" : { }
-      }
-    ],
     [
       {
         "type" : "formContainer",
@@ -38,7 +13,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-bottom-xl padding-lg"
           },
           "hidden" : {
             "type" : "constant",
@@ -58,6 +33,31 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
+            [
+              {
+                "type" : "fragment",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "f96cd388-c181-4264-a941-dc3fd2c66c56",
+                "hasValidationError" : false,
+                "id" : "headerProcess",
+                "binding" : { }
+              }
+            ],
             [
               {
                 "type" : "container",
@@ -324,6 +324,30 @@
                                       }
                                     ]
                                   ]
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    }
+                                  },
+                                  "reference" : "d0b86a5e-f9d5-40be-b5d4-4ea878f390dc",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
                                 }
                               ],
                               [
@@ -974,11 +998,11 @@
                                     },
                                     "condensed" : {
                                       "type" : "constant",
-                                      "value" : false
+                                      "value" : true
                                     },
                                     "bordered" : {
                                       "type" : "constant",
-                                      "value" : false
+                                      "value" : true
                                     }
                                   },
                                   "reference" : "29b38427-50b7-4588-8217-afcfc437e4f4",
@@ -1042,7 +1066,7 @@
                                     },
                                     "message" : {
                                       "type" : "constant",
-                                      "value" : "<b> Todas las acciones de mejora han sido implementadas"
+                                      "value" : "<b>Todas las acciones de mejora han sido implementadas"
                                     },
                                     "show" : {
                                       "type" : "constant",
@@ -1051,6 +1075,13 @@
                                     "type" : {
                                       "type" : "constant",
                                       "value" : "info"
+                                    },
+                                    "color" : {
+                                      "type" : "constant"
+                                    },
+                                    "fontColor" : {
+                                      "type" : "constant",
+                                      "value" : false
                                     }
                                   },
                                   "reference" : "83ff17b2-daec-4f0c-b5cb-e40a33da4cbf",
@@ -1158,16 +1189,100 @@
                                     },
                                     "condensed" : {
                                       "type" : "constant",
-                                      "value" : false
+                                      "value" : true
                                     },
                                     "bordered" : {
                                       "type" : "constant",
-                                      "value" : false
+                                      "value" : true
                                     }
                                   },
                                   "reference" : "83482a8e-68e1-456f-9b89-8e5e5539d2bc",
                                   "hasValidationError" : false,
                                   "id" : "pbTable"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    }
+                                  },
+                                  "reference" : "4b292d3c-a96a-40b2-892a-81ceaed8be04",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "md" : 12,
+                                    "sm" : 12,
+                                    "xs" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "allowHtml" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "hidden" : {
+                                      "type" : "expression",
+                                      "value" : "!formOutput._submitError.message"
+                                    },
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation"
+                                    },
+                                    "text" : {
+                                      "type" : "interpolation",
+                                      "value" : "<strong>Se han encontrado los siguientes errores:</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+                                    },
+                                    "alignment" : {
+                                      "type" : "constant",
+                                      "value" : "left"
+                                    },
+                                    "dimension" : {
+                                      "type" : "constant",
+                                      "value" : 12
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
+                                    }
+                                  },
+                                  "reference" : "2955698d-a582-40b8-9dd6-4e52d4eb36ff",
+                                  "hasValidationError" : false,
+                                  "id" : "pbText",
+                                  "description" : ""
                                 }
                               ],
                               [
@@ -1261,66 +1376,6 @@
                           }
                         }
                       ]
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "allowHTML" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "allowHtml" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "hidden" : {
-                          "type" : "expression",
-                          "value" : "!formOutput._submitError.message"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
-                        },
-                        "label" : {
-                          "type" : "interpolation"
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 4
-                        }
-                      },
-                      "reference" : "2955698d-a582-40b8-9dd6-4e52d4eb36ff",
-                      "hasValidationError" : false,
-                      "id" : "pbText",
-                      "description" : ""
                     }
                   ]
                 ]

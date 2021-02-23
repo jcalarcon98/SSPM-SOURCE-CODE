@@ -3,33 +3,8 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1614044913146,
+  "lastUpdate" : 1614052041992,
   "rows" : [
-    [
-      {
-        "type" : "fragment",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "45fcb673-ed5c-4d0c-b5f9-22c8df48fa5b",
-        "hasValidationError" : false,
-        "id" : "headerProcess",
-        "binding" : { }
-      }
-    ],
     [
       {
         "type" : "formContainer",
@@ -39,7 +14,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-bottom-xl padding-lg"
           },
           "hidden" : {
             "type" : "constant",
@@ -59,6 +34,31 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
+            [
+              {
+                "type" : "fragment",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "45fcb673-ed5c-4d0c-b5f9-22c8df48fa5b",
+                "hasValidationError" : false,
+                "id" : "headerProcess",
+                "binding" : { }
+              }
+            ],
             [
               {
                 "type" : "tabsContainer",

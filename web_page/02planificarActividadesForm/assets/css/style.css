@@ -38,3 +38,7 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .margin-top-25{
     margin-top: 25px;
 }
+
+.padding-xl { padding: 3em; }
+.padding-lg { padding: 1.5em; }
+.padding-bottom-xl { padding-bottom: 3em; }
