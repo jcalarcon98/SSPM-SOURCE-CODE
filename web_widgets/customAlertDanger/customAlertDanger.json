@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "customAlertDanger",
   "name" : "alertDanger",
-  "lastUpdate" : 1613874967158,
+  "lastUpdate" : 1614041906868,
   "template" : "@customAlertDanger.tpl.html",
   "controller" : "@customAlertDanger.ctrl.js",
   "custom" : true,

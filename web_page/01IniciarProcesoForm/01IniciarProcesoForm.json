@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1613663587035,
+  "lastUpdate" : 1614043735933,
   "rows" : [
     [
       {
@@ -3280,7 +3280,7 @@
                               },
                               "confirmText" : {
                                 "type" : "constant",
-                                "value" : "Sí, finalizar"
+                                "value" : "Sí, continuar"
                               },
                               "titleQuestion" : {
                                 "type" : "constant",

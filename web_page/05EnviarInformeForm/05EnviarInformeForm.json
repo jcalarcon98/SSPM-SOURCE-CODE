@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1613885352986,
+  "lastUpdate" : 1614045080445,
   "rows" : [
     [
       {
@@ -1675,71 +1675,39 @@
                         {
                           "type" : "component",
                           "dimension" : {
-                            "md" : 12,
-                            "sm" : 12,
                             "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
                             "lg" : 12
                           },
                           "propertyValues" : {
-                            "removeItem" : {
-                              "type" : "variable"
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
                             },
                             "hidden" : {
                               "type" : "constant",
                               "value" : false
                             },
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "buttonStyle" : {
-                              "type" : "constant",
-                              "value" : "success"
+                            "disabled" : {
+                              "type" : "expression",
+                              "value" : "$form.$invalid  || areEmptyValuesOnImproveActions || !context.reportSSPM_ref.newValue.filename"
                             },
                             "label" : {
                               "type" : "interpolation",
                               "value" : "Finalizar"
                             },
-                            "dataToSend" : {
-                              "type" : "expression",
-                              "value" : "formOutput"
-                            },
-                            "dataFromError" : {
-                              "type" : "variable",
-                              "value" : "formOutput._submitError"
-                            },
-                            "labelHidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "collectionPosition" : {
-                              "type" : "constant"
-                            },
-                            "targetUrlOnSuccess" : {
-                              "type" : "interpolation",
-                              "value" : "/bonita"
-                            },
-                            "action" : {
-                              "type" : "constant",
-                              "value" : "Submit task"
-                            },
-                            "collectionToModify" : {
-                              "type" : "variable"
-                            },
-                            "valueToAdd" : {
-                              "type" : "expression"
-                            },
-                            "disabled" : {
-                              "type" : "expression",
-                              "value" : "$form.$invalid || areEmptyValuesOnImproveActions || !context.reportSSPM_ref.newValue.filename"
-                            },
                             "alignment" : {
                               "type" : "constant",
                               "value" : "center"
                             },
-                            "dimension" : {
+                            "buttonStyle" : {
                               "type" : "constant",
-                              "value" : 12
+                              "value" : "success"
+                            },
+                            "action" : {
+                              "type" : "constant",
+                              "value" : "Submit task"
                             },
                             "assign" : {
                               "type" : "constant",
@@ -1752,23 +1720,42 @@
                               "type" : "variable",
                               "value" : ""
                             },
+                            "dataToSend" : {
+                              "type" : "expression",
+                              "value" : "formOutput"
+                            },
                             "dataFromSuccess" : {
                               "type" : "variable",
                               "value" : ""
                             },
-                            "closeOnSuccess" : {
-                              "type" : "constant",
-                              "value" : false
+                            "dataFromError" : {
+                              "type" : "variable",
+                              "value" : "formOutput._submitError"
                             },
-                            "modalId" : {
+                            "targetUrlOnSuccess" : {
+                              "type" : "interpolation",
+                              "value" : "/bonita"
+                            },
+                            "cancelText" : {
                               "type" : "constant",
-                              "value" : ""
+                              "value" : "Cancelar"
+                            },
+                            "confirmText" : {
+                              "type" : "constant",
+                              "value" : "Sí, continuar"
+                            },
+                            "titleQuestion" : {
+                              "type" : "expression",
+                              "value" : "messageAlert"
+                            },
+                            "textQuestion" : {
+                              "type" : "constant",
+                              "value" : "Es una acción que no se puede revertir."
                             }
                           },
-                          "reference" : "e0583d95-aee5-4bea-802b-215950fccc81",
+                          "reference" : "aded53f1-28f2-4524-bd94-464500319875",
                           "hasValidationError" : false,
-                          "id" : "pbButton",
-                          "description" : ""
+                          "id" : "customSubmitTaskBtn"
                         }
                       ]
                     ]
@@ -1903,10 +1890,15 @@
       ],
       "exposed" : false
     },
-    "test" : {
+    "messageAlert" : {
       "type" : "expression",
       "value" : [
-        "console.log($data.context.reportSSPM_ref.newValue.filename, 'Name');"
+        "if ($data.actualImprovePlan_improveActions.length >  0){",
+        "    return '¿Está seguro de continuar con el proceso?'",
+        "    ",
+        "} else {",
+        "    return '¿Está seguro de continuar con el proceso sin indicar acciones de mejora?'  ",
+        "}"
       ],
       "exposed" : false
     }

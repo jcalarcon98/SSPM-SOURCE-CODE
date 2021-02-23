@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1613874821849,
+  "lastUpdate" : 1614044913146,
   "rows" : [
     [
       {
@@ -258,16 +258,107 @@
                               },
                               "condensed" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : true
                               },
                               "bordered" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : true
                               }
                             },
                             "reference" : "ad84e8ec-c292-4249-a903-6a26859ce24b",
                             "hasValidationError" : false,
                             "id" : "pbTable"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "94b39f26-2fa6-4914-834c-01c05bf8adc3",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b> Aviso: </b> En la siguiente pestaña (Plazo) puede indicar si desea aumentar el plazo de días para que los estudiantes que aún  no han calificado puedan volver a calificar."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "e1d538cb-d012-4a80-9d38-ff431a7ffb00",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "3d1f4542-804c-4524-85ed-b4d94d14b992",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
                           }
                         ]
                       ]
@@ -423,6 +514,10 @@
                               "color" : {
                                 "type" : "constant",
                                 "value" : "amber-100"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "fc6ac809-f022-45a1-b5e0-69bfa8d393fb",
@@ -910,69 +1005,38 @@
                             "type" : "component",
                             "dimension" : {
                               "xs" : 12,
+                              "sm" : 12,
                               "md" : 12,
                               "lg" : 12
                             },
                             "propertyValues" : {
-                              "removeItem" : {
-                                "type" : "variable"
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
                               },
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "buttonStyle" : {
-                                "type" : "constant",
-                                "value" : "success"
+                              "disabled" : {
+                                "type" : "expression",
+                                "value" : "$form.$invalid"
                               },
                               "label" : {
                                 "type" : "interpolation",
                                 "value" : "Finalizar"
                               },
-                              "dataToSend" : {
-                                "type" : "expression",
-                                "value" : "formOutput"
-                              },
-                              "dataFromError" : {
-                                "type" : "variable",
-                                "value" : "formOutput._submitError"
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "collectionPosition" : {
-                                "type" : "constant"
-                              },
-                              "targetUrlOnSuccess" : {
-                                "type" : "interpolation",
-                                "value" : "/bonita"
-                              },
-                              "action" : {
-                                "type" : "constant",
-                                "value" : "Submit task"
-                              },
-                              "collectionToModify" : {
-                                "type" : "variable"
-                              },
-                              "valueToAdd" : {
-                                "type" : "expression"
-                              },
-                              "disabled" : {
-                                "type" : "expression",
-                                "value" : "$form.$invalid"
-                              },
                               "alignment" : {
                                 "type" : "constant",
                                 "value" : "center"
                               },
-                              "dimension" : {
+                              "buttonStyle" : {
                                 "type" : "constant",
-                                "value" : 12
+                                "value" : "success"
+                              },
+                              "action" : {
+                                "type" : "constant",
+                                "value" : "Submit task"
                               },
                               "assign" : {
                                 "type" : "constant",
@@ -985,23 +1049,42 @@
                                 "type" : "variable",
                                 "value" : ""
                               },
+                              "dataToSend" : {
+                                "type" : "expression",
+                                "value" : "formOutput"
+                              },
                               "dataFromSuccess" : {
                                 "type" : "variable",
                                 "value" : ""
                               },
-                              "closeOnSuccess" : {
-                                "type" : "constant",
-                                "value" : false
+                              "dataFromError" : {
+                                "type" : "variable",
+                                "value" : "formOutput._submitError"
                               },
-                              "modalId" : {
+                              "targetUrlOnSuccess" : {
+                                "type" : "interpolation",
+                                "value" : "/bonita"
+                              },
+                              "cancelText" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "Cancelar"
+                              },
+                              "confirmText" : {
+                                "type" : "constant",
+                                "value" : "Sí, continuar"
+                              },
+                              "titleQuestion" : {
+                                "type" : "expression",
+                                "value" : "messageAlert"
+                              },
+                              "textQuestion" : {
+                                "type" : "expression",
+                                "value" : "textQuestion"
                               }
                             },
-                            "reference" : "5b6851e0-f488-4b80-b041-d432f29d08e0",
+                            "reference" : "962cdce8-0538-42d2-91f7-e36d3e8a89e0",
                             "hasValidationError" : false,
-                            "id" : "pbButton",
-                            "description" : ""
+                            "id" : "customSubmitTaskBtn"
                           }
                         ]
                       ]
@@ -1252,6 +1335,31 @@
         "    return list; ",
         "}",
         "return [];"
+      ],
+      "exposed" : false
+    },
+    "messageAlert" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.formInput.extend){",
+        "    if($data.assignNewStudents){",
+        "        $data.textQuestion = `Los estudiantes seleccionados serán reemplazados y se extenderá el plazo ${$data.formInput.duration} días`  ",
+        "        return '¿Está seguro de extender el plazo de calificación de sílabos reemplazando los estudiantes seleccionados?';",
+        "    } else {",
+        "        $data.textQuestion = `Se extenderá el plazo ${$data.formInput.duration} días`;",
+        "        return '¿Está seguro de extender el plazo de calificación de sílabos?';",
+        "    }",
+        "}else {",
+        "    $data.textQuestion = 'No se tabulará la información de los estudiantes que no han calificado, es una acción que no se puede revertir';  ",
+        "    return '¿Está seguro de continuar con el proceso sin extender el plazo?';",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "textQuestion" : {
+      "type" : "expression",
+      "value" : [
+        "return;"
       ],
       "exposed" : false
     }

@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "08VerificarCumplimientoForm",
   "name" : "08VerificarCumplimientoForm",
-  "lastUpdate" : 1613670275769,
+  "lastUpdate" : 1614043502083,
   "rows" : [
     [
       {
@@ -1174,71 +1174,39 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "md" : 12,
-                                    "sm" : 12,
                                     "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
                                     "lg" : 12
                                   },
                                   "propertyValues" : {
-                                    "removeItem" : {
-                                      "type" : "variable"
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
                                     },
                                     "hidden" : {
                                       "type" : "constant",
                                       "value" : false
                                     },
-                                    "cssClasses" : {
-                                      "type" : "constant",
-                                      "value" : ""
-                                    },
-                                    "buttonStyle" : {
-                                      "type" : "constant",
-                                      "value" : "success"
+                                    "disabled" : {
+                                      "type" : "expression",
+                                      "value" : "$form.$invalid"
                                     },
                                     "label" : {
                                       "type" : "interpolation",
                                       "value" : "Finalizar"
                                     },
-                                    "dataToSend" : {
-                                      "type" : "expression",
-                                      "value" : "formOutput"
-                                    },
-                                    "dataFromError" : {
-                                      "type" : "variable",
-                                      "value" : "formOutput._submitError"
-                                    },
-                                    "labelHidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "collectionPosition" : {
-                                      "type" : "constant"
-                                    },
-                                    "targetUrlOnSuccess" : {
-                                      "type" : "interpolation",
-                                      "value" : "/bonita"
-                                    },
-                                    "action" : {
-                                      "type" : "constant",
-                                      "value" : "Submit task"
-                                    },
-                                    "collectionToModify" : {
-                                      "type" : "variable"
-                                    },
-                                    "valueToAdd" : {
-                                      "type" : "expression"
-                                    },
-                                    "disabled" : {
-                                      "type" : "expression",
-                                      "value" : "$form.$invalid"
-                                    },
                                     "alignment" : {
                                       "type" : "constant",
                                       "value" : "center"
                                     },
-                                    "dimension" : {
+                                    "buttonStyle" : {
                                       "type" : "constant",
-                                      "value" : 12
+                                      "value" : "success"
+                                    },
+                                    "action" : {
+                                      "type" : "constant",
+                                      "value" : "Submit task"
                                     },
                                     "assign" : {
                                       "type" : "constant",
@@ -1251,23 +1219,42 @@
                                       "type" : "variable",
                                       "value" : ""
                                     },
+                                    "dataToSend" : {
+                                      "type" : "expression",
+                                      "value" : "formOutput"
+                                    },
                                     "dataFromSuccess" : {
                                       "type" : "variable",
                                       "value" : ""
                                     },
-                                    "closeOnSuccess" : {
-                                      "type" : "constant",
-                                      "value" : false
+                                    "dataFromError" : {
+                                      "type" : "variable",
+                                      "value" : "formOutput._submitError"
                                     },
-                                    "modalId" : {
+                                    "targetUrlOnSuccess" : {
+                                      "type" : "interpolation",
+                                      "value" : "/bonita"
+                                    },
+                                    "cancelText" : {
                                       "type" : "constant",
-                                      "value" : ""
+                                      "value" : "Cancelar"
+                                    },
+                                    "confirmText" : {
+                                      "type" : "constant",
+                                      "value" : "Sí, continuar"
+                                    },
+                                    "titleQuestion" : {
+                                      "type" : "constant",
+                                      "value" : "¿Está seguro de continuar con el proceso?"
+                                    },
+                                    "textQuestion" : {
+                                      "type" : "constant",
+                                      "value" : "Asegúrese de cumplir todas las acciones de mejora en el tiempo previamente establecido."
                                     }
                                   },
-                                  "reference" : "85d43766-8ce2-4dae-95d0-282ca5b9b388",
+                                  "reference" : "2e5c5b29-d716-40d6-a2a1-9841b2606d7a",
                                   "hasValidationError" : false,
-                                  "id" : "pbButton",
-                                  "description" : ""
+                                  "id" : "customSubmitTaskBtn"
                                 }
                               ]
                             ]
