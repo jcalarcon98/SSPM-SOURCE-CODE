@@ -118,3 +118,8 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .margin-left-md { margin-left: 1em; }
 .margin-left-lg { margin-left: 1.5em; }
 .margin-left-xl { margin-left: 3em; }
+
+.bordered {
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}

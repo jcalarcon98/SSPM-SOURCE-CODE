@@ -98,6 +98,7 @@
         <businessObject qualifiedName="com.company.model.Sheet">
             <fields>
                 <relationField type="COMPOSITION" reference="com.company.model.Answer" fetchType="LAZY" name="answers" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="denomination" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

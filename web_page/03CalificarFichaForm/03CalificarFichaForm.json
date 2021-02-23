@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1613516652614,
+  "lastUpdate" : 1613964644044,
   "rows" : [
     [
       {
@@ -1117,7 +1117,8 @@
         "return {",
         "\tactualSheetInput: $data.sheet,",
         "\tsyllabusId: $data.actualStudent.syllabusId,",
-        "\tuserId: $data.task.assigned_id",
+        "\tuserId: $data.task.assigned_id,",
+        "\tdenominationInput: $data.currentStage.denomination",
         "}"
       ],
       "exposed" : false

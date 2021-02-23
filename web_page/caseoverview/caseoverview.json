@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1613667036120,
+  "lastUpdate" : 1614039321948,
   "rows" : [
     [
       {
@@ -17,7 +17,7 @@
         "propertyValues" : {
           "cssClasses" : {
             "type" : "constant",
-            "value" : ""
+            "value" : "padding-xl"
           },
           "hidden" : {
             "type" : "expression",
@@ -848,44 +848,2304 @@
                 "hidden" : {
                   "type" : "constant",
                   "value" : false
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "<h2><span class=\"glyphicon glyphicon-object-align-right\" aria-hidden=\"true\"></span>&nbsp; Línea de Tiempo del proceso</h2>"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "labelHidden" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "label" : {
-                  "type" : "interpolation",
-                  "value" : ""
-                },
-                "labelPosition" : {
-                  "type" : "constant",
-                  "value" : "top"
-                },
-                "labelWidth" : {
-                  "type" : "constant",
-                  "value" : 4
                 }
               },
-              "reference" : "de35d1f4-89c8-4c75-84ca-40fb651481f7",
+              "reference" : "dcc7c566-79c8-4c3c-a287-36ed4ada34dc",
               "hasValidationError" : false,
-              "id" : "pbText"
+              "id" : "customSeparator"
             }
           ],
           [
             {
-              "type" : "component",
+              "type" : "container",
+              "dimension" : {
+                "md" : 12,
+                "sm" : 12,
+                "xs" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!archivedSillabusFile"
+                },
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "dimension" : {
+                  "type" : "constant",
+                  "value" : 12
+                }
+              },
+              "reference" : "5146678c-5ee7-41cf-bc0c-c009956d0c2a",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "description" : "Auto generate ui for business object \"com.company.model.Period\"",
+              "rows" : [
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "064ab4f1-d479-46dd-b010-11e586a49670",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "description" : "\"com.company.model.Period\" object from \"currentPeriod\" variable",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Información detallada"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "8ecf3f19-e980-41bf-9533-8e0babab9619",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "md" : 12,
+                            "sm" : 12,
+                            "xs" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 4"
+                            },
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Período Académico"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            },
+                            "dimension" : {
+                              "type" : "constant",
+                              "value" : 12
+                            }
+                          },
+                          "reference" : "4fda0986-4230-4762-b8d3-76397715a78a",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle",
+                          "description" : ""
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "md" : 12,
+                            "sm" : 12,
+                            "xs" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "headers" : {
+                              "type" : "constant",
+                              "value" : [
+                                "Fecha de Inicio",
+                                "Fecha de Fin"
+                              ]
+                            },
+                            "allowHtml" : {
+                              "type" : "constant",
+                              "value" : true
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "condensed" : {
+                              "type" : "constant",
+                              "value" : true
+                            },
+                            "bordered" : {
+                              "type" : "constant",
+                              "value" : true
+                            },
+                            "selectedRow" : {
+                              "type" : "variable",
+                              "value" : "currentPeriod_selected"
+                            },
+                            "columnsKey" : {
+                              "type" : "constant",
+                              "value" : [
+                                "initDate",
+                                "endDate"
+                              ]
+                            },
+                            "dimension" : {
+                              "type" : "constant",
+                              "value" : 12
+                            },
+                            "content" : {
+                              "type" : "expression",
+                              "value" : "currentPeriod"
+                            },
+                            "zebraStriping" : {
+                              "type" : "constant",
+                              "value" : true
+                            },
+                            "allowHTML" : {
+                              "type" : "constant",
+                              "value" : true
+                            },
+                            "striped" : {
+                              "type" : "constant",
+                              "value" : true
+                            }
+                          },
+                          "reference" : "8e587909-d23e-4335-b356-b2a6b441db1a",
+                          "hasValidationError" : false,
+                          "id" : "pbTable",
+                          "description" : ""
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "3e9a4a5f-a318-488d-9e3b-207a18bed23c",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "md" : 12,
+                            "sm" : 12,
+                            "xs" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 4"
+                            },
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>CARRERA DE {{currentPeriod_degree.name | uppercase}}"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            },
+                            "dimension" : {
+                              "type" : "constant",
+                              "value" : 12
+                            }
+                          },
+                          "reference" : "9211535e-28f8-43a4-9553-a0a248a4d32d",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle",
+                          "description" : ""
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "9c25bdc0-5e5b-4ff6-9479-943370873915",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "container",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "repeatedCollection" : {
+                              "type" : "variable",
+                              "value" : ""
+                            }
+                          },
+                          "reference" : "0eccaa72-e1a8-4047-8166-7f9107d0ae42",
+                          "hasValidationError" : false,
+                          "id" : "pbContainer",
+                          "rows" : [
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b> Gestor de la Carrera"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 4"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "e8451e95-d818-48dc-97be-2eb678692dde",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 3,
+                                  "md" : 3,
+                                  "lg" : 6
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b>Nombres:"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 5"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "edbdd3cc-e087-4c58-acea-c01314962791",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              },
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 9,
+                                  "md" : 9,
+                                  "lg" : 6
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "{{currentPeriod_degree_manager.name}}"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 5"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "b719e18d-4ed1-41b6-843b-9bccfcb686f3",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 3,
+                                  "md" : 3,
+                                  "lg" : 6
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b>Correo Electrónico:"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 5"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "b7747cd7-492d-4700-9354-b9190d33566f",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              },
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 9,
+                                  "md" : 9,
+                                  "lg" : 6
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "{{currentPeriod_degree_manager.email}}"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 5"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "92b60d6c-05aa-4cda-a06d-e96231671828",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "af76850c-a337-4e22-b3f4-05bc7cd7db01",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "container",
+                          "dimension" : {
+                            "xs" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "repeatedCollection" : {
+                              "type" : "variable",
+                              "value" : ""
+                            }
+                          },
+                          "reference" : "950f899b-cc8b-4dcf-bcfd-c8d96b7b358c",
+                          "hasValidationError" : false,
+                          "id" : "pbContainer",
+                          "description" : "\"com.company.model.Integrant\" object from \"currentPeriod_degree_commission_selected.commission\" variable",
+                          "rows" : [
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "md" : 12,
+                                  "sm" : 12,
+                                  "xs" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 4"
+                                  },
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b>Miembros de la Comisión de Evaluación Interna"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  },
+                                  "dimension" : {
+                                    "type" : "constant",
+                                    "value" : 12
+                                  }
+                                },
+                                "reference" : "a571acf3-197b-4be0-b5dc-b336197ae74c",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle",
+                                "description" : ""
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Default label"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 4
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "Docentes seleccionados por la Dirección de la Carrera para llevar a cabo el proceso de Seguimiento al sílabo y Plan de mejoras."
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "a6af2976-44ac-4634-a115-388bd64eedcb",
+                                "hasValidationError" : false,
+                                "id" : "pbText"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "md" : 12,
+                                  "sm" : 12,
+                                  "xs" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "headers" : {
+                                    "type" : "constant",
+                                    "value" : [
+                                      "Nombre",
+                                      "Correo Electrónico"
+                                    ]
+                                  },
+                                  "allowHtml" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "condensed" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "bordered" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "selectedRow" : {
+                                    "type" : "variable",
+                                    "value" : "currentPeriod_degree_commission_selected"
+                                  },
+                                  "columnsKey" : {
+                                    "type" : "constant",
+                                    "value" : [
+                                      "name",
+                                      "email"
+                                    ]
+                                  },
+                                  "dimension" : {
+                                    "type" : "constant",
+                                    "value" : 12
+                                  },
+                                  "content" : {
+                                    "type" : "expression",
+                                    "value" : "currentPeriod_degree_commission"
+                                  },
+                                  "zebraStriping" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "striped" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  }
+                                },
+                                "reference" : "07418f64-1be1-44e5-be5c-89eea64d31fb",
+                                "hasValidationError" : false,
+                                "id" : "pbTable",
+                                "description" : ""
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "6387af40-3858-444d-bfa7-440ce288ae51",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "container",
+                          "dimension" : {
+                            "md" : 12,
+                            "sm" : 12,
+                            "xs" : 11,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "repeatedCollection" : {
+                              "type" : "variable",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "expression",
+                              "value" : "!currentPeriod_selected"
+                            },
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "dimension" : {
+                              "type" : "constant",
+                              "value" : 11
+                            }
+                          },
+                          "reference" : "95b69723-3bea-4425-835c-43e45fad33af",
+                          "hasValidationError" : false,
+                          "id" : "pbContainer",
+                          "description" : "Display \"Period\" details when a line is selected in the table above",
+                          "rows" : [
+                            [
+                              {
+                                "type" : "container",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "repeatedCollection" : {
+                                    "type" : "variable",
+                                    "value" : ""
+                                  }
+                                },
+                                "reference" : "5487bb71-b29b-4b12-940b-db508d6130fe",
+                                "hasValidationError" : false,
+                                "id" : "pbContainer",
+                                "description" : "\"com.company.model.Stage\" object from \"currentPeriod_degree_tracking_stages_selected.stages\" variable",
+                                "rows" : [
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "level" : {
+                                          "type" : "constant",
+                                          "value" : "Level 4"
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "text" : {
+                                          "type" : "interpolation",
+                                          "value" : "<b> Etapas del Proceso de Seguimiento al Sílabo"
+                                        },
+                                        "alignment" : {
+                                          "type" : "constant",
+                                          "value" : "left"
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        }
+                                      },
+                                      "reference" : "dd1551a9-cd66-40b2-bb47-3a7697e0e849",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTitle",
+                                      "description" : ""
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "xs" : 12,
+                                        "sm" : 12,
+                                        "md" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "message" : {
+                                          "type" : "constant",
+                                          "value" : "<b> Seleccione una etapa para poder visualizar los indicadores utilizados en esa etapa."
+                                        },
+                                        "show" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "type" : {
+                                          "type" : "constant",
+                                          "value" : "info"
+                                        },
+                                        "color" : {
+                                          "type" : "constant"
+                                        },
+                                        "fontColor" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        }
+                                      },
+                                      "reference" : "f044f78f-6331-4d54-8d6e-1d5e1e161c95",
+                                      "hasValidationError" : false,
+                                      "id" : "customAlertDanger"
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "headers" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "Denominación",
+                                            "Fecha de Aplicación"
+                                          ]
+                                        },
+                                        "allowHtml" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "condensed" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "bordered" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "selectedRow" : {
+                                          "type" : "variable",
+                                          "value" : "currentPeriod_degree_tracking_stages_selected"
+                                        },
+                                        "columnsKey" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "denomination",
+                                            "executionDate"
+                                          ]
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        },
+                                        "content" : {
+                                          "type" : "expression",
+                                          "value" : "currentPeriod_degree_tracking_stages"
+                                        },
+                                        "zebraStriping" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "striped" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        }
+                                      },
+                                      "reference" : "b5fb5db6-522e-48d5-a5d0-fafc01b5026b",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTable",
+                                      "description" : ""
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "container",
+                                      "dimension" : {
+                                        "xs" : 12,
+                                        "md" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "expression",
+                                          "value" : "!currentPeriod_degree_tracking_stages_questions"
+                                        },
+                                        "repeatedCollection" : {
+                                          "type" : "variable",
+                                          "value" : ""
+                                        }
+                                      },
+                                      "reference" : "aceb2dd4-70d1-4417-aace-1b866850b7a9",
+                                      "hasValidationError" : false,
+                                      "id" : "pbContainer",
+                                      "description" : "\"com.company.model.Question\" object from \"currentPeriod_degree_tracking_stages_questions_selected.questions\" variable",
+                                      "rows" : [
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "hidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "level" : {
+                                                "type" : "constant",
+                                                "value" : "Level 4"
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "text" : {
+                                                "type" : "interpolation",
+                                                "value" : "<b>Indicadores de la etapa \"{{currentPeriod_degree_tracking_stages_selected.denomination}}\""
+                                              },
+                                              "alignment" : {
+                                                "type" : "constant",
+                                                "value" : "left"
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              }
+                                            },
+                                            "reference" : "97ac0687-fd78-482f-9dcd-34b77b96fe51",
+                                            "hasValidationError" : false,
+                                            "id" : "pbTitle",
+                                            "description" : ""
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "xs" : 12,
+                                              "sm" : 12,
+                                              "md" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "hidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Default label"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 4
+                                              },
+                                              "allowHTML" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "text" : {
+                                                "type" : "interpolation",
+                                                "value" : "Indicadores ingresados por la comisión de Evaluación Interna para la etapa de {{currentPeriod_degree_tracking_stages_selected.denomination}}"
+                                              },
+                                              "alignment" : {
+                                                "type" : "constant",
+                                                "value" : "left"
+                                              }
+                                            },
+                                            "reference" : "93780779-2661-4bcc-af57-8983aa43156d",
+                                            "hasValidationError" : false,
+                                            "id" : "pbText"
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "md" : 12,
+                                              "sm" : 12,
+                                              "xs" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "headers" : {
+                                                "type" : "constant",
+                                                "value" : [
+                                                  "Indicadores"
+                                                ]
+                                              },
+                                              "allowHtml" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "hidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "condensed" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "bordered" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "selectedRow" : {
+                                                "type" : "variable",
+                                                "value" : "currentPeriod_degree_tracking_stages_questions_selected"
+                                              },
+                                              "columnsKey" : {
+                                                "type" : "constant",
+                                                "value" : [
+                                                  "description"
+                                                ]
+                                              },
+                                              "dimension" : {
+                                                "type" : "constant",
+                                                "value" : 12
+                                              },
+                                              "content" : {
+                                                "type" : "expression",
+                                                "value" : "currentPeriod_degree_tracking_stages_questions"
+                                              },
+                                              "zebraStriping" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "allowHTML" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "striped" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              }
+                                            },
+                                            "reference" : "6e69d6a0-fee2-4bb8-9b30-a686af7202d2",
+                                            "hasValidationError" : false,
+                                            "id" : "pbTable",
+                                            "description" : ""
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "50b719ae-d367-47a9-a61e-5e2e5732c353",
+                                "hasValidationError" : false,
+                                "id" : "customSeparator"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "container",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "repeatedCollection" : {
+                                    "type" : "variable",
+                                    "value" : ""
+                                  }
+                                },
+                                "reference" : "ef935257-722d-4414-adf4-9eb78f4b625b",
+                                "hasValidationError" : false,
+                                "id" : "pbContainer",
+                                "description" : "\"com.company.model.Alternative\" object from \"currentPeriod_degree_tracking_alternatives_selected.alternatives\" variable",
+                                "rows" : [
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "level" : {
+                                          "type" : "constant",
+                                          "value" : "Level 4"
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "text" : {
+                                          "type" : "interpolation",
+                                          "value" : "<b>Alternativas"
+                                        },
+                                        "alignment" : {
+                                          "type" : "constant",
+                                          "value" : "left"
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        }
+                                      },
+                                      "reference" : "17c08a49-f510-4a88-9eba-ee7ff31702ce",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTitle",
+                                      "description" : ""
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "xs" : 12,
+                                        "sm" : 12,
+                                        "md" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "labelHidden" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "label" : {
+                                          "type" : "interpolation",
+                                          "value" : "Default label"
+                                        },
+                                        "labelPosition" : {
+                                          "type" : "constant",
+                                          "value" : "top"
+                                        },
+                                        "labelWidth" : {
+                                          "type" : "constant",
+                                          "value" : 4
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "text" : {
+                                          "type" : "interpolation",
+                                          "value" : "Alternativas ingresadas por los miembros de la Comisión de Evaluación Interna, para ser utilizadas en ambas etapas:"
+                                        },
+                                        "alignment" : {
+                                          "type" : "constant",
+                                          "value" : "left"
+                                        }
+                                      },
+                                      "reference" : "ab1b55e4-2d5f-410c-a344-16733f35cab2",
+                                      "hasValidationError" : false,
+                                      "id" : "pbText"
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "headers" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "Descripción"
+                                          ]
+                                        },
+                                        "allowHtml" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "condensed" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "bordered" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "selectedRow" : {
+                                          "type" : "variable",
+                                          "value" : "currentPeriod_degree_tracking_alternatives_selected"
+                                        },
+                                        "columnsKey" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "description"
+                                          ]
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        },
+                                        "content" : {
+                                          "type" : "expression",
+                                          "value" : "currentPeriod_degree_tracking_alternatives"
+                                        },
+                                        "zebraStriping" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "striped" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        }
+                                      },
+                                      "reference" : "bf860384-f539-4fb4-a0c4-10daa3dc34a7",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTable",
+                                      "description" : ""
+                                    }
+                                  ]
+                                ]
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "93e50f85-b943-4047-b228-f4bb068261dd",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "container",
+                          "dimension" : {
+                            "xs" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "repeatedCollection" : {
+                              "type" : "variable",
+                              "value" : ""
+                            }
+                          },
+                          "reference" : "156e78ee-1b6a-4f1f-9514-69a6f3c0373d",
+                          "hasValidationError" : false,
+                          "id" : "pbContainer",
+                          "description" : "\"com.company.model.Grade\" object from \"currentPeriod_degree_grades_selected.grades\" variable",
+                          "rows" : [
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "md" : 12,
+                                  "sm" : 12,
+                                  "xs" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 4"
+                                  },
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b>Ciclos a los que se aplicó el proceso de \"Seguimiento al sílabo\""
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  },
+                                  "dimension" : {
+                                    "type" : "constant",
+                                    "value" : 12
+                                  }
+                                },
+                                "reference" : "7164ea56-16ea-4bdd-a7b7-96205e52349f",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle",
+                                "description" : ""
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "message" : {
+                                    "type" : "constant",
+                                    "value" : "<b>Seleccione un ciclo para poder visualizar los sílabos evaluados"
+                                  },
+                                  "show" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "type" : {
+                                    "type" : "constant",
+                                    "value" : "info"
+                                  },
+                                  "color" : {
+                                    "type" : "constant"
+                                  },
+                                  "fontColor" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "7511f6e7-24d4-43c9-a78e-35e16da12df0",
+                                "hasValidationError" : false,
+                                "id" : "customAlertDanger"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "md" : 12,
+                                  "sm" : 12,
+                                  "xs" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "headers" : {
+                                    "type" : "constant",
+                                    "value" : [
+                                      "Ciclo",
+                                      "Paralelo"
+                                    ]
+                                  },
+                                  "allowHtml" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "condensed" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "bordered" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "selectedRow" : {
+                                    "type" : "variable",
+                                    "value" : "currentPeriod_degree_grades_selected"
+                                  },
+                                  "columnsKey" : {
+                                    "type" : "constant",
+                                    "value" : [
+                                      "number",
+                                      "parallel"
+                                    ]
+                                  },
+                                  "dimension" : {
+                                    "type" : "constant",
+                                    "value" : 12
+                                  },
+                                  "content" : {
+                                    "type" : "expression",
+                                    "value" : "currentPeriod_degree_grades"
+                                  },
+                                  "zebraStriping" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "striped" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  }
+                                },
+                                "reference" : "97799407-7ec9-41ab-9ccb-019b83794f50",
+                                "hasValidationError" : false,
+                                "id" : "pbTable",
+                                "description" : ""
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "25486ab4-a33f-4fe6-8d05-765189baf32a",
+                                "hasValidationError" : false,
+                                "id" : "customSeparator"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "container",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "md" : 12,
+                                  "lg" : 12,
+                                  "sm" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "expression",
+                                    "value" : "!currentPeriod_degree_grades_syllabuses"
+                                  },
+                                  "repeatedCollection" : {
+                                    "type" : "variable",
+                                    "value" : ""
+                                  }
+                                },
+                                "reference" : "ac7eef60-9b01-4b57-9bb1-05aa7217a39d",
+                                "hasValidationError" : false,
+                                "id" : "pbContainer",
+                                "description" : "\"com.company.model.Syllabus\" object from \"currentPeriod_degree_grades_syllabuses_selected.syllabuses\" variable",
+                                "rows" : [
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "level" : {
+                                          "type" : "constant",
+                                          "value" : "Level 4"
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "text" : {
+                                          "type" : "interpolation",
+                                          "value" : "<b>Sílabos"
+                                        },
+                                        "alignment" : {
+                                          "type" : "constant",
+                                          "value" : "left"
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        }
+                                      },
+                                      "reference" : "536a9123-1226-4bf8-b380-79c4b144e412",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTitle",
+                                      "description" : ""
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "xs" : 12,
+                                        "sm" : 12,
+                                        "md" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "message" : {
+                                          "type" : "constant",
+                                          "value" : "<b> Seleccione un sílabo para visualizar las fichas de seguimiento al sílabo calificadas."
+                                        },
+                                        "show" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "type" : {
+                                          "type" : "constant",
+                                          "value" : "info"
+                                        },
+                                        "color" : {
+                                          "type" : "constant"
+                                        },
+                                        "fontColor" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        }
+                                      },
+                                      "reference" : "84bd1137-d145-4a4e-bd1d-33c2709dfbe3",
+                                      "hasValidationError" : false,
+                                      "id" : "customAlertDanger"
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "component",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 12,
+                                        "lg" : 12
+                                      },
+                                      "propertyValues" : {
+                                        "headers" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "Denominación del sílabo"
+                                          ]
+                                        },
+                                        "allowHtml" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "condensed" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "bordered" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "selectedRow" : {
+                                          "type" : "variable",
+                                          "value" : "currentPeriod_degree_grades_syllabuses_selected"
+                                        },
+                                        "columnsKey" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "denomination"
+                                          ]
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 12
+                                        },
+                                        "content" : {
+                                          "type" : "expression",
+                                          "value" : "currentPeriod_degree_grades_syllabuses"
+                                        },
+                                        "zebraStriping" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "striped" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        }
+                                      },
+                                      "reference" : "d6ba9340-5f4e-4ef7-ad7f-bd384c67a2d2",
+                                      "hasValidationError" : false,
+                                      "id" : "pbTable",
+                                      "description" : ""
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "type" : "container",
+                                      "dimension" : {
+                                        "md" : 12,
+                                        "sm" : 12,
+                                        "xs" : 11,
+                                        "lg" : 11
+                                      },
+                                      "propertyValues" : {
+                                        "repeatedCollection" : {
+                                          "type" : "variable",
+                                          "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "expression",
+                                          "value" : "!currentPeriod_degree_grades_syllabuses_selected"
+                                        },
+                                        "cssClasses" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "dimension" : {
+                                          "type" : "constant",
+                                          "value" : 11
+                                        }
+                                      },
+                                      "reference" : "c8f9eaf1-fd24-408d-bfe1-94bca992cd01",
+                                      "hasValidationError" : false,
+                                      "id" : "pbContainer",
+                                      "description" : "Display \"Syllabus\" details when a line is selected in the table above",
+                                      "rows" : [
+                                        [
+                                          {
+                                            "type" : "container",
+                                            "dimension" : {
+                                              "xs" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "hidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "repeatedCollection" : {
+                                                "type" : "variable",
+                                                "value" : ""
+                                              }
+                                            },
+                                            "reference" : "e9281457-e5c3-45c3-99b4-00c56a02b0cb",
+                                            "hasValidationError" : false,
+                                            "id" : "pbContainer",
+                                            "description" : "\"com.company.model.Teacher\" object from \"currentPeriod_degree_grades_syllabuses_teacher_selected.teacher\" variable",
+                                            "rows" : [
+                                              [
+                                                {
+                                                  "type" : "component",
+                                                  "dimension" : {
+                                                    "md" : 6,
+                                                    "sm" : 6,
+                                                    "xs" : 12,
+                                                    "lg" : 6
+                                                  },
+                                                  "propertyValues" : {
+                                                    "hidden" : {
+                                                      "type" : "constant",
+                                                      "value" : false
+                                                    },
+                                                    "level" : {
+                                                      "type" : "constant",
+                                                      "value" : "Level 5"
+                                                    },
+                                                    "cssClasses" : {
+                                                      "type" : "constant",
+                                                      "value" : ""
+                                                    },
+                                                    "text" : {
+                                                      "type" : "interpolation",
+                                                      "value" : "Docente de {{currentPeriod_degree_grades_syllabuses_selected.denomination}}:"
+                                                    },
+                                                    "alignment" : {
+                                                      "type" : "constant",
+                                                      "value" : "left"
+                                                    },
+                                                    "dimension" : {
+                                                      "type" : "constant",
+                                                      "value" : 12
+                                                    }
+                                                  },
+                                                  "reference" : "6a77b99a-0aba-4898-8c7e-4bb68784e3eb",
+                                                  "hasValidationError" : false,
+                                                  "id" : "pbTitle",
+                                                  "description" : ""
+                                                },
+                                                {
+                                                  "type" : "component",
+                                                  "dimension" : {
+                                                    "xs" : 12,
+                                                    "sm" : 6,
+                                                    "md" : 6,
+                                                    "lg" : 6
+                                                  },
+                                                  "propertyValues" : {
+                                                    "cssClasses" : {
+                                                      "type" : "constant",
+                                                      "value" : ""
+                                                    },
+                                                    "hidden" : {
+                                                      "type" : "constant",
+                                                      "value" : false
+                                                    },
+                                                    "text" : {
+                                                      "type" : "interpolation",
+                                                      "value" : "<b>{{currentPeriod_degree_grades_syllabuses_teacher.name}}"
+                                                    },
+                                                    "level" : {
+                                                      "type" : "constant",
+                                                      "value" : "Level 5"
+                                                    },
+                                                    "alignment" : {
+                                                      "type" : "constant",
+                                                      "value" : "left"
+                                                    }
+                                                  },
+                                                  "reference" : "8e4734cf-b3a5-48bf-aa85-78e2763ead24",
+                                                  "hasValidationError" : false,
+                                                  "id" : "pbTitle"
+                                                }
+                                              ]
+                                            ]
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "type" : "container",
+                                            "dimension" : {
+                                              "xs" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "hidden" : {
+                                                "type" : "constant",
+                                                "value" : false
+                                              },
+                                              "repeatedCollection" : {
+                                                "type" : "variable",
+                                                "value" : ""
+                                              }
+                                            },
+                                            "reference" : "8dd970ab-8033-4f60-bb32-e454b86f985e",
+                                            "hasValidationError" : false,
+                                            "id" : "pbContainer",
+                                            "description" : "\"com.company.model.Sheet\" object from \"currentPeriod_degree_grades_syllabuses_sheets_selected.sheets\" variable",
+                                            "rows" : [
+                                              [
+                                                {
+                                                  "type" : "component",
+                                                  "dimension" : {
+                                                    "md" : 12,
+                                                    "sm" : 12,
+                                                    "xs" : 12,
+                                                    "lg" : 12
+                                                  },
+                                                  "propertyValues" : {
+                                                    "hidden" : {
+                                                      "type" : "constant",
+                                                      "value" : false
+                                                    },
+                                                    "level" : {
+                                                      "type" : "constant",
+                                                      "value" : "Level 4"
+                                                    },
+                                                    "cssClasses" : {
+                                                      "type" : "constant",
+                                                      "value" : ""
+                                                    },
+                                                    "text" : {
+                                                      "type" : "interpolation",
+                                                      "value" : "<b>Fichas de seguimiento al sílabo calificadas de \"{{currentPeriod_degree_grades_syllabuses_selected.denomination}}\""
+                                                    },
+                                                    "alignment" : {
+                                                      "type" : "constant",
+                                                      "value" : "left"
+                                                    },
+                                                    "dimension" : {
+                                                      "type" : "constant",
+                                                      "value" : 12
+                                                    }
+                                                  },
+                                                  "reference" : "4a1371f3-8fb8-43ed-9c73-6a1b16599f15",
+                                                  "hasValidationError" : false,
+                                                  "id" : "pbTitle",
+                                                  "description" : ""
+                                                }
+                                              ],
+                                              [
+                                                {
+                                                  "type" : "container",
+                                                  "dimension" : {
+                                                    "xs" : 12,
+                                                    "sm" : 12,
+                                                    "md" : 12,
+                                                    "lg" : 12
+                                                  },
+                                                  "propertyValues" : {
+                                                    "cssClasses" : {
+                                                      "type" : "constant",
+                                                      "value" : "padding-x-xl"
+                                                    },
+                                                    "hidden" : {
+                                                      "type" : "constant",
+                                                      "value" : false
+                                                    },
+                                                    "repeatedCollection" : {
+                                                      "type" : "variable",
+                                                      "value" : "currentPeriod_degree_grades_syllabuses_sheets"
+                                                    }
+                                                  },
+                                                  "reference" : "e1e7594c-d200-4c51-be5c-5f8649b0ad84",
+                                                  "hasValidationError" : false,
+                                                  "id" : "pbContainer",
+                                                  "rows" : [
+                                                    [
+                                                      {
+                                                        "type" : "container",
+                                                        "dimension" : {
+                                                          "xs" : 12,
+                                                          "sm" : 12,
+                                                          "md" : 12,
+                                                          "lg" : 12
+                                                        },
+                                                        "propertyValues" : {
+                                                          "cssClasses" : {
+                                                            "type" : "constant",
+                                                            "value" : "padding-x-lg bordered"
+                                                          },
+                                                          "hidden" : {
+                                                            "type" : "constant",
+                                                            "value" : false
+                                                          },
+                                                          "repeatedCollection" : {
+                                                            "type" : "variable",
+                                                            "value" : ""
+                                                          }
+                                                        },
+                                                        "reference" : "0681bbaf-9e05-4c15-b43b-db0debf31aff",
+                                                        "hasValidationError" : false,
+                                                        "id" : "pbContainer",
+                                                        "rows" : [
+                                                          [
+                                                            {
+                                                              "type" : "component",
+                                                              "dimension" : {
+                                                                "xs" : 12,
+                                                                "sm" : 1,
+                                                                "md" : 3,
+                                                                "lg" : 3
+                                                              },
+                                                              "propertyValues" : {
+                                                                "cssClasses" : {
+                                                                  "type" : "constant",
+                                                                  "value" : ""
+                                                                },
+                                                                "hidden" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "text" : {
+                                                                  "type" : "interpolation",
+                                                                  "value" : "<b>{{currentPeriod_degree_grades_syllabuses_sheets.indexOf($item) + 1 }}."
+                                                                },
+                                                                "level" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "Level 5"
+                                                                },
+                                                                "alignment" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "left"
+                                                                }
+                                                              },
+                                                              "reference" : "bfcfb4a9-5154-4722-8646-66923521d430",
+                                                              "hasValidationError" : false,
+                                                              "id" : "pbTitle"
+                                                            },
+                                                            {
+                                                              "type" : "component",
+                                                              "dimension" : {
+                                                                "xs" : 12,
+                                                                "sm" : 3,
+                                                                "md" : 3,
+                                                                "lg" : 3
+                                                              },
+                                                              "propertyValues" : {
+                                                                "cssClasses" : {
+                                                                  "type" : "constant",
+                                                                  "value" : ""
+                                                                },
+                                                                "hidden" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "text" : {
+                                                                  "type" : "interpolation",
+                                                                  "value" : "{{ $item.denomination }}"
+                                                                },
+                                                                "level" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "Level 5"
+                                                                },
+                                                                "alignment" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "left"
+                                                                }
+                                                              },
+                                                              "reference" : "1255f339-dcef-4852-a27b-6f464bf22d0b",
+                                                              "hasValidationError" : false,
+                                                              "id" : "pbTitle"
+                                                            },
+                                                            {
+                                                              "type" : "component",
+                                                              "dimension" : {
+                                                                "xs" : 12,
+                                                                "sm" : 4,
+                                                                "md" : 3,
+                                                                "lg" : 3
+                                                              },
+                                                              "propertyValues" : {
+                                                                "cssClasses" : {
+                                                                  "type" : "constant",
+                                                                  "value" : ""
+                                                                },
+                                                                "hidden" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "text" : {
+                                                                  "type" : "interpolation",
+                                                                  "value" : "<hr>"
+                                                                },
+                                                                "level" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "Level 5"
+                                                                },
+                                                                "alignment" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "left"
+                                                                }
+                                                              },
+                                                              "reference" : "0aa50240-91e3-4d56-aa6f-bc2e1959aef1",
+                                                              "hasValidationError" : false,
+                                                              "id" : "pbTitle"
+                                                            },
+                                                            {
+                                                              "type" : "component",
+                                                              "dimension" : {
+                                                                "xs" : 12,
+                                                                "sm" : 4,
+                                                                "md" : 3,
+                                                                "lg" : 3
+                                                              },
+                                                              "propertyValues" : {
+                                                                "cssClasses" : {
+                                                                  "type" : "constant",
+                                                                  "value" : ""
+                                                                },
+                                                                "hidden" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "disabled" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "label" : {
+                                                                  "type" : "interpolation",
+                                                                  "value" : "<b>Visualizar Resultados"
+                                                                },
+                                                                "alignment" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "right"
+                                                                },
+                                                                "buttonStyle" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "link"
+                                                                },
+                                                                "action" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "Open modal"
+                                                                },
+                                                                "assign" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "url" : {
+                                                                  "type" : "interpolation"
+                                                                },
+                                                                "responseStatusCode" : {
+                                                                  "type" : "variable",
+                                                                  "value" : ""
+                                                                },
+                                                                "dataToSend" : {
+                                                                  "type" : "constant"
+                                                                },
+                                                                "dataFromSuccess" : {
+                                                                  "type" : "variable",
+                                                                  "value" : ""
+                                                                },
+                                                                "closeOnSuccess" : {
+                                                                  "type" : "constant",
+                                                                  "value" : false
+                                                                },
+                                                                "dataFromError" : {
+                                                                  "type" : "variable",
+                                                                  "value" : ""
+                                                                },
+                                                                "targetUrlOnSuccess" : {
+                                                                  "type" : "interpolation"
+                                                                },
+                                                                "collectionToModify" : {
+                                                                  "type" : "variable"
+                                                                },
+                                                                "modalId" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "sheetResults"
+                                                                },
+                                                                "collectionPosition" : {
+                                                                  "type" : "constant",
+                                                                  "value" : "Last"
+                                                                },
+                                                                "valueToAdd" : {
+                                                                  "type" : "constant"
+                                                                },
+                                                                "removeItem" : {
+                                                                  "type" : "variable"
+                                                                },
+                                                                "sheet" : {
+                                                                  "type" : "expression",
+                                                                  "value" : "currentPeriod_degree_grades_syllabuses_sheets.indexOf($item)"
+                                                                },
+                                                                "returnedSheet" : {
+                                                                  "type" : "variable",
+                                                                  "value" : "currentSheetPosition"
+                                                                }
+                                                              },
+                                                              "reference" : "b5d6408d-4382-4fc3-be9d-2dc10401d807",
+                                                              "hasValidationError" : false,
+                                                              "id" : "customButtonModal"
+                                                            }
+                                                          ]
+                                                        ]
+                                                      }
+                                                    ]
+                                                  ]
+                                                }
+                                              ]
+                                            ]
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                ]
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "container",
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
@@ -901,70 +3161,152 @@
                   "type" : "constant",
                   "value" : false
                 },
-                "events" : {
-                  "type" : "expression",
-                  "value" : "timelineEvents"
-                },
-                "noEventsTitle" : {
-                  "type" : "expression",
-                  "value" : "\"No Events yet.\" | translate"
-                },
-                "noEventsContent" : {
-                  "type" : "expression",
-                  "value" : "\"Nothing noticeable happened yet... But it surely will come!\" | translate"
-                },
-                "eventsTitleExpression" : {
-                  "type" : "constant",
-                  "value" : "event.title"
-                },
-                "eventsContentExpression" : {
-                  "type" : "constant",
-                  "value" : "event.description"
-                },
-                "eventsTimeExpression" : {
-                  "type" : "constant",
-                  "value" : "event.lastUpdateDate"
-                },
-                "eventsTimeAttributeFormat" : {
-                  "type" : "constant",
-                  "value" : "medium"
-                },
-                "eventsAuthorExpression" : {
-                  "type" : "constant",
-                  "value" : "event.executedBy || event.assignedTo"
-                },
-                "origin" : {
-                  "type" : "expression",
-                  "value" : "timelineOrigin"
-                },
-                "originTitleExpression" : {
-                  "type" : "constant",
-                  "value" : "origin.title | translate"
-                },
-                "originContentExpression" : {
-                  "type" : "constant",
-                  "value" : "origin.description"
-                },
-                "originTimeExpression" : {
-                  "type" : "constant",
-                  "value" : "origin.startTime"
-                },
-                "originAuthorExpression" : {
-                  "type" : "constant",
-                  "value" : "origin.initiator"
-                },
-                "eventsIconStyleExpression" : {
-                  "type" : "expression",
-                  "value" : "\"event.style\""
-                },
-                "eventsIconExpression" : {
-                  "type" : "constant",
-                  "value" : "event.icon"
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
                 }
               },
-              "reference" : "a51d8918-bd2b-41a9-9526-c2b8377ec655",
+              "reference" : "4443f7e0-5d29-45c3-b74a-8c06a2c3c28c",
               "hasValidationError" : false,
-              "id" : "timelineWidget"
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<h2><span class=\"glyphicon glyphicon-object-align-right\" aria-hidden=\"true\"></span>&nbsp; Línea de Tiempo del proceso</h2>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : ""
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      }
+                    },
+                    "reference" : "de35d1f4-89c8-4c75-84ca-40fb651481f7",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "events" : {
+                        "type" : "expression",
+                        "value" : "timelineEvents"
+                      },
+                      "noEventsTitle" : {
+                        "type" : "expression",
+                        "value" : "\"No Events yet.\" | translate"
+                      },
+                      "noEventsContent" : {
+                        "type" : "expression",
+                        "value" : "\"Nothing noticeable happened yet... But it surely will come!\" | translate"
+                      },
+                      "eventsTitleExpression" : {
+                        "type" : "constant",
+                        "value" : "event.title"
+                      },
+                      "eventsContentExpression" : {
+                        "type" : "constant",
+                        "value" : "event.description"
+                      },
+                      "eventsTimeExpression" : {
+                        "type" : "constant",
+                        "value" : "event.lastUpdateDate"
+                      },
+                      "eventsTimeAttributeFormat" : {
+                        "type" : "constant",
+                        "value" : "medium"
+                      },
+                      "eventsAuthorExpression" : {
+                        "type" : "constant",
+                        "value" : "event.executedBy || event.assignedTo"
+                      },
+                      "origin" : {
+                        "type" : "expression",
+                        "value" : "timelineOrigin"
+                      },
+                      "originTitleExpression" : {
+                        "type" : "constant",
+                        "value" : "origin.title | translate"
+                      },
+                      "originContentExpression" : {
+                        "type" : "constant",
+                        "value" : "origin.description"
+                      },
+                      "originTimeExpression" : {
+                        "type" : "constant",
+                        "value" : "origin.startTime"
+                      },
+                      "originAuthorExpression" : {
+                        "type" : "constant",
+                        "value" : "origin.initiator"
+                      },
+                      "eventsIconStyleExpression" : {
+                        "type" : "expression",
+                        "value" : "\"event.style\""
+                      },
+                      "eventsIconExpression" : {
+                        "type" : "constant",
+                        "value" : "event.icon"
+                      }
+                    },
+                    "reference" : "a51d8918-bd2b-41a9-9526-c2b8377ec655",
+                    "hasValidationError" : false,
+                    "id" : "timelineWidget"
+                  }
+                ]
+              ]
             }
           ]
         ]
@@ -1147,6 +3489,263 @@
             }
           ]
         ]
+      }
+    ],
+    [
+      {
+        "type" : "modalContainer",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : "padding-xl"
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : "sheetResults"
+          },
+          "size" : {
+            "type" : "constant",
+            "value" : "lg"
+          },
+          "animation" : {
+            "type" : "constant",
+            "value" : true
+          }
+        },
+        "reference" : "2fc8f35e-f89f-4362-95d5-a61717e9711e",
+        "hasValidationError" : false,
+        "id" : "pbModalContainer",
+        "container" : {
+          "type" : "container",
+          "dimension" : {
+            "xs" : 12
+          },
+          "propertyValues" : { },
+          "reference" : "5e32a38b-cf20-464d-877c-c597994c7db9",
+          "hasValidationError" : false,
+          "id" : "pbContainer",
+          "rows" : [
+            [
+              {
+                "type" : "fragment",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "afdfd107-1032-44a3-9291-383461a522f3",
+                "hasValidationError" : false,
+                "id" : "headerProcess",
+                "binding" : { }
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b>FACULTAD DE LA ENERGÍA, LAS INDUSTRIAS Y LOS RECURSOS NATURALES NO RENOVABLES <br> CARRERA  DE {{currentPeriod_degree.name | uppercase}} <br> PERÍODO ACADÉMICO {{ currentPeriod[0].initDate }} HASTA {{ currentPeriod[0].endDate }} <br> FICHA DE SEGUIMIENTO AL SÍLABO POR PARTE DE LOS ESTUDIANTES <br>   APLICACIÓN A {{ stageDenomination }} DEL PERÍODO ACADÉMICO"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 4"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "center"
+                  }
+                },
+                "reference" : "65db259a-92cc-4ecd-92e1-e4df6e46edb9",
+                "hasValidationError" : false,
+                "id" : "pbTitle"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "9b9fcf6e-c53b-4201-85d7-8509464132db",
+                "hasValidationError" : false,
+                "id" : "customSeparator"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b>CUESTIONARIO:"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 5"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "1a3c2284-ae63-4b61-9393-e37c8468d0de",
+                "hasValidationError" : false,
+                "id" : "pbTitle"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "headers" : {
+                    "type" : "expression",
+                    "value" : "tableResultsHeader"
+                  },
+                  "content" : {
+                    "type" : "expression",
+                    "value" : "tableResultsContent"
+                  },
+                  "columnsKey" : {
+                    "type" : "expression",
+                    "value" : "tableContentKeys"
+                  },
+                  "selectedRow" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "striped" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "condensed" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "bordered" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "degree" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod_degree.name"
+                  },
+                  "initDate" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod[0].initDate"
+                  },
+                  "endDate" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod[0].endDate"
+                  },
+                  "sheetDenomination" : {
+                    "type" : "expression",
+                    "value" : "currentSheet.denomination"
+                  },
+                  "syllabusDenomination" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod_degree_grades_syllabuses_selected.denomination"
+                  },
+                  "teacher" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod_degree_grades_syllabuses_teacher.name"
+                  },
+                  "cicle" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod_degree_grades_selected.number + ' -  \"' + currentPeriod_degree_grades_selected.parallel + '\"'"
+                  },
+                  "executionDate" : {
+                    "type" : "expression",
+                    "value" : "currentPeriod_degree_tracking_stages[currentSheetPosition].executionDate"
+                  },
+                  "percentageAchieved" : {
+                    "type" : "expression",
+                    "value" : "percentageAchieved"
+                  }
+                },
+                "reference" : "750d3be7-217e-498d-a748-4ff098616fc8",
+                "hasValidationError" : false,
+                "id" : "customTableResultsSheet"
+              }
+            ]
+          ]
+        }
       }
     ],
     [
@@ -1487,9 +4086,9 @@
       "exposed" : false
     },
     "caseId" : {
-      "type" : "urlparameter",
+      "type" : "expression",
       "value" : [
-        "id"
+        "return 4003;"
       ],
       "exposed" : false
     },
@@ -1725,6 +4324,367 @@
         "}",
         "",
         "return false;"
+      ],
+      "exposed" : false
+    },
+    "currentPeriodLink" : {
+      "type" : "expression",
+      "value" : [
+        "let linkPeriod;",
+        "",
+        "if($data.caseOverview){",
+        "    for (let currentLink of $data.caseOverview.businessDataRefs) {",
+        "        if(currentLink.name === 'period (com.company.model.Period)') {",
+        "            linkPeriod = currentLink.link;",
+        "            return linkPeriod;",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "period" : {
+      "type" : "url",
+      "value" : [
+        "../{{currentPeriodLink}}"
+      ],
+      "exposed" : false
+    },
+    "periodId" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.period){",
+        "    return $data.period.persistenceId;",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"findByPersistenceId [com.company.model.Period]\",\"businessObjectName\":\"Period\",\"query\":{\"name\":\"findByPersistenceId\",\"displayName\":\"findByPersistenceId\"},\"id\":\"com.company.model.Period\",\"filters\":[{\"name\":\"persistenceId\",\"type\":\"INTEGER\",\"collection\":false,\"value\":\"{{periodId}}\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_selected" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.currentPeriod){",
+        "    return $data.currentPeriod[0];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_commission" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree|lazyRef:'commission'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_students_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_stages" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_tracking|lazyRef:'stages'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_selected | lazyRef:'degree'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree|lazyRef:'grades'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_stages_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_stages_improvePlan" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_tracking_stages_selected|lazyRef:'improvePlan'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_manager" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree|lazyRef:'manager'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_alternatives_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_grades_selected|lazyRef:'syllabuses'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_stages_questions" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_tracking_stages_selected|lazyRef:'questions'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_alternatives" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_tracking|lazyRef:'alternatives'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_commission_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses_teacher" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_grades_syllabuses_selected|lazyRef:'teacher'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree|lazyRef:'tracking'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses_sheets_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_students" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_grades_selected|lazyRef:'students'}}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_tracking_stages_questions_selected" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses_sheets" : {
+      "type" : "url",
+      "value" : [
+        "{{currentPeriod_degree_grades_syllabuses_selected|lazyRef:'sheets'}}"
+      ],
+      "exposed" : false
+    },
+    "testing" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data.currentPeriod, 'Current Period');",
+        "console.log($data.middleStageQuestions, 'Middle Stage Questions');",
+        "console.log($data.endStageQuestions, 'Final de Ciclo Questions');",
+        "console.log($data.answersSelectedSheet, 'Selected');",
+        "console.log($data.currentSheetPosition, 'Sheet position');",
+        "console.log($data.currentSheet, 'Current Sheet');",
+        "console.log($data.currentPeriod_degree_grades_selected, 'Degree Selected');"
+      ],
+      "exposed" : false
+    },
+    "answersSelectedSheet" : {
+      "type" : "url",
+      "value" : [
+        "{{currentSheet|lazyRef:'answers'}}"
+      ],
+      "exposed" : false
+    },
+    "middleStage" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.currentPeriod_degree_tracking_stages){",
+        "    return $data.currentPeriod_degree_tracking_stages.find(element => element.denomination.toLowerCase() === 'mitad de ciclo');",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "endStage" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.currentPeriod_degree_tracking_stages){",
+        "    return $data.currentPeriod_degree_tracking_stages.find(element => element.denomination.toLowerCase() === 'final de ciclo');",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "middleStageQuestions" : {
+      "type" : "url",
+      "value" : [
+        "{{middleStage | lazyRef: 'questions'}}"
+      ],
+      "exposed" : false
+    },
+    "endStageQuestions" : {
+      "type" : "url",
+      "value" : [
+        "{{endStage | lazyRef: 'questions'}}"
+      ],
+      "exposed" : false
+    },
+    "tableResultsContent" : {
+      "type" : "expression",
+      "value" : [
+        "const tableContent = [];",
+        "",
+        "let questions;",
+        "",
+        "if ($data.currentSheetPosition === 0) {",
+        "    questions = $data.middleStageQuestions;",
+        "} else{",
+        "    questions = $data.endStageQuestions;",
+        "}",
+        "",
+        "if($data.currentPeriod_degree_tracking_alternatives && $data.answersSelectedSheet && questions && $data.tableResultsHeader){",
+        "    $data.answersSelectedSheet.forEach( ({question, alternative}, questionIndex) => {",
+        "        ",
+        "        if(question !== \"percentage\"){",
+        "            if(alternative){",
+        "            ",
+        "                const { description: indicator } = questions.find(currentQuestion => currentQuestion.persistenceId.toString() === question);",
+        "                const { description: alternativeResult } = $data.currentPeriod_degree_tracking_alternatives.find(currentAlternative => currentAlternative.persistenceId.toString() === alternative);",
+        "                const currentObject = {};",
+        "                ",
+        "                $data.tableResultsHeader.forEach((element, index) => {",
+        "                    ",
+        "                    let value = \" \";  ",
+        "                    ",
+        "                    if(index === 0){",
+        "                        value = `${questionIndex + 1}. ${indicator}`;",
+        "                    }",
+        "                    ",
+        "                    if(element === alternativeResult) {",
+        "                        value = 'X';  ",
+        "                    }",
+        "                    ",
+        "                    currentObject[`attribute${index}`] = value;",
+        "                });",
+        "                ",
+        "                tableContent.push(currentObject);",
+        "            }            ",
+        "        } else {",
+        "            $data.percentageAchieved = alternative;",
+        "        }",
+        "    });",
+        "}",
+        "",
+        "",
+        "",
+        "return tableContent;"
+      ],
+      "exposed" : false
+    },
+    "currentSheetPosition" : {
+      "type" : "expression",
+      "value" : [
+        "return undefined;"
+      ],
+      "exposed" : false
+    },
+    "currentSheet" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.currentPeriod_degree_grades_syllabuses_sheets){",
+        "    return $data.currentPeriod_degree_grades_syllabuses_sheets[$data.currentSheetPosition];",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "tableResultsHeader" : {
+      "type" : "expression",
+      "value" : [
+        "const array = [\"Indicadores de desarrollo del Sílabo\"];",
+        "",
+        "if($data.currentPeriod_degree_tracking_alternatives){",
+        "    $data.currentPeriod_degree_tracking_alternatives.forEach( ({ description }) => {",
+        "        array.push(description); ",
+        "    });",
+        "}",
+        "",
+        "return array;"
+      ],
+      "exposed" : false
+    },
+    "tableContentKeys" : {
+      "type" : "expression",
+      "value" : [
+        "const keys = [];",
+        "",
+        "$data.tableResultsHeader.forEach((element, index) => {",
+        "                ",
+        "    const key = `attribute${index}`;",
+        "    keys.push(key);",
+        "});",
+        "            ",
+        "return keys;"
+      ],
+      "exposed" : false
+    },
+    "percentageAchieved" : {
+      "type" : "expression",
+      "value" : [
+        "return;"
+      ],
+      "exposed" : false
+    },
+    "stageDenomination" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.currentSheet){",
+        "    return $data.currentSheet.denomination.toLowerCase().includes('mitad') ? 'MITAD' :  'FINAL';",
+        "}"
       ],
       "exposed" : false
     }
