@@ -146,7 +146,7 @@ public final class UtilsSSPM {
 	 */
 	public static String randomString(int length) {
 		
-		String chars = "abcdefghijklmnopqrstuvwxyz0123456789"
+		String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 		Random rand = new Random();
 		StringBuilder buf = new StringBuilder();
 		for (int i=0; i<length; i++) {
