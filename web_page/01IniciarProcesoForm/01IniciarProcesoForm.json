@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1614049505255,
+  "lastUpdate" : 1614459489561,
   "rows" : [
     [
       {
@@ -276,6 +276,49 @@
                     }
                   ]
                 ]
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "expression",
+                    "value" : "amountReserveStudents !== 0"
+                  },
+                  "message" : {
+                    "type" : "constant",
+                    "value" : "<b>Precaución: </b> En caso de no ingresar estudiantes de reserva, no existiría la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
+                  },
+                  "show" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "type" : {
+                    "type" : "constant",
+                    "value" : "warning"
+                  },
+                  "color" : {
+                    "type" : "constant"
+                  },
+                  "fontColor" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "25c7651d-3d3e-4497-9176-6a4d96431134",
+                "hasValidationError" : false,
+                "id" : "customAlertDanger"
               }
             ],
             [
@@ -1541,6 +1584,222 @@
                           {
                             "type" : "component",
                             "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<b>Estudiantes de Reserva"
+                              },
+                              "level" : {
+                                "type" : "constant",
+                                "value" : "Level 4"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              }
+                            },
+                            "reference" : "3e4b2833-fead-49f0-a89f-037e1142c00a",
+                            "hasValidationError" : false,
+                            "id" : "pbTitle"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b> Los estudiantes de reserva serán seleccionados por el sistema en caso de que algún estudiante por motivo de fuerza mayor no pueda calificar la ficha de seguimiento al sílabo asignada. </b> Tener en cuenta: si se indica 3 estudiantes de reserva, cada ciclo debe proporcionar 3 estudiantes más que la cantidad de sílabos de ese ciclo. <br>  Por ejemplo: <br>  <b>Decimo 'A' cuenta con 4 sílabos, entonces se debe proporcionar un total de 7 estudiantes para Décimo 'A', 4 estudiantes para calificar cada una de las fichas y 3 estudiantes de reserva."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "a7a89002-2ae7-4a0f-824e-474876b40e05",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 6,
+                              "md" : 4,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "<b class='control-label--required'>Cantidad de estudiantes de reserva:"
+                              },
+                              "level" : {
+                                "type" : "constant",
+                                "value" : "Level 5"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
+                              }
+                            },
+                            "reference" : "bdee39f8-ca76-4d15-ae43-80ea0b8e1aef",
+                            "hasValidationError" : false,
+                            "id" : "pbTitle"
+                          },
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 2,
+                              "md" : 2,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Cantidad de estudiantes de reseva:"
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "placeholder" : {
+                                "type" : "interpolation"
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "amountReserveStudents"
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "number"
+                              },
+                              "min" : {
+                                "type" : "constant",
+                                "value" : 0
+                              },
+                              "max" : {
+                                "type" : "constant",
+                                "value" : 10
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
+                              }
+                            },
+                            "reference" : "be92fc3f-ad09-47f2-a848-18504a06b112",
+                            "hasValidationError" : false,
+                            "id" : "pbInput"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "062bc438-6ff6-423b-babb-511cc3f0546a",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
                               "xs" : 12
                             },
                             "propertyValues" : {
@@ -1661,49 +1920,6 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "message" : {
-                                "type" : "expression",
-                                "value" : "reserveStudentsMessage"
-                              },
-                              "show" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
-                              },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
-                                "type" : "constant",
-                                "value" : false
-                              }
-                            },
-                            "reference" : "ec46d195-c66f-4f2d-bad5-c00609f4d152",
-                            "hasValidationError" : false,
-                            "id" : "customAlertDanger"
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
                               "xs" : 12
                             },
                             "propertyValues" : {
@@ -1787,6 +2003,13 @@
                               "type" : {
                                 "type" : "constant",
                                 "value" : "danger"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "b7020957-a53c-4fd1-a0c0-1425d7933ded",
@@ -1911,6 +2134,13 @@
                               "type" : {
                                 "type" : "constant",
                                 "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "ef118710-4b09-4c9a-aa10-8dafff65504e",
@@ -2053,225 +2283,6 @@
                             "reference" : "6f72c625-a12e-45e9-9832-2e0aabfebdd6",
                             "hasValidationError" : false,
                             "id" : "pbTitle"
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "<b> Los estudiantes de reserva serán seleccionados por el sistema en caso de que algún estudiante por motivo de fuerza mayor no pueda calificar la ficha de seguimiento al sílabo asignada. </b> Tener en cuenta: si se indica 3 estudiantes de reserva, cada ciclo debe proporcionar 3 estudiantes más que la cantidad de sílabos de ese ciclo. <br>  Por ejemplo: <br>  <b>Decimo 'A' cuenta con 4 sílabos, entonces se debe proporcionar un total de 7 estudiantes para Décimo 'A', 4 estudiantes para calificar cada una de las fichas y 3 estudiantes de reserva."
-                              },
-                              "show" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
-                              },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
-                                "type" : "constant",
-                                "value" : false
-                              }
-                            },
-                            "reference" : "a7a89002-2ae7-4a0f-824e-474876b40e05",
-                            "hasValidationError" : false,
-                            "id" : "customAlertDanger"
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "xs" : 12,
-                              "sm" : 6,
-                              "md" : 4,
-                              "lg" : 4
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "<b class='control-label--required'>Cantidad de estudiantes de reserva:"
-                              },
-                              "level" : {
-                                "type" : "constant",
-                                "value" : "Level 5"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              }
-                            },
-                            "reference" : "bdee39f8-ca76-4d15-ae43-80ea0b8e1aef",
-                            "hasValidationError" : false,
-                            "id" : "pbTitle"
-                          },
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "xs" : 12,
-                              "sm" : 2,
-                              "md" : 4,
-                              "lg" : 4
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "required" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "minLength" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "maxLength" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "readOnly" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Cantidad de estudiantes de reseva:"
-                              },
-                              "labelPosition" : {
-                                "type" : "constant",
-                                "value" : "top"
-                              },
-                              "labelWidth" : {
-                                "type" : "constant",
-                                "value" : 4
-                              },
-                              "placeholder" : {
-                                "type" : "interpolation"
-                              },
-                              "value" : {
-                                "type" : "variable",
-                                "value" : "amountReserveStudents"
-                              },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "number"
-                              },
-                              "min" : {
-                                "type" : "constant",
-                                "value" : 0
-                              },
-                              "max" : {
-                                "type" : "constant",
-                                "value" : 10
-                              },
-                              "step" : {
-                                "type" : "constant",
-                                "value" : 1
-                              }
-                            },
-                            "reference" : "be92fc3f-ad09-47f2-a848-18504a06b112",
-                            "hasValidationError" : false,
-                            "id" : "pbInput"
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "amountReserveStudents !== 0"
-                              },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "<b>Precaución: </b> En caso de no ingresar estudiantes de reserva, no existiría la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
-                              },
-                              "show" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "warning"
-                              },
-                              "color" : {
-                                "type" : "constant"
-                              }
-                            },
-                            "reference" : "25c7651d-3d3e-4497-9176-6a4d96431134",
-                            "hasValidationError" : false,
-                            "id" : "customAlertDanger"
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              }
-                            },
-                            "reference" : "062bc438-6ff6-423b-babb-511cc3f0546a",
-                            "hasValidationError" : false,
-                            "id" : "customSeparator"
                           }
                         ],
                         [

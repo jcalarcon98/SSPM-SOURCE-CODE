@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1614052041992,
+  "lastUpdate" : 1614460383171,
   "rows" : [
     [
       {
@@ -513,7 +513,7 @@
                               },
                               "color" : {
                                 "type" : "constant",
-                                "value" : "amber-100"
+                                "value" : ""
                               },
                               "fontColor" : {
                                 "type" : "constant",
@@ -729,7 +729,7 @@
                                     },
                                     "label" : {
                                       "type" : "interpolation",
-                                      "value" : "<b>Asignar nuevos estudiantes para calificar las fichas de seguimiento al sílabo que aún no han sido calificadas"
+                                      "value" : "<b> Reemplazar estudiantes"
                                     },
                                     "value" : {
                                       "type" : "variable",
@@ -844,7 +844,7 @@
                                           },
                                           "text" : {
                                             "type" : "interpolation",
-                                            "value" : "Por favor seleccionar los ciclos en los cuales desea que se asigne los estudiantes de reserva para calificar las fichas de seguimiento al silabo que aún no han sido evaluadas."
+                                            "value" : "Por favor, seleccionar los estudiantes que desea reemplazar por los estudiantes de reserva. Tomar en cuenta, que se debe seleccionar los estudiantes que por motivos de fuerza mayor no pueden calificar la ficha de seguimiento al sílabo que se le asignó."
                                           },
                                           "alignment" : {
                                             "type" : "constant",
@@ -895,45 +895,6 @@
                                         "hasValidationError" : false,
                                         "id" : "customCheckTable"
                                       }
-                                    ],
-                                    [
-                                      {
-                                        "type" : "component",
-                                        "dimension" : {
-                                          "xs" : 12,
-                                          "sm" : 12,
-                                          "md" : 12,
-                                          "lg" : 12
-                                        },
-                                        "propertyValues" : {
-                                          "cssClasses" : {
-                                            "type" : "constant",
-                                            "value" : ""
-                                          },
-                                          "hidden" : {
-                                            "type" : "constant",
-                                            "value" : false
-                                          },
-                                          "message" : {
-                                            "type" : "constant",
-                                            "value" : "<b>Nota:</b> Los estudiantes que sean seleccionados, serán remplazados por los estudiantes de reserva. Solamente deben ser seleccionador en casos que haya sucedido alguna situación de fuerza mayor."
-                                          },
-                                          "show" : {
-                                            "type" : "constant",
-                                            "value" : true
-                                          },
-                                          "type" : {
-                                            "type" : "constant",
-                                            "value" : "info"
-                                          },
-                                          "color" : {
-                                            "type" : "constant"
-                                          }
-                                        },
-                                        "reference" : "5bf75ad3-5de3-47c8-aaf1-f1aa8915a6a0",
-                                        "hasValidationError" : false,
-                                        "id" : "customAlertDanger"
-                                      }
                                     ]
                                   ]
                                 }
@@ -975,7 +936,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+                                "value" : "<strong>Errores encontraddos</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
                               },
                               "alignment" : {
                                 "type" : "constant",
