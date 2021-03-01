@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1614459489561,
+  "lastUpdate" : 1614559267274,
   "rows" : [
     [
       {
@@ -276,49 +276,6 @@
                     }
                   ]
                 ]
-              }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 12,
-                  "sm" : 12,
-                  "md" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "hidden" : {
-                    "type" : "expression",
-                    "value" : "amountReserveStudents !== 0"
-                  },
-                  "message" : {
-                    "type" : "constant",
-                    "value" : "<b>Precaución: </b> En caso de no ingresar estudiantes de reserva, no existiría la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
-                  },
-                  "show" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "type" : {
-                    "type" : "constant",
-                    "value" : "warning"
-                  },
-                  "color" : {
-                    "type" : "constant"
-                  },
-                  "fontColor" : {
-                    "type" : "constant",
-                    "value" : false
-                  }
-                },
-                "reference" : "25c7651d-3d3e-4497-9176-6a4d96431134",
-                "hasValidationError" : false,
-                "id" : "customAlertDanger"
               }
             ],
             [
@@ -1770,6 +1727,49 @@
                             "reference" : "be92fc3f-ad09-47f2-a848-18504a06b112",
                             "hasValidationError" : false,
                             "id" : "pbInput"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "expression",
+                                "value" : "amountReserveStudents !== 0"
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>Precaución: </b> En caso de no ingresar estudiantes de reserva, no existiría la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "warning"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "25c7651d-3d3e-4497-9176-6a4d96431134",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
                           }
                         ],
                         [
