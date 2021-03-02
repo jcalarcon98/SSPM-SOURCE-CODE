@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1614051977332,
+  "lastUpdate" : 1614659055174,
   "rows" : [
     [
       {
@@ -640,10 +640,10 @@
                                     "availableValues" : {
                                       "type" : "constant",
                                       "value" : [
-                                        "91 a 100",
-                                        "81 a 90",
-                                        "71 a 80",
-                                        "61 a 70",
+                                        "100 a 91",
+                                        "90 a 81",
+                                        "80 a 71",
+                                        "70 a 61",
                                         "Menos del 60"
                                       ]
                                     },

@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "07VisualizarSugerenciasForm",
   "name" : "07VisualizarSugerenciasForm",
-  "lastUpdate" : 1614052402069,
+  "lastUpdate" : 1614651919482,
   "rows" : [
     [
       {
@@ -312,7 +312,7 @@
                       ],
                       [
                         {
-                          "type" : "component",
+                          "type" : "container",
                           "dimension" : {
                             "xs" : 12,
                             "sm" : 12,
@@ -325,81 +325,111 @@
                               "value" : ""
                             },
                             "hidden" : {
-                              "type" : "constant",
-                              "value" : false
+                              "type" : "expression",
+                              "value" : "!context.reportSSPMChanged_ref"
                             },
-                            "labelHidden" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "label" : {
-                              "type" : "interpolation",
-                              "value" : "Default label"
-                            },
-                            "labelPosition" : {
-                              "type" : "constant",
-                              "value" : "top"
-                            },
-                            "labelWidth" : {
-                              "type" : "constant",
-                              "value" : 4
-                            },
-                            "allowHTML" : {
-                              "type" : "constant",
-                              "value" : true
-                            },
-                            "text" : {
-                              "type" : "interpolation",
-                              "value" : "A continuación se adjunta el informe con las sugerencias de la Dirección de Carrera."
-                            },
-                            "alignment" : {
-                              "type" : "constant",
-                              "value" : "left"
-                            }
-                          },
-                          "reference" : "66e2f76a-b603-4dc9-a2aa-66ea0ac4bfc0",
-                          "hasValidationError" : false,
-                          "id" : "pbText"
-                        }
-                      ],
-                      [
-                        {
-                          "type" : "component",
-                          "dimension" : {
-                            "xs" : 12,
-                            "sm" : 12,
-                            "md" : 12,
-                            "lg" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "type" : {
-                              "type" : "constant",
-                              "value" : "Process document"
-                            },
-                            "url" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "document" : {
+                            "repeatedCollection" : {
                               "type" : "variable",
-                              "value" : "context.reportSSPMChanged_ref"
-                            },
-                            "showPreview" : {
-                              "type" : "constant",
-                              "value" : false
+                              "value" : ""
                             }
                           },
-                          "reference" : "897eb58c-dfe7-4db4-b5e0-783877f27211",
+                          "reference" : "f25005b9-8117-4c7d-b284-a6c4b1117a11",
                           "hasValidationError" : false,
-                          "id" : "pbFileViewer"
+                          "id" : "pbContainer",
+                          "rows" : [
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Default label"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 4
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "A continuación se adjunta el informe con las sugerencias de la Dirección de Carrera."
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "66e2f76a-b603-4dc9-a2aa-66ea0ac4bfc0",
+                                "hasValidationError" : false,
+                                "id" : "pbText"
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "type" : {
+                                    "type" : "constant",
+                                    "value" : "Process document"
+                                  },
+                                  "url" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "document" : {
+                                    "type" : "variable",
+                                    "value" : "context.reportSSPMChanged_ref"
+                                  },
+                                  "showPreview" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  }
+                                },
+                                "reference" : "897eb58c-dfe7-4db4-b5e0-783877f27211",
+                                "hasValidationError" : false,
+                                "id" : "pbFileViewer"
+                              }
+                            ]
+                          ]
                         }
                       ],
                       [

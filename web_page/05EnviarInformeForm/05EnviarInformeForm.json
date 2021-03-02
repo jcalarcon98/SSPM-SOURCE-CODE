@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1614052259655,
+  "lastUpdate" : 1614650643081,
   "rows" : [
     [
       {
@@ -1523,11 +1523,11 @@
                                               },
                                               "condensed" : {
                                                 "type" : "constant",
-                                                "value" : false
+                                                "value" : true
                                               },
                                               "bordered" : {
                                                 "type" : "constant",
-                                                "value" : false
+                                                "value" : true
                                               }
                                             },
                                             "reference" : "31471653-6111-4d2c-b319-79d4eadc609e",

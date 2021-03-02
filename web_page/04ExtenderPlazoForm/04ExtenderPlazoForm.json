@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1614460383171,
+  "lastUpdate" : 1614661848187,
   "rows" : [
     [
       {
@@ -140,7 +140,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "<b>Listado de Estudiantes</b>"
+                                "value" : "<b>Listado de Estudiantes - Etapa : {{currentStage.denomination | uppercase}}</b>"
                               },
                               "level" : {
                                 "type" : "constant",
@@ -504,8 +504,8 @@
                                 "value" : "<b>Precaución</b>, en caso de no extender el plazo de calificación para los estudiantes, el proceso continuará con su flujo normal y se tabulará  solamente la información de las fichas que ya se encuentran calificadas."
                               },
                               "show" : {
-                                "type" : "constant",
-                                "value" : true
+                                "type" : "expression",
+                                "value" : "!formInput.extend"
                               },
                               "type" : {
                                 "type" : "constant",
@@ -802,6 +802,49 @@
                                         "reference" : "c6fc2a9d-099f-4cb2-96d5-9b22667a0ec1",
                                         "hasValidationError" : false,
                                         "id" : "pbTitle"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          },
+                                          "message" : {
+                                            "type" : "constant",
+                                            "value" : "<b> Precaución: </b> La etapa actual es de <b> FINAL DE CICLO </b>, no se debe reemplazar los estudiantes. Los mismos estudiantes que calificaron en la etapa de mitad de ciclo, deben ser los responsables de evaluar en la presente etapa. Sin embargo, se permite reemplazar los estudiantes bajo su responsabilidad."
+                                          },
+                                          "show" : {
+                                            "type" : "expression",
+                                            "value" : "currentStage.denomination.toUpperCase().trim()  === 'FINAL DE CICLO'"
+                                          },
+                                          "type" : {
+                                            "type" : "constant",
+                                            "value" : "warning"
+                                          },
+                                          "color" : {
+                                            "type" : "constant"
+                                          },
+                                          "fontColor" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          }
+                                        },
+                                        "reference" : "7e46d4d6-a86d-45fa-a46f-dc237c52eb4c",
+                                        "hasValidationError" : false,
+                                        "id" : "customAlertDanger"
                                       }
                                     ],
                                     [
@@ -1277,7 +1320,7 @@
     "test" : {
       "type" : "expression",
       "value" : [
-        "console.log($data.gradesToBeEvaluated);"
+        "console.log($data.currentStage, 'Stage');"
       ],
       "exposed" : false
     },
@@ -1321,6 +1364,13 @@
       "type" : "expression",
       "value" : [
         "return;"
+      ],
+      "exposed" : false
+    },
+    "currentStage" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.currentStage_ref.link}}"
       ],
       "exposed" : false
     }

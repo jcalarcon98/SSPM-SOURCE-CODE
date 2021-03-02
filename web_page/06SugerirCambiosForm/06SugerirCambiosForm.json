@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "06SugerirCambiosForm",
   "name" : "06SugerirCambiosForm",
-  "lastUpdate" : 1614052315633,
+  "lastUpdate" : 1614650674292,
   "rows" : [
     [
       {
@@ -556,11 +556,11 @@
                                   },
                                   "condensed" : {
                                     "type" : "constant",
-                                    "value" : false
+                                    "value" : true
                                   },
                                   "bordered" : {
                                     "type" : "constant",
-                                    "value" : false
+                                    "value" : true
                                   }
                                 },
                                 "reference" : "8e553a63-4722-4004-b5bb-8ea0c5b6db00",
@@ -613,42 +613,6 @@
                     "hasValidationError" : false,
                     "id" : "pbContainer",
                     "rows" : [
-                      [
-                        {
-                          "type" : "component",
-                          "dimension" : {
-                            "xs" : 12,
-                            "sm" : 12,
-                            "md" : 12,
-                            "lg" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            },
-                            "text" : {
-                              "type" : "interpolation",
-                              "value" : "<b>Acuerdo de Resultados</b>"
-                            },
-                            "level" : {
-                              "type" : "constant",
-                              "value" : "Level 3"
-                            },
-                            "alignment" : {
-                              "type" : "constant",
-                              "value" : "left"
-                            }
-                          },
-                          "reference" : "ab7cdf71-faea-49f4-8b13-87e86f4d2a0d",
-                          "hasValidationError" : false,
-                          "id" : "pbTitle"
-                        }
-                      ],
                       [
                         {
                           "type" : "component",

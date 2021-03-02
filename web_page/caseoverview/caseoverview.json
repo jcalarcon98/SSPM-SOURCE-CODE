@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1614043919422,
+  "lastUpdate" : 1614661343666,
   "rows" : [
     [
       {
@@ -871,7 +871,7 @@
                 },
                 "hidden" : {
                   "type" : "expression",
-                  "value" : "!archivedSillabusFile"
+                  "value" : "!currentPeriod_degree_grades"
                 },
                 "cssClasses" : {
                   "type" : "constant",
@@ -1621,7 +1621,7 @@
                             },
                             "hidden" : {
                               "type" : "expression",
-                              "value" : "!currentPeriod_selected"
+                              "value" : "!currentPeriod_degree_tracking_stages"
                             },
                             "cssClasses" : {
                               "type" : "constant",
@@ -2307,8 +2307,8 @@
                                 },
                                 "propertyValues" : {
                                   "hidden" : {
-                                    "type" : "constant",
-                                    "value" : false
+                                    "type" : "expression",
+                                    "value" : "!archivedSillabusFile"
                                   },
                                   "level" : {
                                     "type" : "constant",
@@ -2335,6 +2335,42 @@
                                 "hasValidationError" : false,
                                 "id" : "pbTitle",
                                 "description" : ""
+                              }
+                            ],
+                            [
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 12,
+                                  "md" : 12,
+                                  "lg" : 12
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<b> Ciclos"
+                                  },
+                                  "level" : {
+                                    "type" : "constant",
+                                    "value" : "Level 4"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "3ec0f52b-fe7e-4d6f-933b-2832403d3c83",
+                                "hasValidationError" : false,
+                                "id" : "pbTitle"
                               }
                             ],
                             [
@@ -2563,32 +2599,41 @@
                                           "value" : ""
                                         },
                                         "hidden" : {
-                                          "type" : "constant",
-                                          "value" : false
+                                          "type" : "expression",
+                                          "value" : "currentPeriod_degree_grades_syllabuses_sheets.length <= 0s"
                                         },
-                                        "message" : {
-                                          "type" : "constant",
-                                          "value" : "<b> Seleccione un sílabo para visualizar las fichas de seguimiento al sílabo calificadas."
-                                        },
-                                        "show" : {
+                                        "labelHidden" : {
                                           "type" : "constant",
                                           "value" : true
                                         },
-                                        "type" : {
-                                          "type" : "constant",
-                                          "value" : "info"
+                                        "label" : {
+                                          "type" : "interpolation",
+                                          "value" : "Default label"
                                         },
-                                        "color" : {
-                                          "type" : "constant"
-                                        },
-                                        "fontColor" : {
+                                        "labelPosition" : {
                                           "type" : "constant",
-                                          "value" : false
+                                          "value" : "top"
+                                        },
+                                        "labelWidth" : {
+                                          "type" : "constant",
+                                          "value" : 4
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "text" : {
+                                          "type" : "interpolation",
+                                          "value" : "<div class='alert alert-info'  >\n<b> Seleccione un sílabo para visualizar las fichas de seguimiento al sílabo calificadas.\n</div>"
+                                        },
+                                        "alignment" : {
+                                          "type" : "constant",
+                                          "value" : "left"
                                         }
                                       },
-                                      "reference" : "84bd1137-d145-4a4e-bd1d-33c2709dfbe3",
+                                      "reference" : "da89434c-a91c-4f07-96d2-bacf2ab9d970",
                                       "hasValidationError" : false,
-                                      "id" : "customAlertDanger"
+                                      "id" : "pbText"
                                     }
                                   ],
                                   [
@@ -2801,6 +2846,58 @@
                                         ],
                                         [
                                           {
+                                            "type" : "component",
+                                            "dimension" : {
+                                              "xs" : 12,
+                                              "sm" : 12,
+                                              "md" : 12,
+                                              "lg" : 12
+                                            },
+                                            "propertyValues" : {
+                                              "cssClasses" : {
+                                                "type" : "constant",
+                                                "value" : ""
+                                              },
+                                              "hidden" : {
+                                                "type" : "expression",
+                                                "value" : "currentPeriod_degree_grades_syllabuses_sheets.length > 0"
+                                              },
+                                              "labelHidden" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "label" : {
+                                                "type" : "interpolation",
+                                                "value" : "Default label"
+                                              },
+                                              "labelPosition" : {
+                                                "type" : "constant",
+                                                "value" : "top"
+                                              },
+                                              "labelWidth" : {
+                                                "type" : "constant",
+                                                "value" : 4
+                                              },
+                                              "allowHTML" : {
+                                                "type" : "constant",
+                                                "value" : true
+                                              },
+                                              "text" : {
+                                                "type" : "interpolation",
+                                                "value" : "<div class='alert alert-info'> <b>!Aún no hay ninguna ficha de seguimiento al sílabo evaluada!</div>"
+                                              },
+                                              "alignment" : {
+                                                "type" : "constant",
+                                                "value" : "left"
+                                              }
+                                            },
+                                            "reference" : "29f12a8f-d104-4aac-8fbd-b2d9839f35b4",
+                                            "hasValidationError" : false,
+                                            "id" : "pbText"
+                                          }
+                                        ],
+                                        [
+                                          {
                                             "type" : "container",
                                             "dimension" : {
                                               "xs" : 12
@@ -2811,8 +2908,8 @@
                                                 "value" : ""
                                               },
                                               "hidden" : {
-                                                "type" : "constant",
-                                                "value" : false
+                                                "type" : "expression",
+                                                "value" : "!currentPeriod_degree_grades_syllabuses_sheets || currentPeriod_degree_grades_syllabuses_sheets.length <= 0"
                                               },
                                               "repeatedCollection" : {
                                                 "type" : "variable",
@@ -4519,19 +4616,6 @@
       "type" : "url",
       "value" : [
         "{{currentPeriod_degree_grades_syllabuses_selected|lazyRef:'sheets'}}"
-      ],
-      "exposed" : false
-    },
-    "testing" : {
-      "type" : "expression",
-      "value" : [
-        "console.log($data.currentPeriod, 'Current Period');",
-        "console.log($data.middleStageQuestions, 'Middle Stage Questions');",
-        "console.log($data.endStageQuestions, 'Final de Ciclo Questions');",
-        "console.log($data.answersSelectedSheet, 'Selected');",
-        "console.log($data.currentSheetPosition, 'Sheet position');",
-        "console.log($data.currentSheet, 'Current Sheet');",
-        "console.log($data.currentPeriod_degree_grades_selected, 'Degree Selected');"
       ],
       "exposed" : false
     },

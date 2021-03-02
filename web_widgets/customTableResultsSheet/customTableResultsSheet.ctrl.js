@@ -54,7 +54,7 @@ function PbTableCtrl($scope) {
         
         if(denominationSheet === 'FINAL '){
             
-            const percentageValues = ['', '100 a 91', '90 a 81', '80 a 71', '71 a 60', 'Menos del 60'];
+            const percentageValues = ['', '100 a 91', '90 a 81', '80 a 71', '70 a 61', 'Menos del 60'];
             
             const percentageAnswers = ['Porcentaje alcanzado en el cumplimiento de la ejecución del sílabo'];
             
