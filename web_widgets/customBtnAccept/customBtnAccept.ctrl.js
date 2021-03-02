@@ -4,7 +4,7 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
       
         if($scope.properties.showNextTabs){
             const { value } = await Swal.fire({
-                                  title: '¿Está seguro de comenzar con el proceso?',
+                                  title: '¿Está seguro de aplicar el proceso a la carrera seleccionada?',
                                   text: "Es una acción que no se puede revertir",
                                   type: 'question',
                                   showCancelButton: true,

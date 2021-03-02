@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "06SugerirCambiosForm",
   "name" : "06SugerirCambiosForm",
-  "lastUpdate" : 1614650674292,
+  "lastUpdate" : 1614720424050,
   "rows" : [
     [
       {
@@ -76,7 +76,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "<b>Informe de Seguimiento al Sílabo y Plan de Mejoras</b>"
+                  "value" : "<b>Informe de Seguimiento al Sílabo y Plan de Mejoras - {{currentStage.denomination}}</b>"
                 },
                 "level" : {
                   "type" : "constant",
@@ -613,6 +613,42 @@
                     "hasValidationError" : false,
                     "id" : "pbContainer",
                     "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Acuerdo de Resultados"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "95eb0ca7-920e-43e4-86d5-6aa5ba73d1a5",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
                       [
                         {
                           "type" : "component",
@@ -1224,6 +1260,13 @@
       "type" : "expression",
       "value" : [
         "return;"
+      ],
+      "exposed" : false
+    },
+    "currentStage" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.currentStage_ref.link}}"
       ],
       "exposed" : false
     }

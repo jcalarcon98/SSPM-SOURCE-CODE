@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1614051676919,
+  "lastUpdate" : 1614721176267,
   "rows" : [
     [
       {
@@ -1644,6 +1644,30 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    }
+                                  },
+                                  "reference" : "2dec6d69-b69c-4450-99d0-6fa0e633b0a6",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
                                     "xs" : 12
                                   },
                                   "propertyValues" : {
@@ -2601,6 +2625,30 @@
                                       {
                                         "type" : "component",
                                         "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          }
+                                        },
+                                        "reference" : "1fe919bd-309c-4201-aafe-eb44a4cbfd72",
+                                        "hasValidationError" : false,
+                                        "id" : "customSeparator"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
                                           "xs" : 12
                                         },
                                         "propertyValues" : {
@@ -2740,6 +2788,30 @@
                                       {
                                         "type" : "component",
                                         "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          }
+                                        },
+                                        "reference" : "39dd827a-f963-4311-a461-c9ffc9d450c1",
+                                        "hasValidationError" : false,
+                                        "id" : "customSeparator"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
                                           "xs" : 12
                                         },
                                         "propertyValues" : {
@@ -2873,6 +2945,30 @@
                                         "reference" : "e7fc223f-5549-45dd-9b33-6b7bebc17ecb",
                                         "hasValidationError" : false,
                                         "id" : "pbTable"
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          }
+                                        },
+                                        "reference" : "b2744f8c-44f9-4d53-a65d-dc54cee2d939",
+                                        "hasValidationError" : false,
+                                        "id" : "customSeparator"
                                       }
                                     ],
                                     [
@@ -3104,6 +3200,30 @@
                                         "hasValidationError" : false,
                                         "id" : "pbText",
                                         "description" : ""
+                                      }
+                                    ],
+                                    [
+                                      {
+                                        "type" : "component",
+                                        "dimension" : {
+                                          "xs" : 12,
+                                          "sm" : 12,
+                                          "md" : 12,
+                                          "lg" : 12
+                                        },
+                                        "propertyValues" : {
+                                          "cssClasses" : {
+                                            "type" : "constant",
+                                            "value" : ""
+                                          },
+                                          "hidden" : {
+                                            "type" : "constant",
+                                            "value" : false
+                                          }
+                                        },
+                                        "reference" : "867ee808-a06c-4450-ad5a-9f50b63f098c",
+                                        "hasValidationError" : false,
+                                        "id" : "customSeparator"
                                       }
                                     ],
                                     [

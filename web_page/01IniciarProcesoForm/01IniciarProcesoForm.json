@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1614559267274,
+  "lastUpdate" : 1614717281595,
   "rows" : [
     [
       {
@@ -153,7 +153,7 @@
                         },
                         "text" : {
                           "type" : "interpolation",
-                          "value" : "La Universidad Nacional de Loja a través de la expedición de la Resolución 018-R-UNL-2014 del 31 de marzo de 2014 norma la política institucional y la estructura del sistema que facilita el seguimiento al cumplimiento de los sílabos de las diferentes asignaturas de las carreras. El Artículo 3 de la mencionada resolución señala que la Universidad Nacional de Loja garantizará un proceso educativo centrado en el logro de aprendizaje de las y los estudiantes, con la ejecución de la planificación micro curricular y el seguimiento al cumplimiento de los sílabos de las diferentes asignaturas.\n<br>\n<br>\nEl Artículo 11, señala que el “... seguimiento a los sílabos con el informe de las y los estudiantes se hará dos veces en el periodo académico; el primero a la mitad y el segundo al final... “.\n<br>\n<br>\nSiendo que la Evaluación del Desempeño Docente, forma parte de la política de\nmejoramiento de la educación, y uno sus principales componentes, es imperativo\ninstitucionalizarla, particularmente en la Universidad Nacional de Loja."
+                          "value" : "<p class='text-justify'>\nLa Universidad Nacional de Loja a través de la expedición de la Resolución 018-R-UNL-2014 del 31 de marzo de 2014 norma la política institucional y la estructura del sistema que facilita el seguimiento al cumplimiento de los sílabos de las diferentes asignaturas de las carreras. El Artículo 3 de la mencionada resolución señala que la Universidad Nacional de Loja garantizará un proceso educativo centrado en el logro de aprendizaje de las y los estudiantes, con la ejecución de la planificación micro curricular y el seguimiento al cumplimiento de los sílabos de las diferentes asignaturas.\n<br>\n<br>\nEl Artículo 11, señala que el “... seguimiento a los sílabos con el informe de las y los estudiantes se hará dos veces en el periodo académico; el primero a la mitad y el segundo al final... “.\n<br>\n<br>\nSiendo que la Evaluación del Desempeño Docente, forma parte de la política de\nmejoramiento de la educación, y uno sus principales componentes, es imperativo\ninstitucionalizarla, particularmente en la Universidad Nacional de Loja.\n</p>"
                         },
                         "alignment" : {
                           "type" : "constant",
@@ -1591,29 +1591,38 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "<b> Los estudiantes de reserva serán seleccionados por el sistema en caso de que algún estudiante por motivo de fuerza mayor no pueda calificar la ficha de seguimiento al sílabo asignada. </b> Tener en cuenta: si se indica 3 estudiantes de reserva, cada ciclo debe proporcionar 3 estudiantes más que la cantidad de sílabos de ese ciclo. <br>  Por ejemplo: <br>  <b>Decimo 'A' cuenta con 4 sílabos, entonces se debe proporcionar un total de 7 estudiantes para Décimo 'A', 4 estudiantes para calificar cada una de las fichas y 3 estudiantes de reserva."
-                              },
-                              "show" : {
+                              "labelHidden" : {
                                 "type" : "constant",
                                 "value" : true
                               },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Default label"
                               },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
+                              "labelPosition" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "Ingrese la cantidad de estudiantes de reserva:"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
                               }
                             },
-                            "reference" : "a7a89002-2ae7-4a0f-824e-474876b40e05",
+                            "reference" : "c0e14cdb-ff12-436b-a0f6-83faf2b06075",
                             "hasValidationError" : false,
-                            "id" : "customAlertDanger"
+                            "id" : "pbText"
                           }
                         ],
                         [
@@ -1621,9 +1630,9 @@
                             "type" : "component",
                             "dimension" : {
                               "xs" : 12,
-                              "sm" : 6,
+                              "sm" : 5,
                               "md" : 4,
-                              "lg" : 6
+                              "lg" : 4
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -1634,22 +1643,76 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "<b class='control-label--required'>Cantidad de estudiantes de reserva:"
-                              },
-                              "level" : {
+                              "disabled" : {
                                 "type" : "constant",
-                                "value" : "Level 5"
+                                "value" : false
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "<div class='info-button'><span class='glyphicon glyphicon-info-sign'></span> <b class='control-label--required'>Cantidad de estudiantes de reserva: <span class=\"tooltiptext\">Hacer clic para más información</span> </div>"
                               },
                               "alignment" : {
                                 "type" : "constant",
                                 "value" : "left"
+                              },
+                              "buttonStyle" : {
+                                "type" : "constant",
+                                "value" : "link"
+                              },
+                              "action" : {
+                                "type" : "constant",
+                                "value" : "Open modal"
+                              },
+                              "assign" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "url" : {
+                                "type" : "interpolation"
+                              },
+                              "responseStatusCode" : {
+                                "type" : "variable",
+                                "value" : ""
+                              },
+                              "dataToSend" : {
+                                "type" : "constant"
+                              },
+                              "dataFromSuccess" : {
+                                "type" : "variable",
+                                "value" : ""
+                              },
+                              "closeOnSuccess" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "dataFromError" : {
+                                "type" : "variable",
+                                "value" : ""
+                              },
+                              "targetUrlOnSuccess" : {
+                                "type" : "interpolation"
+                              },
+                              "collectionToModify" : {
+                                "type" : "variable"
+                              },
+                              "modalId" : {
+                                "type" : "constant",
+                                "value" : "info-amount-students"
+                              },
+                              "collectionPosition" : {
+                                "type" : "constant",
+                                "value" : "Last"
+                              },
+                              "valueToAdd" : {
+                                "type" : "constant"
+                              },
+                              "removeItem" : {
+                                "type" : "variable"
                               }
                             },
-                            "reference" : "bdee39f8-ca76-4d15-ae43-80ea0b8e1aef",
+                            "reference" : "3aa3cbd5-4720-431d-a5a7-73adc451f7c0",
                             "hasValidationError" : false,
-                            "id" : "pbTitle"
+                            "id" : "pbButton"
                           },
                           {
                             "type" : "component",
@@ -1657,7 +1720,7 @@
                               "xs" : 12,
                               "sm" : 2,
                               "md" : 2,
-                              "lg" : 6
+                              "lg" : 4
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -1890,7 +1953,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "img-thumbnail"
                               },
                               "hidden" : {
                                 "type" : "constant",
@@ -2346,7 +2409,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "img-thumbnail"
                               },
                               "hidden" : {
                                 "type" : "constant",
@@ -3179,7 +3242,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "Los Docentes descritos en la siguiente tabla, serán los encargados de llevar a cabo el Proceso de <b>Seguimiento al sílabo y Plan de mejoras </b> en el periodo {{period.initDate}}  a {{period.endDate}}, por favor lea minuciosamente si los datos ingresados son los correctos."
+                                "value" : "Los Docentes descritos en la siguiente tabla, serán los encargados de llevar a cabo el Proceso de <b>Seguimiento al sílabo y Plan de mejoras </b> en el periodo {{period.initDate | date:'MM/dd/yyyy' }}  a {{period.endDate | date:'MM/dd/yyyy'}}, por favor lea minuciosamente si los datos ingresados son los correctos."
                               },
                               "alignment" : {
                                 "type" : "constant",
@@ -3300,6 +3363,13 @@
                               "type" : {
                                 "type" : "constant",
                                 "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "9d105c42-629d-44b7-8383-c8d5b9ba20b6",
@@ -3481,6 +3551,102 @@
                     }
                   }
                 ]
+              }
+            ]
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "type" : "modalContainer",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : "alert-info rounded padding-10"
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : "info-amount-students"
+          },
+          "size" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "animation" : {
+            "type" : "constant",
+            "value" : true
+          }
+        },
+        "reference" : "d4baf502-7c87-4e6b-bb0e-9fd25befbfb1",
+        "hasValidationError" : false,
+        "id" : "pbModalContainer",
+        "container" : {
+          "type" : "container",
+          "dimension" : {
+            "xs" : 12
+          },
+          "propertyValues" : { },
+          "reference" : "0cea6b7d-a54f-4649-9a0c-3e62144d0b75",
+          "hasValidationError" : false,
+          "id" : "pbContainer",
+          "rows" : [
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Default label"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b> Los estudiantes de reserva serán seleccionados por el sistema en caso de que algún estudiante por motivo de fuerza mayor no pueda calificar la ficha de seguimiento al sílabo asignada. </b> Tener en cuenta: si se indica 3 estudiantes de reserva, cada ciclo debe proporcionar 3 estudiantes más que la cantidad de sílabos de ese ciclo. <br>  Por ejemplo: <br>  <b>Decimo 'A' cuenta con 4 sílabos, entonces se debe proporcionar un total de 7 estudiantes, 4 estudiantes para calificar cada una de las fichas y 3 estudiantes de reserva."
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "028a9945-81fd-4561-9afa-e911e1049d9c",
+                "hasValidationError" : false,
+                "id" : "pbText"
               }
             ]
           ]

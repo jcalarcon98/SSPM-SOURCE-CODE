@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "08VerificarCumplimientoForm",
   "name" : "08VerificarCumplimientoForm",
-  "lastUpdate" : 1614052724270,
+  "lastUpdate" : 1614721116655,
   "rows" : [
     [
       {
@@ -56,6 +56,42 @@
                 "hasValidationError" : false,
                 "id" : "headerProcess",
                 "binding" : { }
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b> Seguimiento al Plan de mejoras - Mitad de Ciclo"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 3"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "a3a13eb1-b63a-4e21-9d87-e516eed26691",
+                "hasValidationError" : false,
+                "id" : "pbTitle"
               }
             ],
             [
@@ -879,6 +915,30 @@
                                     "hidden" : {
                                       "type" : "constant",
                                       "value" : false
+                                    }
+                                  },
+                                  "reference" : "8da69195-d925-40e3-83be-7e7373c876d7",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
                                     },
                                     "text" : {
                                       "type" : "interpolation",
@@ -1537,6 +1597,13 @@
         "});",
         "",
         "return [completedCounter, toCompletedCounter];"
+      ],
+      "exposed" : false
+    },
+    "currentStage" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.currentStage_ref.link}}"
       ],
       "exposed" : false
     }

@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "04ExtenderPlazoForm",
   "name" : "04ExtenderPlazoForm",
-  "lastUpdate" : 1614661848187,
+  "lastUpdate" : 1614719641118,
   "rows" : [
     [
       {
@@ -57,6 +57,42 @@
                 "hasValidationError" : false,
                 "id" : "headerProcess",
                 "binding" : { }
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<b>Extender Plazo - {{currentStage.denomination}}"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 3"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "11a148bb-15de-428f-9cfc-2e430256efe3",
+                "hasValidationError" : false,
+                "id" : "pbTitle"
               }
             ],
             [
@@ -140,7 +176,7 @@
                               },
                               "text" : {
                                 "type" : "interpolation",
-                                "value" : "<b>Listado de Estudiantes - Etapa : {{currentStage.denomination | uppercase}}</b>"
+                                "value" : "<b>Listado de Estudiantes</b>"
                               },
                               "level" : {
                                 "type" : "constant",

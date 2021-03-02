@@ -571,7 +571,7 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fGOQEGS1Eeuieu1-zwk2Cw" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_eWe1MmS1Eeuieu1-zwk2Cw" name="setNewCurrentStage()" content="import com.company.model.Stage&#xA;&#xA;Stage currentStage = null;&#xA;&#xA;for (stage in tracking.stages) {&#xA;&#x9;if(stage.denomination == &quot;Final de Ciclo&quot;){&#xA;&#x9;&#x9;currentStage = stage;&#xA;&#x9;}&#xA;}&#xA;&#xA;return currentStage;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Stage">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_cLYmIGajEeueloIkIVx2ZA" name="tracking" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Tracking"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_vUBFwHudEeugbqCBG5wv9A" name="tracking" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Tracking"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_eWe1M2S1Eeuieu1-zwk2Cw" type="ASSIGNMENT"/>
           </operations>
@@ -1957,26 +1957,6 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_EVtbMWQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_EVtbMGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_EVv3cGQWEeuaypGxdjAx3Q" name="" content="" returnTypeFixed="true"/>
-          <connectors xmi:type="process:Connector" xmi:id="_BWnVcHSAEeuLpZN-Z3PlmA" name="testing" definitionId="scripting-groovy-script" event="ON_FINISH" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_BWnVcXSAEeuLpZN-Z3PlmA" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BWnVcnSAEeuLpZN-Z3PlmA" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_BWnVc3SAEeuLpZN-Z3PlmA" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BWnVdHSAEeuLpZN-Z3PlmA" key="variables"/>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BWnVdXSAEeuLpZN-Z3PlmA" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_BWnVdnSAEeuLpZN-Z3PlmA" name="test" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;logger.severe(existImprovementPlan.toString());" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:Data" xmi:id="_BWnVd3SAEeuLpZN-Z3PlmA" name="existImprovementPlan" dataType="_PH_rnEU9EeuYOOr8JiHqIQ"/>
-                </expression>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_BWnVeHSAEeuLpZN-Z3PlmA">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_BWnVeXSAEeuLpZN-Z3PlmA"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_BWnVenSAEeuLpZN-Z3PlmA" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_BWnVe3SAEeuLpZN-Z3PlmA" name="result" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_BWnVfHSAEeuLpZN-Z3PlmA" type="ASSIGNMENT"/>
-            </outputs>
-          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_U13PcGRFEeuLM5QOp-5kzA">
             <leftOperand xmi:type="expression:Expression" xmi:id="_U13PcWRFEeuLM5QOp-5kzA" name="reportSSPM" content="reportSSPM" type="DOCUMENT_REF_TYPE">
               <referencedElements xmi:type="process:Document" xmi:id="_U13PcmRFEeuLM5QOp-5kzA" name="reportSSPM"/>

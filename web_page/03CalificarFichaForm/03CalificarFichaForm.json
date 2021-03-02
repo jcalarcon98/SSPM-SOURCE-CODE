@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1614659055174,
+  "lastUpdate" : 1614721629645,
   "rows" : [
     [
       {
@@ -382,7 +382,8 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 7
+                                    "xs" : 7,
+                                    "sm" : 7
                                   },
                                   "propertyValues" : {
                                     "cssClasses" : {
@@ -415,7 +416,7 @@
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "<b>{{questions.indexOf($item) + 1}}.</b> {{$item.description}}"
+                                      "value" : "<b>{{questions.indexOf($item) + 1}}.</b> {{$item.description}} <span class='control-label--required'></span>"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -429,7 +430,8 @@
                                 {
                                   "type" : "component",
                                   "dimension" : {
-                                    "xs" : 5
+                                    "xs" : 5,
+                                    "sm" : 5
                                   },
                                   "propertyValues" : {
                                     "cssClasses" : {
@@ -450,7 +452,7 @@
                                     },
                                     "labelHidden" : {
                                       "type" : "constant",
-                                      "value" : false
+                                      "value" : true
                                     },
                                     "label" : {
                                       "type" : "interpolation",
@@ -516,6 +518,30 @@
                         ],
                         [
                           {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "e68bb90f-726a-4030-965c-66f281ce07bb",
+                            "hasValidationError" : false,
+                            "id" : "customSeparator"
+                          }
+                        ],
+                        [
+                          {
                             "type" : "container",
                             "dimension" : {
                               "xs" : 12,
@@ -546,9 +572,9 @@
                                   "type" : "component",
                                   "dimension" : {
                                     "xs" : 12,
-                                    "sm" : 8,
+                                    "sm" : 7,
                                     "md" : 7,
-                                    "lg" : 6
+                                    "lg" : 7
                                   },
                                   "propertyValues" : {
                                     "cssClasses" : {
@@ -581,7 +607,7 @@
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "Porcentaje alcanzado en el cumplimiento de la ejecución del Sílabo."
+                                      "value" : "Porcentaje alcanzado en el cumplimiento de la ejecución del Sílabo.<span class='control-label--required'></span>"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -596,9 +622,9 @@
                                   "type" : "component",
                                   "dimension" : {
                                     "xs" : 12,
-                                    "sm" : 4,
+                                    "sm" : 5,
                                     "md" : 5,
-                                    "lg" : 6
+                                    "lg" : 5
                                   },
                                   "propertyValues" : {
                                     "cssClasses" : {
@@ -619,7 +645,7 @@
                                     },
                                     "labelHidden" : {
                                       "type" : "constant",
-                                      "value" : false
+                                      "value" : true
                                     },
                                     "label" : {
                                       "type" : "interpolation",

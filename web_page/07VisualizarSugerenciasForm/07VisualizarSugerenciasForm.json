@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "07VisualizarSugerenciasForm",
   "name" : "07VisualizarSugerenciasForm",
-  "lastUpdate" : 1614651919482,
+  "lastUpdate" : 1614719528497,
   "rows" : [
     [
       {
@@ -76,7 +76,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "<b>Informe de Seguimiento al Sílabo y Plan de Mejoras</b>"
+                  "value" : "<b>Informe de Seguimiento al Sílabo y Plan de Mejoras - {{currentStage.denomination}}</b>"
                 },
                 "level" : {
                   "type" : "constant",
@@ -676,6 +676,13 @@
       "type" : "url",
       "value" : [
         "../API/bpm/caseVariable/{{task.caseId}}/suggestions"
+      ],
+      "exposed" : false
+    },
+    "currentStage" : {
+      "type" : "url",
+      "value" : [
+        "./{{context.currentStage_ref.link}}"
       ],
       "exposed" : false
     }

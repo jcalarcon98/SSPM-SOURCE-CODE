@@ -51,3 +51,43 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .padding-xl { padding: 3em; }
 .padding-lg { padding: 1.5em; }
 .padding-bottom-xl { padding-bottom: 3em; }
+
+.rounded {
+    border-radius: 5px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+
+.info-button {
+  position: relative;
+  display: inline-block;
+  border-bottom: none;
+}
+
+.info-button .tooltiptext {
+  visibility: hidden;
+  width: 230px;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  left: 10%;
+}
+
+.info-button:hover .tooltiptext {
+  visibility: visible;
+}
+
+.image-height {
+    height: 90px;
+}
+
+

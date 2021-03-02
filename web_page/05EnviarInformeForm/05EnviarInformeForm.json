@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1614650643081,
+  "lastUpdate" : 1614719586692,
   "rows" : [
     [
       {
@@ -76,7 +76,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "<b>Informe de Seguimiento al Sílabo y Plan de Mejoras</b>"
+                  "value" : "<b>Informe de Seguimiento al Sílabo y Plan de Mejoras - {{currentStage.denomination}}</b>"
                 },
                 "level" : {
                   "type" : "constant",
@@ -1071,30 +1071,6 @@
                               "value" : ""
                             },
                             "hidden" : {
-                              "type" : "constant",
-                              "value" : false
-                            }
-                          },
-                          "reference" : "cf4841f4-3b7d-4db9-9996-930f10deb246",
-                          "hasValidationError" : false,
-                          "id" : "customSeparator"
-                        }
-                      ],
-                      [
-                        {
-                          "type" : "component",
-                          "dimension" : {
-                            "xs" : 12,
-                            "sm" : 12,
-                            "md" : 12,
-                            "lg" : 12
-                          },
-                          "propertyValues" : {
-                            "cssClasses" : {
-                              "type" : "constant",
-                              "value" : ""
-                            },
-                            "hidden" : {
                               "type" : "expression",
                               "value" : "context.reportSSPM_ref.newValue.filename"
                             },
@@ -1899,6 +1875,13 @@
         "} else {",
         "    return '¿Está seguro de continuar con el proceso sin indicar acciones de mejora?'  ",
         "}"
+      ],
+      "exposed" : false
+    },
+    "currentStage" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.currentStage_ref.link}}"
       ],
       "exposed" : false
     }

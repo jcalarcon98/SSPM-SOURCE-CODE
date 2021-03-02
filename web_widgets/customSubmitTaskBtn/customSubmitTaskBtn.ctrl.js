@@ -5,8 +5,7 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
   var vm = this;
 
   this.action = function action() {
-     if ($scope.properties.action === 'Submit task') {
-        Swal.fire({
+     Swal.fire({
           title: $scope.properties.titleQuestion,
           text: $scope.properties.textQuestion,
           type: 'question',
@@ -21,14 +20,29 @@ function PbButtonCtrl($scope, $http, $location, $log, $window, localStorageServi
           footer: '<p class="text-primary"><b>Seguimiento al Sílabo y Plan de mejoras </b></p>',
         }).then((result) => {
           if (result.value) {
-             submitTask();
+             if ($scope.properties.action === 'Submit task') {
+                submitTask();
+            } else if ($scope.properties.action === 'Start process') {
+                startProcess();
+            }else if ($scope.properties.url) {
+                doRequest($scope.properties.action, $scope.properties.url);
+            }
           }
         })
-    }  if ($scope.properties.url) {
-      doRequest($scope.properties.action, $scope.properties.url);
-    }
   };
+    
+  function startProcess() {
+    var id = getUrlParam('id');
+    if (id) {
+      var prom = doRequest('POST', '../API/bpm/process/' + id + '/instantiation', getUserParam()).then(function() {
+        localStorageService.delete($window.location.href);
+      });
 
+    } else {
+      $log.log('Impossible to retrieve the process definition id value from the URL');
+    }
+  }
+    
   /**
    * Execute a get/post request to an URL
    * It also bind custom data from success|error to a data
