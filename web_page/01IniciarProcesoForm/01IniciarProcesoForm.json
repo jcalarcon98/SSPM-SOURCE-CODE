@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1614717281595,
+  "lastUpdate" : 1614746850226,
   "rows" : [
     [
       {
@@ -61,6 +61,30 @@
             ],
             [
               {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "9ca93374-d541-44d6-a56d-7ba25933414e",
+                "hasValidationError" : false,
+                "id" : "customSeparator"
+              }
+            ],
+            [
+              {
                 "type" : "container",
                 "dimension" : {
                   "xs" : 12
@@ -87,7 +111,10 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "xs" : 12
+                        "xs" : 12,
+                        "md" : 4,
+                        "lg" : 4,
+                        "sm" : 4
                       },
                       "propertyValues" : {
                         "cssClasses" : {
@@ -114,6 +141,81 @@
                       "reference" : "0a7a90ae-d3cf-45ec-851e-44a3405b4695",
                       "hasValidationError" : false,
                       "id" : "pbTitle"
+                    },
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 4
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Default label"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "text" : {
+                          "type" : "interpolation",
+                          "value" : "<hr>"
+                        },
+                        "alignment" : {
+                          "type" : "constant",
+                          "value" : "left"
+                        }
+                      },
+                      "reference" : "04cac476-dc39-4908-9238-8e12194ae7a2",
+                      "hasValidationError" : false,
+                      "id" : "pbText"
+                    },
+                    {
+                      "type" : "fragment",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 6,
+                        "md" : 6,
+                        "lg" : 4
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "640ba250-958e-4721-937c-cb5760235a56",
+                      "hasValidationError" : false,
+                      "id" : "pdfManualPreview",
+                      "binding" : {
+                        "manual" : "degreeManual[0]"
+                      }
                     }
                   ],
                   [
@@ -3663,6 +3765,20 @@
       "external" : false
     },
     {
+      "id" : "bab02671-bf03-4bf7-8706-7064c8713ca7",
+      "name" : "pdf-icon.png",
+      "type" : "img",
+      "order" : 6,
+      "external" : false
+    },
+    {
+      "id" : "d39af42f-fc53-488b-bea0-a94a110a668b",
+      "name" : "underscore-min.js",
+      "type" : "js",
+      "order" : 3,
+      "external" : false
+    },
+    {
       "id" : "f7461123-e8ba-4398-9afe-db447a448ac0",
       "name" : "silabos.png",
       "type" : "img",
@@ -3688,13 +3804,6 @@
       "name" : "unlLogo.png",
       "type" : "img",
       "order" : 1,
-      "external" : false
-    },
-    {
-      "id" : "d39af42f-fc53-488b-bea0-a94a110a668b",
-      "name" : "underscore-min.js",
-      "type" : "js",
-      "order" : 3,
       "external" : false
     }
   ],
@@ -5297,6 +5406,13 @@
       "type" : "expression",
       "value" : [
         "return `<b>Nota: </b> Las calificaciones de cada estudiante deben ser las del periodo académico anterior. <b>Además debe agregar ${$data.amountReserveStudents} estudiante(s) más, que la cantidad de sílabos por cada ciclo.`;"
+      ],
+      "exposed" : false
+    },
+    "degreeManual" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?p=0&c=10&f=name=degreeManual"
       ],
       "exposed" : false
     }

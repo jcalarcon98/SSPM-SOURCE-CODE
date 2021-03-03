@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1614721629645,
+  "lastUpdate" : 1614748442791,
   "rows" : [
     [
       {
@@ -100,9 +100,9 @@
                 "type" : "component",
                 "dimension" : {
                   "xs" : 12,
-                  "sm" : 12,
-                  "md" : 12,
-                  "lg" : 12
+                  "sm" : 4,
+                  "md" : 4,
+                  "lg" : 4
                 },
                 "propertyValues" : {
                   "cssClasses" : {
@@ -129,6 +129,81 @@
                 "reference" : "a36dbba1-bb3b-4037-a3d5-1c2c6d54539e",
                 "hasValidationError" : false,
                 "id" : "pbTitle"
+              },
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 2,
+                  "md" : 2,
+                  "lg" : 4
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Default label"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<hr>"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "40f3859e-4e12-43c2-9773-768bb38c01c9",
+                "hasValidationError" : false,
+                "id" : "pbText"
+              },
+              {
+                "type" : "fragment",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 6,
+                  "md" : 6,
+                  "lg" : 4
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "047636be-4acb-40a0-9527-9a12dd0fd01a",
+                "hasValidationError" : false,
+                "id" : "pdfManualPreview",
+                "binding" : {
+                  "manual" : "studentManual[0]"
+                }
               }
             ],
             [
@@ -1167,6 +1242,13 @@
   ],
   "assets" : [
     {
+      "id" : "fbe48577-a8a5-4a07-98a9-142c76ddcd89",
+      "name" : "pdf-icon.png",
+      "type" : "img",
+      "order" : 2,
+      "external" : false
+    },
+    {
       "id" : "ce6e5b8d-469d-48da-9690-79c06c117374",
       "name" : "style.css",
       "type" : "css",
@@ -1567,6 +1649,13 @@
         "}",
         "",
         "return alternativesData;"
+      ],
+      "exposed" : false
+    },
+    "studentManual" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?p=0&c=10&f=name=studentManual"
       ],
       "exposed" : false
     }

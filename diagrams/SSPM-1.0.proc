@@ -1235,27 +1235,16 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_ca2a0XuyEeugKL_ifMEEHQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_ca2a0HuyEeugKL_ifMEEHQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_ca2a0nuyEeugKL_ifMEEHQ" name="" content="" returnTypeFixed="true"/>
-          <connectors xmi:type="process:Connector" xmi:id="_5mG0EHuyEeugKL_ifMEEHQ" name="deleteCommissionMembership" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_5mHbIHuyEeugKL_ifMEEHQ" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_5mHbIXuyEeugKL_ifMEEHQ" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_5mHbInuyEeugKL_ifMEEHQ" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_5mHbI3uyEeugKL_ifMEEHQ" key="variables"/>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_5mHbJHuyEeugKL_ifMEEHQ" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_5mHbJXuyEeugKL_ifMEEHQ" name="deleteCommissionMembership()" content="import org.bonitasoft.engine.identity.User;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;String username = &quot;&quot;;&#xA;String groupName = &quot;Commission&quot;;&#xA;String roleName = &quot;member&quot;;&#xA;Long groupId = utils.getGroupId(apiAccessor, groupName);&#xA;Long roleId = utils.getRoleId(apiAccessor, roleName);&#xA;&#xA;for (member in degree.commission) {&#xA;&#x9;&#xA;&#x9;username = member.email&#xA;&#x9;&#xA;&#x9;User findUser = utils.findUserByUsername(apiAccessor, username)&#xA;&#x9;&#xA;&#x9;if(findUser != null){&#xA;&#x9;&#x9;utils.removeMembership(apiAccessor, findUser.getId(), groupId, roleId)&#xA;&#x9;}&#xA;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bF3S8Hu0EeugKL_ifMEEHQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_bF3S8Xu0EeugKL_ifMEEHQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                </expression>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_5mHbKHuyEeugKL_ifMEEHQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_5mHbKXuyEeugKL_ifMEEHQ"/>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_5mHbKnuyEeugKL_ifMEEHQ" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_5mHbK3uyEeugKL_ifMEEHQ" name="result" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_5mHbLHuyEeugKL_ifMEEHQ" type="ASSIGNMENT"/>
-            </outputs>
-          </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_yYaZIHvEEeugbqCBG5wv9A">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_yYaZIXvEEeugbqCBG5wv9A" name="index" content="index" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:Data" xmi:id="_0zBaYHvEEeugbqCBG5wv9A" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_yYaZInvEEeugbqCBG5wv9A" name="deleteCommissionMembership()" content="import org.bonitasoft.engine.identity.User;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;String username = &quot;&quot;;&#xA;String groupName = &quot;Commission&quot;;&#xA;String roleName = &quot;member&quot;;&#xA;Long groupId = utils.getGroupId(apiAccessor, groupName);&#xA;Long roleId = utils.getRoleId(apiAccessor, roleName);&#xA;for (member in currentDegree.commission) {&#xA;&#x9;&#xA;&#x9;username = member.email&#xA;&#x9;&#xA;&#x9;User findUser = utils.findUserByUsername(apiAccessor, username)&#xA;&#x9;&#xA;&#x9;if(findUser != null){&#xA;&#x9;&#x9;utils.removeMembership(apiAccessor, findUser.getId(), groupId, roleId)&#xA;&#x9;}&#xA;}&#xA;return 0;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_QHEIcHvHEeugbqCBG5wv9A" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_QHEIcXvHEeugbqCBG5wv9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_yYaZI3vEEeugbqCBG5wv9A" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_ca2a03uyEeugKL_ifMEEHQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_ca2a1HuyEeugKL_ifMEEHQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_ca2a1XuyEeugKL_ifMEEHQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -4097,6 +4086,21 @@
         <mimeType xmi:type="expression:Expression" xmi:id="_J77cgWV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
         <url xmi:type="expression:Expression" xmi:id="_J78DkGV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
         <initialMultipleContent xmi:type="expression:Expression" xmi:id="_J78DkWV5EeugQYG4i8wMTQ" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
+      </documents>
+      <documents xmi:type="process:Document" xmi:id="_YFAVwHvPEeugbqCBG5wv9A" name="studentManual" defaultValueIdOfDocumentStore="Manual de uso.pdf" documentType="INTERNAL">
+        <mimeType xmi:type="expression:Expression" xmi:id="_YFAVwXvPEeugbqCBG5wv9A" name="" content="" returnTypeFixed="true"/>
+        <url xmi:type="expression:Expression" xmi:id="_YFAVwnvPEeugbqCBG5wv9A" name="" content="" returnTypeFixed="true"/>
+        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_YFAVw3vPEeugbqCBG5wv9A" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
+      </documents>
+      <documents xmi:type="process:Document" xmi:id="_hyCssHvYEeugbqCBG5wv9A" name="degreeManual" defaultValueIdOfDocumentStore="Manual de uso - DC.pdf" documentType="INTERNAL">
+        <mimeType xmi:type="expression:Expression" xmi:id="_hyCssXvYEeugbqCBG5wv9A" name="" content="" returnTypeFixed="true"/>
+        <url xmi:type="expression:Expression" xmi:id="_hyCssnvYEeugbqCBG5wv9A" name="" content="" returnTypeFixed="true"/>
+        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_hyCss3vYEeugbqCBG5wv9A" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
+      </documents>
+      <documents xmi:type="process:Document" xmi:id="_kuf2wHvYEeugbqCBG5wv9A" name="commissionManual" defaultValueIdOfDocumentStore="Manual de uso - CEI.pdf" documentType="INTERNAL">
+        <mimeType xmi:type="expression:Expression" xmi:id="_kuf2wXvYEeugbqCBG5wv9A" name="" content="" returnTypeFixed="true"/>
+        <url xmi:type="expression:Expression" xmi:id="_kuf2wnvYEeugbqCBG5wv9A" name="" content="" returnTypeFixed="true"/>
+        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_kuf2w3vYEeugbqCBG5wv9A" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
       </documents>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_PH_rjUU9EeuYOOr8JiHqIQ">
         <name xmi:type="expression:Expression" xmi:id="_PH_rjkU9EeuYOOr8JiHqIQ" content="" returnTypeFixed="true"/>

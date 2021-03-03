@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1614721176267,
+  "lastUpdate" : 1614748319287,
   "rows" : [
     [
       {
@@ -59,6 +59,30 @@
           ],
           [
             {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "f4e38495-accc-4e5e-919e-fe6b79170ae6",
+              "hasValidationError" : false,
+              "id" : "customSeparator"
+            }
+          ],
+          [
+            {
               "type" : "formContainer",
               "dimension" : {
                 "xs" : 12,
@@ -92,7 +116,10 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "xs" : 12
+                        "xs" : 12,
+                        "md" : 6,
+                        "lg" : 6,
+                        "sm" : 6
                       },
                       "propertyValues" : {
                         "hidden" : {
@@ -124,6 +151,31 @@
                       "hasValidationError" : false,
                       "id" : "pbTitle",
                       "description" : ""
+                    },
+                    {
+                      "type" : "fragment",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 6,
+                        "md" : 6,
+                        "lg" : 6
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : "margin-top-20"
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "d244ae43-5fea-4cc8-9169-fd8e8494717c",
+                      "hasValidationError" : false,
+                      "id" : "pdfManualPreview",
+                      "binding" : {
+                        "manual" : "commissionManual[0]"
+                      }
                     }
                   ],
                   [
@@ -352,6 +404,30 @@
                                   "reference" : "fa5c07ee-a59d-40c3-8bc2-f8dd25aa088f",
                                   "hasValidationError" : false,
                                   "id" : "customCustomDatePicker"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    }
+                                  },
+                                  "reference" : "8726dd8b-85c8-49a0-8351-7c3fbb930574",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
                                 }
                               ],
                               [
@@ -1033,6 +1109,30 @@
                                   "reference" : "b3a4cc09-9414-4234-b9bd-f1e0433b9e01",
                                   "hasValidationError" : false,
                                   "id" : "customCustomDatePicker"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    }
+                                  },
+                                  "reference" : "25417ac4-18be-4e62-bc16-7161a7ef6cc7",
+                                  "hasValidationError" : false,
+                                  "id" : "customSeparator"
                                 }
                               ],
                               [
@@ -3351,6 +3451,13 @@
       "type" : "img",
       "order" : 2,
       "external" : false
+    },
+    {
+      "id" : "c663ff5d-fd5c-4fcc-9012-adeec7623200",
+      "name" : "pdf-icon.png",
+      "type" : "img",
+      "order" : 3,
+      "external" : false
     }
   ],
   "inactiveAssets" : [ ],
@@ -3755,6 +3862,13 @@
         "console.log($data.periodInitDate);",
         "console.log($data.periodEndDate);",
         "console.log(typeof($data.periodInitDate));"
+      ],
+      "exposed" : false
+    },
+    "commissionManual" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?p=0&c=10&f=name=commissionManual"
       ],
       "exposed" : false
     }
