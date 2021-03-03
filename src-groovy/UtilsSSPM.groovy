@@ -110,6 +110,65 @@ public final class UtilsSSPM {
 	
 	/**
 	 *@param apiAccessor, the current APIAccessor
+	 *@param username, username of the user to search
+	 *@return User, the user if exists or null if doesn't exists
+	 *
+	 */
+	public static User findUserByUsername(APIAccessor apiAccessor, String username) {
+		
+		SearchOptionsBuilder builder = new SearchOptionsBuilder(0, 100);
+		builder.filter(UserSearchDescriptor.USER_NAME, username);
+		SearchResultImpl<User> userResults = apiAccessor.identityAPI.searchUsers(builder.done())
+			
+		for (user in userResults.getResult()){
+			if (user.getUserName() == username) {
+				return user;
+			}
+		}
+			
+		return null;
+	}
+	
+	/**
+	 *@param apiAccessor, the current APIAccessor
+	 *@param userId, id of the user to assign the new membership
+	 *@param groupId, id of the group to assign to the user
+	 *@param roleId, id of the role to assign to the user
+	 *@return Boolean, true if operation succeded or false if operation find an error
+	 *
+	 */
+	public static Boolean addMembership(APIAccessor apiAccessor, Long userId, Long groupId, Long roleId) {
+		
+		try {
+			apiAccessor.identityAPI.addUserMembership(userId, groupId, roleId);
+			return true;
+			
+		}catch (Exception ex){
+			return false;
+		}
+	}
+	
+	/**
+	 *@param apiAccessor, the current APIAccessor
+	 *@param userId, id of the user to remove the membership
+	 *@param groupId, id of the group to remove the user
+	 *@param roleId, id of the role to remove the user
+	 *@return Boolean, true if operation succeded or false if operation find an error
+	 *
+	 */
+	public static Boolean removeMembership(APIAccessor apiAccessor, Long userId, Long groupId, Long roleId) {
+		
+		try {
+			apiAccessor.identityAPI.deleteUserMembership(userId, groupId, roleId);
+			return true;
+			
+		}catch (Exception ex){
+			return false;
+		}
+	}
+	
+	/**
+	 *@param apiAccessor, the current APIAccessor
 	 *@param username, username for the new account
 	 *@param password, password for the new account
 	 *@param name, name for the contact data
