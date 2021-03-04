@@ -2433,16 +2433,16 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_O0mhdHFHEeu7jpfeHLyCxA" key="variables"/>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_O0mhdXFHEeu7jpfeHLyCxA" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_O0mhdnFHEeu7jpfeHLyCxA" name="setNewLists()" content="import org.bonitasoft.engine.identity.User&#xA;import com.company.model.Student&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;&quot;;&#xA;Long studentId = -1;&#xA;Boolean exists = false;&#xA;&#xA;String groupName = &quot;Students&quot;;&#xA;String profileName = &quot;User&quot;;&#xA;String roleName = &quot;member&quot;;&#xA;Long groupId = utils.getGroupId(apiAccessor, groupName);&#xA;Long profileId = utils.getProfileId(apiAccessor, profileName);&#xA;Long roleId = utils.getRoleId(apiAccessor, roleName);&#xA;&#xA;List globalList = []&#xA;List newStudentSyllabusObj = studentSyllabusObj&#xA;List newListStudents = listStudents&#xA;List newStudentUserList = studentUsers;&#xA;List newStudentUserReserved = [];&#xA;List newStudentSyllabusObjCopy = studentSyllabusObjCopy&#xA;List newListStudentsCopy = listStudentsCopy&#xA;ArrayList&lt;ReserveGrade> newReserveGrades = reserveGrades;&#xA;&#xA;def newStudentSyllabus = [];&#xA;def newStudentUser = [];&#xA;&#xA;selectedGrades.each { currentGrade ->&#xA;&#x9;currentGrade.students.each { currentStudent ->&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if(currentStudent.selected){&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;newReserveGrades.each { reserveGrade ->&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if(reserveGrade.number == currentGrade.number &amp;&amp; reserveGrade.parallel == currentGrade.parallel){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Student std = reserveGrade.qualifyStudents.find{ std -> std.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.notQualifyStudent.add(std);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def studentObj = newStudentSyllabusObj.find { currentStudentObj -> currentStudentObj.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObj.removeIf { stdObj -> stdObj.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObjCopy.removeIf { stdObjCopy -> stdObjCopy.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudents.removeIf { stdList -> stdList == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudentsCopy.removeIf { stdListCopy -> stdListCopy == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def studentUserObj = newStudentUserList.find { stdUserFind -> stdUserFind.studentId == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUserList.removeIf { stdUser -> stdUser.studentId == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Student stdRes = reserveGrade.reserveStudents[currentGrade.amount];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.qualifyStudents.add(stdRes);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;username = stdRes.email&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(exists){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password = 'Anteriormente Registrado'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(productionTimers){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, stdRes.name, profileId, groupId, roleId)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;studentId = newUser.getId();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabus = ['persistenceId': stdRes.persistenceId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'name': stdRes.name,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'lastName': stdRes.lastName,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'email': username,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'studentId': studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusId': studentObj.syllabusId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'denomination': studentObj.denomination,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusTeacher': studentObj.syllabusTeacher,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeParallel': reserveGrade.parallel,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeNumber': reserveGrade.number];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUser = [studentId: studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;student: stdRes,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;syllabus: studentUserObj.syllabus,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password: password,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;registered: exists];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObj.add(newStudentSyllabus)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObjCopy.add(newStudentSyllabus)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudents.add(studentId)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudentsCopy.add(studentId)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUserList.add(newStudentUser)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUserReserved.add(newStudentUser)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.qualifyStudents.removeIf{ remStd -> remStd.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.reserveStudents.removeIf{ remStd -> remStd.persistenceId == stdRes.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.amount--;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;currentGrade.amount--;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;globalList.add(newStudentSyllabusObj)&#xA;globalList.add(newListStudents)&#xA;globalList.add(newReserveGrades)&#xA;globalList.add(newStudentUserList)&#xA;globalList.add(newStudentUserReserved)&#xA;globalList.add(newStudentSyllabusObjCopy)&#xA;globalList.add(newListStudentsCopy)&#xA;&#xA;return globalList;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BSu44HiPEeurVuLgFe2Bsg" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_BSu44XiPEeurVuLgFe2Bsg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_BSu44niPEeurVuLgFe2Bsg" name="listStudents" multiple="true" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BSu443iPEeurVuLgFe2Bsg" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BSu45HiPEeurVuLgFe2Bsg" name="selectedGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="SelectedGrade"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BSu45XiPEeurVuLgFe2Bsg" name="studentSyllabusObjCopy" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_BSvf8HiPEeurVuLgFe2Bsg" name="listStudentsCopy" multiple="true" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BSvf8XiPEeurVuLgFe2Bsg" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
-                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_BSvf8niPEeurVuLgFe2Bsg" name="productionTimers" typeClassname="java.lang.Boolean"/>
+                <expression xmi:type="expression:Expression" xmi:id="_O0mhdnFHEeu7jpfeHLyCxA" name="setNewLists()" content="import org.bonitasoft.engine.identity.User&#xA;import com.company.model.Student&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;&quot;;&#xA;Long studentId = -1;&#xA;Boolean exists = false;&#xA;&#xA;String groupName = &quot;Students&quot;;&#xA;String profileName = &quot;User&quot;;&#xA;String roleName = &quot;member&quot;;&#xA;Long groupId = utils.getGroupId(apiAccessor, groupName);&#xA;Long profileId = utils.getProfileId(apiAccessor, profileName);&#xA;Long roleId = utils.getRoleId(apiAccessor, roleName);&#xA;&#xA;List globalList = []&#xA;List newStudentSyllabusObj = studentSyllabusObj&#xA;List newListStudents = listStudents&#xA;List newStudentUserList = studentUsers;&#xA;List newStudentUserReserved = [];&#xA;List newStudentSyllabusObjCopy = studentSyllabusObjCopy&#xA;List newListStudentsCopy = listStudentsCopy&#xA;ArrayList&lt;ReserveGrade> newReserveGrades = reserveGrades;&#xA;&#xA;def newStudentSyllabus = [];&#xA;def newStudentUser = [];&#xA;&#xA;selectedGrades.each { currentGrade ->&#xA;&#x9;currentGrade.students.each { currentStudent ->&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if(currentStudent.selected){&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;newReserveGrades.each { reserveGrade ->&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if(reserveGrade.number == currentGrade.number &amp;&amp; reserveGrade.parallel == currentGrade.parallel){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Student std = reserveGrade.qualifyStudents.find{ std -> std.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.notQualifyStudent.add(std);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def studentObj = newStudentSyllabusObj.find { currentStudentObj -> currentStudentObj.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObj.removeIf { stdObj -> stdObj.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObjCopy.removeIf { stdObjCopy -> stdObjCopy.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudents.removeIf { stdList -> stdList == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudentsCopy.removeIf { stdListCopy -> stdListCopy == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def studentUserObj = newStudentUserList.find { stdUserFind -> stdUserFind.studentId == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUserList.removeIf { stdUser -> stdUser.studentId == studentObj.studentId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Student stdRes = reserveGrade.reserveStudents[currentGrade.amount];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.qualifyStudents.add(stdRes);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;username = stdRes.email&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(exists){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password = 'Anteriormente Registrado'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(productionPassword){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, stdRes.name, profileId, groupId, roleId)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;studentId = newUser.getId();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabus = ['persistenceId': stdRes.persistenceId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'name': stdRes.name,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'lastName': stdRes.lastName,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'email': username,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'studentId': studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusId': studentObj.syllabusId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'denomination': studentObj.denomination,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusTeacher': studentObj.syllabusTeacher,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeParallel': reserveGrade.parallel,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeNumber': reserveGrade.number];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUser = [studentId: studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;student: stdRes,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;syllabus: studentUserObj.syllabus,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password: password,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;registered: exists];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObj.add(newStudentSyllabus)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentSyllabusObjCopy.add(newStudentSyllabus)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudents.add(studentId)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newListStudentsCopy.add(studentId)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUserList.add(newStudentUser)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;newStudentUserReserved.add(newStudentUser)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.qualifyStudents.removeIf{ remStd -> remStd.persistenceId == currentStudent.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.reserveStudents.removeIf{ remStd -> remStd.persistenceId == stdRes.persistenceId }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;reserveGrade.amount--;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;currentGrade.amount--;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;globalList.add(newStudentSyllabusObj)&#xA;globalList.add(newListStudents)&#xA;globalList.add(newReserveGrades)&#xA;globalList.add(newStudentUserList)&#xA;globalList.add(newStudentUserReserved)&#xA;globalList.add(newStudentSyllabusObjCopy)&#xA;globalList.add(newListStudentsCopy)&#xA;&#xA;return globalList;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_vgUJkHyTEeu4y6D4bQG0Mg" name="studentSyllabusObj" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_vgUJkXyTEeu4y6D4bQG0Mg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_vgUJknyTEeu4y6D4bQG0Mg" name="listStudents" multiple="true" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_vgUJk3yTEeu4y6D4bQG0Mg" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_vgUwoHyTEeu4y6D4bQG0Mg" name="selectedGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="SelectedGrade"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_vgUwoXyTEeu4y6D4bQG0Mg" name="studentSyllabusObjCopy" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_vgUwonyTEeu4y6D4bQG0Mg" name="listStudentsCopy" multiple="true" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_vgUwo3yTEeu4y6D4bQG0Mg" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_vgUwpHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
                 </expression>
               </parameters>
             </configuration>
@@ -2575,7 +2575,7 @@
               <referencedElements xmi:type="process:Data" xmi:id="_YGSAwHIOEeuJ0MOecJdBVA" name="reserveGradesString" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_UnPHAnIOEeuJ0MOecJdBVA" name="setNewReserveGradesString()" content="def builder = new groovy.json.JsonBuilder(reserveGrades);&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_W0aJMHIOEeuJ0MOecJdBVA" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_RudVQHyREeu4y6D4bQG0Mg" name="reserveGrades" multiple="true" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="ReserveGrade"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_UnPHA3IOEeuJ0MOecJdBVA" type="ASSIGNMENT"/>
           </operations>
@@ -4026,16 +4026,159 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_FNO9IGWXEeuUFNFgVPZMBg" key="document-converter-impl -- 2.1.0" value="xmlbeans-3.0.1.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxQWHjEeuKpJXCxJU9_A" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxQWHjEeuKpJXCxJU9_A" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmkfUHyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmkfUXyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGYHyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGYXyQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxQmHjEeuKpJXCxJU9_A" id="OTHER"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxQ2HjEeuKpJXCxJU9_A" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxQ2HjEeuKpJXCxJU9_A" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGYnyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGY3yQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGZHyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGZXyQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxRGHjEeuKpJXCxJU9_A" id="OTHER"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_FOI8EGWXEeuUFNFgVPZMBg" name="emailUser" value="seguimiento.silabos@gmail.com" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_VlCxsGWaEeuUFNFgVPZMBg" name="backendHost" value="http://34.122.145.48:3000" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_bmlGZnyQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_6QfHkHyTEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_EVS0YHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pablo.ordonez@unl.edu.ec" password="unlseguimiento">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_EVTbcHyUEeu4y6D4bQG0Mg">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_EVTbcXyUEeu4y6D4bQG0Mg" name="Docente">
+            <groups xmi:type="actormapping:Groups" xmi:id="_EVTbcnyUEeu4y6D4bQG0Mg">
+              <group>/UNL/FEIRNNR/IS-C/SSPM/Commission</group>
+            </groups>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_EVTbc3yUEeu4y6D4bQG0Mg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_EVTbdHyUEeu4y6D4bQG0Mg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_EVTbdXyUEeu4y6D4bQG0Mg"/>
+          </actorMapping>
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_EVTbdnyUEeu4y6D4bQG0Mg" name="Dirección de Carrera Actor">
+            <groups xmi:type="actormapping:Groups" xmi:id="_EVTbd3yUEeu4y6D4bQG0Mg">
+              <group>/UNL/FEIRNNR/IS-C</group>
+            </groups>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_EVTbeHyUEeu4y6D4bQG0Mg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_EVTbeXyUEeu4y6D4bQG0Mg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_EVTbenyUEeu4y6D4bQG0Mg"/>
+          </actorMapping>
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_EVTbe3yUEeu4y6D4bQG0Mg" name="Estudiante">
+            <groups xmi:type="actormapping:Groups" xmi:id="_EVTbfHyUEeu4y6D4bQG0Mg">
+              <group>/UNL/FEIRNNR/IS-C/SSPM/Students</group>
+            </groups>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_EVTbfXyUEeu4y6D4bQG0Mg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_EVTbfnyUEeu4y6D4bQG0Mg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_EVTbf3yUEeu4y6D4bQG0Mg"/>
+          </actorMapping>
+        </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EVS0YXyUEeu4y6D4bQG0Mg" type="ACTOR_FILTER" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0" implementationId="bonita-actorfilter-single-user-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EVS0YnyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EVS0Y3yUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="email" definitionVersion="1.2.0" implementationId="email-impl" implementationVersion="1.3.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EVS0ZHyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="document-templating" definitionVersion="1.0.1" implementationId="document-templating-impl" implementationVersion="2.1.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EVS0ZXyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="document-converter" definitionVersion="1.0.2" implementationId="document-converter-impl" implementationVersion="2.1.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EVS0ZnyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="rest-post" definitionVersion="1.1.0" implementationId="rest-post-impl" implementationVersion="1.0.10"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0Z3yUEeu4y6D4bQG0Mg" id="ACTOR_FILTER">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_EVS0aHyUEeu4y6D4bQG0Mg" id="bonita-actorfilter-single-user-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0aXyUEeu4y6D4bQG0Mg" key="bonita-actorfilter-single-user-impl -- 1.0.0" value="bonita-actorfilter-single-user-1.0.0.jar" type="ACTOR_FILTER"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0anyUEeu4y6D4bQG0Mg" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_EVS0a3yUEeu4y6D4bQG0Mg" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0bHyUEeu4y6D4bQG0Mg" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_EVS0bXyUEeu4y6D4bQG0Mg" id="email-impl-1.3.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0bnyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="bonita-connector-email-1.3.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0b3yUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-1.6.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0cHyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-api-1.6.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_EVS0cXyUEeu4y6D4bQG0Mg" id="document-templating-impl-2.1.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0cnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="bonita-connector-document-templating-2.1.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0c3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-collections-3.2.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0dHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-lang-2.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0dXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-lang3-3.3.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0dnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-text-1.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0d3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0eHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0eXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0enyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0e3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.odt.odfdom-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0fHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0fXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0fnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.docx-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0f3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.odt-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0gHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.itext.extension-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0gXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.template-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0gnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.template.velocity-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0g3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="itext-2.1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0hHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0hXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="oro-2.0.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0hnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="velocity-1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0h3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="velocity-tools-generic-1.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0iHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_EVS0iXyUEeu4y6D4bQG0Mg" id="document-converter-impl-2.1.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0inyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="bonita-connector-document-converter-2.1.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0i3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-collections-3.2.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0jHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-compress-1.18.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0jXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-lang-2.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0jnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-lang3-3.3.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0j3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-math3-3.6.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0kHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-text-1.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0kXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="curvesapi-1.05.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0knyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0k3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0lHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0lXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0lnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0l3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0mHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0mXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.docx.xwpf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0mnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.odt.odfdom-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0m3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0nHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0nXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.docx-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0nnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.odt-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0n3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.itext.extension-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0oHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.template-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0oXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.template.velocity-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0onyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="itext-2.1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0o3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0pHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="ooxml-schemas-1.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0pXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="oro-2.0.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0pnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="poi-4.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0p3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="poi-ooxml-4.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0qHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="velocity-1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0qXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0qnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="xmlbeans-3.0.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_EVS0q3yUEeu4y6D4bQG0Mg" id="rest-post-impl-1.0.10">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_EVS0rHyUEeu4y6D4bQG0Mg" key="rest-post-impl -- 1.0.10" value="bonita-connector-rest-1.0.10.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0rXyUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbgHyUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbgXyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbgnyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbg3yUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0rnyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0r3yUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbhHyUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbhXyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbhnyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbh3yUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0sHyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbiHyUEeu4y6D4bQG0Mg" name="emailUser" value="notMatter" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbiXyUEeu4y6D4bQG0Mg" name="backendHost" value="http://34.122.145.48:3000" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbinyUEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbi3yUEeu4y6D4bQG0Mg" name="productionPassword" value="false" typeClassname="java.lang.Boolean"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_fBQ5MGHkEeuKpJXCxJU9_A" name="emailUser" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_ZzzGkGWZEeuUFNFgVPZMBg" name="backendHost" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_QOB2QGzYEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_rTs_MHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
       <contract xmi:type="process:Contract" xmi:id="_PH_rjEU9EeuYOOr8JiHqIQ"/>
       <documents xmi:type="process:Document" xmi:id="_x1sFcEoSEeuRMrcBo1p0Vg" name="sillabusFile">
         <mimeType xmi:type="expression:Expression" xmi:id="_x1sFcUoSEeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
@@ -4376,13 +4519,13 @@
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_0a7mVEr3EeuHg-ZrLb5XVA" key="variables"/>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_0a7mVUr3EeuHg-ZrLb5XVA" key="fakeScriptExpression">
-              <expression xmi:type="expression:Expression" xmi:id="_0a7mVkr3EeuHg-ZrLb5XVA" name="createUsersCommission()" content="import org.bonitasoft.engine.identity.User;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;Boolean exists = false;&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;bpm&quot;;&#xA;Long userProfileId = profileCommissionId;&#xA;Long groupId = groupCommissionId;&#xA;Long roleId = roleCommissionId;&#xA;&#xA;List commissionUserList = [];&#xA;def commissionUser = [];&#xA;&#xA;for (member in degree.commission) {&#xA;&#x9;&#xA;&#x9;username = member.email;&#xA;&#x9;&#xA;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#xA;&#x9;if(exists){&#xA;&#x9;&#x9;password = 'Anteriormente Registrado';&#xA;&#x9;}else{&#xA;&#x9;&#x9;if(productionTimers){&#xA;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, member.name, userProfileId, groupId, roleId)&#xA;&#x9;&#xA;&#x9;utils.addMembership(apiAccessor, newUser.getId(), groupId, roleId)&#xA;&#x9;&#xA;&#x9;commissionUser = [member: member, password: password, registered: exists];&#xA;&#x9;commissionUserList.add(commissionUser);&#xA;}&#xA;&#xA;return commissionUserList;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                <referencedElements xmi:type="process:Data" xmi:id="_GqGEQHuyEeugKL_ifMEEHQ" name="groupCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:Data" xmi:id="_GqGrUHuyEeugKL_ifMEEHQ" name="profileCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:Data" xmi:id="_GqGrUXuyEeugKL_ifMEEHQ" name="roleCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_GqGrUnuyEeugKL_ifMEEHQ" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_GqGrU3uyEeugKL_ifMEEHQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                <referencedElements xmi:type="parameter:Parameter" xmi:id="_GqGrVHuyEeugKL_ifMEEHQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+              <expression xmi:type="expression:Expression" xmi:id="_0a7mVkr3EeuHg-ZrLb5XVA" name="createUsersCommission()" content="import org.bonitasoft.engine.identity.User;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;Boolean exists = false;&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;bpm&quot;;&#xA;Long userProfileId = profileCommissionId;&#xA;Long groupId = groupCommissionId;&#xA;Long roleId = roleCommissionId;&#xA;&#xA;List commissionUserList = [];&#xA;def commissionUser = [];&#xA;&#xA;for (member in degree.commission) {&#xA;&#x9;&#xA;&#x9;username = member.email;&#xA;&#x9;&#xA;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#xA;&#x9;if(exists){&#xA;&#x9;&#x9;password = 'Anteriormente Registrado';&#xA;&#x9;}else{&#xA;&#x9;&#x9;if(productionPassword){&#xA;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, member.name, userProfileId, groupId, roleId)&#xA;&#x9;&#xA;&#x9;utils.addMembership(apiAccessor, newUser.getId(), groupId, roleId)&#xA;&#x9;&#xA;&#x9;commissionUser = [member: member, password: password, registered: exists];&#xA;&#x9;commissionUserList.add(commissionUser);&#xA;}&#xA;&#xA;return commissionUserList;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                <referencedElements xmi:type="process:Data" xmi:id="_zTDbYHyTEeu4y6D4bQG0Mg" name="groupCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_zTDbYXyTEeu4y6D4bQG0Mg" name="profileCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_zTDbYnyTEeu4y6D4bQG0Mg" name="roleCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_zTDbY3yTEeu4y6D4bQG0Mg" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_zTDbZHyTEeu4y6D4bQG0Mg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                <referencedElements xmi:type="parameter:Parameter" xmi:id="_zTDbZXyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
               </expression>
             </parameters>
           </configuration>
@@ -4485,13 +4628,13 @@
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jEjk1EsBEeuHg-ZrLb5XVA" key="variables"/>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jEjk1UsBEeuHg-ZrLb5XVA" key="fakeScriptExpression">
-              <expression xmi:type="expression:Expression" xmi:id="_jEjk1ksBEeuHg-ZrLb5XVA" name="createUsersStudent()" content="import org.bonitasoft.engine.identity.User;&#xA;import org.bonitasoft.engine.identity.UserCreator;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;Boolean exists = false;&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;bpm&quot;;&#xA;Long userProfileId = profileStudentId;&#xA;Long groupId = groupStudentsId;&#xA;Long roleId = roleStudentId;&#xA;Long studentId;&#xA;&#xA;List studentUserList = [];&#xA;def studentUser = [];&#xA;&#xA;List studentSyllabusList = [];&#xA;def studentSyllabusObj = [];&#xA;&#xA;List&lt;Long> idList = new ArrayList&lt;Long>();&#xA;&#xA;for (grade in grades) {&#xA;&#x9;&#xA;&#x9;List studentsList = grade.students;&#xA;&#x9;Integer flag = 0;&#xA;&#x9;&#xA;&#x9;studentsList.sort{x->&#xA;&#x9;&#x9;x.rate&#xA;&#x9;};&#xA;&#x9;  &#xA;&#x9;studentsList = studentsList.reverse();&#xA;&#x9;&#xA;&#x9;for (syllabus in grade.syllabuses) {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;username = studentsList[flag].email;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if(exists){&#xA;&#x9;&#x9;&#x9;password = 'Anteriormente Registrado';&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;if(productionTimers){&#xA;&#x9;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, studentsList[flag].name, userProfileId, groupId, roleId)&#xA;&#x9;&#x9;studentId = newUser.getId();&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;studentUser = [studentId: studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;student: studentsList[flag],&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;syllabus: syllabus,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password: password,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;registered: exists];&#xA;&#x9;&#x9;studentUserList.add(studentUser);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;studentSyllabusObj = ['persistenceId': studentsList[flag].persistenceId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'name': studentsList[flag].name,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'lastName': studentsList[flag].lastName,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'email': username,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'studentId': studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusId': syllabus.persistenceId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'denomination': syllabus.denomination,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusTeacher': syllabus.teacher,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeParallel': grade.parallel,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeNumber': grade.number];&#xA;&#x9;&#x9;studentSyllabusList.add(studentSyllabusObj);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;idList.add(studentId);&#xA;&#x9;&#x9;flag++;&#xA;&#x9;}&#xA;}&#xA;&#xA;def builder = new groovy.json.JsonBuilder(studentSyllabusList);&#xA;&#xA;List resultLists = [];&#xA;resultLists.add(studentUserList);&#xA;resultLists.add(builder.toString());&#xA;resultLists.add(studentSyllabusList);&#xA;resultLists.add(idList);&#xA;&#xA;return resultLists;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                <referencedElements xmi:type="process:Data" xmi:id="_27HU0HuvEeugKL_ifMEEHQ" name="groupStudentsId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_27HU0XuvEeugKL_ifMEEHQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_27HU0nuvEeugKL_ifMEEHQ" name="grades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                <referencedElements xmi:type="process:Data" xmi:id="_27HU03uvEeugKL_ifMEEHQ" name="profileStudentId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:Data" xmi:id="_27HU1HuvEeugKL_ifMEEHQ" name="roleStudentId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="parameter:Parameter" xmi:id="_27H74HuvEeugKL_ifMEEHQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+              <expression xmi:type="expression:Expression" xmi:id="_jEjk1ksBEeuHg-ZrLb5XVA" name="createUsersStudent()" content="import org.bonitasoft.engine.identity.User;&#xA;import org.bonitasoft.engine.identity.UserCreator;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;Boolean exists = false;&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;bpm&quot;;&#xA;Long userProfileId = profileStudentId;&#xA;Long groupId = groupStudentsId;&#xA;Long roleId = roleStudentId;&#xA;Long studentId;&#xA;&#xA;List studentUserList = [];&#xA;def studentUser = [];&#xA;&#xA;List studentSyllabusList = [];&#xA;def studentSyllabusObj = [];&#xA;&#xA;List&lt;Long> idList = new ArrayList&lt;Long>();&#xA;&#xA;for (grade in grades) {&#xA;&#x9;&#xA;&#x9;List studentsList = grade.students;&#xA;&#x9;Integer flag = 0;&#xA;&#x9;&#xA;&#x9;studentsList.sort{x->&#xA;&#x9;&#x9;x.rate&#xA;&#x9;};&#xA;&#x9;  &#xA;&#x9;studentsList = studentsList.reverse();&#xA;&#x9;&#xA;&#x9;for (syllabus in grade.syllabuses) {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;username = studentsList[flag].email;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if(exists){&#xA;&#x9;&#x9;&#x9;password = 'Anteriormente Registrado';&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;if(productionPassword){&#xA;&#x9;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, studentsList[flag].name, userProfileId, groupId, roleId)&#xA;&#x9;&#x9;studentId = newUser.getId();&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;studentUser = [studentId: studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;student: studentsList[flag],&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;syllabus: syllabus,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;password: password,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;registered: exists];&#xA;&#x9;&#x9;studentUserList.add(studentUser);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;studentSyllabusObj = ['persistenceId': studentsList[flag].persistenceId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'name': studentsList[flag].name,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'lastName': studentsList[flag].lastName,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'email': username,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'studentId': studentId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusId': syllabus.persistenceId,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'denomination': syllabus.denomination,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'syllabusTeacher': syllabus.teacher,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeParallel': grade.parallel,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'gradeNumber': grade.number];&#xA;&#x9;&#x9;studentSyllabusList.add(studentSyllabusObj);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;idList.add(studentId);&#xA;&#x9;&#x9;flag++;&#xA;&#x9;}&#xA;}&#xA;&#xA;def builder = new groovy.json.JsonBuilder(studentSyllabusList);&#xA;&#xA;List resultLists = [];&#xA;resultLists.add(studentUserList);&#xA;resultLists.add(builder.toString());&#xA;resultLists.add(studentSyllabusList);&#xA;resultLists.add(idList);&#xA;&#xA;return resultLists;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                <referencedElements xmi:type="process:Data" xmi:id="_34umAHyTEeu4y6D4bQG0Mg" name="groupStudentsId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_34vNEHyTEeu4y6D4bQG0Mg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_34vNEXyTEeu4y6D4bQG0Mg" name="grades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_34vNEnyTEeu4y6D4bQG0Mg" name="profileStudentId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_34vNE3yTEeu4y6D4bQG0Mg" name="roleStudentId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="parameter:Parameter" xmi:id="_34vNFHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
               </expression>
             </parameters>
           </configuration>
@@ -4631,12 +4774,56 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_PWyACmWXEeuUFNFgVPZMBg" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyAC2WXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyAC2WXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSYpwHyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSYpwXyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSYpwnyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSYpw3yQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyADGWXEeuUFNFgVPZMBg" id="OTHER"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyADWWXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyADWWXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSZQ0HyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSZQ0XyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSZQ0nyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_fSZQ03yQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyADmWXEeuUFNFgVPZMBg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_fSZQ1HyQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="__jIF4HyTEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_SkalgHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pablo.ordonez@unl.edu.ec" password="unlseguimiento">
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_SkalgXyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_SkalgnyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="email" definitionVersion="1.2.0" implementationId="email-impl" implementationVersion="1.3.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Skalg3yUEeu4y6D4bQG0Mg" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_SkalhHyUEeu4y6D4bQG0Mg" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_SkalhXyUEeu4y6D4bQG0Mg" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_SkalhnyUEeu4y6D4bQG0Mg" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Skalh3yUEeu4y6D4bQG0Mg" id="email-impl-1.3.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_SkaliHyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="bonita-connector-email-1.3.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_SkaliXyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-1.6.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_SkalinyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-api-1.6.2.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Skali3yUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Skalj3yUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_SkalkHyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_SkalkXyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_SkalknyUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_SkaljHyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_SkaljXyUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Skalk3yUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_SkallHyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_SkallXyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_SkallnyUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_SkaljnyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Skall3yUEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_SkalmHyUEeu4y6D4bQG0Mg" name="productionPassword" value="false" typeClassname="java.lang.Boolean"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_Os1jAHiOEeurVuLgFe2Bsg" name="productionTimers" typeClassname="java.lang.Boolean"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_xGRawHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
       <contract xmi:type="process:Contract" xmi:id="_SaL6REr2EeuHg-ZrLb5XVA"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_SaLTMEr2EeuHg-ZrLb5XVA">
         <name xmi:type="expression:Expression" xmi:id="_SaLTMUr2EeuHg-ZrLb5XVA" content="" returnTypeFixed="true"/>
@@ -5220,10 +5407,113 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_FVNNpmWXEeuUFNFgVPZMBg" key="email-impl -- 1.3.0" value="javax.mail-api-1.6.2.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_FVNNp2WXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_FVNNp2WXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilPhoHyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQIsHyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQIsXyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQIsnyQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_FVNNqGWXEeuUFNFgVPZMBg" id="OTHER"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_FVNNqWWXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_FVNNqWWXEeuUFNFgVPZMBg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQIs3yQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQItHyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQItXyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_ilQItnyQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_FVNNqmWXEeuUFNFgVPZMBg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_ilQIt3yQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_U8VfIHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pablo.ordonez@unl.edu.ec" password="unlseguimiento">
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_U8VfIXyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_U8VfInyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="document-templating" definitionVersion="1.0.1" implementationId="document-templating-impl" implementationVersion="2.1.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_U8VfI3yUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="document-converter" definitionVersion="1.0.2" implementationId="document-converter-impl" implementationVersion="2.1.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_U8VfJHyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="email" definitionVersion="1.2.0" implementationId="email-impl" implementationVersion="1.3.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_U8VfJXyUEeu4y6D4bQG0Mg" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_U8VfJnyUEeu4y6D4bQG0Mg" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_U8VfJ3yUEeu4y6D4bQG0Mg" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfKHyUEeu4y6D4bQG0Mg" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_U8VfKXyUEeu4y6D4bQG0Mg" id="document-templating-impl-2.1.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfKnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="bonita-connector-document-templating-2.1.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfK3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-collections-3.2.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfLHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-lang-2.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfLXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-lang3-3.3.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfLnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-text-1.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfL3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfMHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfMXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfMnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfM3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.odt.odfdom-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfNHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfNXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfNnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.docx-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfN3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.odt-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfOHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.itext.extension-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfOXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.template-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfOnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.template.velocity-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfO3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="itext-2.1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfPHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfPXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="oro-2.0.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfPnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="velocity-1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfP3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="velocity-tools-generic-1.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfQHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_U8VfQXyUEeu4y6D4bQG0Mg" id="document-converter-impl-2.1.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfQnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="bonita-connector-document-converter-2.1.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfQ3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-collections-3.2.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfRHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-compress-1.18.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfRXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-lang-2.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfRnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-lang3-3.3.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfR3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-math3-3.6.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfSHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-text-1.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfSXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="curvesapi-1.05.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfSnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfS3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfTHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfTXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfTnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfT3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfUHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfUXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.docx.xwpf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfUnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.odt.odfdom-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfU3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfVHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfVXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.docx-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfVnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.odt-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfV3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.itext.extension-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfWHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.template-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfWXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.template.velocity-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfWnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="itext-2.1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfW3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfXHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="ooxml-schemas-1.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfXXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="oro-2.0.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfXnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="poi-4.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfX3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="poi-ooxml-4.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfYHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="velocity-1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfYXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfYnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="xmlbeans-3.0.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_U8VfY3yUEeu4y6D4bQG0Mg" id="email-impl-1.3.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfZHyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="bonita-connector-email-1.3.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfZXyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-1.6.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfZnyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-api-1.6.2.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_U8VfZ3yUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8Vfa3yUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfbHyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfbXyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfbnyUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_U8VfaHyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_U8VfaXyUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8Vfb3yUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfcHyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfcXyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_U8VfcnyUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_U8VfanyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_U8Vfc3yUEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_PUr-AGzZEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
       <contract xmi:type="process:Contract" xmi:id="_gvJENF9bEeuVVLsH7l3cUw"/>
@@ -6024,10 +6314,121 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_h4AGcGWcEeuR799rSR61XA" key="email-impl -- 1.3.0" value="javax.mail-api-1.6.2.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_h4AGcWWcEeuR799rSR61XA" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_h4AGcWWcEeuR799rSR61XA" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDkHyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDkXyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDknyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDk3yQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_h4AGcmWcEeuR799rSR61XA" id="OTHER"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_h4AGc2WcEeuR799rSR61XA" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_h4AGc2WcEeuR799rSR61XA" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDlHyQEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDlXyQEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDlnyQEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_lFTDl3yQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_h4AGdGWcEeuR799rSR61XA" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_lFTDmHyQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_Wz0lMHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pablo.ordonez@unl.edu.ec" password="unlseguimiento">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_Wz1MZXyUEeu4y6D4bQG0Mg">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_Wz1MZnyUEeu4y6D4bQG0Mg" name="Comisión de Evaluación Interna">
+            <groups xmi:type="actormapping:Groups" xmi:id="_Wz1MZ3yUEeu4y6D4bQG0Mg"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_Wz1MaHyUEeu4y6D4bQG0Mg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_Wz1MaXyUEeu4y6D4bQG0Mg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_Wz1ManyUEeu4y6D4bQG0Mg"/>
+          </actorMapping>
+        </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Wz0lMXyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Wz0lMnyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="document-templating" definitionVersion="1.0.1" implementationId="document-templating-impl" implementationVersion="2.1.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Wz0lM3yUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="document-converter" definitionVersion="1.0.2" implementationId="document-converter-impl" implementationVersion="2.1.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Wz0lNHyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="email" definitionVersion="1.2.0" implementationId="email-impl" implementationVersion="1.3.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Wz0lNXyUEeu4y6D4bQG0Mg" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Wz0lNnyUEeu4y6D4bQG0Mg" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Wz0lN3yUEeu4y6D4bQG0Mg" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lOHyUEeu4y6D4bQG0Mg" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Wz0lOXyUEeu4y6D4bQG0Mg" id="document-templating-impl-2.1.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lOnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="bonita-connector-document-templating-2.1.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lO3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-collections-3.2.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lPHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-lang-2.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lPXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-lang3-3.3.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lPnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="commons-text-1.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lP3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lQHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lQXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lQnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lQ3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.odt.odfdom-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lRHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lRXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lRnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.docx-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lR3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.odt-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lSHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.itext.extension-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lSXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.template-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lSnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="fr.opensagres.xdocreport.template.velocity-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lS3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="itext-2.1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lTHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lTXyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="oro-2.0.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lTnyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="velocity-1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lT3yUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="velocity-tools-generic-1.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lUHyUEeu4y6D4bQG0Mg" key="document-templating-impl -- 2.1.0" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Wz0lUXyUEeu4y6D4bQG0Mg" id="document-converter-impl-2.1.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lUnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="bonita-connector-document-converter-2.1.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lU3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-collections-3.2.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lVHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-compress-1.18.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz0lVXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-lang-2.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MQHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-lang3-3.3.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MQXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-math3-3.6.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MQnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="commons-text-1.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MQ3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="curvesapi-1.05.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MRHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MRXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MRnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.odfdom.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MR3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MSHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.pdf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MSXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.poi.xwpf.converter.xhtml-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MSnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MS3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.docx.xwpf-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MTHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.converter.odt.odfdom-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MTXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.core-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MTnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MT3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.docx-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MUHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.document.odt-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MUXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.itext.extension-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MUnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.template-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MU3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="fr.opensagres.xdocreport.template.velocity-2.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MVHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="itext-2.1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MVXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MVnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="ooxml-schemas-1.4.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MV3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="oro-2.0.8.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MWHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="poi-4.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MWXyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="poi-ooxml-4.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MWnyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="velocity-1.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MW3yUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MXHyUEeu4y6D4bQG0Mg" key="document-converter-impl -- 2.1.0" value="xmlbeans-3.0.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Wz1MXXyUEeu4y6D4bQG0Mg" id="email-impl-1.3.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MXnyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="bonita-connector-email-1.3.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MX3yUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-1.6.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MYHyUEeu4y6D4bQG0Mg" key="email-impl -- 1.3.0" value="javax.mail-api-1.6.2.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Wz1MYXyUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1Ma3yUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MbHyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MbXyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1MbnyUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Wz1MYnyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Wz1MY3yUEeu4y6D4bQG0Mg" id="GROOVY_SCRIPT">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1Mb3yUEeu4y6D4bQG0Mg" key="ReserveGrade.groovy" value="ReserveGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1McHyUEeu4y6D4bQG0Mg" key="SelectedGrade.groovy" value="SelectedGrade.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1McXyUEeu4y6D4bQG0Mg" key="SelectedStudent.groovy" value="SelectedStudent.groovy" exported="false" type="GROOVY_SCRIPT"/>
+          <fragments xmi:type="configuration:Fragment" xmi:id="_Wz1McnyUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" exported="false" type="GROOVY_SCRIPT"/>
+        </applicationDependencies>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Wz1MZHyUEeu4y6D4bQG0Mg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Wz1Mc3yUEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_dbAYcGzZEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
       <contract xmi:type="process:Contract" xmi:id="_bwPM4mTPEeuzaNnnrgaTTA"/>
