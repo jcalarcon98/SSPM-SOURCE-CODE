@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "02planificarActividadesForm",
   "name" : "02planificarActividadesForm",
-  "lastUpdate" : 1614748319287,
+  "lastUpdate" : 1615083708094,
   "rows" : [
     [
       {
@@ -1724,7 +1724,7 @@
                                     },
                                     "min" : {
                                       "type" : "constant",
-                                      "value" : 3
+                                      "value" : 2
                                     },
                                     "max" : {
                                       "type" : "constant",
@@ -2405,6 +2405,10 @@
                                           },
                                           "color" : {
                                             "type" : "constant"
+                                          },
+                                          "fontColor" : {
+                                            "type" : "constant",
+                                            "value" : false
                                           }
                                         },
                                         "reference" : "6e932fa1-6e88-472d-8c53-f8e589667463",
@@ -2441,6 +2445,10 @@
                                           },
                                           "color" : {
                                             "type" : "constant"
+                                          },
+                                          "fontColor" : {
+                                            "type" : "constant",
+                                            "value" : false
                                           }
                                         },
                                         "reference" : "ebbb3085-d4b3-4d01-8a27-6f02482a30a1",
@@ -2477,6 +2485,10 @@
                                           },
                                           "color" : {
                                             "type" : "constant"
+                                          },
+                                          "fontColor" : {
+                                            "type" : "constant",
+                                            "value" : false
                                           }
                                         },
                                         "reference" : "f354f187-0001-462f-bbc7-79e4446f160c",
@@ -2513,6 +2525,10 @@
                                           },
                                           "color" : {
                                             "type" : "constant"
+                                          },
+                                          "fontColor" : {
+                                            "type" : "constant",
+                                            "value" : false
                                           }
                                         },
                                         "reference" : "07227b45-4c16-4219-bffc-73d665312e73",
@@ -3477,7 +3493,7 @@
         "    \"stages\" : [ ],",
         "    \"alternatives\" : [ ]",
         "  },",
-        "  \"duration\" : 3",
+        "  \"duration\" : 2",
         "}"
       ],
       "exposed" : false
@@ -3791,14 +3807,21 @@
         " * returns boolean",
         " */",
         "",
+        "function halfStageDateWithDuration(date, days) {",
+        "  var result = new Date(date);",
+        "  result.setDate(result.getDate() + days);",
+        "  return result;",
+        "}",
+        "",
         "let datesError = '<b>Error: </b>';  ",
         "",
         "const halfStageDate = $data.halfStage.executionDate;",
         "const endStageDate = $data.endStage.executionDate;",
         "",
+        "",
         "if(halfStageDate && endStageDate){",
-        "    if(Date.parse(halfStageDate) >= Date.parse(endStageDate)){",
-        "        datesError += 'La fecha de ejecución de <b>Final de Ciclo</b> debe ser mayor a la fecha de ejecución de <b>Mitad de Ciclo</b>';",
+        "    if(Date.parse(halfStageDateWithDuration(halfStageDate, $data.formInput.duration)) >= Date.parse(endStageDate)){",
+        "        datesError += `La fecha de ejecución de la etapa de <b>Final de Ciclo</b>, no puede ser definida en el rango en el cual se está ejecutando la etapa de Mitad de Ciclo. <b> La duración para calificar las fichas de seguimiento al sílabo en ambas etapas es de ${$data.formInput.duration} días </b>`;",
         "        return {",
         "            isIncorrect: true,",
         "            errorMessage: datesError",
