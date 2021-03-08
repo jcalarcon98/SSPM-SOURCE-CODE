@@ -2057,7 +2057,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_EVv3dWQWEeuaypGxdjAx3Q" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_EVv3dGQWEeuaypGxdjAx3Q" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_LBWMwGQWEeuaypGxdjAx3Q">
-            <targetForm xmi:type="expression:Expression" xmi:id="_HNVHwGRGEeuLM5QOp-5kzA" name="05EnviarInformeForm" content="01ed09d2-9677-40ae-8608-6e6c97b82e6b" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_XlLOwH-3EeuCP-Ybsj4aYg" name="05EnviarInformeForm" content="01ed09d2-9677-40ae-8608-6e6c97b82e6b" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_LBVluGQWEeuaypGxdjAx3Q">
             <inputs xmi:type="process:ContractInput" xmi:id="_U12oYGRFEeuLM5QOp-5kzA" name="reportSSPMDocumentInput" type="FILE" dataReference="reportSSPM" createMode="false"/>

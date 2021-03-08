@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "05EnviarInformeForm",
   "name" : "05EnviarInformeForm",
-  "lastUpdate" : 1614719586692,
+  "lastUpdate" : 1615177367699,
   "rows" : [
     [
       {
@@ -162,6 +162,59 @@
                     "hasValidationError" : false,
                     "id" : "pbContainer",
                     "rows" : [
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "a4e56783-2b0d-47d4-b711-30ef917c43e6",
+                          "hasValidationError" : false,
+                          "id" : "fileViewerURL",
+                          "binding" : {
+                            "title" : "'Tabulación de Resultados'",
+                            "file" : "tabulateResults",
+                            "textDescription" : "reportDescription"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "bb033b3a-931c-4dfb-a186-b1b79b40ac25",
+                          "hasValidationError" : false,
+                          "id" : "customSeparator"
+                        }
+                      ],
                       [
                         {
                           "type" : "component",
@@ -1882,6 +1935,41 @@
       "type" : "url",
       "value" : [
         "../{{context.currentStage_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "syllabusTrackingReport" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?f=caseId={{task.parentCaseId}}&f=name=syllabusTrackingReport"
+      ],
+      "exposed" : false
+    },
+    "caseId" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/case/{{caseId}}"
+      ],
+      "exposed" : false
+    },
+    "testing" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data.syllabusTrackingReport);"
+      ],
+      "exposed" : false
+    },
+    "tabulateResults" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.syllabusTrackingReport.length > 0) { return $data.syllabusTrackingReport[0]; }"
+      ],
+      "exposed" : false
+    },
+    "reportDescription" : {
+      "type" : "expression",
+      "value" : [
+        "return `Se adjunta la tabulación de resultados de la etapa de ${$data.currentStage.denomination}:`;  "
       ],
       "exposed" : false
     }

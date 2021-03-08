@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "03CalificarFichaForm",
   "name" : "03CalificarFichaForm",
-  "lastUpdate" : 1615099903340,
+  "lastUpdate" : 1615178632170,
   "rows" : [
     [
       {
@@ -890,7 +890,7 @@
                               },
                               "hidden" : {
                                 "type" : "expression",
-                                "value" : "questions.length === answerLength"
+                                "value" : "questionsLength === answerLength"
                               },
                               "labelHidden" : {
                                 "type" : "constant",
@@ -1755,6 +1755,16 @@
       "type" : "expression",
       "value" : [
         "return $data.answers.alternative.filter(alternative => alternative !==  undefined).length;"
+      ],
+      "exposed" : false
+    },
+    "questionsLength" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.stageDenomination === 'FINAL'){",
+        "    return $data.questions.length + 1;",
+        "}",
+        "return $data.questions.length;"
       ],
       "exposed" : false
     }
