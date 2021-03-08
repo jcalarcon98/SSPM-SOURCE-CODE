@@ -40,12 +40,12 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .padding-bottom-xl { padding-bottom: 3em; }
 
 .container-width{
-    width: 1100px;
-    height: 650px;
+    width: 1000px;
+    height: 630px;
 }
 
 .container-position {
-    height: 900px;
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;

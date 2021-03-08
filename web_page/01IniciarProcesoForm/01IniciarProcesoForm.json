@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1615093031612,
+  "lastUpdate" : 1615098291400,
   "rows" : [
     [
       {
@@ -2055,7 +2055,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : "img-thumbnail"
+                                "value" : "margin-x-15 img-thumbnail"
                               },
                               "hidden" : {
                                 "type" : "constant",
@@ -2511,7 +2511,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : "img-thumbnail"
+                                "value" : "img-thumbnail margin-x-15"
                               },
                               "hidden" : {
                                 "type" : "constant",

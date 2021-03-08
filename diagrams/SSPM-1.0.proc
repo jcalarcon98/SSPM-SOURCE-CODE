@@ -3612,7 +3612,9 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_Wqq6UV92EeuVVLsH7l3cUw" content=""/>
       </data>
       <data xmi:type="process:Data" xmi:id="_RYrWoGACEeu0_-WLyBvLsw" name="emailUsername" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_RYrWoWACEeu0_-WLyBvLsw" name="seguimiento.silabos@gmail.com" content="seguimiento.silabos@gmail.com"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_RYrWoWACEeu0_-WLyBvLsw" name="emailUser" content="emailUser" interpreter="GROOVY" type="TYPE_PARAMETER">
+          <referencedElements xmi:type="parameter:Parameter" xmi:id="_y7VxcH9xEeusRo-_te0nfA" name="emailUser" typeClassname="java.lang.String"/>
+        </defaultValue>
       </data>
       <data xmi:type="process:Data" xmi:id="_VeA0UGACEeu0_-WLyBvLsw" name="emailHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_VeA0UWACEeu0_-WLyBvLsw" name="smtp.gmail.com" content="smtp.gmail.com"/>
@@ -3621,7 +3623,9 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_XqWwEWACEeu0_-WLyBvLsw" name="465" content="465" returnType="java.lang.Integer"/>
       </data>
       <data xmi:type="process:Data" xmi:id="_al1CsGACEeu0_-WLyBvLsw" name="emailPassword" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_al1CsWACEeu0_-WLyBvLsw" name="seguimiento2021" content="seguimiento2021"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_al1CsWACEeu0_-WLyBvLsw" name="emailPassword" content="emailPassword" interpreter="GROOVY" type="TYPE_PARAMETER">
+          <referencedElements xmi:type="parameter:Parameter" xmi:id="_2fo-oH9xEeusRo-_te0nfA" name="emailPassword" typeClassname="java.lang.String"/>
+        </defaultValue>
       </data>
       <data xmi:type="process:JavaObjectData" xmi:id="_zwB-QGDnEeuPS9Z04F0ZTQ" name="currentPeriod" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Period">
         <defaultValue xmi:type="expression:Expression" xmi:id="_zwB-QWDnEeuPS9Z04F0ZTQ" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Period"/>
@@ -4069,6 +4073,8 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_VlCxsGWaEeuUFNFgVPZMBg" name="backendHost" value="http://34.122.145.48:3000" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_bmlGZnyQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_6QfHkHyTEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_pBdNIH9vEeusRo-_te0nfA" name="urlServer" value="http://&lt;ip-del-servidor-de-bonita>/bonita/apps/cis-user" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_56G6YH9xEeusRo-_te0nfA" name="emailPassword" value="contraseña" typeClassname="java.lang.String"/>
       </configurations>
       <configurations xmi:type="configuration:Configuration" xmi:id="_EVS0YHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pablo.ordonez@unl.edu.ec" password="unlseguimiento">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_EVTbcHyUEeu4y6D4bQG0Mg">
@@ -4205,6 +4211,7 @@
       <parameters xmi:type="parameter:Parameter" xmi:id="_QOB2QGzYEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_rTs_MHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_lh_AoH4yEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_0-HhgH9xEeusRo-_te0nfA" name="emailPassword" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_PH_rjEU9EeuYOOr8JiHqIQ"/>
       <documents xmi:type="process:Document" xmi:id="_x1sFcEoSEeuRMrcBo1p0Vg" name="sillabusFile">
         <mimeType xmi:type="expression:Expression" xmi:id="_x1sFcUoSEeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
