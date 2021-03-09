@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "fileViewerURL",
   "name" : "fileViewerURL",
-  "lastUpdate" : 1615176978346,
+  "lastUpdate" : 1615263515508,
   "rows" : [
     [
       {
@@ -179,7 +179,7 @@
                           "dimension" : {
                             "xs" : 12,
                             "sm" : 11,
-                            "md" : 10,
+                            "md" : 11,
                             "lg" : 11
                           },
                           "propertyValues" : {
@@ -217,7 +217,7 @@
                           "dimension" : {
                             "xs" : 12,
                             "sm" : 1,
-                            "md" : 2,
+                            "md" : 1,
                             "lg" : 1
                           },
                           "propertyValues" : {

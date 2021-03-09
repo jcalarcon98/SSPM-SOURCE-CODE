@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1614745426640,
+  "lastUpdate" : 1615265411331,
   "rows" : [
     [
       {
@@ -223,8 +223,8 @@
                         "value" : ""
                       },
                       "hidden" : {
-                        "type" : "expression",
-                        "value" : "openStudentsFile"
+                        "type" : "constant",
+                        "value" : true
                       },
                       "text" : {
                         "type" : "interpolation",
@@ -279,6 +279,156 @@
                 },
                 "hidden" : {
                   "type" : "expression",
+                  "value" : "studentManual.length === 0"
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "535e93c2-b572-477e-8871-38bb5519d164",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<b> Manuales de Uso del Módulo de SSPM"
+                      },
+                      "level" : {
+                        "type" : "constant",
+                        "value" : "Level 3"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "8141b6a6-4da3-480c-a158-5723ffddea4a",
+                    "hasValidationError" : false,
+                    "id" : "pbTitle"
+                  }
+                ],
+                [
+                  {
+                    "type" : "fragment",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "303de3d9-d67f-420b-913b-85c4288d2d03",
+                    "hasValidationError" : false,
+                    "id" : "fileViewer",
+                    "binding" : {
+                      "title" : "'Manual de Uso - Estudiantes'",
+                      "file" : "studentManual[0]"
+                    }
+                  }
+                ],
+                [
+                  {
+                    "type" : "fragment",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "3b9fc831-799f-4252-98b8-a71ea14e0724",
+                    "hasValidationError" : false,
+                    "id" : "fileViewer",
+                    "binding" : {
+                      "title" : "'Manual de uso - Dirección de Carrera'",
+                      "file" : "degreeDirectionManual[0]"
+                    }
+                  }
+                ],
+                [
+                  {
+                    "type" : "fragment",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "bcfaa11c-2563-48d2-be72-c5b46c48e9f8",
+                    "hasValidationError" : false,
+                    "id" : "fileViewer",
+                    "binding" : {
+                      "title" : "'Manual de uso - Comisión de Evaluación Interna'",
+                      "file" : "commissionManual[0]"
+                    }
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
                   "value" : "!openStudentsFile"
                 },
                 "repeatedCollection" : {
@@ -290,6 +440,30 @@
               "hasValidationError" : false,
               "id" : "pbContainer",
               "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "ee18f0d0-7ea7-4407-91bc-38626b277f20",
+                    "hasValidationError" : false,
+                    "id" : "customSeparator"
+                  }
+                ],
                 [
                   {
                     "type" : "container",
@@ -483,7 +657,7 @@
                             },
                             "text" : {
                               "type" : "interpolation",
-                              "value" : "<b>Reporte de sílabos generado en la presente etapa"
+                              "value" : "<b>Tabulación de resultados generados en la etapa más reciente"
                             },
                             "level" : {
                               "type" : "constant",
@@ -522,8 +696,103 @@
                           "hasValidationError" : false,
                           "id" : "fileViewerURL",
                           "binding" : {
-                            "title" : "'Reporte de la última calificación de estudiantes'",
-                            "file" : "currentSillabusReportFile"
+                            "title" : "'Resultados tabulados de la última calificación de estudiantes'",
+                            "file" : "currentSillabusReportFile",
+                            "textDescription" : ""
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "openReportSyllabusFiles.length === 0"
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "f3c9bd2c-588d-45fb-92e4-a970e7216ef0",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Informe de Seguimiento al sílabo en la etapa más reciente"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "065dbaab-ef88-49e7-afa7-f48a9738d025",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "b6e1abea-8b89-4635-9c90-563a53ee019d",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Informe de Seguimiento al sílabo de la última Etapa'",
+                            "file" : "openReportSyllabus"
                           }
                         }
                       ]
@@ -560,6 +829,180 @@
               "hasValidationError" : false,
               "id" : "pbContainer",
               "rows" : [
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "f28158ee-f639-472c-b55a-707078cf2e42",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b> Manuales de Uso del Módulo de SSPM"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "f615382c-adb1-440b-9a95-1f97dfe9d3b6",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "028c469f-ce8a-48f3-9758-807ea0e90d6f",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Manual de uso - Estudiantes'",
+                            "file" : "studentManualArchived[0]"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "3c0d372c-bf62-45f1-878e-89f8f55559cc",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Manual de uso - Dirección de Carrera'",
+                            "file" : "degreeDirectionManualArchived[0]"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "2b616ba1-52f8-47fc-952f-a579439e765d",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "file" : "commissionManualArchived[0]",
+                            "title" : "'Manual de uso - Comisión de Evaluación Interna'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "ff3a455e-8424-44b4-b6a7-ce45f5132867",
+                    "hasValidationError" : false,
+                    "id" : "customSeparator"
+                  }
+                ],
                 [
                   {
                     "type" : "container",
@@ -753,7 +1196,7 @@
                             },
                             "text" : {
                               "type" : "interpolation",
-                              "value" : "<b>Reportes de sílabos generados"
+                              "value" : "<b>Resultados Tabulados"
                             },
                             "level" : {
                               "type" : "constant",
@@ -793,7 +1236,8 @@
                           "id" : "fileViewerURL",
                           "binding" : {
                             "title" : "'Mitad de Ciclo'",
-                            "file" : "archivedSillabusMiddleReport"
+                            "file" : "archivedSillabusMiddleReport",
+                            "textDescription" : ""
                           }
                         }
                       ],
@@ -821,7 +1265,154 @@
                           "id" : "fileViewerURL",
                           "binding" : {
                             "title" : "'Final de Ciclo'",
-                            "file" : "archivedSillabusEndReport"
+                            "file" : "archivedSillabusEndReport",
+                            "textDescription" : ""
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      }
+                    },
+                    "reference" : "5d8f3d5d-77ab-46bd-b0b0-2f1700860e0f",
+                    "hasValidationError" : false,
+                    "id" : "customSeparator"
+                  }
+                ],
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "a253ded6-c130-47f0-8515-246a6f7dfc0b",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "<b>Informes de Seguimiento al sílabo"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 3"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "left"
+                            }
+                          },
+                          "reference" : "d973e01f-6f44-467d-8296-5bcfe97903f2",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "371dd5a1-8a88-4824-8e18-cec518759228",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Mitad de Ciclo'",
+                            "file" : "reportSyllabusMiddleStage"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "fragment",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "constant",
+                              "value" : false
+                            }
+                          },
+                          "reference" : "3e576137-ec4e-47a2-9afd-aa771861818b",
+                          "hasValidationError" : false,
+                          "id" : "fileViewer",
+                          "binding" : {
+                            "title" : "'Final de Ciclo'",
+                            "file" : "reportSyllabusEndStage"
                           }
                         }
                       ]
@@ -1223,7 +1814,7 @@
                                   "xs" : 12,
                                   "sm" : 3,
                                   "md" : 3,
-                                  "lg" : 6
+                                  "lg" : 3
                                 },
                                 "propertyValues" : {
                                   "cssClasses" : {
@@ -1255,9 +1846,59 @@
                                 "type" : "component",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 9,
-                                  "md" : 9,
-                                  "lg" : 6
+                                  "sm" : 3,
+                                  "md" : 4,
+                                  "lg" : 4
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Default label"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 4
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<hr>"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "7efd1326-9be0-4613-a987-d9fe750a7b2c",
+                                "hasValidationError" : false,
+                                "id" : "pbText"
+                              },
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 6,
+                                  "md" : 5,
+                                  "lg" : 5
                                 },
                                 "propertyValues" : {
                                   "cssClasses" : {
@@ -1293,7 +1934,7 @@
                                   "xs" : 12,
                                   "sm" : 3,
                                   "md" : 3,
-                                  "lg" : 6
+                                  "lg" : 3
                                 },
                                 "propertyValues" : {
                                   "cssClasses" : {
@@ -1325,9 +1966,59 @@
                                 "type" : "component",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 9,
-                                  "md" : 9,
-                                  "lg" : 6
+                                  "sm" : 3,
+                                  "md" : 4,
+                                  "lg" : 4
+                                },
+                                "propertyValues" : {
+                                  "cssClasses" : {
+                                    "type" : "constant",
+                                    "value" : ""
+                                  },
+                                  "hidden" : {
+                                    "type" : "constant",
+                                    "value" : false
+                                  },
+                                  "labelHidden" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "label" : {
+                                    "type" : "interpolation",
+                                    "value" : "Default label"
+                                  },
+                                  "labelPosition" : {
+                                    "type" : "constant",
+                                    "value" : "top"
+                                  },
+                                  "labelWidth" : {
+                                    "type" : "constant",
+                                    "value" : 4
+                                  },
+                                  "allowHTML" : {
+                                    "type" : "constant",
+                                    "value" : true
+                                  },
+                                  "text" : {
+                                    "type" : "interpolation",
+                                    "value" : "<hr>"
+                                  },
+                                  "alignment" : {
+                                    "type" : "constant",
+                                    "value" : "left"
+                                  }
+                                },
+                                "reference" : "476ac932-76a8-47aa-8e83-9dca8db3f516",
+                                "hasValidationError" : false,
+                                "id" : "pbText"
+                              },
+                              {
+                                "type" : "component",
+                                "dimension" : {
+                                  "xs" : 12,
+                                  "sm" : 6,
+                                  "md" : 5,
+                                  "lg" : 5
                                 },
                                 "propertyValues" : {
                                   "cssClasses" : {
@@ -1611,7 +2302,7 @@
                           "dimension" : {
                             "md" : 12,
                             "sm" : 12,
-                            "xs" : 11,
+                            "xs" : 12,
                             "lg" : 12
                           },
                           "propertyValues" : {
@@ -4768,6 +5459,92 @@
       "value" : [
         "if($data.currentSheet){",
         "    return $data.currentSheet.denomination.toLowerCase().includes('mitad') ? 'MITAD' :  'FINAL';",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "studentManual" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?p=0&c=10&f=name=studentManual"
+      ],
+      "exposed" : false
+    },
+    "degreeDirectionManual" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?p=0&c=10&f=name=degreeManual"
+      ],
+      "exposed" : false
+    },
+    "commissionManual" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?p=0&c=10&f=name=commissionManual"
+      ],
+      "exposed" : false
+    },
+    "studentManualArchived" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?p=0&c=10&f=name=studentManual"
+      ],
+      "exposed" : false
+    },
+    "degreeDirectionManualArchived" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?p=0&c=10&f=name=degreeManual"
+      ],
+      "exposed" : false
+    },
+    "commissionManualArchived" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?p=0&c=10&f=name=commissionManual"
+      ],
+      "exposed" : false
+    },
+    "reportSyllabusFiles" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCaseDocument?f=caseId={{caseId}}&f=name=reportSSPM"
+      ],
+      "exposed" : false
+    },
+    "reportSyllabusMiddleStage" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.reportSyllabusFiles.length > 0){ return $data.reportSyllabusFiles[0]; }"
+      ],
+      "exposed" : false
+    },
+    "reportSyllabusEndStage" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.reportSyllabusFiles.length > 1){ return $data.reportSyllabusFiles[1]; }"
+      ],
+      "exposed" : false
+    },
+    "openReportSyllabusFiles" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/caseDocument?f=caseId={{caseId}}&f=name=reportSSPM"
+      ],
+      "exposed" : false
+    },
+    "openReportSyllabus" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.openReportSyllabusFiles.length > 0) { return $data.openReportSyllabusFiles[0]}"
+      ],
+      "exposed" : false
+    },
+    "openReportCurrentFile" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.openReportSyllabusFiles.length > 0) {",
+        "    return $data.openReportSyllabusFiles[0];",
         "}"
       ],
       "exposed" : false
