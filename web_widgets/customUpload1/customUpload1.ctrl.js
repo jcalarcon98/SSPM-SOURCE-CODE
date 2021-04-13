@@ -18,8 +18,14 @@ function PbUploadCtrl($scope, $sce, $element, widgetNameFactory, $timeout, $log,
             $scope.properties.results = undefined;
         }
         
+        const currentFileName = event.target.files[0].name;
+        const acceptedExtension = '.csv';
+        const extractedExtension = currentFileName.substr(currentFileName.length - acceptedExtension.length);
+    
+        const isValid = extractedExtension === acceptedExtension;
+
         
-        if(event.target.files[0].type === 'text/csv'){
+        if(isValid){
             Papa.parse(event.target.files[0], {
                 complete: function(results) {
                     $scope.properties.results = results.data;
