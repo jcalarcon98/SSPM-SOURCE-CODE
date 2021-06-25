@@ -1,5 +1,5 @@
-import com.company.model.Grade
-import com.company.model.Student
+import com.sspm.model.Grade
+import com.sspm.model.Student
 
 /**
  * 

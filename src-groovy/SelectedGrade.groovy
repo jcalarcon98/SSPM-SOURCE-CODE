@@ -1,4 +1,4 @@
-import com.company.model.Student
+import com.sspm.model.Student
 
 /**
  * 

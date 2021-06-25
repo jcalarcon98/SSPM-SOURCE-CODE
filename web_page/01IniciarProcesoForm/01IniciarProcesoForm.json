@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1618278366869,
+  "lastUpdate" : 1623532133152,
   "rows" : [
     [
       {
@@ -1914,7 +1914,7 @@
                               },
                               "message" : {
                                 "type" : "constant",
-                                "value" : "<b>Precaución: </b> En caso de no ingresar estudiantes de reserva, no existiría la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
+                                "value" : "<b>Precaución: </b> Tomar en cuenta al no ingresar estudiantes de reserva, no existirá la posibilidad de reemplazarlos en caso que no califiquen la ficha de seguimiento al sílabo asignada."
                               },
                               "show" : {
                                 "type" : "constant",
