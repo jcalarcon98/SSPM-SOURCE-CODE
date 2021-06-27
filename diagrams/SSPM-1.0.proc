@@ -857,9 +857,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xSMRMWV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xSMRMGV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xSMRMmV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;Date executionDate = calendar.getTime();&#xA;Date today = new Date();&#xA;Date finishDate = new Date(executionDate.getTime() - today.getTime());&#xA;&#xA;if(productionTimers){&#xA;&#x9;if(finishDate.getTime() &lt;= 0){&#xA;&#x9;&#x9;Date newExecutionDate = new Date(today.getTime() + 86400000L);&#xA;&#x9;&#x9;return newExecutionDate;&#xA;&#x9;}else{&#xA;&#x9;&#x9;return executionDate;&#xA;&#x9;}&#xA;}&#xA;&#xA;Long expiremilis = 540000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_xJQHgMvKEeu4i8b5DjGa5A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
-            <referencedElements xmi:type="parameter:Parameter" xmi:id="_xJQukMvKEeu4i8b5DjGa5A" name="productionTimers" typeClassname="java.lang.Boolean"/>
+          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;Date executionDate = calendar.getTime();&#xA;Date today = new Date();&#xA;Date finishDate = new Date(executionDate.getTime() - today.getTime());&#xA;&#xA;if(productionTimers){&#xA;&#x9;if(finishDate.getTime() &lt;= 0){&#xA;&#x9;&#x9;Date newExecutionDate = new Date(today.getTime() + 86400000L);&#xA;&#x9;&#x9;return newExecutionDate;&#xA;&#x9;}else{&#xA;&#x9;&#x9;return executionDate;&#xA;&#x9;}&#xA;}&#xA;&#xA;//Long expiremilis = 540000L;&#xA;Long expiremilis = 120000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_f6kR0NbqEeufB7jSKchEGQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+            <referencedElements xmi:type="parameter:Parameter" xmi:id="_f6k44NbqEeufB7jSKchEGQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_B-sPMGilEeu4QMMChlZ5tw" name="Notificar dirección de carrera sobre el informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_MI0g4GilEeu4QMMChlZ5tw" incoming="_B_A_UGilEeu4QMMChlZ5tw">
@@ -1858,15 +1858,15 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_fr5iU2PsEeu0xZBfUQusog" key="variables"/>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_fr5iVGPsEeu0xZBfUQusog" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_fr5iVWPsEeu0xZBfUQusog" name="removeSyllabus()" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;logger.severe(&quot;***********Remove Syllabus********&quot;);&#xA;&#xA;List newList = [];&#xA;&#xA;List newCurrentGrades = currentGrades;&#xA;List denominations = [];&#xA;List numbers = [];&#xA;List parallels = [];&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;for (syllabus in grade.syllabuses){&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if( (stage == 0 &amp;&amp; syllabus.sheets.size() &lt; 1) || (stage == 1 &amp;&amp; syllabus.sheets.size() &lt; 2) ){&#xA;&#x9;&#x9;&#x9;denominations.add(syllabus.denomination);&#xA;&#x9;&#x9;&#x9;numbers.add(grade.number.toString());&#xA;&#x9;&#x9;&#x9;parallels.add(grade.parallel);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;if(stage == 0){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 1};&#xA;&#x9;}else if(stage == 1){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 2};&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(newCurrentGrades);&#xA;newList.add(denominations);&#xA;newList.add(numbers);&#xA;newList.add(parallels);&#xA;&#xA;logger.severe(newCurrentGrades.toString());&#xA;logger.severe(&quot;***********RRsss********&quot;);&#xA;logger.severe(denominations.toString());&#xA;logger.severe(numbers.toString());&#xA;logger.severe(parallels.toString());&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_xXHbUNa1EeuZauV-GKOubQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_xXHbUda1EeuZauV-GKOubQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                <expression xmi:type="expression:Expression" xmi:id="_fr5iVWPsEeu0xZBfUQusog" name="removeSyllabus()" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;logger.severe(&quot;***********Remove Syllabus********&quot;);&#xA;&#xA;List newList = [];&#xA;&#xA;List newCurrentGrades = currentGrades;&#xA;List denominations = [];&#xA;List numbers = [];&#xA;List parallels = [];&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;for (syllabus in grade.syllabuses){&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if( (stage == 0 &amp;&amp; syllabus.sheets.size() &lt; 1) || (stage == 1 &amp;&amp; syllabus.sheets.size() &lt; 2) ){&#xA;&#x9;&#x9;&#x9;denominations.add(syllabus.denomination);&#xA;&#x9;&#x9;&#x9;numbers.add(grade.number.toString());&#xA;&#x9;&#x9;&#x9;parallels.add(grade.parallel);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;if(stage == 0){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 1};&#xA;&#x9;}else if(stage == 1){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 2};&#xA;&#x9;}&#xA;}&#xA;&#xA;newCurrentGrades.removeIf{ grade -> grade.syllabuses.size() == 0 }&#xA;&#xA;newList.add(newCurrentGrades);&#xA;newList.add(denominations);&#xA;newList.add(numbers);&#xA;newList.add(parallels);&#xA;&#xA;logger.severe(newCurrentGrades.toString());&#xA;logger.severe(&quot;***********RRsss********&quot;);&#xA;logger.severe(denominations.toString());&#xA;logger.severe(numbers.toString());&#xA;logger.severe(parallels.toString());&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:Data" xmi:id="_okoI0NbzEeufB7jSKchEGQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_okoI0dbzEeufB7jSKchEGQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                 </expression>
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_fr5iVmPsEeu0xZBfUQusog">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_fr5iV2PsEeu0xZBfUQusog" name="currentGrades" content="currentGrades" type="TYPE_VARIABLE" returnType="java.util.List">
-                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_i-1dQGPtEeu0xZBfUQusog" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <leftOperand xmi:type="expression:Expression" xmi:id="_fr5iV2PsEeu0xZBfUQusog" name="backendGrades" content="backendGrades" type="TYPE_VARIABLE" returnType="java.util.List">
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_okov4NbzEeufB7jSKchEGQ" name="backendGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
               </leftOperand>
               <rightOperand xmi:type="expression:Expression" xmi:id="_fr5iWGPsEeu0xZBfUQusog" name="result[0]()" content="return result[0];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
                 <referencedElements xmi:type="definition:Output" xmi:id="_Ic85AGP4Eeu0xZBfUQusog" name="result" type="java.lang.Object"/>
@@ -2976,6 +2976,15 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Bqmbs2DoEeuPS9Z04F0ZTQ" type="ASSIGNMENT"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_0zdIENbxEeufB7jSKchEGQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_0zdIEdbxEeufB7jSKchEGQ" name="backendGrades" content="backendGrades" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_1vercNbxEeufB7jSKchEGQ" name="backendGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_0zdIEtbxEeufB7jSKchEGQ" name="currentGrades" content="currentGrades" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_GcTOENbyEeufB7jSKchEGQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_0zdIE9bxEeufB7jSKchEGQ" type="ASSIGNMENT"/>
+          </operations>
           <operations xmi:type="expression:Operation" xmi:id="_ZtZe4FttEeuuwMIX-fl6EA">
             <leftOperand xmi:type="expression:Expression" xmi:id="_ZtZe4VttEeuuwMIX-fl6EA" name="grades" content="grades" type="TYPE_VARIABLE" returnType="java.util.List">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_aezGoFttEeuuwMIX-fl6EA" name="grades" multiple="true" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Grade"/>
@@ -3038,9 +3047,9 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_wAQoslkXEeuJIr4cTKuYsA" name="student" content="student" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_wAQosVkXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_n4TJIFzzEeuCL6OsnlvZyg" name="Tiempo Límite" outgoing="_IT0FkGiiEeu4QMMChlZ5tw">
-            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;// Nine minutes&#xA;return 540000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_budwAMvBEeu4i8b5DjGa5A" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_budwAcvBEeu4i8b5DjGa5A" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;// Nine minutes&#xA;//return 540000L;&#xA;&#xA;// Two minutes&#xA;return 120000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="_ar-GANbqEeufB7jSKchEGQ" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_ar_UINbqEeufB7jSKchEGQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <BoundaryIntermediateEvents xmi:type="process:NonInterruptingBoundaryTimerEvent" xmi:id="_qdzXUF9aEeuVVLsH7l3cUw" name="1 día despúes" outgoing="_Quz0IF9bEeuVVLsH7l3cUw">
@@ -3166,14 +3175,14 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_usSsu2DpEeuPS9Z04F0ZTQ"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_usSsvGDpEeuPS9Z04F0ZTQ" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_usSsvWDpEeuPS9Z04F0ZTQ" name="getUrlDocument" content="import groovy.json.JsonBuilder&#xA;&#xA;def builder = new JsonBuilder();&#xA;&#xA;class FormatQuestion {&#xA;&#x9;Long persistenceId&#xA;&#x9;String description&#xA;}&#xA;&#xA;def questionsList = []&#xA;&#xA;currentStage.questions.each {&#xA;&#x9;questionsList.add({ currentQuestion ->&#xA;&#x9;&#x9;def formatQuestion = new FormatQuestion();&#xA;&#x9;&#x9;formatQuestion.persistenceId = currentQuestion.persistenceId&#xA;&#x9;&#x9;formatQuestion.description = currentQuestion.description&#xA;&#x9;&#x9;return formatQuestion&#xA;&#x9;}(it))&#xA;}&#xA;&#xA;def root = builder.period {&#xA;&#x9;degree currentDegree.name&#xA;&#x9;initDate currentPeriod.initDate.toString()&#xA;&#x9;endDate currentPeriod.endDate.toString()&#xA;&#x9;stage currentStage.denomination&#xA;&#x9;questions questionsList&#xA;&#x9;alternatives currentTracking.alternatives&#xA;&#x9;evaluationGrades currentGrades&#xA;}&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:Data" xmi:id="_-7T6wNaiEeuZauV-GKOubQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-7T6wdaiEeuZauV-GKOubQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-7T6wtaiEeuZauV-GKOubQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh0NaiEeuZauV-GKOubQ" name="currentPeriod" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh0daiEeuZauV-GKOubQ" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh0taiEeuZauV-GKOubQ" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh09aiEeuZauV-GKOubQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                <expression xmi:type="expression:Expression" xmi:id="_usSsvWDpEeuPS9Z04F0ZTQ" name="getUrlDocument" content="import groovy.json.JsonBuilder&#xA;&#xA;def builder = new JsonBuilder();&#xA;&#xA;class FormatQuestion {&#xA;&#x9;Long persistenceId&#xA;&#x9;String description&#xA;}&#xA;&#xA;def questionsList = []&#xA;&#xA;currentStage.questions.each {&#xA;&#x9;questionsList.add({ currentQuestion ->&#xA;&#x9;&#x9;def formatQuestion = new FormatQuestion();&#xA;&#x9;&#x9;formatQuestion.persistenceId = currentQuestion.persistenceId&#xA;&#x9;&#x9;formatQuestion.description = currentQuestion.description&#xA;&#x9;&#x9;return formatQuestion&#xA;&#x9;}(it))&#xA;}&#xA;&#xA;def root = builder.period {&#xA;&#x9;degree currentDegree.name&#xA;&#x9;initDate currentPeriod.initDate.toString()&#xA;&#x9;endDate currentPeriod.endDate.toString()&#xA;&#x9;stage currentStage.denomination&#xA;&#x9;questions questionsList&#xA;&#x9;alternatives currentTracking.alternatives&#xA;&#x9;evaluationGrades backendGrades&#xA;}&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:Data" xmi:id="_LVkDENbyEeufB7jSKchEGQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_LVkDEdbyEeufB7jSKchEGQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_LVkDEtbyEeufB7jSKchEGQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_LVkDE9byEeufB7jSKchEGQ" name="currentPeriod" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_LVkqINbyEeufB7jSKchEGQ" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_LVkqIdbyEeufB7jSKchEGQ" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_LVkqItbyEeufB7jSKchEGQ" name="backendGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_usSsxWDpEeuPS9Z04F0ZTQ" key="do_not_follow_redirect">
@@ -3662,6 +3671,9 @@
       <data xmi:type="process:Data" xmi:id="_L17CMHutEeugKL_ifMEEHQ" name="leftStudents" dataType="_PH_rnEU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_L17CMXutEeugKL_ifMEEHQ" content="" returnType="java.lang.Boolean"/>
       </data>
+      <data xmi:type="process:JavaObjectData" xmi:id="_y4RNwNbxEeufB7jSKchEGQ" name="backendGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_y4RNwdbxEeufB7jSKchEGQ" content="" returnType="java.util.List"/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_PH_rhEU9EeuYOOr8JiHqIQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_smrxUEoPEeuRMrcBo1p0Vg" name="00InitForm" content="e91ca845-526b-40c1-9ef4-dd86faa5d762" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
@@ -3712,7 +3724,7 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_r7b1sGJJEeuniqg8bGbAsA" target="_2WYgAGDoEeuPS9Z04F0ZTQ" source="_m9iYUGJJEeuniqg8bGbAsA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_r7ccwGJJEeuniqg8bGbAsA"/>
-        <condition xmi:type="expression:Expression" xmi:id="_r7ccwWJJEeuniqg8bGbAsA" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_r7ccwWJJEeuniqg8bGbAsA" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_ViVfQGQWEeuaypGxdjAx3Q" target="_WQ84wGQWEeuaypGxdjAx3Q" source="_SF2KQGQWEeuaypGxdjAx3Q">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_ViWGUGQWEeuaypGxdjAx3Q"/>
