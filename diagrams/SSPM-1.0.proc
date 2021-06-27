@@ -271,7 +271,7 @@
           </inputMappings>
           <inputMappings xmi:type="process:InputMapping" xmi:id="_LfM9wEr5EeuHg-ZrLb5XVA" subprocessTarget="degree" assignationType="Data">
             <processSource xmi:type="expression:Expression" xmi:id="_LfM9wUr5EeuHg-ZrLb5XVA" name="currentDegree" content="currentDegree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_MBLpcEr5EeuHg-ZrLb5XVA" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_xJ2IgNX-Eeu6Y8Hn8yrE3Q" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
             </processSource>
           </inputMappings>
           <inputMappings xmi:type="process:InputMapping" xmi:id="_B2F58EuzEeuocLIPuMdEiw" subprocessTarget="period" assignationType="Data">
@@ -494,8 +494,8 @@
               <referencedElements xmi:type="process:Data" xmi:id="_Muh9gGSpEeuZ5dHhba0c_w" name="emails" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_Lm_GomSpEeuZ5dHhba0c_w" name="setEmails()" content="&#xA;String text = &quot;&quot;;&#xA;&#xA;text = degree.manager.email +&quot;, &quot;+ emailsCommission;&#xA;&#xA;return text;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_NergsGSsEeuZ5dHhba0c_w" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_NergsWSsEeuZ5dHhba0c_w" name="emailsCommission" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_zATE0NajEeuZauV-GKOubQ" name="emailsCommission" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zATE0dajEeuZauV-GKOubQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Lm_Go2SpEeuZ5dHhba0c_w" type="ASSIGNMENT"/>
           </operations>
@@ -551,7 +551,7 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fGOQEGS1Eeuieu1-zwk2Cw" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_eWe1MmS1Eeuieu1-zwk2Cw" name="setNewCurrentStage()" content="import com.sspm.model.Stage&#xA;&#xA;Stage currentStage = null;&#xA;&#xA;for (stage in tracking.stages) {&#xA;&#x9;if(stage.denomination == &quot;Final de Ciclo&quot;){&#xA;&#x9;&#x9;currentStage = stage;&#xA;&#x9;}&#xA;}&#xA;&#xA;return currentStage;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.sspm.model.Stage">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dPP3ANVpEeuql54jiEAdVQ" name="tracking" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_cXS3oNajEeuZauV-GKOubQ" name="tracking" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_eWe1M2S1Eeuieu1-zwk2Cw" type="ASSIGNMENT"/>
           </operations>
@@ -833,8 +833,8 @@
               <referencedElements xmi:type="process:Data" xmi:id="_4VnGEGV4EeugQYG4i8wMTQ" name="emailsTo" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_3cQcMmV4EeugQYG4i8wMTQ" name="setEmailsTo()" content="&#xA;String text = &quot;&quot;;&#xA;&#xA;text = degree.manager.email +&quot;, &quot;+ emailsCommission;&#xA;&#xA;return text;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:Data" xmi:id="_3e9-EHSDEeuLpZN-Z3PlmA" name="emailsCommission" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3e9-EXSDEeuLpZN-Z3PlmA" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_id8s0NajEeuZauV-GKOubQ" name="emailsCommission" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_id8s0dajEeuZauV-GKOubQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_3cQcM2V4EeugQYG4i8wMTQ" type="ASSIGNMENT"/>
           </operations>
@@ -843,7 +843,7 @@
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_BOUq8GZwEeuUi9V_NqML1w" name="improveActionsLists" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_AUKv0mZwEeuUi9V_NqML1w" name="setImproveActionsLists()" content="&#xA;&#xA;List newList = [];&#xA;&#xA;List descriptions = [];&#xA;List states = [];&#xA;&#xA;&#xA;for(action in actualImprovePlan.improveActions){&#xA;&#x9;&#xA;&#x9;descriptions.add(action.description);&#xA;&#x9;&#xA;&#x9;if(action.completed){&#xA;&#x9;&#x9;states.add(&quot;Completada&quot;);&#xA;&#x9;}else{&#xA;&#x9;&#x9;states.add(&quot;No Completada&quot;);&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(descriptions);&#xA;newList.add(states);&#xA;&#xA;return newList;&#xA;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_VskegGZ1EeuUi9V_NqML1w" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_kOBjUNajEeuZauV-GKOubQ" name="actualImprovePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_AUKv02ZwEeuUi9V_NqML1w" type="ASSIGNMENT"/>
           </operations>
@@ -990,7 +990,7 @@
               <referencedElements xmi:type="process:Data" xmi:id="_fvu2EGilEeu4QMMChlZ5tw" name="emailManager" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_efL0MmilEeu4QMMChlZ5tw" name="gerEmailManager()" content="return degree.manager.email;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_iA6OgGilEeu4QMMChlZ5tw" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_2jjwMNajEeuZauV-GKOubQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_efL0M2ilEeu4QMMChlZ5tw" type="ASSIGNMENT"/>
           </operations>
@@ -1205,8 +1205,8 @@
               <referencedElements xmi:type="process:Data" xmi:id="_8tsswHSDEeuLpZN-Z3PlmA" name="emailsTo" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_38mVQnSDEeuLpZN-Z3PlmA" name="setEmails()" content="String text = &quot;&quot;;&#xA;&#xA;text = degree.manager.email +&quot;, &quot;+ emailsCommission;&#xA;&#xA;return text;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:Data" xmi:id="__iE44HSDEeuLpZN-Z3PlmA" name="emailsCommission" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="__iE44XSDEeuLpZN-Z3PlmA" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_nFhU4NajEeuZauV-GKOubQ" name="emailsCommission" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_nFh78NajEeuZauV-GKOubQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_38mVQ3SDEeuLpZN-Z3PlmA" type="ASSIGNMENT"/>
           </operations>
@@ -1230,8 +1230,8 @@
               <referencedElements xmi:type="process:Data" xmi:id="_0zBaYHvEEeugbqCBG5wv9A" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_yYaZInvEEeugbqCBG5wv9A" name="deleteCommissionMembership()" content="import org.bonitasoft.engine.identity.User;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;String username = &quot;&quot;;&#xA;String groupName = &quot;Commission&quot;;&#xA;String roleName = &quot;member&quot;;&#xA;Long groupId = utils.getGroupId(apiAccessor, groupName);&#xA;Long roleId = utils.getRoleId(apiAccessor, roleName);&#xA;for (member in currentDegree.commission) {&#xA;&#x9;&#xA;&#x9;username = member.email&#xA;&#x9;&#xA;&#x9;User findUser = utils.findUserByUsername(apiAccessor, username)&#xA;&#x9;&#xA;&#x9;if(findUser != null){&#xA;&#x9;&#x9;utils.removeMembership(apiAccessor, findUser.getId(), groupId, roleId)&#xA;&#x9;}&#xA;}&#xA;return 0;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
-              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_QHEIcHvHEeugbqCBG5wv9A" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_QHEIcXvHEeugbqCBG5wv9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_wA24MNajEeuZauV-GKOubQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_wA3fQNajEeuZauV-GKOubQ" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_yYaZI3vEEeugbqCBG5wv9A" type="ASSIGNMENT"/>
           </operations>
@@ -1414,8 +1414,8 @@
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_EdgVhFkDEeuF5ruAm3t3cQ" key="variables"/>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_EdgVhVkDEeuF5ruAm3t3cQ" key="fakeScriptExpression">
                 <expression xmi:type="expression:Expression" xmi:id="_EdgVhlkDEeuF5ruAm3t3cQ" name="getHalfstageEndDate()" content="&#xA;Long days = durationRate;&#xA;&#xA;return (currentTracking.stages[0].executionDate.plusDays(days)).toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_4LnWQGSsEeuZ5dHhba0c_w" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Tracking"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_4LnWQWSsEeuZ5dHhba0c_w" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_h4e6cNYCEeu6Y8Hn8yrE3Q" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_h4e6cdYCEeu6Y8Hn8yrE3Q" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
                 </expression>
               </parameters>
             </configuration>
@@ -1437,8 +1437,8 @@
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Ig1BBFkDEeuF5ruAm3t3cQ" key="variables"/>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Ig1BBVkDEeuF5ruAm3t3cQ" key="fakeScriptExpression">
                 <expression xmi:type="expression:Expression" xmi:id="_Ig1BBlkDEeuF5ruAm3t3cQ" name="getEndstageEndDate()" content="&#xA;Long days = durationRate;&#xA;&#xA;return (currentTracking.stages[1].executionDate.plusDays(days)).toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_WERoEGStEeuieu1-zwk2Cw" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Tracking"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_WERoEWStEeuieu1-zwk2Cw" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_mD4j4NYCEeu6Y8Hn8yrE3Q" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_mD4j4dYCEeu6Y8Hn8yrE3Q" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
                 </expression>
               </parameters>
             </configuration>
@@ -1858,9 +1858,9 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_fr5iU2PsEeu0xZBfUQusog" key="variables"/>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_fr5iVGPsEeu0xZBfUQusog" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_fr5iVWPsEeu0xZBfUQusog" name="removeSyllabus()" content="List newList = [];&#xA;&#xA;List newCurrentGrades = currentGrades;&#xA;List denominations = [];&#xA;List numbers = [];&#xA;List parallels = [];&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;for (syllabus in grade.syllabuses){&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if( (stage == 0 &amp;&amp; syllabus.sheets.size() &lt; 1) || (stage == 1 &amp;&amp; syllabus.sheets.size() &lt; 2) ){&#xA;&#x9;&#x9;&#x9;denominations.add(syllabus.denomination);&#xA;&#x9;&#x9;&#x9;numbers.add(grade.number.toString());&#xA;&#x9;&#x9;&#x9;parallels.add(grade.parallel);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;if(stage == 0){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 1};&#xA;&#x9;}else if(stage == 1){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 2};&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(newCurrentGrades);&#xA;newList.add(denominations);&#xA;newList.add(numbers);&#xA;newList.add(parallels);&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Ug-5UGP9Eeu0xZBfUQusog" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_Ug-5UWP9Eeu0xZBfUQusog" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                <expression xmi:type="expression:Expression" xmi:id="_fr5iVWPsEeu0xZBfUQusog" name="removeSyllabus()" content="import java.util.logging.Logger&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;logger.severe(&quot;***********Remove Syllabus********&quot;);&#xA;&#xA;List newList = [];&#xA;&#xA;List newCurrentGrades = currentGrades;&#xA;List denominations = [];&#xA;List numbers = [];&#xA;List parallels = [];&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;for (syllabus in grade.syllabuses){&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if( (stage == 0 &amp;&amp; syllabus.sheets.size() &lt; 1) || (stage == 1 &amp;&amp; syllabus.sheets.size() &lt; 2) ){&#xA;&#x9;&#x9;&#x9;denominations.add(syllabus.denomination);&#xA;&#x9;&#x9;&#x9;numbers.add(grade.number.toString());&#xA;&#x9;&#x9;&#x9;parallels.add(grade.parallel);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;for (grade in newCurrentGrades){&#xA;&#x9;&#xA;&#x9;if(stage == 0){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 1};&#xA;&#x9;}else if(stage == 1){&#xA;&#x9;&#x9;grade.syllabuses.removeIf{ syllabus -> syllabus.sheets.size() &lt; 2};&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(newCurrentGrades);&#xA;newList.add(denominations);&#xA;newList.add(numbers);&#xA;newList.add(parallels);&#xA;&#xA;logger.severe(newCurrentGrades.toString());&#xA;logger.severe(&quot;***********RRsss********&quot;);&#xA;logger.severe(denominations.toString());&#xA;logger.severe(numbers.toString());&#xA;logger.severe(parallels.toString());&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_xXHbUNa1EeuZauV-GKOubQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_xXHbUda1EeuZauV-GKOubQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                 </expression>
               </parameters>
             </configuration>
@@ -3167,13 +3167,13 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_usSsvGDpEeuPS9Z04F0ZTQ" key="body">
                 <expression xmi:type="expression:Expression" xmi:id="_usSsvWDpEeuPS9Z04F0ZTQ" name="getUrlDocument" content="import groovy.json.JsonBuilder&#xA;&#xA;def builder = new JsonBuilder();&#xA;&#xA;class FormatQuestion {&#xA;&#x9;Long persistenceId&#xA;&#x9;String description&#xA;}&#xA;&#xA;def questionsList = []&#xA;&#xA;currentStage.questions.each {&#xA;&#x9;questionsList.add({ currentQuestion ->&#xA;&#x9;&#x9;def formatQuestion = new FormatQuestion();&#xA;&#x9;&#x9;formatQuestion.persistenceId = currentQuestion.persistenceId&#xA;&#x9;&#x9;formatQuestion.description = currentQuestion.description&#xA;&#x9;&#x9;return formatQuestion&#xA;&#x9;}(it))&#xA;}&#xA;&#xA;def root = builder.period {&#xA;&#x9;degree currentDegree.name&#xA;&#x9;initDate currentPeriod.initDate.toString()&#xA;&#x9;endDate currentPeriod.endDate.toString()&#xA;&#x9;stage currentStage.denomination&#xA;&#x9;questions questionsList&#xA;&#x9;alternatives currentTracking.alternatives&#xA;&#x9;evaluationGrades currentGrades&#xA;}&#xA;&#xA;return builder.toString();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_usSsvmDpEeuPS9Z04F0ZTQ" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_usSsv2DpEeuPS9Z04F0ZTQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Stage"/>
-                  <referencedElements xmi:type="process:Data" xmi:id="_usSswGDpEeuPS9Z04F0ZTQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_usSswWDpEeuPS9Z04F0ZTQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_usSswmDpEeuPS9Z04F0ZTQ" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Tracking"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_usSsw2DpEeuPS9Z04F0ZTQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_usSsxGDpEeuPS9Z04F0ZTQ" name="currentPeriod" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Period"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_-7T6wNaiEeuZauV-GKOubQ" name="stage" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-7T6wdaiEeuZauV-GKOubQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-7T6wtaiEeuZauV-GKOubQ" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh0NaiEeuZauV-GKOubQ" name="currentPeriod" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh0daiEeuZauV-GKOubQ" name="currentDegree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh0taiEeuZauV-GKOubQ" name="currentTracking" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Tracking"/>
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_-7Uh09aiEeuZauV-GKOubQ" name="currentGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_usSsxWDpEeuPS9Z04F0ZTQ" key="do_not_follow_redirect">
@@ -4313,9 +4313,9 @@
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BctTpHGREeuYMuCMXEcOJQ" key="variables"/>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_BctTpXGREeuYMuCMXEcOJQ" key="fakeScriptExpression">
-              <expression xmi:type="expression:Expression" xmi:id="_BctTpnGREeuYMuCMXEcOJQ" name="setContent()" content="String content = &quot;&quot;&#xA;&#xA;if(commissionUsers[index].registered){&#xA;&#x9;content = &quot;En caso de haber olvidado la contraseña por favor ponerse en contacto con el administrador.&quot;&#xA;}else{&#xA;&#x9;content = &quot;Las credenciales de acceso asignadas a su persona son las siguientes:&quot; + &#xA;&#x9;&quot;&lt;br>&lt;br>&lt;b>Usuario: &lt;/b>&quot; + commissionUsers[index].member.email + &#xA;&#x9;&quot;&lt;br>&lt;b>Contraseña: &lt;/b>&quot; + commissionUsers[index].password;&#xA;}&#xA;&#xA;return content;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                <referencedElements xmi:type="process:Data" xmi:id="_6WsdwHGREeuYMuCMXEcOJQ" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_6WsdwXGREeuYMuCMXEcOJQ" name="commissionUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+              <expression xmi:type="expression:Expression" xmi:id="_BctTpnGREeuYMuCMXEcOJQ" name="setContent()" content="&#xA;String content = &quot;&quot;&#xA;&#xA;if(commissionUsers[index].registered){&#xA;&#x9;content = &quot;En caso de haber olvidado la contraseña por favor ponerse en contacto con el administrador.&quot;&#xA;}else{&#xA;&#x9;content = &quot;Las credenciales de acceso asignadas a su persona son las siguientes:&quot; +&#xA;&#x9;&quot;&lt;br>&lt;br>&lt;b>Usuario: &lt;/b>&quot; + commissionUsers[index].member.email +&#xA;&#x9;&quot;&lt;br>&lt;b>Contraseña: &lt;/b>&quot; + commissionUsers[index].password;&#xA;}&#xA;&#xA;return content;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                <referencedElements xmi:type="process:Data" xmi:id="_0cxNYNakEeuZauV-GKOubQ" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_0cxNYdakEeuZauV-GKOubQ" name="commissionUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
               </expression>
             </parameters>
           </configuration>
@@ -4358,7 +4358,9 @@
               </expression>
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uhmcbkuwEeuocLIPuMdEiw" key="from">
-              <expression xmi:type="expression:Expression" xmi:id="_uhmcb0uwEeuocLIPuMdEiw" name="seguimiento.silabos@gmail.com" content="seguimiento.silabos@gmail.com" returnTypeFixed="true"/>
+              <expression xmi:type="expression:Expression" xmi:id="_uhmcb0uwEeuocLIPuMdEiw" name="emailUsername" content="emailUsername" type="TYPE_VARIABLE" returnTypeFixed="true">
+                <referencedElements xmi:type="process:Data" xmi:id="_gKnSINX8Eeu6Y8Hn8yrE3Q" name="emailUsername" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+              </expression>
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uhmccEuwEeuocLIPuMdEiw" key="returnPath">
               <expression xmi:type="expression:Expression" xmi:id="_uhmccUuwEeuocLIPuMdEiw" content="" returnTypeFixed="true"/>
@@ -4445,8 +4447,8 @@
           <operator xmi:type="expression:Operator" xmi:id="_D9ZrI0r3EeuHg-ZrLb5XVA" type="ASSIGNMENT"/>
         </operations>
         <loopCondition xmi:type="expression:Expression" xmi:id="_uFsYAUr2EeuHg-ZrLb5XVA" name="loopWhile()" content="return ( index &lt; degree.commission.size() );" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:JavaObjectData" xmi:id="_GHwDwEuwEeuocLIPuMdEiw" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.company.model.Degree"/>
-          <referencedElements xmi:type="process:Data" xmi:id="_GHwDwUuwEeuocLIPuMdEiw" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+          <referencedElements xmi:type="process:JavaObjectData" xmi:id="_DJbooNYBEeu6Y8Hn8yrE3Q" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+          <referencedElements xmi:type="process:Data" xmi:id="_DJboodYBEeu6Y8Hn8yrE3Q" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
         </loopCondition>
         <loopMaximum xmi:type="expression:Expression" xmi:id="_uFsYAkr2EeuHg-ZrLb5XVA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_uFsYA0r2EeuHg-ZrLb5XVA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -4541,13 +4543,13 @@
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_0a7mVEr3EeuHg-ZrLb5XVA" key="variables"/>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_0a7mVUr3EeuHg-ZrLb5XVA" key="fakeScriptExpression">
-              <expression xmi:type="expression:Expression" xmi:id="_0a7mVkr3EeuHg-ZrLb5XVA" name="createUsersCommission()" content="import org.bonitasoft.engine.identity.User;&#xA;import java.util.logging.Logger&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;Logger logger = Logger.getLogger(&quot;org.bonitasoft&quot;);&#xA;&#xA;Boolean exists = false;&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;bpm&quot;;&#xA;Long userProfileId = profileCommissionId;&#xA;Long groupId = groupCommissionId;&#xA;Long roleId = roleCommissionId;&#xA;&#xA;List commissionUserList = [];&#xA;def commissionUser = [];&#xA;&#xA;logger.severe(&quot;********************&quot;);&#xA;logger.severe(groupId.toString())&#xA;&#xA;for (member in degree.commission) {&#xA;&#x9;&#xA;&#x9;logger.severe(&quot;********************&quot;);&#xA;&#x9;logger.severe(&quot;***********DESPUES********&quot;);&#xA;&#x9;logger.severe(degree.name)&#xA;&#x9;&#xA;&#x9;username = member.email;&#xA;&#x9;&#xA;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#xA;&#x9;if(exists){&#xA;&#x9;&#x9;password = 'Anteriormente Registrado';&#xA;&#x9;}else{&#xA;&#x9;&#x9;if(productionPassword){&#xA;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, member.name, userProfileId, groupId, roleId)&#xA;&#x9;&#xA;&#x9;utils.addMembership(apiAccessor, newUser.getId(), groupId, roleId)&#xA;&#x9;&#xA;&#x9;commissionUser = [member: member, password: password, registered: exists];&#xA;&#x9;commissionUserList.add(commissionUser);&#xA;}&#xA;&#xA;return commissionUserList;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                <referencedElements xmi:type="process:Data" xmi:id="_VySckNVxEeuql54jiEAdVQ" name="groupCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:Data" xmi:id="_VySckdVxEeuql54jiEAdVQ" name="profileCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:Data" xmi:id="_VyScktVxEeuql54jiEAdVQ" name="roleCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
-                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_VySck9VxEeuql54jiEAdVQ" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
-                <referencedElements xmi:type="parameter:Parameter" xmi:id="_VySclNVxEeuql54jiEAdVQ" name="productionPassword" typeClassname="java.lang.Boolean"/>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_VyScldVxEeuql54jiEAdVQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+              <expression xmi:type="expression:Expression" xmi:id="_0a7mVkr3EeuHg-ZrLb5XVA" name="createUsersCommission()" content="import org.bonitasoft.engine.identity.User;&#xA;&#xA;UtilsSSPM utils = new UtilsSSPM();&#xA;&#xA;Boolean exists = false;&#xA;&#xA;String username = &quot;&quot;;&#xA;String password = &quot;bpm&quot;;&#xA;Long userProfileId = profileCommissionId;&#xA;Long groupId = groupCommissionId;&#xA;Long roleId = roleCommissionId;&#xA;&#xA;List commissionUserList = [];&#xA;def commissionUser = [];&#xA;&#xA;for (member in degree.commission) {&#xA;&#x9;&#xA;&#x9;username = member.email;&#xA;&#x9;&#xA;&#x9;exists = utils.userExists(apiAccessor, username);&#xA;&#x9;&#xA;&#x9;if(exists){&#xA;&#x9;&#x9;password = 'Anteriormente Registrado';&#xA;&#x9;}else{&#xA;&#x9;&#x9;if(productionPassword){&#xA;&#x9;&#x9;&#x9;password = utils.randomString(12);&#xA;&#x9;&#x9;}else{&#xA;&#x9;&#x9;&#x9;password = 'bpm';&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;User newUser = utils.createAccount(apiAccessor, username, password, member.name, userProfileId, groupId, roleId)&#xA;&#x9;utils.addMembership(apiAccessor, newUser.getId(), groupId, roleId)&#xA;&#x9;&#xA;&#x9;commissionUser = [member: member, password: password, registered: exists];&#xA;&#x9;commissionUserList.add(commissionUser);&#xA;}&#xA;&#xA;return commissionUserList;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                <referencedElements xmi:type="process:Data" xmi:id="_qpofYNakEeuZauV-GKOubQ" name="groupCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_qppGcNakEeuZauV-GKOubQ" name="profileCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_qppGcdakEeuZauV-GKOubQ" name="roleCommissionId" dataType="_PH_rn0U9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="process:JavaObjectData" xmi:id="_qppGctakEeuZauV-GKOubQ" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                <referencedElements xmi:type="parameter:Parameter" xmi:id="_qppGc9akEeuZauV-GKOubQ" name="productionPassword" typeClassname="java.lang.Boolean"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_qppGdNakEeuZauV-GKOubQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
               </expression>
             </parameters>
           </configuration>
@@ -5605,8 +5607,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_otn-eGTREeuzaNnnrgaTTA" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_otn-eWTREeuzaNnnrgaTTA" name="improvePlanInput.improveActions" content="def improveActionList = []&#xA;//For each item collected in multiple input&#xA;improvePlanInput?.improveActions.each{&#xA;&#x9;//Add ImproveAction instance&#xA;&#x9;improveActionList.add({ currentImproveActionInput ->&#xA;&#x9;&#x9;def improveActionVar = improvePlan.improveActions.find { it.persistenceId.toString() == currentImproveActionInput.persistenceId_string} ?: new com.sspm.model.ImproveAction()&#xA;&#x9;&#x9;improveActionVar.description = currentImproveActionInput.description&#xA;&#x9;&#x9;improveActionVar.completed = currentImproveActionInput.completed&#xA;&#x9;&#x9;return improveActionVar&#xA;&#x9;}(it))&#xA;}&#xA;return improveActionList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_XAucENVlEeujquuUhg7Ycw" name="improvePlanInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_XAucEdVlEeujquuUhg7Ycw" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_o1E0sNaoEeuZauV-GKOubQ" name="improvePlanInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_o1FbwNaoEeuZauV-GKOubQ" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_otn-fGTREeuzaNnnrgaTTA" type="JAVA_METHOD" expression="setImproveActions">
               <inputTypes>java.util.List</inputTypes>
@@ -5626,7 +5628,7 @@
               <referencedElements xmi:type="process:Data" xmi:id="_2zy1oGTWEeuzaNnnrgaTTA" name="completed" dataType="_PH_rnEU9EeuYOOr8JiHqIQ"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_2OnsAmTWEeuzaNnnrgaTTA" name="checkCompleted()" content="&#xA;for (action in improvePlan.improveActions){&#xA;&#x9;if(!action.completed){&#xA;&#x9;&#x9;return false;&#xA;&#x9;}&#xA;}&#xA;&#xA;return true;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Jr8AUGTXEeuzaNnnrgaTTA" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_q9ZzINaoEeuZauV-GKOubQ" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_2OnsA2TWEeuzaNnnrgaTTA" type="ASSIGNMENT"/>
           </operations>
@@ -5637,9 +5639,9 @@
           <completionCondition xmi:type="expression:Expression" xmi:id="_xlJqtWTPEeuzaNnnrgaTTA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_XWlPkGTQEeuzaNnnrgaTTA" name="Fecha límite excedida" outgoing="_dT0qEGTQEeuzaNnnrgaTTA">
             <condition xmi:type="expression:Expression" xmi:id="_8DJeIGTQEeuzaNnnrgaTTA" name="setTimer()" content="Date limitDate = actualDate.plus(improvePlan.duration);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return limitDate;&#xA;}&#xA;&#xA;Long expiremilis = 300000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_BFMV4MvCEeu4i8b5DjGa5A" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_BFMV4cvCEeu4i8b5DjGa5A" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_BFMV4svCEeu4i8b5DjGa5A" name="productionTimers" typeClassname="java.lang.Boolean"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_g2LEcNaoEeuZauV-GKOubQ" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_g2LrgNaoEeuZauV-GKOubQ" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="_g2LrgdaoEeuZauV-GKOubQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_0J1N-WTPEeuzaNnnrgaTTA">
@@ -5899,7 +5901,7 @@
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_bKgOMGZyEeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_Z0bMEmZyEeuUi9V_NqML1w" name="setImproveActionList()" content="&#xA;List newList = [];&#xA;&#xA;List descriptions = [];&#xA;List states = [];&#xA;&#xA;&#xA;for(action in improvePlan.improveActions){&#xA;&#x9;&#xA;&#x9;descriptions.add(action.description);&#xA;&#x9;&#xA;&#x9;if(action.completed){&#xA;&#x9;&#x9;states.add(&quot;Completada&quot;);&#xA;&#x9;}else{&#xA;&#x9;&#x9;states.add(&quot;No Completada&quot;);&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(descriptions);&#xA;newList.add(states);&#xA;&#xA;return newList;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_cOPCwNVlEeujquuUhg7Ycw" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TJ_y4NapEeuZauV-GKOubQ" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Z0bME2ZyEeuUi9V_NqML1w" type="ASSIGNMENT"/>
           </operations>
@@ -6135,7 +6137,7 @@
               <referencedElements xmi:type="process:JavaObjectData" xmi:id="_ig3XwGZyEeuUi9V_NqML1w" name="improveActionsList" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_d1LEsmZyEeuUi9V_NqML1w" name="setImproveActionList()" content="&#xA;List newList = [];&#xA;&#xA;List descriptions = [];&#xA;List states = [];&#xA;&#xA;&#xA;for(action in improvePlan.improveActions){&#xA;&#x9;&#xA;&#x9;descriptions.add(action.description);&#xA;&#x9;&#xA;&#x9;if(action.completed){&#xA;&#x9;&#x9;states.add(&quot;Completada&quot;);&#xA;&#x9;}else{&#xA;&#x9;&#x9;states.add(&quot;No Completada&quot;);&#xA;&#x9;}&#xA;}&#xA;&#xA;newList.add(descriptions);&#xA;newList.add(states);&#xA;&#xA;return newList;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_azlCoNVlEeujquuUhg7Ycw" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PNEDQNapEeuZauV-GKOubQ" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_d1LEs2ZyEeuUi9V_NqML1w" type="ASSIGNMENT"/>
           </operations>
@@ -6240,8 +6242,8 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_uQUAYGTQEeuzaNnnrgaTTA" name="SI" target="_MjHjwHIHEeuJ0MOecJdBVA" source="_8GSHIGTPEeuzaNnnrgaTTA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_uQUAYWTQEeuzaNnnrgaTTA"/>
         <condition xmi:type="expression:Expression" xmi:id="_uQUAYmTQEeuzaNnnrgaTTA" name="checkTimeAndCompleted()" content="&#xA;Boolean isTimeLimit = false;&#xA;Boolean areActionsCompleted = true;&#xA;&#xA;def duration;&#xA;&#xA;Date limitDate = actualDate.plus(improvePlan.duration);&#xA;&#xA;use(groovy.time.TimeCategory) {&#xA;&#x9;duration = new Date() - limitDate;&#xA;}&#xA;&#xA;if(duration.days > 0){&#xA;&#x9;isTimeLimit = true;&#xA;}&#xA;&#xA;for (action in improvePlan.improveActions){&#xA;&#x9;if(!action.completed){&#xA;&#x9;&#x9;areActionsCompleted = false;&#xA;&#x9;}&#xA;}&#xA;&#xA;return isTimeLimit || areActionsCompleted;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:Data" xmi:id="_wsTKkGTkEeuzaNnnrgaTTA" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_wsTxoGTkEeuzaNnnrgaTTA" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.company.model.ImprovePlan"/>
+          <referencedElements xmi:type="process:Data" xmi:id="_dtrlUNavEeuZauV-GKOubQ" name="actualDate" dataType="_PH_rnUU9EeuYOOr8JiHqIQ"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dtrlUdavEeuZauV-GKOubQ" name="improvePlan" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.ImprovePlan"/>
         </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_2BsSAGTQEeuzaNnnrgaTTA" target="_2BjvIGTQEeuzaNnnrgaTTA" source="_x7re4GTQEeuzaNnnrgaTTA">
