@@ -156,6 +156,50 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_--6yk2_PEeuRZJYO1HfhxQ" type="ASSIGNMENT"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_b8FA4NiIEeuKysyr3FSVLA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_b8FA4diIEeuKysyr3FSVLA" name="emailHost" content="emailHost" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_dqkjANiIEeuKysyr3FSVLA" name="emailHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_b8FA4tiIEeuKysyr3FSVLA" name="serverInformation.smtpHost" content="serverInformation.smtpHost" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_g_Zw0NiIEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_g_Zw0diIEeuKysyr3FSVLA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_b8FA49iIEeuKysyr3FSVLA" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_hhvo4NiIEeuKysyr3FSVLA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_hhvo4diIEeuKysyr3FSVLA" name="emailPort" content="emailPort" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:Data" xmi:id="_iunrsNiIEeuKysyr3FSVLA" name="emailPort" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_hhvo4tiIEeuKysyr3FSVLA" name="serverInformation.smtpPort" content="serverInformation.smtpPort" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_k80ooNiIEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_k80oodiIEeuKysyr3FSVLA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_hhvo49iIEeuKysyr3FSVLA" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_uPvlgNiIEeuKysyr3FSVLA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_uPvlgdiIEeuKysyr3FSVLA" name="emailUsername" content="emailUsername" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_vuHA8NiIEeuKysyr3FSVLA" name="emailUsername" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_uPvlgtiIEeuKysyr3FSVLA" name="serverInformation.email" content="serverInformation.email" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_zO94kNiIEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_zO94kdiIEeuKysyr3FSVLA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_uPvlg9iIEeuKysyr3FSVLA" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_zrxJUNiIEeuKysyr3FSVLA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_zrxJUdiIEeuKysyr3FSVLA" name="emailPassword" content="emailPassword" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_1gTpENiIEeuKysyr3FSVLA" name="emailPassword" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_zrxJUtiIEeuKysyr3FSVLA" name="serverInformation.password" content="serverInformation.password" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_5jIlUNiIEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_5jIlUdiIEeuKysyr3FSVLA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_zrxJU9iIEeuKysyr3FSVLA" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_vLqmo0n7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_vLqmpEn7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_vLqmpUn7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -204,6 +248,27 @@
             </inputs>
             <inputs xmi:type="process:ContractInput" xmi:id="_69T-UG_PEeuRZJYO1HfhxQ" name="amountReserveStudentsInput" type="INTEGER">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_69T-UW_PEeuRZJYO1HfhxQ"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_G8sc4NiIEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_G8sc4diIEeuKysyr3FSVLA"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_KAVNANiIEeuKysyr3FSVLA" name="email">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KAVNAdiIEeuKysyr3FSVLA"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_K2lfkNiIEeuKysyr3FSVLA" name="password">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_K2lfkdiIEeuKysyr3FSVLA"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Lwe8ANiIEeuKysyr3FSVLA" name="smtpHost">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Lwe8AdiIEeuKysyr3FSVLA"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_OPO2YNiIEeuKysyr3FSVLA" name="smtpPort" type="INTEGER">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_OPO2YdiIEeuKysyr3FSVLA"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_P-IoMNiIEeuKysyr3FSVLA" name="backendUrl">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_P-IoMdiIEeuKysyr3FSVLA"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Q55F0NiIEeuKysyr3FSVLA" name="applicationUrl">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_Q55F0diIEeuKysyr3FSVLA"/>
+              </inputs>
             </inputs>
             <constraints xmi:type="process:ContractConstraint" xmi:id="_4UklMFUaEeu9n-5VMdb4Uw" expression="gradesInput?.number.flatten().every{it!=null}" errorMessage="El número del Ciclo es necesario." name="mandatory_gradesInput_number">
               <inputNames>gradesInput</inputNames>
