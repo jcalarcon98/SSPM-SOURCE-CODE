@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1624933706085,
+  "lastUpdate" : 1624942391728,
   "rows" : [
     [
       {
@@ -2746,7 +2746,7 @@
                               },
                               "message" : {
                                 "type" : "constant",
-                                "value" : "<b>!Todo Correcto!</b>,Se ha verificado con éxito la información  del archivo csv ingresado, puede dirigirse a la última pestaña   <b>4. Finalizar </b>"
+                                "value" : "<b>!Todo Correcto!</b>,Se ha verificado con éxito la información  del archivo csv ingresado, puede dirigirse a la última pestaña   <b>4. Servidor </b>"
                               },
                               "show" : {
                                 "type" : "expression",
@@ -2755,6 +2755,13 @@
                               "type" : {
                                 "type" : "constant",
                                 "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "859a0f75-018a-43eb-a628-308af459beb9",
@@ -2848,8 +2855,8 @@
                         "value" : false
                       },
                       "disabled" : {
-                        "type" : "constant",
-                        "value" : false
+                        "type" : "expression",
+                        "value" : "disableLastTab"
                       },
                       "title" : {
                         "type" : "interpolation",
@@ -2947,29 +2954,38 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "Las siguientes configuraciones son necesarias para el correcto funcionamiento del módulo. Por favor, asegúrese de que toda la información ingresada en esta sección es válida y está verificada por la persona a cargo de la Infraestructura Tecnológica de la carrera. </b>"
-                              },
-                              "show" : {
+                              "labelHidden" : {
                                 "type" : "constant",
                                 "value" : true
                               },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Default label"
                               },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
+                              "labelPosition" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "Las siguientes configuraciones son necesarias para el correcto funcionamiento del módulo. Por favor, asegúrese de que toda la información ingresada en esta sección es válida y está verificada por la persona a cargo de la Infraestructura Tecnológica de la carrera. </b>"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
                               }
                             },
-                            "reference" : "3f9f38a6-516d-43e2-81c0-907c87a3027e",
+                            "reference" : "d3e40ae7-7c4c-46ba-aa0b-9cefec15dc74",
                             "hasValidationError" : false,
-                            "id" : "customAlertDanger"
+                            "id" : "pbText"
                           }
                         ],
                         [
@@ -3089,7 +3105,7 @@
                             "type" : "component",
                             "dimension" : {
                               "xs" : 12,
-                              "sm" : 12,
+                              "sm" : 6,
                               "md" : 6,
                               "lg" : 4
                             },
@@ -3164,7 +3180,7 @@
                             "type" : "component",
                             "dimension" : {
                               "xs" : 12,
-                              "sm" : 12,
+                              "sm" : 6,
                               "md" : 6,
                               "lg" : 4
                             },
@@ -3253,6 +3269,49 @@
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "En caso de que esté utilizando el servidor SMTP de Google asegúrese que la dirección de correo que va a ingresar cuenta con el acceso de Aplicaciones menos seguras, puede verificar esta configuración en el siguiente enlace: <b><a>https://support.google.com/accounts/answer/6010255 </a></b>"
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "c51f7fac-3031-4cc2-9ac9-bfa2a90aad21",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "f2dd7adf-9c76-4df8-97f5-860d584391f7",
@@ -3314,29 +3373,38 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "La siguiente configuración SMTP corresponde al servicio Gmail de Google, si en caso utiliza otro servicio, por favor modifique los siguientes parámetros:"
-                              },
-                              "show" : {
+                              "labelHidden" : {
                                 "type" : "constant",
                                 "value" : true
                               },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Default label"
                               },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
+                              "labelPosition" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "La siguiente configuración SMTP corresponde al servicio Gmail de Google, si en caso utiliza otro servicio, por favor modifique los siguientes parámetros:"
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
                               }
                             },
-                            "reference" : "041e786b-ccc5-4c27-b5a7-bb7094be7ff9",
+                            "reference" : "8c010f91-da29-4690-a76e-6cb09c8023a7",
                             "hasValidationError" : false,
-                            "id" : "customAlertDanger"
+                            "id" : "pbText"
                           }
                         ],
                         [
@@ -3344,7 +3412,7 @@
                             "type" : "component",
                             "dimension" : {
                               "xs" : 12,
-                              "sm" : 12,
+                              "sm" : 6,
                               "md" : 6,
                               "lg" : 6
                             },
@@ -3419,7 +3487,7 @@
                             "type" : "component",
                             "dimension" : {
                               "xs" : 12,
-                              "sm" : 12,
+                              "sm" : 6,
                               "md" : 6,
                               "lg" : 6
                             },
@@ -3570,29 +3638,38 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "La siguiente dirección URL es utilizada para realizar la tabulación de los datos generados por cada una de las Fichas de seguimiento al sílabo una vez calificadas por los estudiantes. <b> Por favor asegúrese que esta dirección URL sea la correcta </b>"
-                              },
-                              "show" : {
+                              "labelHidden" : {
                                 "type" : "constant",
                                 "value" : true
                               },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "warning"
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Default label"
                               },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
+                              "labelPosition" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "La siguiente dirección URL es utilizada para realizar la tabulación de los datos generados por cada una de las Fichas de seguimiento al sílabo una vez calificadas por los estudiantes."
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
                               }
                             },
-                            "reference" : "c1f9f0cb-a295-48b5-ab0a-eb49d5d85228",
+                            "reference" : "101ae175-9dd0-4017-bef6-3f234df0db62",
                             "hasValidationError" : false,
-                            "id" : "customAlertDanger"
+                            "id" : "pbText"
                           }
                         ],
                         [
@@ -3689,6 +3766,49 @@
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
+                              },
+                              "message" : {
+                                "type" : "constant",
+                                "value" : "<b>Por favor asegúrese que esta dirección URL sea la correcta</b>"
+                              },
+                              "show" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "info"
+                              },
+                              "color" : {
+                                "type" : "constant"
+                              },
+                              "fontColor" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "14b5364f-cfa7-46ec-8c74-f8b45a79509e",
+                            "hasValidationError" : false,
+                            "id" : "customAlertDanger"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
                               }
                             },
                             "reference" : "a2c01d1c-4931-4d1a-ac96-ead1bc7e1b12",
@@ -3750,29 +3870,38 @@
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "message" : {
-                                "type" : "constant",
-                                "value" : "La siguiente dirección URL es utilizada como parte del contenido de los correos electrónicos enviados, con el objetivo de que los estudiantes y miembros de la comisión de evaluación interna tengan conocimiento acerca de la dirección  URL a la que deben redirigirse para realizar las tareas asignadas."
-                              },
-                              "show" : {
+                              "labelHidden" : {
                                 "type" : "constant",
                                 "value" : true
                               },
-                              "type" : {
-                                "type" : "constant",
-                                "value" : "info"
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Default label"
                               },
-                              "color" : {
-                                "type" : "constant"
-                              },
-                              "fontColor" : {
+                              "labelPosition" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "text" : {
+                                "type" : "interpolation",
+                                "value" : "La siguiente dirección URL es utilizada como parte del contenido de los correos electrónicos enviados, con el objetivo de que los estudiantes y miembros de la comisión de evaluación interna tengan conocimiento acerca de la dirección  URL a la que deben redirigirse para realizar las tareas asignadas."
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "left"
                               }
                             },
-                            "reference" : "ab29c5fd-179f-4145-a633-46a844b82fbf",
+                            "reference" : "6647b53a-9461-4395-abe4-75deb501fd1f",
                             "hasValidationError" : false,
-                            "id" : "customAlertDanger"
+                            "id" : "pbText"
                           }
                         ],
                         [

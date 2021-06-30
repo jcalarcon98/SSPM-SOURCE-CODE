@@ -200,6 +200,28 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_zrxJU9iIEeuKysyr3FSVLA" type="ASSIGNMENT"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_b3dUsNiKEeuKysyr3FSVLA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_b3dUsdiKEeuKysyr3FSVLA" name="backendHost" content="backendHost" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_c0Xo4NiKEeuKysyr3FSVLA" name="backendHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_b3dUstiKEeuKysyr3FSVLA" name="serverInformation.backendUrl" content="serverInformation.backendUrl" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_g3qfMNiKEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_g3qfMdiKEeuKysyr3FSVLA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_b3dUs9iKEeuKysyr3FSVLA" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_kjOyANiKEeuKysyr3FSVLA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_kjOyAdiKEeuKysyr3FSVLA" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_lafxMNiKEeuKysyr3FSVLA" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_kjOyAtiKEeuKysyr3FSVLA" name="serverInformation.applicationUrl" content="serverInformation.applicationUrl" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_othoMNiKEeuKysyr3FSVLA" name="serverInformation" type="COMPLEX">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_othoMdiKEeuKysyr3FSVLA"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_kjOyA9iKEeuKysyr3FSVLA" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_vLqmo0n7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_vLqmpEn7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_vLqmpUn7EeuRMrcBo1p0Vg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -362,6 +384,11 @@
           <inputMappings xmi:type="process:InputMapping" xmi:id="_14YN4GACEeu0_-WLyBvLsw" subprocessTarget="emailPassword" assignationType="Data">
             <processSource xmi:type="expression:Expression" xmi:id="_14YN4WACEeu0_-WLyBvLsw" name="emailPassword" content="emailPassword" type="TYPE_VARIABLE">
               <referencedElements xmi:type="process:Data" xmi:id="_4AvokGACEeu0_-WLyBvLsw" name="emailPassword" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+            </processSource>
+          </inputMappings>
+          <inputMappings xmi:type="process:InputMapping" xmi:id="_F93jgNiQEeume9C3OuVuhg" subprocessTarget="urlServer" assignationType="Data">
+            <processSource xmi:type="expression:Expression" xmi:id="_F93jgdiQEeume9C3OuVuhg" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+              <referencedElements xmi:type="process:Data" xmi:id="_HDH7YNiQEeume9C3OuVuhg" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
             </processSource>
           </inputMappings>
           <outputMappings xmi:type="process:OutputMapping" xmi:id="_0RteEE1WEeuV9t0H3Gb7Sg" subprocessSource="commissionUsers" processTarget="_vOpM0E1WEeuV9t0H3Gb7Sg"/>
@@ -922,9 +949,9 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xSMRMWV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xSMRMGV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xSMRMmV5EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
-          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;Date executionDate = calendar.getTime();&#xA;Date today = new Date();&#xA;Date finishDate = new Date(executionDate.getTime() - today.getTime());&#xA;&#xA;if(productionTimers){&#xA;&#x9;if(finishDate.getTime() &lt;= 0){&#xA;&#x9;&#x9;Date newExecutionDate = new Date(today.getTime() + 86400000L);&#xA;&#x9;&#x9;return newExecutionDate;&#xA;&#x9;}else{&#xA;&#x9;&#x9;return executionDate;&#xA;&#x9;}&#xA;}&#xA;&#xA;//Long expiremilis = 540000L;&#xA;Long expiremilis = 120000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_f6kR0NbqEeufB7jSKchEGQ" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
-            <referencedElements xmi:type="parameter:Parameter" xmi:id="_f6k44NbqEeufB7jSKchEGQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+          <condition xmi:type="expression:Expression" xmi:id="_4DkeYGV5EeugQYG4i8wMTQ" name="setFinishDate()" content="import java.time.LocalDate&#xA;&#xA;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#xA;Calendar calendar = GregorianCalendar.getInstance();&#xA;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#xA;Date executionDate = calendar.getTime();&#xA;Date today = new Date();&#xA;Date finishDate = new Date(executionDate.getTime() - today.getTime());&#xA;&#xA;if(productionTimers){&#xA;&#x9;if(finishDate.getTime() &lt;= 0){&#xA;&#x9;&#x9;Date newExecutionDate = new Date(today.getTime() + 86400000L);&#xA;&#x9;&#x9;return newExecutionDate;&#xA;&#x9;}else{&#xA;&#x9;&#x9;return executionDate;&#xA;&#x9;}&#xA;}&#xA;// Nine minutes&#xA;Long expiremilis = 540000L;&#xA;// Two minutes&#xA;//Long expiremilis = 120000L;&#xA;&#xA;Date strtime = new Date()&#xA;&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_FJcYsNlbEeuIfuuJf0kNwg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+            <referencedElements xmi:type="parameter:Parameter" xmi:id="_FJcYsdlbEeuIfuuJf0kNwg" name="productionTimers" typeClassname="java.lang.Boolean"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_B-sPMGilEeu4QMMChlZ5tw" name="Notificar dirección de carrera sobre el informe de Seguimiento al Sílabo y Plan de Mejoras" outgoing="_MI0g4GilEeu4QMMChlZ5tw" incoming="_B_A_UGilEeu4QMMChlZ5tw">
@@ -1014,24 +1041,24 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3OyPs2inEeu4QMMChlZ5tw" key="message">
                 <expression xmi:type="expression:Expression" xmi:id="_3OyPtGinEeu4QMMChlZ5tw" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;&#x9;&lt;tbody>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td align=&quot;center&quot;>&lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;max-width:400px; width:100%&quot; />&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td>&#xA;&#x9;&#x9;&#x9;&lt;p style=&quot;font-size:16px;&quot;>Estimado(a) autoridad,&lt;br />&#xA;&#x9;&#x9;&#x9;&lt;br />&#xA;&#x9;&#x9;&#x9;se le informa que los miembros de la comisi&amp;oacute;n de evaluaci&amp;oacute;n interna encargados del proceso de Seguimiento al S&amp;iacute;labo y Plan de Mejoras de la carrera &lt;strong>${degree.name}&lt;/strong> acaban de subir el informe de la etapa correspondiente a &lt;strong>${currentStage.denomination}&lt;/strong>,&lt;strong>&amp;nbsp;&lt;/strong>${improveActionsInfo}&lt;br />&#xA;&#x9;&#x9;&#x9;&lt;br />&#xA;&#x9;&#x9;&#x9;Para visualizar el informe y las acciones de mejora ingresar al siguiente enlace: &lt;a href=&quot;${urlServer}&quot;>Seguimiento al S&amp;iacute;labo y Plan de Mejoras&lt;/a>.&lt;/p>&#xA;&#x9;&#x9;&#x9;&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D; font-size:14px;&quot;>Seguimiento al S&amp;iacute;labo y Plan de Mejoras - UNL&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&lt;/tbody>&#xA;&lt;/table>&#xA;" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoEH4zEeuRs9oQMLXI7A" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoEX4zEeuRs9oQMLXI7A" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SXnoEn4zEeuRs9oQMLXI7A" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_vO54QNiPEeume9C3OuVuhg" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_vO54QdiPEeume9C3OuVuhg" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_vO54QtiPEeume9C3OuVuhg" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoE34zEeuRs9oQMLXI7A" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoFH4zEeuRs9oQMLXI7A" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SXnoFX4zEeuRs9oQMLXI7A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_vO54Q9iPEeume9C3OuVuhg" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_vO54RNiPEeume9C3OuVuhg" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_vO54RdiPEeume9C3OuVuhg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoFn4zEeuRs9oQMLXI7A" name="improveActionsInfo" content="improveActionsInfo" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoF34zEeuRs9oQMLXI7A" name="improveActionsInfo" content="improveActionsInfo" type="TYPE_VARIABLE">
-                      <referencedElements xmi:type="process:Data" xmi:id="_SXnoGH4zEeuRs9oQMLXI7A" name="improveActionsInfo" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_vO54RtiPEeume9C3OuVuhg" name="improveActionsInfo" content="improveActionsInfo" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_vO54R9iPEeume9C3OuVuhg" name="improveActionsInfo" content="improveActionsInfo" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_vO54SNiPEeume9C3OuVuhg" name="improveActionsInfo" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoGX4zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_SXnoGn4zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" type="TYPE_PARAMETER">
-                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_SXnoG34zEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_vO54SdiPEeume9C3OuVuhg" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_vO54StiPEeume9C3OuVuhg" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_vO54S9iPEeume9C3OuVuhg" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -1127,19 +1154,19 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_-kW5pGioEeu4QMMChlZ5tw" key="message">
                 <expression xmi:type="expression:Expression" xmi:id="_-kW5pWioEeu4QMMChlZ5tw" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p style=&quot;font-size:16px;&quot;>&#xA;          Estimado(a) miembro de la comisión,&#xA;          &lt;br>&lt;br>&#xA;          se le informa que la Dirección de la Carrera &lt;b>${degree.name}&lt;/b> ha revisado y señalado algunas sugerencias al informe de Seguimiento al Sílabo y Plan de Mejoras de la etapa correspondiente a &lt;b>${currentStage.denomination}&lt;/b>.&#xA;           &lt;br>&lt;br>&#xA;           Para visualizar las sugerencias por favor ingresar a  &lt;a href=&quot;${urlServer}&quot;>Seguimiento al Sílabo y Plan de Mejoras&lt;/a>.&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D; font-size:14px;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fY_MoH4zEeuRs9oQMLXI7A" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_fY_MoX4zEeuRs9oQMLXI7A" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fY_Mon4zEeuRs9oQMLXI7A" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_OQLKMNiLEeuKysyr3FSVLA" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_OQLKMdiLEeuKysyr3FSVLA" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_OQLKMtiLEeuKysyr3FSVLA" name="degree" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fY_Mo34zEeuRs9oQMLXI7A" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_fY_MpH4zEeuRs9oQMLXI7A" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fY_MpX4zEeuRs9oQMLXI7A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_OQLKM9iLEeuKysyr3FSVLA" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_OQLKNNiLEeuKysyr3FSVLA" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_OQLKNdiLEeuKysyr3FSVLA" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fY_Mpn4zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_fY_Mp34zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" type="TYPE_PARAMETER">
-                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_fY_MqH4zEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_OQLKNtiLEeuKysyr3FSVLA" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_OQLKN9iLEeuKysyr3FSVLA" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_OQLKONiLEeuKysyr3FSVLA" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -1725,47 +1752,47 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_08F_vVkOEeu-o8VYBasvEA" key="message">
                 <expression xmi:type="expression:Expression" xmi:id="_08F_vlkOEeu-o8VYBasvEA" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p style=&quot;font-size:16px;&quot;>&#xA;          Estimado(a) estudiante,&#xA;          &lt;br>&lt;br>&#xA;          ha sido seleccionado(a) para ejecutar la evaluación del Seguimiento al Sílabo de &lt;strong>${currentStage.denomination}&lt;/strong> en el periodo académico ${period.initDate.toString()} a ${period.endDate.toString()}, con el objetivo de permitir la participación estudiantil y valorar el grado de satisfacción de las y los estudiantes al realizar las actividades propuestas en los sílabos.&#xA;          &lt;br>&lt;br>&#xA;           Usted se encuentra encargado de calificar el sílabo denominado &lt;b>&quot;${studentUsers[index].syllabus.denomination}&quot;&lt;/b> y posee un plazo de &lt;b>${durationRate.toString()} días&lt;/b> para calificar, a partir del día ${currentStage.executionDate.toString()}.&#xA;          &lt;br>&lt;br>&#xA;          ${content} &#xA;          &lt;br>&lt;br>&#xA;          Ingresar en el siguiente enlace: &lt;a href=&quot;${urlServer}&quot;>Seguimiento al Sílabo y Plan de Mejoras&lt;/a>&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D; font-size:14px;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7isz4H40EeuRs9oQMLXI7A" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7isz4X40EeuRs9oQMLXI7A" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_7isz4n40EeuRs9oQMLXI7A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3scsUNiPEeume9C3OuVuhg" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3scsUdiPEeume9C3OuVuhg" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3scsUtiPEeume9C3OuVuhg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7isz4340EeuRs9oQMLXI7A" name="period.initDate.toString()" content="period.initDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7isz5H40EeuRs9oQMLXI7A" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_7isz5X40EeuRs9oQMLXI7A" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3scsU9iPEeume9C3OuVuhg" name="period.initDate.toString()" content="period.initDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3scsVNiPEeume9C3OuVuhg" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3scsVdiPEeume9C3OuVuhg" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7isz5n40EeuRs9oQMLXI7A" name="period.endDate.toString()" content="period.endDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7isz5340EeuRs9oQMLXI7A" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_7isz6H40EeuRs9oQMLXI7A" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3scsVtiPEeume9C3OuVuhg" name="period.endDate.toString()" content="period.endDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3scsV9iPEeume9C3OuVuhg" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3scsWNiPEeume9C3OuVuhg" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7isz6X40EeuRs9oQMLXI7A" name="studentUsers[index].syllabus.denomination" content="studentUsers[index].syllabus.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7isz6n40EeuRs9oQMLXI7A" name="index" content="index" type="TYPE_VARIABLE" returnType="java.lang.Integer">
-                      <referencedElements xmi:type="process:Data" xmi:id="_7isz6340EeuRs9oQMLXI7A" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3scsWdiPEeume9C3OuVuhg" name="studentUsers[index].syllabus.denomination" content="studentUsers[index].syllabus.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3scsWtiPEeume9C3OuVuhg" name="index" content="index" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+                      <referencedElements xmi:type="process:Data" xmi:id="_3scsW9iPEeume9C3OuVuhg" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7isz7H40EeuRs9oQMLXI7A" name="studentUsers" content="studentUsers" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_7isz7X40EeuRs9oQMLXI7A" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                    </referencedElements>
-                  </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7ita8H40EeuRs9oQMLXI7A" name="durationRate.toString()" content="durationRate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7ita8X40EeuRs9oQMLXI7A" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
-                      <referencedElements xmi:type="process:Data" xmi:id="_7ita8n40EeuRs9oQMLXI7A" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3scsXNiPEeume9C3OuVuhg" name="studentUsers" content="studentUsers" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_3scsXdiPEeume9C3OuVuhg" name="studentUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7ita8340EeuRs9oQMLXI7A" name="currentStage.executionDate.toString()" content="currentStage.executionDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7ita9H40EeuRs9oQMLXI7A" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_7ita9X40EeuRs9oQMLXI7A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTYNiPEeume9C3OuVuhg" name="durationRate.toString()" content="durationRate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTYdiPEeume9C3OuVuhg" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+                      <referencedElements xmi:type="process:Data" xmi:id="_3sdTYtiPEeume9C3OuVuhg" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7ita9n40EeuRs9oQMLXI7A" name="content" content="content" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7ita9340EeuRs9oQMLXI7A" name="content" content="content" type="TYPE_VARIABLE">
-                      <referencedElements xmi:type="process:Data" xmi:id="_7ita-H40EeuRs9oQMLXI7A" name="content" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTY9iPEeume9C3OuVuhg" name="currentStage.executionDate.toString()" content="currentStage.executionDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTZNiPEeume9C3OuVuhg" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3sdTZdiPEeume9C3OuVuhg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_7ita-X40EeuRs9oQMLXI7A" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_7ita-n40EeuRs9oQMLXI7A" name="urlServer" content="urlServer" type="TYPE_PARAMETER">
-                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_7ita-340EeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTZtiPEeume9C3OuVuhg" name="content" content="content" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTZ9iPEeume9C3OuVuhg" name="content" content="content" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_3sdTaNiPEeume9C3OuVuhg" name="content" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                    </referencedElements>
+                  </referencedElements>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTadiPEeume9C3OuVuhg" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_3sdTatiPEeume9C3OuVuhg" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_3sdTa9iPEeume9C3OuVuhg" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -2150,8 +2177,8 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Ao1EAGV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Ao1EAmV6EeugQYG4i8wMTQ" name="" content="" returnTypeFixed="true"/>
           <condition xmi:type="expression:Expression" xmi:id="_DMFq8GV6EeugQYG4i8wMTQ" name="setMiddleDate()" content="import java.time.LocalDate&#xA;&#xA;if(productionTimers){&#xA;&#x9;LocalDate currentLocalDate = currentStage.executionDate;&#xA;&#x9;Calendar calendar = GregorianCalendar.getInstance();&#xA;&#x9;calendar.set(currentLocalDate.getYear(), currentLocalDate.getMonthValue() - 1, currentLocalDate.getDayOfMonth(), 07, 30, 01);&#xA;&#x9;return calendar.getTime();&#xA;}&#xA;Long expiremilis = 60000L;&#xA;Date strtime = new Date()&#xA;Date endtime = new Date(strtime.getTime() + expiremilis)&#xA;return endtime;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Date">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_8v8pYMvAEeu4i8b5DjGa5A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
-            <referencedElements xmi:type="parameter:Parameter" xmi:id="_8v8pYcvAEeu4i8b5DjGa5A" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_62lo0NlaEeuIfuuJf0kNwg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+            <referencedElements xmi:type="parameter:Parameter" xmi:id="_62lo0dlaEeuIfuuJf0kNwg" name="productionTimers" typeClassname="java.lang.Boolean"/>
           </condition>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_RzNR0GiaEeuZ26MaKERMkg" name="Notificar miembros de la comisión sobre activación de tarea de los estudiantes para calificar las fichas" outgoing="_SPCSMGiaEeuZ26MaKERMkg" incoming="_KiZrwGicEeuZ26MaKERMkg">
@@ -2740,42 +2767,42 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3EK6-XGCEeuYMuCMXEcOJQ" key="message">
                 <expression xmi:type="expression:Expression" xmi:id="_3EK6-nGCEeuYMuCMXEcOJQ" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;&#x9;&lt;tbody>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td align=&quot;center&quot;>&lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;max-width:400px; width:100%&quot; />&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td>&#xA;&#x9;&#x9;&#x9;&lt;p style=&quot;font-size:16px;&quot;>Estimado(a) estudiante,&lt;br />&#xA;&#x9;&#x9;&#x9;&lt;br />&#xA;&#x9;&#x9;&#x9;ha sido seleccionado(a) para ejecutar la evaluaci&amp;oacute;n del Seguimiento al S&amp;iacute;labo de &lt;strong>${currentStage.denomination}&lt;/strong> en el periodo acad&amp;eacute;mico ${period.initDate.toString()} a ${period.endDate.toString()}, con el objetivo de permitir la participaci&amp;oacute;n estudiantil y valorar el grado de satisfacci&amp;oacute;n de las y los estudiantes al realizar las actividades propuestas en los s&amp;iacute;labos.&lt;br />&#xA;&#x9;&#x9;&#x9;&lt;br />&#xA;&#x9;&#x9;&#x9;Usted se encuentra encargado de calificar el s&amp;iacute;labo denominado &lt;strong>&amp;quot;${studentUsersReserved[indexReserved].syllabus.denomination}&amp;quot;&lt;/strong> y posee un plazo de &lt;strong>${durationRate.toString()} d&amp;iacute;as&lt;/strong> para calificar, a partir del d&amp;iacute;a de hoy.&lt;br />&#xA;&#x9;&#x9;&#x9;&lt;br />&#xA;&#x9;&#x9;&#x9;${content}&lt;br />&#xA;&#x9;&#x9;&#x9;&lt;br />&#xA;&#x9;&#x9;&#x9;Ingresar en el siguiente enlace: &lt;a href=&quot;${urlServer}&quot;>Seguimiento al S&amp;iacute;labo y Plan de Mejoras&lt;/a>&lt;/p>&#xA;&#x9;&#x9;&#x9;&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D; font-size:14px;&quot;>Seguimiento al S&amp;iacute;labo y Plan de Mejoras - UNL&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&lt;/tbody>&#xA;&lt;/table>&#xA;" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ACzz8H4zEeuRs9oQMLXI7A" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_ACzz8X4zEeuRs9oQMLXI7A" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ACzz8n4zEeuRs9oQMLXI7A" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwYNiPEeume9C3OuVuhg" name="currentStage.denomination" content="currentStage.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwYdiPEeume9C3OuVuhg" name="currentStage" content="currentStage" type="TYPE_VARIABLE" returnType="com.sspm.model.Stage">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_8YSwYtiPEeume9C3OuVuhg" name="currentStage" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Stage"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bAH4zEeuRs9oQMLXI7A" name="period.initDate.toString()" content="period.initDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bAX4zEeuRs9oQMLXI7A" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_AC0bAn4zEeuRs9oQMLXI7A" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwY9iPEeume9C3OuVuhg" name="period.initDate.toString()" content="period.initDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwZNiPEeume9C3OuVuhg" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_8YSwZdiPEeume9C3OuVuhg" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bA34zEeuRs9oQMLXI7A" name="period.endDate.toString()" content="period.endDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bBH4zEeuRs9oQMLXI7A" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_AC0bBX4zEeuRs9oQMLXI7A" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwZtiPEeume9C3OuVuhg" name="period.endDate.toString()" content="period.endDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwZ9iPEeume9C3OuVuhg" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_8YSwaNiPEeume9C3OuVuhg" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bBn4zEeuRs9oQMLXI7A" name="studentUsersReserved[indexReserved].syllabus.denomination" content="studentUsersReserved[indexReserved].syllabus.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bB34zEeuRs9oQMLXI7A" name="indexReserved" content="indexReserved" type="TYPE_VARIABLE" returnType="java.lang.Integer">
-                      <referencedElements xmi:type="process:Data" xmi:id="_AC0bCH4zEeuRs9oQMLXI7A" name="indexReserved" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwadiPEeume9C3OuVuhg" name="studentUsersReserved[indexReserved].syllabus.denomination" content="studentUsersReserved[indexReserved].syllabus.denomination" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwatiPEeume9C3OuVuhg" name="indexReserved" content="indexReserved" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+                      <referencedElements xmi:type="process:Data" xmi:id="_8YSwa9iPEeume9C3OuVuhg" name="indexReserved" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bCX4zEeuRs9oQMLXI7A" name="studentUsersReserved" content="studentUsersReserved" type="TYPE_VARIABLE" returnType="java.util.List">
-                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_AC0bCn4zEeuRs9oQMLXI7A" name="studentUsersReserved" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
-                    </referencedElements>
-                  </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bC34zEeuRs9oQMLXI7A" name="durationRate.toString()" content="durationRate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bDH4zEeuRs9oQMLXI7A" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
-                      <referencedElements xmi:type="process:Data" xmi:id="_AC0bDX4zEeuRs9oQMLXI7A" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwbNiPEeume9C3OuVuhg" name="studentUsersReserved" content="studentUsersReserved" type="TYPE_VARIABLE" returnType="java.util.List">
+                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_8YSwbdiPEeume9C3OuVuhg" name="studentUsersReserved" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bDn4zEeuRs9oQMLXI7A" name="content" content="content" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bD34zEeuRs9oQMLXI7A" name="content" content="content" type="TYPE_VARIABLE">
-                      <referencedElements xmi:type="process:Data" xmi:id="_AC0bEH4zEeuRs9oQMLXI7A" name="content" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwbtiPEeume9C3OuVuhg" name="durationRate.toString()" content="durationRate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwb9iPEeume9C3OuVuhg" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+                      <referencedElements xmi:type="process:Data" xmi:id="_8YSwcNiPEeume9C3OuVuhg" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_AC0bEX4zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_AC1CEH4zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" type="TYPE_PARAMETER">
-                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_AC1CEX4zEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwcdiPEeume9C3OuVuhg" name="content" content="content" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwctiPEeume9C3OuVuhg" name="content" content="content" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_8YSwc9iPEeume9C3OuVuhg" name="content" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                    </referencedElements>
+                  </referencedElements>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwdNiPEeume9C3OuVuhg" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_8YSwddiPEeume9C3OuVuhg" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_8YSwdtiPEeume9C3OuVuhg" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -2874,14 +2901,14 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_iHJlxHYoEeukecCvAF8eCQ" key="message">
                 <expression xmi:type="expression:Expression" xmi:id="_iHJlxXYoEeukecCvAF8eCQ" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p style=&quot;font-size:16px;&quot;>&#xA;          Estimado(a) estudiante,&#xA;          &lt;br>&lt;br>&#xA;          se le informa que se ha extendido el plazo de calificación de las fichas de Seguimiento al Sílabo y tiene &lt;b>${durationRate.toString()} días&lt;/b> para calificar su ficha con el objetivo de permitir la participación estudiantil y valorar el grado de satisfacción de las y los estudiantes al realizar las actividades propuestas en los sílabos. &#xA;          &lt;br>&lt;br>&#xA;          Ingresar en el siguiente enlace: &lt;a href=&quot;${urlServer}&quot;>Seguimiento al Sílabo y Plan de Mejoras&lt;/a>&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;          &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D; font-size:14px;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_FF56YH4zEeuRs9oQMLXI7A" name="durationRate.toString()" content="durationRate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_FF56YX4zEeuRs9oQMLXI7A" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
-                      <referencedElements xmi:type="process:Data" xmi:id="_FF56Yn4zEeuRs9oQMLXI7A" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_AAwr4NiQEeume9C3OuVuhg" name="durationRate.toString()" content="durationRate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_AAwr4diQEeume9C3OuVuhg" name="durationRate" content="durationRate" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+                      <referencedElements xmi:type="process:Data" xmi:id="_AAwr4tiQEeume9C3OuVuhg" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_FF56Y34zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_FF56ZH4zEeuRs9oQMLXI7A" name="urlServer" content="urlServer" type="TYPE_PARAMETER">
-                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_FF6hcH4zEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_AAwr49iQEeume9C3OuVuhg" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_AAwr5NiQEeume9C3OuVuhg" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_AAwr5diQEeume9C3OuVuhg" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -3112,9 +3139,9 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_wAQoslkXEeuJIr4cTKuYsA" name="student" content="student" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_wAQosVkXEeuJIr4cTKuYsA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <BoundaryIntermediateEvents xmi:type="process:BoundaryTimerEvent" xmi:id="_n4TJIFzzEeuCL6OsnlvZyg" name="Tiempo Límite" outgoing="_IT0FkGiiEeu4QMMChlZ5tw">
-            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;// Nine minutes&#xA;//return 540000L;&#xA;&#xA;// Two minutes&#xA;return 120000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:Data" xmi:id="_ar-GANbqEeufB7jSKchEGQ" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-              <referencedElements xmi:type="parameter:Parameter" xmi:id="_ar_UINbqEeufB7jSKchEGQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
+            <condition xmi:type="expression:Expression" xmi:id="_uOhrYFzzEeuCL6OsnlvZyg" name="setDuration()" content="import java.time.Duration&#xA;&#xA;Duration duration = Duration.ofDays(durationRate);&#xA;&#xA;if(productionTimers){&#xA;&#x9;return duration.toMillis();&#xA;}&#xA;&#xA;// Nine minutes&#xA;return 540000L;&#xA;&#xA;// Two minutes&#xA;//return 120000L;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:Data" xmi:id="__bHj8NlaEeuIfuuJf0kNwg" name="durationRate" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
+              <referencedElements xmi:type="parameter:Parameter" xmi:id="__bHj8dlaEeuIfuuJf0kNwg" name="productionTimers" typeClassname="java.lang.Boolean"/>
             </condition>
           </BoundaryIntermediateEvents>
           <BoundaryIntermediateEvents xmi:type="process:NonInterruptingBoundaryTimerEvent" xmi:id="_qdzXUF9aEeuVVLsH7l3cUw" name="1 día despúes" outgoing="_Quz0IF9bEeuVVLsH7l3cUw">
@@ -3224,7 +3251,7 @@
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_usSssWDpEeuPS9Z04F0ZTQ" definitionId="rest-post" version="1.1.0" modelVersion="7.11.1-001">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_usSssmDpEeuPS9Z04F0ZTQ" key="url">
                 <expression xmi:type="expression:Expression" xmi:id="_usSss2DpEeuPS9Z04F0ZTQ" name="getUrl()" content="return backendHost + '/api/docx'" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_897SAGWZEeuUFNFgVPZMBg" name="backendHost" typeClassname="java.lang.String"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_OMpKgNiKEeuKysyr3FSVLA" name="backendHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_usSstGDpEeuPS9Z04F0ZTQ" key="contentType">
@@ -3332,8 +3359,8 @@
                 <referencedElements xmi:type="process:Document" xmi:id="_3Y0X8GDpEeuPS9Z04F0ZTQ" name="syllabusTrackingReport"/>
               </leftOperand>
               <rightOperand xmi:type="expression:Expression" xmi:id="_usSs-2DpEeuPS9Z04F0ZTQ" name="newScript()" content="import org.bonitasoft.engine.bpm.document.DocumentValue&#xA;&#xA;def documentPath = backendHost + '/api/docx/download/' + bodyAsObject.folder + '/' +bodyAsObject.documentName;&#xA;&#xA;return new DocumentValue(documentPath);" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="org.bonitasoft.engine.bpm.document.DocumentValue">
-                <referencedElements xmi:type="definition:Output" xmi:id="_1kbU4GWZEeuUFNFgVPZMBg" name="bodyAsObject" type="java.lang.Object"/>
-                <referencedElements xmi:type="parameter:Parameter" xmi:id="_1kbU4WWZEeuUFNFgVPZMBg" name="backendHost" typeClassname="java.lang.String"/>
+                <referencedElements xmi:type="definition:Output" xmi:id="_OMqYoNiKEeuKysyr3FSVLA" name="bodyAsObject" type="java.lang.Object"/>
+                <referencedElements xmi:type="process:Data" xmi:id="_OMqYodiKEeuKysyr3FSVLA" name="backendHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
               </rightOperand>
               <operator xmi:type="expression:Operator" xmi:id="_usSs_WDpEeuPS9Z04F0ZTQ" type="DOCUMENT_CREATE_UPDATE"/>
             </outputs>
@@ -3667,9 +3694,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_Wqq6UV92EeuVVLsH7l3cUw" content=""/>
       </data>
       <data xmi:type="process:Data" xmi:id="_RYrWoGACEeu0_-WLyBvLsw" name="emailUsername" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_RYrWoWACEeu0_-WLyBvLsw" name="emailUser" content="emailUser" interpreter="GROOVY" type="TYPE_PARAMETER">
-          <referencedElements xmi:type="parameter:Parameter" xmi:id="_y7VxcH9xEeusRo-_te0nfA" name="emailUser" typeClassname="java.lang.String"/>
-        </defaultValue>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_RYrWoWACEeu0_-WLyBvLsw" name="" content="" interpreter="GROOVY"/>
       </data>
       <data xmi:type="process:Data" xmi:id="_VeA0UGACEeu0_-WLyBvLsw" name="emailHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_VeA0UWACEeu0_-WLyBvLsw" name="smtp.gmail.com" content="smtp.gmail.com"/>
@@ -3678,9 +3703,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_XqWwEWACEeu0_-WLyBvLsw" name="465" content="465" returnType="java.lang.Integer"/>
       </data>
       <data xmi:type="process:Data" xmi:id="_al1CsGACEeu0_-WLyBvLsw" name="emailPassword" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_al1CsWACEeu0_-WLyBvLsw" name="emailPasswordParam" content="emailPasswordParam" interpreter="GROOVY" type="TYPE_PARAMETER">
-          <referencedElements xmi:type="parameter:Parameter" xmi:id="_2fo-oH9xEeusRo-_te0nfA" name="emailPasswordParam" typeClassname="java.lang.String"/>
-        </defaultValue>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_al1CsWACEeu0_-WLyBvLsw" name="" content="" interpreter="GROOVY"/>
       </data>
       <data xmi:type="process:JavaObjectData" xmi:id="_zwB-QGDnEeuPS9Z04F0ZTQ" name="currentPeriod" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period">
         <defaultValue xmi:type="expression:Expression" xmi:id="_zwB-QWDnEeuPS9Z04F0ZTQ" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="com.sspm.model.Period"/>
@@ -3738,6 +3761,12 @@
       </data>
       <data xmi:type="process:JavaObjectData" xmi:id="_y4RNwNbxEeufB7jSKchEGQ" name="backendGrades" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List">
         <defaultValue xmi:type="expression:Expression" xmi:id="_y4RNwdbxEeufB7jSKchEGQ" content="" returnType="java.util.List"/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="_89A1wNiJEeuKysyr3FSVLA" name="backendHost" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_89A1wdiJEeuKysyr3FSVLA" content=""/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="_jm5soNiKEeuKysyr3FSVLA" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_jm5sodiKEeuKysyr3FSVLA" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_PH_rhEU9EeuYOOr8JiHqIQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_smrxUEoPEeuRMrcBo1p0Vg" name="00InitForm" content="e91ca845-526b-40c1-9ef4-dd86faa5d762" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -4006,7 +4035,7 @@
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_0RytAGHjEeuKpJXCxJU9_A">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_0RytBmHjEeuKpJXCxJU9_A" name="Docente">
             <groups xmi:type="actormapping:Groups" xmi:id="_0RytB2HjEeuKpJXCxJU9_A">
-              <group>/UNL/FEIRNNR/IS-C/SSPM/Commission</group>
+              <group>/unl/facultad/cis/SSPM/Comision</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_0RytCGHjEeuKpJXCxJU9_A"/>
             <roles xmi:type="actormapping:Roles" xmi:id="_0RytCWHjEeuKpJXCxJU9_A"/>
@@ -4014,7 +4043,8 @@
           </actorMapping>
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_0RytC2HjEeuKpJXCxJU9_A" name="Dirección de Carrera Actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_0RytDGHjEeuKpJXCxJU9_A">
-              <group>/UNL/FEIRNNR/IS-C</group>
+              <group>/unl/facultad/cis/coordinacion</group>
+              <group>/unl/facultad/cis/secretaria</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_0RytDWHjEeuKpJXCxJU9_A"/>
             <roles xmi:type="actormapping:Roles" xmi:id="_0RytDmHjEeuKpJXCxJU9_A"/>
@@ -4022,7 +4052,7 @@
           </actorMapping>
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_0RytEGHjEeuKpJXCxJU9_A" name="Estudiante">
             <groups xmi:type="actormapping:Groups" xmi:id="_0RytEWHjEeuKpJXCxJU9_A">
-              <group>/UNL/FEIRNNR/IS-C/SSPM/Students</group>
+              <group>/unl/estudiante</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_0RytEmHjEeuKpJXCxJU9_A"/>
             <roles xmi:type="actormapping:Roles" xmi:id="_0RytE2HjEeuKpJXCxJU9_A"/>
@@ -4127,12 +4157,8 @@
           <fragments xmi:type="configuration:Fragment" xmi:id="_bmlGZXyQEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
         </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_0RqxRGHjEeuKpJXCxJU9_A" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_FOI8EGWXEeuUFNFgVPZMBg" name="emailUser" value="seguimiento.silabos@gmail.com" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_VlCxsGWaEeuUFNFgVPZMBg" name="backendHost" value="http://34.122.145.48:3000" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_bmlGZnyQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_6QfHkHyTEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_pBdNIH9vEeusRo-_te0nfA" name="urlServer" value="http://&lt;ip-del-servidor-de-bonita>/bonita/apps/cis-user" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_56G6YH9xEeusRo-_te0nfA" name="emailPasswordParam" value="contraseña" typeClassname="java.lang.String"/>
       </configurations>
       <configurations xmi:type="configuration:Configuration" xmi:id="_EVS0YHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pfordonez@unl.edu.ec" password="unlseguimiento">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_EVTbcHyUEeu4y6D4bQG0Mg">
@@ -4260,19 +4286,11 @@
           <fragments xmi:type="configuration:Fragment" xmi:id="_EVTbh3yUEeu4y6D4bQG0Mg" key="UtilsSSPM.groovy" value="UtilsSSPM.groovy" type="GROOVY_SCRIPT"/>
         </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EVS0sHyUEeu4y6D4bQG0Mg" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbiHyUEeu4y6D4bQG0Mg" name="emailUser" value="cis.seguimiento.silabos@gmail.com" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbiXyUEeu4y6D4bQG0Mg" name="backendHost" value="http://ciscunl.info:3000" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbinyUEeu4y6D4bQG0Mg" name="productionTimers" value="false" typeClassname="java.lang.Boolean"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbi3yUEeu4y6D4bQG0Mg" name="productionPassword" value="false" typeClassname="java.lang.Boolean"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_Tg_t4IO4EeusxdTUoos_jA" name="urlServer" value="http://ciscunl.info:5000/bonita/apps/userApp" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_Tg_t4YO4EeusxdTUoos_jA" name="emailPasswordParam" value="seguimiento2021" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_EVTbi3yUEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
       </configurations>
-      <parameters xmi:type="parameter:Parameter" xmi:id="_fBQ5MGHkEeuKpJXCxJU9_A" name="emailUser" typeClassname="java.lang.String"/>
-      <parameters xmi:type="parameter:Parameter" xmi:id="_ZzzGkGWZEeuUFNFgVPZMBg" name="backendHost" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_QOB2QGzYEeunXPDArUMloQ" name="productionTimers" typeClassname="java.lang.Boolean"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_rTs_MHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
-      <parameters xmi:type="parameter:Parameter" xmi:id="_lh_AoH4yEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita Environment is installed"/>
-      <parameters xmi:type="parameter:Parameter" xmi:id="_0-HhgH9xEeusRo-_te0nfA" name="emailPasswordParam" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_PH_rjEU9EeuYOOr8JiHqIQ"/>
       <documents xmi:type="process:Document" xmi:id="_x1sFcEoSEeuRMrcBo1p0Vg" name="sillabusFile">
         <mimeType xmi:type="expression:Expression" xmi:id="_x1sFcUoSEeuRMrcBo1p0Vg" name="" content="" returnTypeFixed="true"/>
@@ -4462,37 +4480,37 @@
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uhmcfkuwEeuocLIPuMdEiw" key="message">
               <expression xmi:type="expression:Expression" xmi:id="_uhmcf0uwEeuocLIPuMdEiw" name="&lt;pattern-expression>" content="&lt;table align=&quot;center&quot; bgcolor=&quot;#F4F4F4&quot; cellpadding=&quot;16px&quot; cellspacing=&quot;0&quot; width=&quot;75%&quot;>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot;>&#xA;         &lt;img src=&quot;https://unl.edu.ec/sites/default/files/inline-images/logogris.png&quot; style=&quot;width:100%; max-width:400px;&quot;/>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td>&#xA;         &lt;p style=&quot;font-size:16px;&quot;>&#xA;          Estimado(a) ${commissionUsers[index].member.name},&#xA;          &lt;br>&lt;br>&#xA;          ha sido seleccionado(a) como parte de la Comisión de Evaluación Interna, la cual está designada para llevar a cabo el proceso de &lt;b>Seguimiento al Sílabo y Plan de Mejoras&lt;/b> en el periodo académico ${period.initDate.toString()} a ${period.endDate.toString()} de la carrera de &lt;b>${degree.name}&lt;/b>. &#xA;          &lt;br>&lt;br>&#xA;          ${content} &#xA;&#x9;&#x9;  &lt;br>&lt;br>&#xA;          Ingresar en el siguiente enlace: &lt;a href=&quot;${urlServer}&quot;>Seguimiento al Sílabo y Plan de Mejoras&lt;/a>&#xA;          &lt;/p>&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;     &lt;tr>&#xA;       &lt;td align=&quot;center&quot; style=&quot;color: #5D5D5D; font-size:14px;&quot;>&#xA;         Seguimiento al Sílabo y Plan de Mejoras - UNL&#xA;       &lt;/td>&#xA;     &lt;/tr>&#xA;&lt;/table>" type="TYPE_PATTERN" returnTypeFixed="true">
-                <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCEH4xEeuRs9oQMLXI7A" name="commissionUsers[index].member.name" content="commissionUsers[index].member.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCEX4xEeuRs9oQMLXI7A" name="commissionUsers" content="commissionUsers" type="TYPE_VARIABLE" returnType="java.util.List">
-                    <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Q9dCEn4xEeuRs9oQMLXI7A" name="commissionUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_bmSS4NiPEeuKysyr3FSVLA" name="commissionUsers[index].member.name" content="commissionUsers[index].member.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmSS4diPEeuKysyr3FSVLA" name="commissionUsers" content="commissionUsers" type="TYPE_VARIABLE" returnType="java.util.List">
+                    <referencedElements xmi:type="process:JavaObjectData" xmi:id="_bmSS4tiPEeuKysyr3FSVLA" name="commissionUsers" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="java.util.List"/>
                   </referencedElements>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCE34xEeuRs9oQMLXI7A" name="index" content="index" type="TYPE_VARIABLE" returnType="java.lang.Integer">
-                    <referencedElements xmi:type="process:Data" xmi:id="_Q9dCFH4xEeuRs9oQMLXI7A" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
-                  </referencedElements>
-                </referencedElements>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCFX4xEeuRs9oQMLXI7A" name="period.initDate.toString()" content="period.initDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCFn4xEeuRs9oQMLXI7A" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
-                    <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Q9dCF34xEeuRs9oQMLXI7A" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmSS49iPEeuKysyr3FSVLA" name="index" content="index" type="TYPE_VARIABLE" returnType="java.lang.Integer">
+                    <referencedElements xmi:type="process:Data" xmi:id="_bmSS5NiPEeuKysyr3FSVLA" name="index" dataType="_PH_rnkU9EeuYOOr8JiHqIQ"/>
                   </referencedElements>
                 </referencedElements>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCGH4xEeuRs9oQMLXI7A" name="period.endDate.toString()" content="period.endDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dCGX4xEeuRs9oQMLXI7A" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
-                    <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Q9dCGn4xEeuRs9oQMLXI7A" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_bmSS5diPEeuKysyr3FSVLA" name="period.initDate.toString()" content="period.initDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmSS5tiPEeuKysyr3FSVLA" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
+                    <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bmSS59iPEeuKysyr3FSVLA" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
                   </referencedElements>
                 </referencedElements>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dpIH4xEeuRs9oQMLXI7A" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dpIX4xEeuRs9oQMLXI7A" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
-                    <referencedElements xmi:type="process:JavaObjectData" xmi:id="_Q9dpIn4xEeuRs9oQMLXI7A" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_bmS58NiPEeuKysyr3FSVLA" name="period.endDate.toString()" content="period.endDate.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmS58diPEeuKysyr3FSVLA" name="period" content="period" type="TYPE_VARIABLE" returnType="com.sspm.model.Period">
+                    <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bmS58tiPEeuKysyr3FSVLA" name="period" dataType="_PH_rpEU9EeuYOOr8JiHqIQ" className="com.sspm.model.Period"/>
                   </referencedElements>
                 </referencedElements>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dpI34xEeuRs9oQMLXI7A" name="content" content="content" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dpJH4xEeuRs9oQMLXI7A" name="content" content="content" type="TYPE_VARIABLE">
-                    <referencedElements xmi:type="process:Data" xmi:id="_Q9dpJX4xEeuRs9oQMLXI7A" name="content" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_bmS589iPEeuKysyr3FSVLA" name="degree.name" content="degree.name" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmS59NiPEeuKysyr3FSVLA" name="degree" content="degree" type="TYPE_VARIABLE" returnType="com.sspm.model.Degree">
+                    <referencedElements xmi:type="process:JavaObjectData" xmi:id="_bmS59diPEeuKysyr3FSVLA" name="degree" dataType="_PH_rokU9EeuYOOr8JiHqIQ" className="com.sspm.model.Degree"/>
                   </referencedElements>
                 </referencedElements>
-                <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dpJn4xEeuRs9oQMLXI7A" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_Q9dpJ34xEeuRs9oQMLXI7A" name="urlServer" content="urlServer" type="TYPE_PARAMETER">
-                    <referencedElements xmi:type="parameter:Parameter" xmi:id="_Q9dpKH4xEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita is installed"/>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_bmS59tiPEeuKysyr3FSVLA" name="content" content="content" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmS599iPEeuKysyr3FSVLA" name="content" content="content" type="TYPE_VARIABLE">
+                    <referencedElements xmi:type="process:Data" xmi:id="_bmS5-NiPEeuKysyr3FSVLA" name="content" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
+                  </referencedElements>
+                </referencedElements>
+                <referencedElements xmi:type="expression:Expression" xmi:id="_bmS5-diPEeuKysyr3FSVLA" name="urlServer" content="urlServer" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_bmS5-tiPEeuKysyr3FSVLA" name="urlServer" content="urlServer" type="TYPE_VARIABLE">
+                    <referencedElements xmi:type="process:Data" xmi:id="_bmS5-9iPEeuKysyr3FSVLA" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ"/>
                   </referencedElements>
                 </referencedElements>
               </expression>
@@ -4827,6 +4845,9 @@
       <data xmi:type="process:Data" xmi:id="_vLhUUGACEeu0_-WLyBvLsw" name="emailPassword" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
         <defaultValue xmi:type="expression:Expression" xmi:id="_vLhUUWACEeu0_-WLyBvLsw" content=""/>
       </data>
+      <data xmi:type="process:Data" xmi:id="_IIqckNiPEeuKysyr3FSVLA" name="urlServer" dataType="_PH_roUU9EeuYOOr8JiHqIQ">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_IIqckdiPEeuKysyr3FSVLA" content=""/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_SaL6QEr2EeuHg-ZrLb5XVA" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_CEA_QEsFEeuHg-ZrLb5XVA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
@@ -4891,7 +4912,6 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_PWyADmWXEeuUFNFgVPZMBg" id="OTHER"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_fSZQ1HyQEeu4y6D4bQG0Mg" name="productionTimers" value="true" typeClassname="java.lang.Boolean"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="__jIF4HyTEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_lLHN8IOyEeusxdTUoos_jA" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita is installed"/>
       </configurations>
       <configurations xmi:type="configuration:Configuration" xmi:id="_SkalgHyUEeu4y6D4bQG0Mg" name="testingProduction" version="7.12.0-004" username="pfordonez@unl.edu.ec" password="unlseguimiento">
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_SkalgXyUEeu4y6D4bQG0Mg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
@@ -4922,12 +4942,10 @@
         </applicationDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_SkaljnyUEeu4y6D4bQG0Mg" id="OTHER"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Skall3yUEeu4y6D4bQG0Mg" name="productionTimers" value="false" typeClassname="java.lang.Boolean"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_SkalmHyUEeu4y6D4bQG0Mg" name="productionPassword" value="false" typeClassname="java.lang.Boolean"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_AyQhYIO5EeusxdTUoos_jA" name="urlServer" value="http://ciscunl.info:5000/bonita/apps/userApp" typeClassname="java.lang.String" description="URL of the server where Bonita is installed"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_SkalmHyUEeu4y6D4bQG0Mg" name="productionPassword" value="true" typeClassname="java.lang.Boolean"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_Os1jAHiOEeurVuLgFe2Bsg" name="productionTimers" typeClassname="java.lang.Boolean"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_xGRawHyTEeu4y6D4bQG0Mg" name="productionPassword" typeClassname="java.lang.Boolean"/>
-      <parameters xmi:type="parameter:Parameter" xmi:id="_J2-uoH4xEeuRs9oQMLXI7A" name="urlServer" typeClassname="java.lang.String" description="URL of the server where Bonita is installed"/>
       <contract xmi:type="process:Contract" xmi:id="_SaL6REr2EeuHg-ZrLb5XVA"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_SaLTMEr2EeuHg-ZrLb5XVA">
         <name xmi:type="expression:Expression" xmi:id="_SaLTMUr2EeuHg-ZrLb5XVA" content="" returnTypeFixed="true"/>
@@ -6336,7 +6354,7 @@
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_h4EXoGWcEeuR799rSR61XA">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_h4EXoWWcEeuR799rSR61XA" name="Comisión de Evaluación Interna">
             <groups xmi:type="actormapping:Groups" xmi:id="_h4EXomWcEeuR799rSR61XA">
-              <group>/UNL/FEIRNNR/IS-C/SSPM/Commission</group>
+              <group>/unl/facultad/cis/SSPM/Comision</group>
             </groups>
             <memberships xmi:type="actormapping:Membership" xmi:id="_h4EXo2WcEeuR799rSR61XA"/>
             <roles xmi:type="actormapping:Roles" xmi:id="_h4EXpGWcEeuR799rSR61XA"/>
