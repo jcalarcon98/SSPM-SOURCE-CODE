@@ -61,10 +61,6 @@ function PbTableCtrl($scope) {
             percentageValues.forEach((currentPercentage,index) => {
                
                if(index > 0) {
-                   
-                   console.log(currentPercentage, 'Current Percentage');
-                   console.log($scope.properties.percentageAchieved, 'Percentage Achieved');
-                   
                    if(currentPercentage === $scope.properties.percentageAchieved.trim()){
                        percentageAnswers.push({text: 'X' , alignment: 'center', style: {bold: true, fontSize: 13,color: 'black'}});
                    } else {
@@ -171,6 +167,7 @@ function PbTableCtrl($scope) {
             docDefinition.content.push({text: 'PORCENTAJE ALCANZADO:', style : 'subheaderPercentage' });
             docDefinition.content.push(percentageTable);
         }
+        
         pdfMake.createPdf(docDefinition).open();   
     };
     

@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1615265411331,
+  "lastUpdate" : 1625549971994,
   "rows" : [
     [
       {
@@ -4520,7 +4520,7 @@
                   },
                   "executionDate" : {
                     "type" : "expression",
-                    "value" : "currentPeriod_degree_tracking_stages[currentSheetPosition].executionDate"
+                    "value" : "currentPeriod_degree_tracking_stages[currentSheet.denomination.toLowerCase() === 'mitad de ciclo' ? 0 : 1].executionDate"
                   },
                   "percentageAchieved" : {
                     "type" : "expression",
@@ -4874,9 +4874,9 @@
       "exposed" : false
     },
     "caseId" : {
-      "type" : "urlparameter",
+      "type" : "expression",
       "value" : [
-        "id"
+        "return 5009;"
       ],
       "exposed" : false
     },
@@ -5083,7 +5083,7 @@
     "studentsGroup" : {
       "type" : "url",
       "value" : [
-        "../API/identity/group?&f=name=Students"
+        "../API/identity/group?&f=name=estudiante"
       ],
       "exposed" : false
     },
@@ -5122,7 +5122,7 @@
         "",
         "if($data.caseOverview){",
         "    for (let currentLink of $data.caseOverview.businessDataRefs) {",
-        "        if(currentLink.name === 'period (com.company.model.Period)') {",
+        "        if(currentLink.name === 'period (com.sspm.model.Period)') {",
         "            linkPeriod = currentLink.link;",
         "            return linkPeriod;",
         "        }",
@@ -5144,13 +5144,6 @@
         "if($data.period){",
         "    return $data.period.persistenceId;",
         "}"
-      ],
-      "exposed" : false
-    },
-    "currentPeriod" : {
-      "type" : "businessdata",
-      "value" : [
-        "{\"displayValue\":\"findByPersistenceId [com.company.model.Period]\",\"businessObjectName\":\"Period\",\"query\":{\"name\":\"findByPersistenceId\",\"displayName\":\"findByPersistenceId\"},\"id\":\"com.company.model.Period\",\"filters\":[{\"name\":\"persistenceId\",\"type\":\"INTEGER\",\"collection\":false,\"value\":\"{{periodId}}\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
       ],
       "exposed" : false
     },
@@ -5356,7 +5349,7 @@
         "",
         "let questions;",
         "",
-        "if ($data.currentSheetPosition === 0) {",
+        "if ($data.currentSheet.denomination === 'Mitad de Ciclo' ) {",
         "    questions = $data.middleStageQuestions;",
         "} else{",
         "    questions = $data.endStageQuestions;",
@@ -5546,6 +5539,35 @@
         "if($data.openReportSyllabusFiles.length > 0) {",
         "    return $data.openReportSyllabusFiles[0];",
         "}"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses_sheets_middle" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.currentPeriod_degree_grades_syllabuses_sheets.filter(sheet => sheet.denomination.trim().toLowerCase() === 'mitad de ciclo')"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod_degree_grades_syllabuses_sheets_end" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.currentPeriod_degree_grades_syllabuses_sheets.filter(sheet => sheet.denomination.trim().toLowerCase() === 'final de ciclo')"
+      ],
+      "exposed" : false
+    },
+    "consolelog" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data.currentPeriod_degree_grades_syllabuses_sheets_middle, 'Middle')",
+        "console.log($data.currentSheet, 'CUrrent sheet'  )"
+      ],
+      "exposed" : false
+    },
+    "currentPeriod" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"findByPersistenceId [com.sspm.model.Period]\",\"businessObjectName\":\"undefined\",\"query\":{\"name\":\"findByPersistenceId\",\"displayName\":\"findByPersistenceId\"},\"id\":\"com.sspm.model.Period\",\"filters\":[{\"name\":\"persistenceId\",\"type\":\"INTEGER\",\"collection\":false,\"value\":\"{{periodId}}\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
       ],
       "exposed" : false
     }
