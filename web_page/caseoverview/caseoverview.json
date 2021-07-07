@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.10.18",
   "id" : "caseoverview",
   "name" : "caseoverview",
-  "lastUpdate" : 1625549971994,
+  "lastUpdate" : 1625618059765,
   "rows" : [
     [
       {
@@ -4874,9 +4874,9 @@
       "exposed" : false
     },
     "caseId" : {
-      "type" : "expression",
+      "type" : "urlparameter",
       "value" : [
-        "return 5009;"
+        "id"
       ],
       "exposed" : false
     },
