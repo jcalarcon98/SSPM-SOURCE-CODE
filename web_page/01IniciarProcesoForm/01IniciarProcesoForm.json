@@ -3,7 +3,7 @@
   "previousArtifactVersion" : "1.11.62",
   "id" : "01IniciarProcesoForm",
   "name" : "01IniciarProcesoForm",
-  "lastUpdate" : 1625377468644,
+  "lastUpdate" : 1626885575609,
   "rows" : [
     [
       {
@@ -6610,8 +6610,8 @@
         "    password: \"\",",
         "    smtpHost: \"smtp.gmail.com\",",
         "    smtpPort: 465,",
-        "    backendUrl: \"\",",
-        "    applicationUrl: \"\",",
+        "    backendUrl: \"http://ciscunl.info:3000\",",
+        "    applicationUrl: \"https://ciscunl.info:5000/bonita/apps/userApp/task-list/\",",
         "}"
       ],
       "exposed" : false

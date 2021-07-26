@@ -4062,7 +4062,7 @@
       <actors xmi:type="process:Actor" xmi:id="_LM4HYE1ZEeuV9t0H3Gb7Sg" documentation="Docente miembro de la Comisión de Seguimiento al Sílabo y Plan de Mejoras" name="Docente"/>
       <actors xmi:type="process:Actor" xmi:id="_PC26cE1ZEeuV9t0H3Gb7Sg" name="Dirección de Carrera Actor" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_NruogFkXEeuJIr4cTKuYsA" documentation="Estudiante encargado de evaluar la Ficha de Seguimiento al Sílabo" name="Estudiante"/>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_0RqxMGHjEeuKpJXCxJU9_A" name="Production" version="7.12.0-004" username="pablo.ordonez@unl.edu.ec" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_0RqxMGHjEeuKpJXCxJU9_A" name="Production" version="7.12.0-004" username="pfordonez@unl.edu.ec" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_0RytAGHjEeuKpJXCxJU9_A">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_0RytBmHjEeuKpJXCxJU9_A" name="Docente">
             <groups xmi:type="actormapping:Groups" xmi:id="_0RytB2HjEeuKpJXCxJU9_A">
